@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #36615A;
+  --color-saddle: #8B542B;
+  --color-copper: #A7703D;
+  --color-eggshell: #F3F0E1;
+  --color-porcelain: #FDFFFC;
+}
+
+
+
+
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Fix container constraints */
+* {
+  box-sizing: border-box;
+}
+
+/* Fix w-screen overflow */
+[class*="w-screen"] {
+  width: 100% !important;
+}
+
+/* Ensure full width for gradients */
+body > div {
+  width: 100%;
+}
+   
+
+
