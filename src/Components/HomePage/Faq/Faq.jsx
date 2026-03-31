@@ -11,12 +11,18 @@ const faqs = [
   { num: '08', q: `Can I start with a small project before committing to a full book?`, a: `Yes — we offer a Discovery Session where we help you outline your story and assess the scope. It's a great way to see if we're the right fit before diving into a full project.`, tag: 'Getting Started' },
 ];
 
+const INITIAL_VISIBLE = 4;
+
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [headerVisible, setHeaderVisible] = useState(false);
   const [itemsVisible, setItemsVisible] = useState([]);
+  const [showAll, setShowAll] = useState(false);
   const headerRef = useRef(null);
   const itemRefs = useRef([]);
+  const moreRef = useRef(null);
+
+  const visibleFaqs = showAll ? faqs : faqs.slice(0, INITIAL_VISIBLE);
 
   useEffect(() => {
     if (!headerRef.current) return;
@@ -36,9 +42,24 @@ const FAQSection = () => {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
+  }, [showAll]);
 
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+
+  const handleShowAll = () => {
+    setShowAll(true);
+    // scroll into newly revealed items after render
+    setTimeout(() => {
+      if (moreRef.current) {
+        moreRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 80);
+  };
+
+  const handleShowLess = () => {
+    setShowAll(false);
+    setOpenIndex(null);
+  };
 
   return (
     <>
@@ -156,6 +177,20 @@ const FAQSection = () => {
           box-shadow: 0 4px 48px rgba(20,32,26,0.05);
         }
 
+        /* Collapsed extra items wrapper */
+        .faq-extra-wrap {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.5s ease;
+        }
+        .faq-extra-wrap.open {
+          grid-template-rows: 1fr;
+        }
+        .faq-extra-inner {
+          overflow: hidden;
+          border-top: 1px solid rgba(54,97,90,0.07);
+        }
+
         .faq-row {
           background: #ffffff;
           border-bottom: 1px solid rgba(54,97,90,0.07);
@@ -267,6 +302,58 @@ const FAQSection = () => {
           margin: 0;
         }
 
+        /* VIEW MORE BUTTON */
+        .faq-more-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 28px 0 0;
+          gap: 0;
+        }
+
+        .faq-more-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          font-family: 'Outfit', sans-serif;
+          font-size: 10px;
+          font-weight: 500;
+          letter-spacing: 0.28em;
+          text-transform: uppercase;
+          color: #36615a;
+          background: transparent;
+          border: 1px solid rgba(54,97,90,0.25);
+          padding: 16px 32px;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: background 0.3s, border-color 0.3s, color 0.3s, gap 0.3s;
+        }
+        .faq-more-btn:hover {
+          background: rgba(54,97,90,0.06);
+          border-color: rgba(54,97,90,0.45);
+          gap: 18px;
+        }
+
+        .faq-more-btn .btn-icon {
+          width: 18px; height: 18px;
+          border-radius: 50%;
+          border: 1px solid currentColor;
+          display: flex; align-items: center; justify-content: center;
+          flex-shrink: 0;
+          transition: transform 0.35s ease;
+        }
+        .faq-more-btn.less .btn-icon { transform: rotate(180deg); }
+        .faq-more-btn svg { width: 10px; height: 10px; }
+
+        .faq-remaining-badge {
+          font-size: 9px;
+          letter-spacing: 0.1em;
+          color: rgba(54,97,90,0.5);
+          background: rgba(54,97,90,0.07);
+          border-radius: 50px;
+          padding: 3px 10px;
+        }
+
         /* FOOTER */
         .faq-footer {
           margin-top: 40px;
@@ -373,7 +460,8 @@ const FAQSection = () => {
           </div>
 
           <div className="faq-list">
-            {faqs.map((item, i) => (
+            {/* Always-visible first 4 */}
+            {faqs.slice(0, INITIAL_VISIBLE).map((item, i) => (
               <div
                 key={i}
                 ref={el => itemRefs.current[i] = el}
@@ -400,6 +488,63 @@ const FAQSection = () => {
                 </div>
               </div>
             ))}
+
+            {/* Remaining items — smooth expand */}
+            <div className={`faq-extra-wrap${showAll ? ' open' : ''}`}>
+              <div className="faq-extra-inner">
+                {faqs.slice(INITIAL_VISIBLE).map((item, idx) => {
+                  const i = INITIAL_VISIBLE + idx;
+                  return (
+                    <div
+                      key={i}
+                      ref={el => itemRefs.current[i] = el}
+                      className={`faq-row${itemsVisible.includes(i) ? ' vis' : ''}${openIndex === i ? ' open' : ''}`}
+                      onClick={() => toggle(i)}
+                      style={{ borderTop: idx === 0 ? 'none' : undefined }}
+                    >
+                      <div className="faq-row-head">
+                        <span className="faq-row-num">{item.num}</span>
+                        <p className="faq-row-q">{item.q}</p>
+                        <span className="faq-tag">{item.tag}</span>
+                        <div className="faq-toggle">
+                          <svg viewBox="0 0 13 13" fill="none">
+                            <path d="M6.5 1v11M1 6.5h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="faq-answer-wrap">
+                        <div className="faq-answer-inner">
+                          <div className="faq-answer-body">
+                            <span />
+                            <p className="faq-answer-text">{item.a}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* View More / View Less Button */}
+          <div className="faq-more-wrap" ref={moreRef}>
+            <button
+              className={`faq-more-btn${showAll ? ' less' : ''}`}
+              onClick={showAll ? handleShowLess : handleShowAll}
+            >
+              {showAll ? 'Show Less' : (
+                <>
+                  View More Questions
+                  <span className="faq-remaining-badge">+{faqs.length - INITIAL_VISIBLE}</span>
+                </>
+              )}
+              <span className="btn-icon">
+                <svg viewBox="0 0 10 10" fill="none">
+                  <path d="M5 2v6M2 5h6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+                </svg>
+              </span>
+            </button>
           </div>
 
           <div className="faq-footer">

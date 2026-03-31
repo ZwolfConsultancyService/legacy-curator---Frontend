@@ -101,7 +101,7 @@ const Footer = () => {
             <div className="flex items-center gap-6">
               <Link to="/privacy-policy" className="text-xs text-porcelain/60 hover:text-porcelain transition">Privacy Policy</Link>
               <Link to="/terms" className="text-xs text-porcelain/60 hover:text-porcelain transition">Terms of Service</Link>
-              <Link to="/sitemap" className="text-xs text-porcelain/60 hover:text-porcelain transition">Sitemap</Link>
+            
             </div>
           </div>
           {/* Zwolf Credit */}

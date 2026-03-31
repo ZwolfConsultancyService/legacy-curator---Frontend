@@ -49,11 +49,11 @@ const reasons = [
   },
 ];
 
-const stats = [
-  { num: '500', suffix: '+', label: 'Legacy books delivered' },
-  { num: '12', suffix: '+', label: 'Years of storytelling expertise' },
-  { num: '98', suffix: '%', label: 'Client satisfaction rate' },
-];
+// const stats = [
+//   { num: '500', suffix: '+', label: 'Legacy books delivered' },
+//   { num: '12', suffix: '+', label: 'Years of storytelling expertise' },
+//   { num: '98', suffix: '%', label: 'Client satisfaction rate' },
+// ];
 
 const WhyChooseUs = () => {
   const [visible, setVisible] = useState([]);
@@ -507,7 +507,7 @@ const WhyChooseUs = () => {
             ))}
           </div>
 
-          <div className="wcu-stats" ref={statsRef}>
+          {/* <div className="wcu-stats" ref={statsRef}>
             {stats.map((s, i) => (
               <div className="wcu-stat" key={i}>
                 <div className={`wcu-stat-num${statsVisible ? ' sv' : ''}`}>
@@ -516,7 +516,7 @@ const WhyChooseUs = () => {
                 <div className="wcu-stat-label">{s.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
     </>
