@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import MainPage from "./pages/MainPage/MainPage";
+import MainPage from "./Pages/MainPage/MainPage";
 import ScrollToTop from "./Lib/ScrollToTop/ScrollToTop";
 import Layout from "./Layout/LayoutSection";
 import AboutPage from "./Pages/Routes/AboutPage/AboutPage";
