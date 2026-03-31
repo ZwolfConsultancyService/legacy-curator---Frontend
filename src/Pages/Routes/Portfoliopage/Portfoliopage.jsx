@@ -103,12 +103,6 @@ const portfolios = [
   },
 ];
 
-const stats = [
-  { num: "12k+", label: "Portfolios Published" },
-  { num: "84+", label: "Countries Represented" },
-  { num: "3m+", label: "Pages Browsed Monthly" },
-  { num: "9.2", label: "Average Creator Rating" },
-];
 
 function BookCard({ p, large = false }) {
   const [hovered, setHovered] = useState(false);
