@@ -1,0 +1,412 @@
+// src/Pages/DetailPage/Blogdetailpage/Blogdetailpage.jsx
+
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { blogs } from "../../Routes/Blogpage/Blogpage";
+
+export default function BlogDetailPage() {
+  const { slug } = useParams();
+  const navigate = useNavigate();
+  const [scrollPct, setScrollPct] = useState(0);
+  const [activeSection, setActiveSection] = useState(0);
+  const articleRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = articleRef.current;
+      if (!el) return;
+      const { top, height } = el.getBoundingClientRect();
+      const winH = window.innerHeight;
+      const pct = Math.min(100, Math.max(0, ((winH - top) / height) * 100));
+      setScrollPct(Math.round(pct));
+      const h2s = el.querySelectorAll("h2[data-section]");
+      let current = 0;
+      h2s.forEach((h, i) => {
+        if (h.getBoundingClientRect().top < winH * 0.4) current = i + 1;
+      });
+      setActiveSection(current);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const post = blogs.find((b) => b.slug === slug);
+
+  if (!post) {
+    return (
+      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4">
+        <div className="text-[5rem] text-forest/10 font-light" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>404</div>
+        <p className="text-sm text-gray-400">This article doesn't exist.</p>
+        <button
+          onClick={() => navigate("/blog")}
+          className="mt-2 px-5 py-2 rounded-full border border-forest/30 text-forest text-sm bg-transparent hover:bg-forest hover:text-white transition-all"
+        >
+          Back to Journal
+        </button>
+      </div>
+    );
+  }
+
+  const related = blogs.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 3);
+  const relatedPosts = related.length > 0 ? related : blogs.filter((p) => p.slug !== post.slug).slice(0, 3);
+
+  const firstH2 = post.content.findIndex((b) => b.type === "h2");
+  const introBlocks = firstH2 > 0 ? post.content.slice(0, firstH2) : [];
+  const bodyBlocks = firstH2 >= 0 ? post.content.slice(firstH2) : post.content;
+
+  return (
+    <div className="bg-white">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+        @keyframes bdp-up {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .bdp-fu { animation: bdp-up 0.55s cubic-bezier(0.22,1,0.36,1) both; }
+
+        .bdp-progress {
+          position: fixed; top: 0; left: 0; height: 2px; z-index: 9999;
+          background: linear-gradient(90deg, #36615A, #A7703D);
+          transition: width 0.15s linear;
+        }
+        .bdp-back {
+          display: inline-flex; align-items: center; gap: 6px;
+          background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+          border-radius: 100px; padding: 6px 16px; font-size: 0.72rem;
+          color: rgba(255,255,255,0.7); cursor: pointer; transition: all 0.2s;
+          letter-spacing: 0.04em; font-family: 'DM Sans', sans-serif;
+        }
+        .bdp-back:hover { background: rgba(255,255,255,0.2); color: #fff; }
+
+        .bdp-lead {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 1.32rem; line-height: 1.78; color: #444; font-weight: 300;
+        }
+        .bdp-p {
+          font-size: 0.975rem; line-height: 1.95; color: #555;
+          margin-bottom: 1.5rem; font-weight: 300; letter-spacing: 0.01em;
+        }
+        .bdp-h2 {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 1.75rem; font-weight: 400; color: #111110;
+          margin: 2.8rem 0 1rem; line-height: 1.15;
+          letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px;
+        }
+        .bdp-h2-num {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 26px; height: 26px; border-radius: 50%;
+          background: rgba(54,97,90,0.08); color: #36615A;
+          font-family: 'DM Sans', sans-serif; font-size: 0.68rem;
+          font-weight: 500; flex-shrink: 0;
+        }
+        .bdp-bq {
+          margin: 2.2rem 0; padding: 1.2rem 0 1.2rem 1.6rem;
+          border-left: 2px solid #36615A; position: relative;
+        }
+        .bdp-bq::before {
+          content: '"'; position: absolute; left: -0.5rem; top: -0.6rem;
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 3.5rem; color: #36615A; line-height: 1; opacity: 0.2;
+        }
+        .bdp-bq p {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 1.35rem; font-style: italic; color: #333;
+          font-weight: 300; line-height: 1.65; margin: 0;
+        }
+        .bdp-toc-btn {
+          display: flex; align-items: flex-start; gap: 8px; padding: 6px 0;
+          font-size: 0.73rem; line-height: 1.4; color: #bbb;
+          background: none; border: none; text-align: left;
+          font-family: 'DM Sans', sans-serif; width: 100%;
+          cursor: pointer; transition: color 0.2s;
+        }
+        .bdp-toc-btn:hover { color: #36615A; }
+        .bdp-toc-btn.active { color: #36615A; font-weight: 500; }
+        .bdp-dot {
+          width: 5px; height: 5px; border-radius: 50%;
+          background: currentColor; flex-shrink: 0; margin-top: 5px;
+          transition: transform 0.2s;
+        }
+        .bdp-toc-btn.active .bdp-dot { transform: scale(1.7); }
+        .bdp-share-btn {
+          display: flex; align-items: center; justify-content: center; gap: 7px;
+          padding: 8px 12px; border-radius: 6px; width: 100%;
+          border: 1px solid rgba(54,97,90,0.18); background: transparent;
+          color: #777; font-size: 0.71rem; cursor: pointer;
+          font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+        }
+        .bdp-share-btn:hover { background: #36615A; color: #fff; border-color: #36615A; }
+        .bdp-tag {
+          padding: 4px 13px; border-radius: 100px; font-size: 0.63rem;
+          letter-spacing: 0.13em; text-transform: uppercase;
+          background: rgba(54,97,90,0.07); color: #36615A;
+          border: 1px solid rgba(54,97,90,0.15); cursor: pointer; transition: all 0.2s;
+        }
+        .bdp-tag:hover { background: #36615A; color: #fff; }
+        .bdp-rel-card {
+          background: #F3F0E1; border-radius: 8px; overflow: hidden;
+          cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+          transition: all 0.32s cubic-bezier(0.25,0.8,0.25,1);
+        }
+        .bdp-rel-card:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(54,97,90,0.13); }
+        .bdp-deco {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-weight: 300; font-style: italic;
+          color: rgba(54,97,90,0.07); user-select: none; pointer-events: none; line-height: 1;
+        }
+
+        @media (max-width: 900px) {
+          .bdp-body-grid { grid-template-columns: 1fr !important; }
+          .bdp-sidebar { display: none !important; }
+          .bdp-related-grid { grid-template-columns: 1fr !important; }
+          .bdp-intro-grid { grid-template-columns: 1fr !important; }
+          .bdp-hero-inner { padding: 28px 20px 36px !important; }
+          .bdp-body-wrap { padding: 32px 20px 56px !important; }
+          .bdp-related-wrap { padding: 36px 20px 48px !important; }
+          .bdp-intro-wrap { padding: 36px 20px !important; }
+        }
+      `}</style>
+
+      {/* Progress bar */}
+      <div className="bdp-progress" style={{ width: `${scrollPct}%` }} />
+
+      {/* ══ HERO ══ */}
+      <header style={{ background: post.accentBg }} className="relative overflow-hidden">
+        <div className="bdp-deco absolute pointer-events-none select-none text-white/[0.03]"
+          style={{ fontSize: "28rem", right: -60, top: -80 }}>LC</div>
+        <div className="absolute inset-x-0 bottom-0 h-28 pointer-events-none"
+          style={{ background: "linear-gradient(to top,rgba(0,0,0,0.15),transparent)" }} />
+
+        <div className="bdp-hero-inner relative max-w-3xl mx-auto px-14 py-10 pb-12">
+          {/* Back + tag row */}
+          <div className="bdp-fu flex items-center justify-between flex-wrap gap-3 mb-8">
+            <button className="bdp-back" onClick={() => navigate("/blog")}>← Journal</button>
+            <div className="flex items-center gap-2">
+              {post.tag && (
+                <span className="text-[0.57rem] uppercase tracking-[0.18em] text-white/50 border border-white/20 px-3 py-1 rounded-sm">
+                  {post.tag}
+                </span>
+              )}
+              <span className="text-[0.57rem] uppercase tracking-[0.18em] text-white/40">{post.category}</span>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h1 className="bdp-fu text-porcelain font-light leading-[1.08] mb-5"
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "clamp(2.2rem,5vw,3.5rem)", letterSpacing: "-0.01em", animationDelay: "0.06s" }}>
+            {post.title}
+          </h1>
+
+          {/* Excerpt */}
+          <p className="bdp-fu text-porcelain/60 leading-relaxed max-w-lg"
+            style={{ fontSize: "0.95rem", animationDelay: "0.12s" }}>
+            {post.excerpt}
+          </p>
+
+          {/* Author meta */}
+          <div className="bdp-fu flex items-center flex-wrap gap-5 mt-8 pt-6 border-t border-white/10"
+            style={{ animationDelay: "0.18s" }}>
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full border-2 border-white/25 flex items-center justify-center text-porcelain text-sm font-semibold flex-shrink-0"
+                style={{ background: post.avatarBg, fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+                {post.authorInitial}
+              </div>
+              <div>
+                <div className="text-[0.8rem] font-medium text-porcelain">{post.author}</div>
+                <div className="text-[0.64rem] text-white/38 mt-0.5">{post.authorRole}</div>
+              </div>
+            </div>
+            <div className="w-px h-6 bg-white/12" />
+            <div className="text-[0.67rem] text-white/38 leading-relaxed">
+              <div>{post.date}</div>
+              <div>{post.readTime}</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Divider */}
+      <div className="h-px" style={{ background: "linear-gradient(90deg,#36615A 0%,#A7703D 30%,transparent 80%)" }} />
+
+      {/* ══ INTRO BAND ══ */}
+      {introBlocks.length > 0 && (
+        <div className="bg-eggshell border-b border-forest/8">
+          <div className="bdp-intro-wrap bdp-intro-grid max-w-6xl mx-auto px-14 py-12"
+            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3.5rem", alignItems: "start" }}>
+            <div>
+              <div className="text-[0.57rem] uppercase tracking-[0.2em] text-copper mb-4">✦ The Story</div>
+              {introBlocks.map((block, i) =>
+                block.type === "p" ? (
+                  <p key={i} className="bdp-lead" style={{ marginBottom: i < introBlocks.length - 1 ? "1.2rem" : 0 }}>
+                    {block.text}
+                  </p>
+                ) : null
+              )}
+            </div>
+            <div className="rounded-xl overflow-hidden relative flex items-center justify-center"
+              style={{ background: post.accentBg, minHeight: 230 }}>
+              <div className="bdp-deco" style={{ fontSize: "9rem" }}>{String(post.id).padStart(2, "0")}</div>
+              <div className="absolute inset-x-0 bottom-0 px-5 py-3"
+                style={{ background: "linear-gradient(to top,rgba(0,0,0,0.38),transparent)" }}>
+                <div className="text-[0.54rem] uppercase tracking-[0.15em] text-white/45">
+                  LegacyCurator · {post.category}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ══ MAIN BODY ══ */}
+      <div className="bdp-body-wrap max-w-6xl mx-auto px-14 py-12 pb-16">
+        <div className="bdp-body-grid" ref={articleRef}
+          style={{ display: "grid", gridTemplateColumns: "1fr 248px", gap: "4rem", alignItems: "start" }}>
+
+          {/* Article */}
+          <article>
+            {bodyBlocks.map((block, i) => {
+              if (block.type === "h2") {
+                const num = bodyBlocks.slice(0, i).filter(b => b.type === "h2").length + 1;
+                return (
+                  <h2 key={i} className="bdp-h2" data-section={num}>
+                    <span className="bdp-h2-num">{num}</span>
+                    {block.text}
+                  </h2>
+                );
+              }
+              if (block.type === "p") return <p key={i} className="bdp-p">{block.text}</p>;
+              if (block.type === "blockquote") return (
+                <div key={i} className="bdp-bq"><p>{block.text}</p></div>
+              );
+              return null;
+            })}
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 mt-10 pt-8 border-t border-forest/8">
+              {post.tags.map((tag) => (
+                <span key={tag} className="bdp-tag">{tag}</span>
+              ))}
+            </div>
+
+            {/* Author bio */}
+            <div className="mt-8 bg-eggshell rounded-xl p-7 border border-forest/8"
+              style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "1.2rem", alignItems: "start" }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center text-porcelain font-semibold text-lg flex-shrink-0"
+                style={{ background: post.avatarBg, fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+                {post.authorInitial}
+              </div>
+              <div>
+                <div className="text-[0.58rem] uppercase tracking-[0.16em] text-copper mb-1">Written by</div>
+                <div className="font-normal text-gray-900 text-lg mb-1"
+                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>{post.author}</div>
+                <div className="text-[0.66rem] text-forest/50 italic mb-2">{post.authorRole}</div>
+                <p className="text-[0.79rem] leading-[1.72] text-gray-500 m-0">{post.authorBio}</p>
+              </div>
+            </div>
+          </article>
+
+          {/* Sidebar */}
+          <aside className="bdp-sidebar">
+            <div className="sticky flex flex-col gap-4" style={{ top: "24px" }}>
+
+              {/* TOC */}
+              <div className="bg-porcelain rounded-xl border border-forest/10 px-5 py-5">
+                <div className="text-[0.56rem] uppercase tracking-[0.2em] text-gray-300 mb-4">In this article</div>
+                <div className="flex flex-col">
+                  {post.toc.map((item, i) => (
+                    <button key={i} className={`bdp-toc-btn ${activeSection === i ? "active" : ""}`}>
+                      <span className="bdp-dot" /><span>{item}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Progress */}
+              <div className="bg-porcelain rounded-xl border border-forest/10 px-5 py-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-[0.62rem] text-gray-300 tracking-wide">Progress</span>
+                  <span className="text-[0.72rem] font-medium text-forest">{scrollPct}%</span>
+                </div>
+                <div className="h-[3px] rounded-full overflow-hidden bg-forest/10">
+                  <div className="h-full rounded-full transition-all duration-150"
+                    style={{ width: `${scrollPct}%`, background: "linear-gradient(90deg,#36615A,#A7703D)" }} />
+                </div>
+                <div className="mt-2 text-[0.61rem] text-gray-300">{post.readTime}</div>
+              </div>
+
+             
+
+              {/* Category */}
+              <div className="rounded-xl border border-forest/10 px-5 py-5 relative overflow-hidden"
+                style={{ background: post.accentBg }}>
+                <div className="bdp-deco absolute text-white/[0.07]" style={{ fontSize: "4rem", right: -4, bottom: -10 }}>LC</div>
+                <div className="text-[0.55rem] uppercase tracking-[0.18em] text-white/45 mb-2">Filed under</div>
+                <div className="text-white/90 font-light text-xl leading-tight"
+                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>{post.category}</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      {/* ══ RELATED ══ */}
+      {relatedPosts.length > 0 && (
+        <section className="bg-white border-t border-forest/10">
+          <div className="bdp-related-wrap max-w-6xl mx-auto px-14 py-12">
+            <div className="flex items-end justify-between flex-wrap gap-4 mb-8">
+              <div>
+                <div className="text-[0.57rem] uppercase tracking-[0.2em] text-copper mb-2">✦ Continue reading</div>
+                <h2 className="font-light text-gray-900"
+                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "2rem" }}>
+                  More from the Journal
+                </h2>
+              </div>
+              <button
+                onClick={() => navigate("/blog")}
+                className="px-5 py-2 rounded-full border border-forest/25 text-forest text-sm bg-transparent hover:bg-forest hover:text-white transition-all"
+              >
+                View all →
+              </button>
+            </div>
+
+            <div className="bdp-related-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.2rem" }}>
+              {relatedPosts.map((p) => (
+                <div key={p.id} className="bdp-rel-card"
+                  onClick={() => { navigate(`/blog/${p.slug}`); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+                  <div className="h-32 relative flex items-center justify-center overflow-hidden"
+                    style={{ background: p.accentBg }}>
+                    <div className="bdp-deco" style={{ fontSize: "5rem" }}>{String(p.id).padStart(2, "0")}</div>
+                    <div className="absolute inset-x-0 bottom-0 px-4 py-3"
+                      style={{ background: "linear-gradient(to top,rgba(0,0,0,0.3),transparent)" }}>
+                      <span className="text-[0.53rem] uppercase tracking-[0.13em] text-white/55 border border-white/18 px-2 py-0.5 rounded-sm">
+                        {p.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-5 pb-4">
+                    <h3 className="font-normal text-gray-900 leading-snug mb-3"
+                      style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "1.07rem" }}>
+                      {p.title}
+                    </h3>
+                    <p className="text-[0.74rem] leading-relaxed text-gray-400 mb-4 line-clamp-2">{p.excerpt}</p>
+                    <div className="flex items-center justify-between pt-3 border-t border-forest/7">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center text-[0.57rem] text-white font-semibold"
+                          style={{ background: p.avatarBg, fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+                          {p.authorInitial}
+                        </div>
+                        <span className="text-[0.67rem] text-gray-400">{p.author}</span>
+                      </div>
+                      <span className="text-[0.62rem] text-gray-300">{p.readTime}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
+  );
+}

@@ -471,12 +471,12 @@ const HeroSection = () => {
 
           {/* Buttons */}
           <div className={`hero-btns${loaded ? ' vis' : ''}`}>
-            <Link to="/services" className="hero-btn-primary">
+            <Link to="/about" className="hero-btn-primary">
               Get Started
               <span className="btn-arrow" />
             </Link>
-            <Link to="/portfolio" className="hero-btn-secondary">
-              View Portfolio
+            <Link to="/contact" className="hero-btn-secondary">
+              Contact Us
               <span className="btn-arrow" />
             </Link>
           </div>

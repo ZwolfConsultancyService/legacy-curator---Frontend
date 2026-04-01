@@ -4,8 +4,9 @@ import ServicesSlider from "../../Components/HomePage/ServicesSlider/ServicesSli
 import WhyChooseUs from "../../Components/HomePage/Whychooseus/Whychooseus";
 import FAQSection from "../../Components/HomePage/Faq/Faq";
 import HowWeWork from "../../Components/HomePage/Howwework/Howwework";
+import VideoTestimonials from "../../Components/HomePage/VideoTestimonials/VideoTestimonials";
 //import ToolsSection from "../../Components/HomePage/Toolssection/Toolssection";
-import PortfolioSection from "../../Components/Portfoliosection/Portfoliosection";
+//import PortfolioSection from "../../Components/Portfoliosection/Portfoliosection";
 
 const MainPage = () => {
   return (
@@ -15,10 +16,11 @@ const MainPage = () => {
       <WhyChooseUs />
      
        <HowWeWork />
-       <PortfolioSection />
+       {/* <PortfolioSection /> */}
          {/* <ToolsSection /> */}
+     
       <FAQSection />
-    
+        <VideoTestimonials />
     </div>
   );
 };

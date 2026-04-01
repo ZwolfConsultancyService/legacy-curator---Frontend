@@ -387,24 +387,7 @@ export default function PortfolioSection() {
         gap:            24,
         flexWrap:       "wrap",
       }}>
-        {/* Progress dots */}
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-            {[0,1,2,3].map(i => (
-              <div key={i} style={{
-                width:        i === 0 ? 24 : 8,
-                height:       3,
-                borderRadius: 2,
-                background:   i === 0 ? colors.forest : "rgba(54,97,90,0.18)",
-                transition:   "width 0.3s",
-              }} />
-            ))}
-          </div>
-          <span style={{ fontSize: "0.74rem", color: "#999", letterSpacing: "0.05em" }}>
-            Showing 4 of {portfolios.length}
-          </span>
-        </div>
-
+       
         {/* View all button → /portfolio */}
         <button
           className="ps-view-btn"

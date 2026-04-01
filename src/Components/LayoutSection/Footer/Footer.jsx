@@ -25,34 +25,34 @@ const YoutubeIcon = () => (
   </svg>
 );
 
+// ─── Updated: Our Portfolio (Services) links matching navbar dropdown ─────────
 const footerLinks = {
-  'Popular Books': [
-    { name: 'Memoirs', path: '/books/memoirs' },
-    { name: 'Coffee Table Books', path: '/books/coffee-table' },
-    { name: 'Family Legacy Books', path: '/books/family' },
-    { name: 'Business Books', path: '/books/business' },
-    { name: 'Photography Books', path: '/books/photography' },
-    { name: "Children's Books", path: '/books/children' },
+  'Our Portfolio': [
+    { name: 'Photo Books',        path: '/services/photo-book'   },
+    { name: 'Travel Books',       path: '/services/travel-book'  },
+    { name: 'Legacy Books',       path: '/services/legacy-book'  },
+    { name: 'Coffee Table Books', path: '/services/coffee-table' },
+    { name: 'Memoir Books',       path: '/services/memoir'       },
+    { name: 'Wedding Books',      path: '/services/wedding-book' },
+    { name: 'Vision & Passion',   path: '/services/vision-book'  },
+    { name: 'Business Story',     path: '/services/business'     },
   ],
   'Get Inspired': [
-    { name: 'Blog', path: '/blog' },
-    { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Events', path: '/events' },
-    { name: 'Gift Center', path: '/gifts' },
-    { name: 'Success Stories', path: '/stories' },
+    { name: 'Blog',            path: '/blog'      },
+    { name: 'Portfolio',       path: '/portfolio' },
+   
   ],
   'Company': [
-    { name: 'About Us', path: '/about' },
-    { name: 'Our Team', path: '/team' },
-    { name: 'Careers', path: '/careers' },
-    { name: 'Press', path: '/press' },
+    { name: 'About Us',   path: '/about'   },
+    { name: 'Our Team',   path: '/team'    },
+
     { name: 'Contact Us', path: '/contact' },
   ],
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-eggshell border-t border-saddle/20">
+    <footer className="bg-[#F5F0EA] border-t border-saddle/20">
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -82,7 +82,10 @@ const Footer = () => {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <Link to={link.path} className="text-sm text-forest/60 hover:text-saddle transition-colors duration-200">
+                    <Link
+                      to={link.path}
+                      className="text-sm text-forest/60 hover:text-saddle transition-colors duration-200"
+                    >
                       {link.name}
                     </Link>
                   </li>
@@ -90,6 +93,7 @@ const Footer = () => {
               </ul>
             </div>
           ))}
+
         </div>
       </div>
 
@@ -101,7 +105,6 @@ const Footer = () => {
             <div className="flex items-center gap-6">
               <Link to="/privacy-policy" className="text-xs text-porcelain/60 hover:text-porcelain transition">Privacy Policy</Link>
               <Link to="/terms" className="text-xs text-porcelain/60 hover:text-porcelain transition">Terms of Service</Link>
-            
             </div>
           </div>
           {/* Zwolf Credit */}
