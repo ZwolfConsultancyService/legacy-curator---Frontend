@@ -484,10 +484,6 @@ const WhyChooseUs = () => {
                 with the precision of artisans and the heart
                 of storytellers who understand what truly matters.
               </p>
-              <div className="wcu-cta">
-                Our Process
-                <span className="wcu-cta-arrow" />
-              </div>
             </div>
           </div>
 

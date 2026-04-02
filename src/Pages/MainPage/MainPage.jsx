@@ -14,15 +14,17 @@ const MainPage = () => {
       <HeroSection />
       <ServicesSlider />
       <WhyChooseUs />
-     
-       <HowWeWork />
-       {/* <PortfolioSection /> */}
-         {/* <ToolsSection /> */}
-     
+
+      <HowWeWork />
+      {/* <PortfolioSection /> */}
+      {/* <ToolsSection /> */}
+
       <FAQSection />
-        <VideoTestimonials />
+      <VideoTestimonials />
     </div>
   );
 };
 
 export default MainPage;
+
+

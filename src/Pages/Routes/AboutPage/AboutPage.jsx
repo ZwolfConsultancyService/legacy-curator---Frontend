@@ -51,8 +51,16 @@ export default function AboutPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
+        :root {
+          --color-forest: #36615A;
+          --color-saddle: #8B542B;
+          --color-copper: #A7703D;
+          --color-eggshell: #F3F0E1;
+          --color-porcelain: #FDFFFC;
+        }
+
         .ab-root {
-          background: #faf9f7;
+          background: var(--color-porcelain);
           font-family: 'DM Sans', sans-serif;
           color: #1a1816;
           overflow-x: hidden;
@@ -86,14 +94,14 @@ export default function AboutPage() {
           font-weight: 500;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: #9a938a;
+          color: var(--color-copper);
           margin: 0 0 32px;
         }
         .ab-eyebrow::before {
           content: '';
           width: 28px;
           height: 1px;
-          background: #c8c0b8;
+          background: var(--color-copper);
           display: block;
         }
         .ab-hero-title {
@@ -102,15 +110,18 @@ export default function AboutPage() {
           font-weight: 300;
           line-height: 0.95;
           letter-spacing: -0.03em;
-          color: #0f0e0c;
+          color: var(--color-forest);
           margin: 0 0 48px;
           padding: 0;
         }
-        .ab-hero-title em { font-style: italic; color: #0f0e0c; }
+        .ab-hero-title em {
+          font-style: italic;
+          color: var(--color-saddle);
+        }
         .ab-hero-rule {
           width: 48px;
-          height: 1px;
-          background: #0f0e0c;
+          height: 2px;
+          background: var(--color-forest);
         }
         .ab-hero-body {
           font-size: 18px;
@@ -125,10 +136,10 @@ export default function AboutPage() {
           font-size: 22px;
           font-weight: 400;
           font-style: italic;
-          color: #0f0e0c;
+          color: var(--color-forest);
           line-height: 1.5;
           padding: 24px 0 24px 24px;
-          border-left: 1.5px solid #0f0e0c;
+          border-left: 2px solid var(--color-copper);
           margin: 0;
         }
 
@@ -136,7 +147,7 @@ export default function AboutPage() {
         .ab-divider {
           width: 100%;
           height: 1px;
-          background: linear-gradient(to right, transparent, #d8d0c8 20%, #d8d0c8 80%, transparent);
+          background: linear-gradient(to right, transparent, #c8c0a8 20%, #c8c0a8 80%, transparent);
         }
 
         /* ── MISSION ── */
@@ -158,7 +169,7 @@ export default function AboutPage() {
           font-weight: 500;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: #9a938a;
+          color: var(--color-copper);
           padding-top: 6px;
           margin: 0;
         }
@@ -168,11 +179,14 @@ export default function AboutPage() {
           font-weight: 300;
           line-height: 1.1;
           letter-spacing: -0.025em;
-          color: #0f0e0c;
+          color: var(--color-forest);
           margin: 0 0 32px;
           padding: 0;
         }
-        .ab-mission-heading em { font-style: italic; }
+        .ab-mission-heading em {
+          font-style: italic;
+          color: var(--color-saddle);
+        }
         .ab-mission-body {
           font-size: 16px;
           font-weight: 300;
@@ -185,7 +199,7 @@ export default function AboutPage() {
 
         /* ── VALUES ── */
         .ab-values {
-          background: #0f0e0c;
+          background: var(--color-forest);
           padding: 80px 48px;
           opacity: 0;
           transform: translateY(32px);
@@ -204,7 +218,7 @@ export default function AboutPage() {
           font-weight: 500;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: #5a5550;
+          color: rgba(243,240,225,0.45);
           padding-top: 6px;
           margin: 0;
         }
@@ -214,29 +228,32 @@ export default function AboutPage() {
           font-weight: 300;
           line-height: 1.1;
           letter-spacing: -0.025em;
-          color: #f5f2ee;
+          color: var(--color-eggshell);
           margin: 0;
           padding: 0;
         }
-        .ab-values-heading em { font-style: italic; }
+        .ab-values-heading em {
+          font-style: italic;
+          color: var(--color-copper);
+        }
         .ab-values-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 1px;
-          background: #2a2824;
+          background: rgba(243,240,225,0.12);
         }
         .ab-value-card {
-          background: #0f0e0c;
+          background: var(--color-forest);
           padding: 44px 48px;
           transition: background 0.25s ease;
           cursor: default;
         }
-        .ab-value-card:hover { background: #1a1916; }
+        .ab-value-card:hover { background: #2d5249; }
         .ab-value-num {
           font-family: 'Cormorant Garamond', serif;
           font-size: 13px;
           font-weight: 400;
-          color: #3a3830;
+          color: var(--color-copper);
           letter-spacing: 0.1em;
           margin: 0 0 24px;
           padding: 0;
@@ -245,7 +262,7 @@ export default function AboutPage() {
           font-family: 'Cormorant Garamond', serif;
           font-size: 26px;
           font-weight: 400;
-          color: #f5f2ee;
+          color: var(--color-eggshell);
           line-height: 1.25;
           letter-spacing: -0.02em;
           margin: 0 0 14px;
@@ -254,17 +271,15 @@ export default function AboutPage() {
         .ab-value-body {
           font-size: 14px;
           font-weight: 300;
-          color: #6a6560;
+          color: rgba(243,240,225,0.55);
           line-height: 1.75;
           margin: 0;
           padding: 0;
         }
 
-        /* ── STATS ── 
-           No separate wrapper — sits directly after values, 
-           border-top/bottom replaces the old gap hack */
+        /* ── STATS ── */
         .ab-stats {
-          background: #faf9f7;
+          background: var(--color-porcelain);
           opacity: 0;
           transform: translateY(32px);
           transition: opacity 0.75s ease 0.1s, transform 0.75s ease 0.1s;
@@ -275,13 +290,13 @@ export default function AboutPage() {
           margin: 0 auto;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          border-top: 1px solid #e8e2da;
-          border-bottom: 1px solid #e8e2da;
+          border-top: 1px solid #d8d0b8;
+          border-bottom: 1px solid #d8d0b8;
         }
         .ab-stat-cell {
           padding: 64px 48px;
           text-align: center;
-          border-right: 1px solid #e8e2da;
+          border-right: 1px solid #d8d0b8;
         }
         .ab-stat-cell:last-child { border-right: none; }
         .ab-stat-num {
@@ -289,7 +304,7 @@ export default function AboutPage() {
           font-size: clamp(52px, 6vw, 80px);
           font-weight: 300;
           letter-spacing: -0.04em;
-          color: #0f0e0c;
+          color: var(--color-forest);
           line-height: 1;
           margin: 0 0 12px;
           padding: 0;
@@ -300,7 +315,7 @@ export default function AboutPage() {
           font-weight: 400;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: #9a938a;
+          color: var(--color-copper);
           margin: 0;
           padding: 0;
         }
@@ -322,11 +337,14 @@ export default function AboutPage() {
           font-weight: 300;
           line-height: 1.05;
           letter-spacing: -0.03em;
-          color: #0f0e0c;
+          color: var(--color-forest);
           margin: 0 0 36px;
           padding: 0;
         }
-        .ab-closing-title em { font-style: italic; }
+        .ab-closing-title em {
+          font-style: italic;
+          color: var(--color-saddle);
+        }
         .ab-closing-sub {
           font-size: 16px;
           font-weight: 300;
@@ -347,8 +365,8 @@ export default function AboutPage() {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: #0f0e0c;
-          color: #faf9f7;
+          background: var(--color-forest);
+          color: var(--color-eggshell);
           font-family: 'DM Sans', sans-serif;
           font-size: 14px;
           font-weight: 400;
@@ -360,28 +378,9 @@ export default function AboutPage() {
           letter-spacing: 0.02em;
           transition: background 0.2s, transform 0.2s;
         }
-        .ab-btn-primary:hover { background: #2a2824; transform: translateY(-1px); }
+        .ab-btn-primary:hover { background: #2d5249; transform: translateY(-1px); }
         .ab-btn-primary svg { transition: transform 0.2s; }
         .ab-btn-primary:hover svg { transform: translateX(3px); }
-        .ab-btn-secondary {
-          display: inline-flex;
-          align-items: center;
-          font-family: 'DM Sans', sans-serif;
-          font-size: 14px;
-          font-weight: 400;
-          color: #4a4540;
-          text-decoration: none;
-          letter-spacing: 0.02em;
-          padding: 14px 0;
-          border-bottom: 1px solid rgba(74,69,64,0.3);
-          transition: color 0.2s, border-color 0.2s;
-          background: none;
-          border-top: none;
-          border-left: none;
-          border-right: none;
-          cursor: pointer;
-        }
-        .ab-btn-secondary:hover { color: #0f0e0c; border-bottom-color: #0f0e0c; }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
@@ -393,7 +392,7 @@ export default function AboutPage() {
           .ab-values-grid { grid-template-columns: 1fr; }
           .ab-value-card { padding: 32px; }
           .ab-stats-inner { grid-template-columns: 1fr; }
-          .ab-stat-cell { border-right: none; border-bottom: 1px solid #e8e2da; padding: 48px 32px; }
+          .ab-stat-cell { border-right: none; border-bottom: 1px solid #d8d0b8; padding: 48px 32px; }
           .ab-stat-cell:last-child { border-bottom: none; }
           .ab-closing { padding: 64px 24px 80px; }
         }
@@ -408,7 +407,7 @@ export default function AboutPage() {
 
       <div className="ab-root">
 
-        {/* ── HERO ── */}
+        {/* HERO */}
         <div className={`ab-hero${mounted ? ' ab-visible' : ''}`}>
           <div className="ab-hero-left">
             <p className="ab-eyebrow">About us</p>
@@ -431,7 +430,7 @@ export default function AboutPage() {
 
         <div className="ab-divider" />
 
-        {/* ── MISSION ── */}
+        {/* MISSION */}
         <div
           className={`ab-mission${visibleSections.has('1') ? ' ab-visible' : ''}`}
           data-index="1"
@@ -452,7 +451,7 @@ export default function AboutPage() {
 
         <div className="ab-divider" />
 
-        {/* ── VALUES ── */}
+        {/* VALUES */}
         <div
           className={`ab-values${visibleSections.has('2') ? ' ab-visible' : ''}`}
           data-index="2"
@@ -479,7 +478,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* ── STATS — directly after values, no wrapper div, no gap ── */}
+        {/* STATS */}
         <div
           className={`ab-stats${visibleSections.has('3') ? ' ab-visible' : ''}`}
           data-index="3"
@@ -503,7 +502,7 @@ export default function AboutPage() {
 
         <div className="ab-divider" />
 
-        {/* ── CLOSING ── */}
+        {/* CLOSING */}
         <div
           className={`ab-closing${visibleSections.has('4') ? ' ab-visible' : ''}`}
           data-index="4"
@@ -517,14 +516,13 @@ export default function AboutPage() {
             Join over two million creators who have already discovered what it feels like to hold your own work in your hands.
           </p>
           <div className="ab-cta-row">
-            <a href="#" className="ab-btn-primary">
+            <a href="/contact" className="ab-btn-primary">
               Start creating
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11"
                   stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="#" className="ab-btn-secondary">See how it works</a>
           </div>
         </div>
 

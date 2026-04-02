@@ -1,14 +1,55 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const faqs = [
-  { num: '01', q: `How long does it take to create a legacy book?`, a: `Most projects take between 8–16 weeks depending on complexity, number of pages, and how quickly you share your stories and materials with us. We'll give you a clear timeline at the start.`, tag: 'Timeline' },
-  { num: '02', q: `Do I need to be a good writer to get started?`, a: `Not at all. Our in-house writers work closely with you through interviews, voice notes, or written drafts — whatever feels most natural. We shape your words into something beautiful.`, tag: 'Process' },
-  { num: '03', q: `How many copies of my book will I receive?`, a: `Every package includes at least one premium bound copy. You can order additional copies at a reduced rate — many clients gift them to family members or loved ones.`, tag: 'Delivery' },
-  { num: '04', q: `Can I include photos, documents, and family memorabilia?`, a: `Absolutely. We can incorporate scanned photographs, handwritten letters, certificates, maps, and other keepsakes into the design. We handle everything with the utmost care.`, tag: 'Content' },
-  { num: '05', q: `What if I want to make changes after the project starts?`, a: `We build in multiple review rounds throughout the process. Minor edits are always welcome. Significant structural changes after the design phase may incur a small additional fee.`, tag: 'Revisions' },
-  { num: '06', q: `Is my story and personal information kept private?`, a: `Completely. All stories, documents, and conversations shared with us are held in strict confidence and never shared with third parties. Your legacy belongs only to you.`, tag: 'Privacy' },
-  { num: '07', q: `What binding and paper options are available?`, a: `We offer hardcover cloth and leather bindings, and our paper ranges from standard archival-quality to premium cotton stock. We'll walk you through samples before printing.`, tag: 'Materials' },
-  { num: '08', q: `Can I start with a small project before committing to a full book?`, a: `Yes — we offer a Discovery Session where we help you outline your story and assess the scope. It's a great way to see if we're the right fit before diving into a full project.`, tag: 'Getting Started' },
+  {
+    num: "01",
+    q: `How long does it take to create a legacy book?`,
+    a: `Most projects take between 8–16 weeks depending on complexity, number of pages, and how quickly you share your stories and materials with us. We'll give you a clear timeline at the start.`,
+    tag: "Timeline",
+  },
+  {
+    num: "02",
+    q: `Do I need to be a good writer to get started?`,
+    a: `Not at all. Our in-house writers work closely with you through interviews, voice notes, or written drafts — whatever feels most natural. We shape your words into something beautiful.`,
+    tag: "Process",
+  },
+  {
+    num: "03",
+    q: `How many copies of my book will I receive?`,
+    a: `Every package includes at least one premium bound copy. You can order additional copies at a reduced rate — many clients gift them to family members or loved ones.`,
+    tag: "Delivery",
+  },
+  {
+    num: "04",
+    q: `Can I include photos, documents, and family memorabilia?`,
+    a: `Absolutely. We can incorporate scanned photographs, handwritten letters, certificates, maps, and other keepsakes into the design. We handle everything with the utmost care.`,
+    tag: "Content",
+  },
+  {
+    num: "05",
+    q: `What if I want to make changes after the project starts?`,
+    a: `We build in multiple review rounds throughout the process. Minor edits are always welcome. Significant structural changes after the design phase may incur a small additional fee.`,
+    tag: "Revisions",
+  },
+  {
+    num: "06",
+    q: `Is my story and personal information kept private?`,
+    a: `Completely. All stories, documents, and conversations shared with us are held in strict confidence and never shared with third parties. Your legacy belongs only to you.`,
+    tag: "Privacy",
+  },
+  {
+    num: "07",
+    q: `What binding and paper options are available?`,
+    a: `We offer hardcover cloth and leather bindings, and our paper ranges from standard archival-quality to premium cotton stock. We'll walk you through samples before printing.`,
+    tag: "Materials",
+  },
+  {
+    num: "08",
+    q: `Can I start with a small project before committing to a full book?`,
+    a: `Yes — we offer a Discovery Session where we help you outline your story and assess the scope. It's a great way to see if we're the right fit before diving into a full project.`,
+    tag: "Getting Started",
+  },
 ];
 
 const INITIAL_VISIBLE = 4;
@@ -26,7 +67,12 @@ const FAQSection = () => {
 
   useEffect(() => {
     if (!headerRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setHeaderVisible(true); }, { threshold: 0.2 });
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) setHeaderVisible(true);
+      },
+      { threshold: 0.2 },
+    );
     obs.observe(headerRef.current);
     return () => obs.disconnect();
   }, []);
@@ -35,13 +81,18 @@ const FAQSection = () => {
     const observers = itemRefs.current.map((el, i) => {
       if (!el) return null;
       const obs = new IntersectionObserver(
-        ([e]) => { if (e.isIntersecting) { setTimeout(() => setItemsVisible(v => [...v, i]), i * 55); obs.disconnect(); } },
-        { threshold: 0.05 }
+        ([e]) => {
+          if (e.isIntersecting) {
+            setTimeout(() => setItemsVisible((v) => [...v, i]), i * 55);
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.05 },
       );
       obs.observe(el);
       return obs;
     });
-    return () => observers.forEach(o => o && o.disconnect());
+    return () => observers.forEach((o) => o && o.disconnect());
   }, [showAll]);
 
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
@@ -51,7 +102,7 @@ const FAQSection = () => {
     // scroll into newly revealed items after render
     setTimeout(() => {
       if (moreRef.current) {
-        moreRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        moreRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }, 80);
   };
@@ -434,27 +485,36 @@ const FAQSection = () => {
         <div className="faq-bg-text">FAQ</div>
 
         <div className="faq-inner">
-          <div ref={headerRef} className={`faq-top${headerVisible ? ' vis' : ''}`}>
+          <div
+            ref={headerRef}
+            className={`faq-top${headerVisible ? " vis" : ""}`}
+          >
             <div>
               <div className="faq-eyebrow">
                 <span className="faq-eyebrow-line" />
                 Frequently Asked
               </div>
               <h2 className="faq-h2">
-                Questions,<br />
+                Questions,
+                <br />
                 <em>answered</em>
                 <span className="ghost">honestly.</span>
               </h2>
             </div>
             <div className="faq-right-block">
               <p className="faq-desc">
-                Everything you need to know before beginning
-                your legacy book journey — from timelines
-                and privacy to materials and revisions.
+                Everything you need to know before beginning your legacy book
+                journey — from timelines and privacy to materials and revisions.
               </p>
               <div className="faq-count-row">
-                <div className="faq-count-num">08<span>+</span></div>
-                <div className="faq-count-label">Common questions<br />answered below</div>
+                <div className="faq-count-num">
+                  08<span>+</span>
+                </div>
+                <div className="faq-count-label">
+                  Common questions
+                  <br />
+                  answered below
+                </div>
               </div>
             </div>
           </div>
@@ -464,8 +524,8 @@ const FAQSection = () => {
             {faqs.slice(0, INITIAL_VISIBLE).map((item, i) => (
               <div
                 key={i}
-                ref={el => itemRefs.current[i] = el}
-                className={`faq-row${itemsVisible.includes(i) ? ' vis' : ''}${openIndex === i ? ' open' : ''}`}
+                ref={(el) => (itemRefs.current[i] = el)}
+                className={`faq-row${itemsVisible.includes(i) ? " vis" : ""}${openIndex === i ? " open" : ""}`}
                 onClick={() => toggle(i)}
               >
                 <div className="faq-row-head">
@@ -474,7 +534,12 @@ const FAQSection = () => {
                   <span className="faq-tag">{item.tag}</span>
                   <div className="faq-toggle">
                     <svg viewBox="0 0 13 13" fill="none">
-                      <path d="M6.5 1v11M1 6.5h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path
+                        d="M6.5 1v11M1 6.5h11"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -490,17 +555,17 @@ const FAQSection = () => {
             ))}
 
             {/* Remaining items — smooth expand */}
-            <div className={`faq-extra-wrap${showAll ? ' open' : ''}`}>
+            <div className={`faq-extra-wrap${showAll ? " open" : ""}`}>
               <div className="faq-extra-inner">
                 {faqs.slice(INITIAL_VISIBLE).map((item, idx) => {
                   const i = INITIAL_VISIBLE + idx;
                   return (
                     <div
                       key={i}
-                      ref={el => itemRefs.current[i] = el}
-                      className={`faq-row${itemsVisible.includes(i) ? ' vis' : ''}${openIndex === i ? ' open' : ''}`}
+                      ref={(el) => (itemRefs.current[i] = el)}
+                      className={`faq-row${itemsVisible.includes(i) ? " vis" : ""}${openIndex === i ? " open" : ""}`}
                       onClick={() => toggle(i)}
-                      style={{ borderTop: idx === 0 ? 'none' : undefined }}
+                      style={{ borderTop: idx === 0 ? "none" : undefined }}
                     >
                       <div className="faq-row-head">
                         <span className="faq-row-num">{item.num}</span>
@@ -508,7 +573,12 @@ const FAQSection = () => {
                         <span className="faq-tag">{item.tag}</span>
                         <div className="faq-toggle">
                           <svg viewBox="0 0 13 13" fill="none">
-                            <path d="M6.5 1v11M1 6.5h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                            <path
+                              d="M6.5 1v11M1 6.5h11"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                            />
                           </svg>
                         </div>
                       </div>
@@ -530,18 +600,27 @@ const FAQSection = () => {
           {/* View More / View Less Button */}
           <div className="faq-more-wrap" ref={moreRef}>
             <button
-              className={`faq-more-btn${showAll ? ' less' : ''}`}
+              className={`faq-more-btn${showAll ? " less" : ""}`}
               onClick={showAll ? handleShowLess : handleShowAll}
             >
-              {showAll ? 'Show Less' : (
+              {showAll ? (
+                "Show Less"
+              ) : (
                 <>
                   View More Questions
-                  <span className="faq-remaining-badge">+{faqs.length - INITIAL_VISIBLE}</span>
+                  <span className="faq-remaining-badge">
+                    +{faqs.length - INITIAL_VISIBLE}
+                  </span>
                 </>
               )}
               <span className="btn-icon">
                 <svg viewBox="0 0 10 10" fill="none">
-                  <path d="M5 2v6M2 5h6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+                  <path
+                    d="M5 2v6M2 5h6"
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </span>
             </button>
@@ -549,13 +628,17 @@ const FAQSection = () => {
 
           <div className="faq-footer">
             <div>
-              <p className="faq-footer-title">Still have a question? <em>Let's talk.</em></p>
-              <p className="faq-footer-sub">Our team typically responds within one business day.</p>
+              <p className="faq-footer-title">
+                Still have a question? <em>Let's talk.</em>
+              </p>
+              <p className="faq-footer-sub">
+                Our team typically responds within one business day.
+              </p>
             </div>
-            <button className="faq-footer-btn">
+            <Link to="/contact" className="faq-footer-btn">
               Get in Touch
               <span className="faq-footer-arrow" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
