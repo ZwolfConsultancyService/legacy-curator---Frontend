@@ -2,22 +2,85 @@
 
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { blogs } from "../../Routes/Blogpage/Blogpage";
+
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 export default function BlogDetailPage() {
-  const { slug } = useParams();
-  const navigate = useNavigate();
-  const [scrollPct, setScrollPct] = useState(0);
+  const { slug }    = useParams();
+  const navigate    = useNavigate();
+
+  // ── State ──────────────────────────────────────────────────
+  const [post, setPost]                   = useState(null);
+  const [relatedPosts, setRelatedPosts]   = useState([]);
+  const [loading, setLoading]             = useState(true);
+  const [error, setError]                 = useState("");
+  const [scrollPct, setScrollPct]         = useState(0);
   const [activeSection, setActiveSection] = useState(0);
   const articleRef = useRef(null);
 
+  // ── Fetch blog by slug ─────────────────────────────────────
+  useEffect(() => {
+    const fetchPost = async () => {
+      setLoading(true);
+      setError("");
+      setPost(null);
+      setRelatedPosts([]);
+      window.scrollTo({ top: 0 });
+
+      try {
+        // GET /api/blogs/slug/:slug  → full doc (content + toc included)
+        const res  = await fetch(`${API_BASE}/blogs/slug/${slug}`);
+        const data = await res.json();
+
+        if (!data.success) {
+          setError(data.message || "Blog not found.");
+          setLoading(false);
+          return;
+        }
+
+        const fetchedPost = data.data;
+        setPost(fetchedPost);
+
+        // ── Related: same category first, then fill from all ──
+        const relRes  = await fetch(`${API_BASE}/blogs?category=${encodeURIComponent(fetchedPost.category)}`);
+        const relData = await relRes.json();
+
+        let related = [];
+        if (relData.success) {
+          related = relData.data.filter((b) => b._id !== fetchedPost._id).slice(0, 3);
+        }
+
+        if (related.length < 3) {
+          const allRes  = await fetch(`${API_BASE}/blogs`);
+          const allData = await allRes.json();
+          if (allData.success) {
+            const fill = allData.data
+              .filter((b) => b._id !== fetchedPost._id && !related.find((r) => r._id === b._id))
+              .slice(0, 3 - related.length);
+            related = [...related, ...fill];
+          }
+        }
+
+        setRelatedPosts(related);
+      } catch (e) {
+        console.error("BlogDetailPage fetch error:", e);
+        setError("Could not connect to server.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
+  }, [slug]); // slug change hone par re-fetch (related card click)
+
+  // ── Scroll progress ────────────────────────────────────────
   useEffect(() => {
     const onScroll = () => {
       const el = articleRef.current;
       if (!el) return;
       const { top, height } = el.getBoundingClientRect();
       const winH = window.innerHeight;
-      const pct = Math.min(100, Math.max(0, ((winH - top) / height) * 100));
+      const pct  = Math.min(100, Math.max(0, ((winH - top) / height) * 100));
       setScrollPct(Math.round(pct));
       const h2s = el.querySelectorAll("h2[data-section]");
       let current = 0;
@@ -28,15 +91,36 @@ export default function BlogDetailPage() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [post]); // re-attach after post loads
 
-  const post = blogs.find((b) => b.slug === slug);
+  // ── Loading skeleton ───────────────────────────────────────
+  if (loading) {
+    return (
+      <div className="bg-white min-h-screen">
+        <style>{`
+          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=DM+Sans:wght@300;400;500&display=swap');
+          @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+          .sk { background: linear-gradient(90deg,#e8e8e8 25%,#f4f4f4 50%,#e8e8e8 75%); background-size:200% 100%; animation: shimmer 1.4s infinite; border-radius: 4px; }
+        `}</style>
+        {/* Hero skeleton */}
+        <div className="sk" style={{ height: 340 }} />
+        {/* Body skeleton */}
+        <div className="max-w-3xl mx-auto px-14 py-12 flex flex-col gap-4">
+          {[100, 82, 95, 68, 88, 74, 60, 90, 76].map((w, i) => (
+            <div key={i} className="sk" style={{ height: 14, width: `${w}%` }} />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
-  if (!post) {
+  // ── 404 / Error ────────────────────────────────────────────
+  if (error || !post) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4">
-        <div className="text-[5rem] text-forest/10 font-light" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>404</div>
-        <p className="text-sm text-gray-400">This article doesn't exist.</p>
+        <style>{`@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300&display=swap');`}</style>
+        <div className="font-light" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "5rem", color: "rgba(54,97,90,0.1)" }}>404</div>
+        <p className="text-sm text-gray-400">{error || "This article doesn't exist."}</p>
         <button
           onClick={() => navigate("/blog")}
           className="mt-2 px-5 py-2 rounded-full border border-forest/30 text-forest text-sm bg-transparent hover:bg-forest hover:text-white transition-all"
@@ -47,12 +131,11 @@ export default function BlogDetailPage() {
     );
   }
 
-  const related = blogs.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 3);
-  const relatedPosts = related.length > 0 ? related : blogs.filter((p) => p.slug !== post.slug).slice(0, 3);
-
-  const firstH2 = post.content.findIndex((b) => b.type === "h2");
-  const introBlocks = firstH2 > 0 ? post.content.slice(0, firstH2) : [];
-  const bodyBlocks = firstH2 >= 0 ? post.content.slice(firstH2) : post.content;
+  // ── Content split ──────────────────────────────────────────
+  const content     = post.content || [];
+  const firstH2     = content.findIndex((b) => b.type === "h2");
+  const introBlocks = firstH2 > 0 ? content.slice(0, firstH2) : [];
+  const bodyBlocks  = firstH2 >= 0 ? content.slice(firstH2) : content;
 
   return (
     <div className="bg-white">
@@ -78,7 +161,6 @@ export default function BlogDetailPage() {
           letter-spacing: 0.04em; font-family: 'DM Sans', sans-serif;
         }
         .bdp-back:hover { background: rgba(255,255,255,0.2); color: #fff; }
-
         .bdp-lead {
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-size: 1.32rem; line-height: 1.78; color: #444; font-weight: 300;
@@ -129,14 +211,6 @@ export default function BlogDetailPage() {
           transition: transform 0.2s;
         }
         .bdp-toc-btn.active .bdp-dot { transform: scale(1.7); }
-        .bdp-share-btn {
-          display: flex; align-items: center; justify-content: center; gap: 7px;
-          padding: 8px 12px; border-radius: 6px; width: 100%;
-          border: 1px solid rgba(54,97,90,0.18); background: transparent;
-          color: #777; font-size: 0.71rem; cursor: pointer;
-          font-family: 'DM Sans', sans-serif; transition: all 0.2s;
-        }
-        .bdp-share-btn:hover { background: #36615A; color: #fff; border-color: #36615A; }
         .bdp-tag {
           padding: 4px 13px; border-radius: 100px; font-size: 0.63rem;
           letter-spacing: 0.13em; text-transform: uppercase;
@@ -172,9 +246,9 @@ export default function BlogDetailPage() {
       <div className="bdp-progress" style={{ width: `${scrollPct}%` }} />
 
       {/* ══ HERO ══ */}
-      <header style={{ background: post.accentBg }} className="relative overflow-hidden">
-        <div className="bdp-deco absolute pointer-events-none select-none text-white/[0.03]"
-          style={{ fontSize: "28rem", right: -60, top: -80 }}>LC</div>
+      <header style={{ background: post.accentBg || "linear-gradient(135deg,#36615A,#2a4a44)" }} className="relative overflow-hidden">
+        <div className="bdp-deco absolute pointer-events-none select-none"
+          style={{ fontSize: "28rem", right: -60, top: -80, color: "rgba(255,255,255,0.03)" }}>LC</div>
         <div className="absolute inset-x-0 bottom-0 h-28 pointer-events-none"
           style={{ background: "linear-gradient(to top,rgba(0,0,0,0.15),transparent)" }} />
 
@@ -193,14 +267,14 @@ export default function BlogDetailPage() {
           </div>
 
           {/* Title */}
-          <h1 className="bdp-fu text-porcelain font-light leading-[1.08] mb-5"
-            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "clamp(2.2rem,5vw,3.5rem)", letterSpacing: "-0.01em", animationDelay: "0.06s" }}>
+          <h1 className="bdp-fu font-light leading-[1.08] mb-5"
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "clamp(2.2rem,5vw,3.5rem)", letterSpacing: "-0.01em", color: "#FDFFFC", animationDelay: "0.06s" }}>
             {post.title}
           </h1>
 
           {/* Excerpt */}
-          <p className="bdp-fu text-porcelain/60 leading-relaxed max-w-lg"
-            style={{ fontSize: "0.95rem", animationDelay: "0.12s" }}>
+          <p className="bdp-fu leading-relaxed max-w-lg"
+            style={{ fontSize: "0.95rem", color: "rgba(253,255,252,0.6)", animationDelay: "0.12s" }}>
             {post.excerpt}
           </p>
 
@@ -208,17 +282,17 @@ export default function BlogDetailPage() {
           <div className="bdp-fu flex items-center flex-wrap gap-5 mt-8 pt-6 border-t border-white/10"
             style={{ animationDelay: "0.18s" }}>
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full border-2 border-white/25 flex items-center justify-center text-porcelain text-sm font-semibold flex-shrink-0"
-                style={{ background: post.avatarBg, fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
-                {post.authorInitial}
+              <div className="w-9 h-9 rounded-full border-2 border-white/25 flex items-center justify-center text-sm font-semibold flex-shrink-0"
+                style={{ background: post.avatarBg || "#36615A", color: "#FDFFFC", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+                {post.authorInitial || post.author?.[0] || "A"}
               </div>
               <div>
-                <div className="text-[0.8rem] font-medium text-porcelain">{post.author}</div>
-                <div className="text-[0.64rem] text-white/38 mt-0.5">{post.authorRole}</div>
+                <div className="text-[0.8rem] font-medium" style={{ color: "#FDFFFC" }}>{post.author}</div>
+                <div className="text-[0.64rem] mt-0.5" style={{ color: "rgba(255,255,255,0.38)" }}>{post.authorRole}</div>
               </div>
             </div>
-            <div className="w-px h-6 bg-white/12" />
-            <div className="text-[0.67rem] text-white/38 leading-relaxed">
+            <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.12)" }} />
+            <div className="text-[0.67rem] leading-relaxed" style={{ color: "rgba(255,255,255,0.38)" }}>
               <div>{post.date}</div>
               <div>{post.readTime}</div>
             </div>
@@ -245,8 +319,11 @@ export default function BlogDetailPage() {
               )}
             </div>
             <div className="rounded-xl overflow-hidden relative flex items-center justify-center"
-              style={{ background: post.accentBg, minHeight: 230 }}>
-              <div className="bdp-deco" style={{ fontSize: "9rem" }}>{String(post.id).padStart(2, "0")}</div>
+              style={{ background: post.accentBg || "linear-gradient(135deg,#36615A,#2a4a44)", minHeight: 230 }}>
+              {/* MongoDB _id ke last 2 chars as decorative number */}
+              <div className="bdp-deco" style={{ fontSize: "9rem" }}>
+                {post._id ? post._id.slice(-2).toUpperCase() : "LC"}
+              </div>
               <div className="absolute inset-x-0 bottom-0 px-5 py-3"
                 style={{ background: "linear-gradient(to top,rgba(0,0,0,0.38),transparent)" }}>
                 <div className="text-[0.54rem] uppercase tracking-[0.15em] text-white/45">
@@ -267,7 +344,7 @@ export default function BlogDetailPage() {
           <article>
             {bodyBlocks.map((block, i) => {
               if (block.type === "h2") {
-                const num = bodyBlocks.slice(0, i).filter(b => b.type === "h2").length + 1;
+                const num = bodyBlocks.slice(0, i).filter((b) => b.type === "h2").length + 1;
                 return (
                   <h2 key={i} className="bdp-h2" data-section={num}>
                     <span className="bdp-h2-num">{num}</span>
@@ -275,26 +352,26 @@ export default function BlogDetailPage() {
                   </h2>
                 );
               }
-              if (block.type === "p") return <p key={i} className="bdp-p">{block.text}</p>;
-              if (block.type === "blockquote") return (
-                <div key={i} className="bdp-bq"><p>{block.text}</p></div>
-              );
+              if (block.type === "p")          return <p key={i} className="bdp-p">{block.text}</p>;
+              if (block.type === "blockquote") return <div key={i} className="bdp-bq"><p>{block.text}</p></div>;
               return null;
             })}
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mt-10 pt-8 border-t border-forest/8">
-              {post.tags.map((tag) => (
-                <span key={tag} className="bdp-tag">{tag}</span>
-              ))}
-            </div>
+            {post.tags?.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-10 pt-8 border-t border-forest/8">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="bdp-tag">{tag}</span>
+                ))}
+              </div>
+            )}
 
             {/* Author bio */}
             <div className="mt-8 bg-eggshell rounded-xl p-7 border border-forest/8"
               style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "1.2rem", alignItems: "start" }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center text-porcelain font-semibold text-lg flex-shrink-0"
-                style={{ background: post.avatarBg, fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
-                {post.authorInitial}
+              <div className="w-12 h-12 rounded-full flex items-center justify-center font-semibold text-lg flex-shrink-0"
+                style={{ background: post.avatarBg || "#36615A", color: "#FDFFFC", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+                {post.authorInitial || post.author?.[0] || "A"}
               </div>
               <div>
                 <div className="text-[0.58rem] uppercase tracking-[0.16em] text-copper mb-1">Written by</div>
@@ -311,16 +388,18 @@ export default function BlogDetailPage() {
             <div className="sticky flex flex-col gap-4" style={{ top: "24px" }}>
 
               {/* TOC */}
-              <div className="bg-porcelain rounded-xl border border-forest/10 px-5 py-5">
-                <div className="text-[0.56rem] uppercase tracking-[0.2em] text-gray-300 mb-4">In this article</div>
-                <div className="flex flex-col">
-                  {post.toc.map((item, i) => (
-                    <button key={i} className={`bdp-toc-btn ${activeSection === i ? "active" : ""}`}>
-                      <span className="bdp-dot" /><span>{item}</span>
-                    </button>
-                  ))}
+              {post.toc?.length > 0 && (
+                <div className="bg-porcelain rounded-xl border border-forest/10 px-5 py-5">
+                  <div className="text-[0.56rem] uppercase tracking-[0.2em] text-gray-300 mb-4">In this article</div>
+                  <div className="flex flex-col">
+                    {post.toc.map((item, i) => (
+                      <button key={i} className={`bdp-toc-btn ${activeSection === i ? "active" : ""}`}>
+                        <span className="bdp-dot" /><span>{item}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Progress */}
               <div className="bg-porcelain rounded-xl border border-forest/10 px-5 py-4">
@@ -335,15 +414,13 @@ export default function BlogDetailPage() {
                 <div className="mt-2 text-[0.61rem] text-gray-300">{post.readTime}</div>
               </div>
 
-             
-
               {/* Category */}
               <div className="rounded-xl border border-forest/10 px-5 py-5 relative overflow-hidden"
-                style={{ background: post.accentBg }}>
-                <div className="bdp-deco absolute text-white/[0.07]" style={{ fontSize: "4rem", right: -4, bottom: -10 }}>LC</div>
-                <div className="text-[0.55rem] uppercase tracking-[0.18em] text-white/45 mb-2">Filed under</div>
-                <div className="text-white/90 font-light text-xl leading-tight"
-                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>{post.category}</div>
+                style={{ background: post.accentBg || "linear-gradient(135deg,#36615A,#2a4a44)" }}>
+                <div className="bdp-deco absolute" style={{ fontSize: "4rem", right: -4, bottom: -10, color: "rgba(255,255,255,0.07)" }}>LC</div>
+                <div className="text-[0.55rem] uppercase tracking-[0.18em] mb-2" style={{ color: "rgba(255,255,255,0.45)" }}>Filed under</div>
+                <div className="font-light text-xl leading-tight"
+                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(255,255,255,0.9)" }}>{post.category}</div>
               </div>
             </div>
           </aside>
@@ -372,14 +449,18 @@ export default function BlogDetailPage() {
 
             <div className="bdp-related-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.2rem" }}>
               {relatedPosts.map((p) => (
-                <div key={p.id} className="bdp-rel-card"
+                <div key={p._id} className="bdp-rel-card"
                   onClick={() => { navigate(`/blog/${p.slug}`); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
                   <div className="h-32 relative flex items-center justify-center overflow-hidden"
-                    style={{ background: p.accentBg }}>
-                    <div className="bdp-deco" style={{ fontSize: "5rem" }}>{String(p.id).padStart(2, "0")}</div>
+                    style={{ background: p.accentBg || "linear-gradient(135deg,#36615A,#2a4a44)" }}>
+                    {/* Decorative initials from _id */}
+                    <div className="bdp-deco" style={{ fontSize: "5rem" }}>
+                      {p._id ? p._id.slice(-2).toUpperCase() : "LC"}
+                    </div>
                     <div className="absolute inset-x-0 bottom-0 px-4 py-3"
                       style={{ background: "linear-gradient(to top,rgba(0,0,0,0.3),transparent)" }}>
-                      <span className="text-[0.53rem] uppercase tracking-[0.13em] text-white/55 border border-white/18 px-2 py-0.5 rounded-sm">
+                      <span className="text-[0.53rem] uppercase tracking-[0.13em] border border-white/18 px-2 py-0.5 rounded-sm"
+                        style={{ color: "rgba(255,255,255,0.55)" }}>
                         {p.category}
                       </span>
                     </div>
@@ -393,8 +474,8 @@ export default function BlogDetailPage() {
                     <div className="flex items-center justify-between pt-3 border-t border-forest/7">
                       <div className="flex items-center gap-2">
                         <div className="w-5 h-5 rounded-full flex items-center justify-center text-[0.57rem] text-white font-semibold"
-                          style={{ background: p.avatarBg, fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
-                          {p.authorInitial}
+                          style={{ background: p.avatarBg || "#36615A", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+                          {p.authorInitial || p.author?.[0] || "A"}
                         </div>
                         <span className="text-[0.67rem] text-gray-400">{p.author}</span>
                       </div>
