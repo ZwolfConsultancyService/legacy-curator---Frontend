@@ -173,9 +173,9 @@ const FAQSection = () => {
         .faq-eyebrow-line { width: 36px; height: 1px; background: #b07d3e; flex-shrink: 0; }
 
         .faq-h2 {
-          font-family: 'Playfair Display', serif;
+          font-family: 'Cinzel', serif;
           font-size: clamp(40px, 5vw, 68px);
-          font-weight: 900;
+          font-weight: 500;
           color: #14201a;
           line-height: 1.02;
           letter-spacing: -0.025em;
@@ -497,8 +497,8 @@ const FAQSection = () => {
               <h2 className="faq-h2">
                 Questions,
                 <br />
-                <em>answered</em>
-                <span className="ghost">honestly.</span>
+                <em>answered honestly</em>
+        
               </h2>
             </div>
             <div className="faq-right-block">

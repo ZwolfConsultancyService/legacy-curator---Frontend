@@ -72,10 +72,11 @@ const Footer = () => {
                 className="h-20 w-auto object-contain transition-opacity duration-300 group-hover:opacity-75"
               />
             </Link>
-            <p className="text-sm text-forest/55 leading-relaxed mb-7 max-w-[280px]">
+            {/* Darker text (from forest/55 to forest/85) */}
+            <p className="text-sm text-forest/85 leading-relaxed mb-7 max-w-[280px] font-medium">
               Transforming personal, family, and business legacies into timeless coffee table books — preserving your story for generations.
             </p>
-            {/* Social Icons */}
+            {/* Social Icons - Darker default state */}
             <div className="flex items-center gap-2.5">
               {socialLinks.map(({ label, href, icon }) => (
                 <a
@@ -84,8 +85,8 @@ const Footer = () => {
                   aria-label={label}
                   className="
                     w-8 h-8 flex items-center justify-center
-                    rounded-full border border-saddle/25 bg-white/50
-                    text-forest/45
+                    rounded-full border border-saddle/35 bg-white/50
+                    text-forest/70
                     hover:text-saddle hover:border-saddle hover:bg-white hover:shadow-sm
                     transition-all duration-200
                   "
@@ -101,7 +102,8 @@ const Footer = () => {
 
           {/* ── Our Portfolio ── */}
           <div className="lg:col-span-3">
-            <h3 className="text-[10px] font-semibold tracking-[0.15em] uppercase text-forest/75 mb-4 pb-2 border-b border-saddle/20">
+            {/* Darker heading (forest/90) */}
+            <h3 className="text-[10px] font-bold tracking-[0.15em] uppercase text-forest/90 mb-4 pb-2 border-b border-saddle/30">
               Our Portfolio
             </h3>
             <ul className="space-y-2.5">
@@ -109,9 +111,9 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="group flex items-center text-[13px] text-forest/55 hover:text-saddle transition-colors duration-200"
+                    className="group flex items-center text-[13px] text-forest/80 hover:text-saddle font-medium transition-colors duration-200"
                   >
-                    <span className="block h-px bg-saddle/70 w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
+                    <span className="block h-px bg-saddle w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
                     {link.name}
                   </Link>
                 </li>
@@ -121,7 +123,7 @@ const Footer = () => {
 
           {/* ── Company ── */}
           <div className="lg:col-span-2">
-            <h3 className="text-[10px] font-semibold tracking-[0.15em] uppercase text-forest/75 mb-4 pb-2 border-b border-saddle/20">
+            <h3 className="text-[10px] font-bold tracking-[0.15em] uppercase text-forest/90 mb-4 pb-2 border-b border-saddle/30">
               Company
             </h3>
             <ul className="space-y-2.5">
@@ -129,9 +131,9 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="group flex items-center text-[13px] text-forest/55 hover:text-saddle transition-colors duration-200"
+                    className="group flex items-center text-[13px] text-forest/80 hover:text-saddle font-medium transition-colors duration-200"
                   >
-                    <span className="block h-px bg-saddle/70 w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
+                    <span className="block h-px bg-saddle w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
                     {link.name}
                   </Link>
                 </li>
@@ -141,10 +143,10 @@ const Footer = () => {
 
           {/* ── Newsletter ── */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <h3 className="text-[10px] font-semibold tracking-[0.15em] uppercase text-forest/75 mb-4 pb-2 border-b border-saddle/20">
+            <h3 className="text-[10px] font-bold tracking-[0.15em] uppercase text-forest/90 mb-4 pb-2 border-b border-saddle/30">
               Stay in Touch
             </h3>
-            <p className="text-[12px] text-forest/50 leading-relaxed mb-4">
+            <p className="text-[12px] text-forest/75 font-medium leading-relaxed mb-4">
               Stories, inspiration & behind-the-scenes updates.
             </p>
             <div className="flex flex-col gap-2">
@@ -153,14 +155,14 @@ const Footer = () => {
                 placeholder="Your email address"
                 className="
                   w-full px-3 py-2 text-xs rounded-md
-                  border border-saddle/25 bg-white/60
-                  text-forest placeholder:text-forest/35
-                  focus:outline-none focus:border-saddle/50 focus:bg-white
+                  border border-saddle/40 bg-white
+                  text-forest placeholder:text-forest/50
+                  focus:outline-none focus:border-saddle focus:ring-1 focus:ring-saddle/20
                   transition-all duration-200
                 "
               />
               <button className="
-                w-full px-3 py-2 text-[11px] font-semibold tracking-wider uppercase
+                w-full px-3 py-2 text-[11px] font-bold tracking-wider uppercase
                 bg-forest text-[#F5F0EA] rounded-md
                 hover:bg-saddle active:scale-[0.98]
                 transition-all duration-200
@@ -175,34 +177,34 @@ const Footer = () => {
 
       {/* ── Divider ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-saddle/15" />
+        <div className="h-px bg-saddle/25" />
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="bg-forest">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="bg-[#1B2B24]"> {/* Thoda aur dark forest variant for contrast */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
-            <p className="text-[11px] text-porcelain/45 text-center sm:text-left order-2 sm:order-1">
+            <p className="text-[11px] text-porcelain/60 text-center sm:text-left order-2 sm:order-1 font-medium">
               © 2026 Legacy Curator. All rights reserved.
             </p>
             <div className="flex items-center gap-4 order-1 sm:order-2">
-              <Link to="/privacy-policy" className="text-[11px] text-porcelain/45 hover:text-porcelain/80 transition">
+              <Link to="/privacy-policy" className="text-[11px] text-porcelain/60 hover:text-porcelain transition font-medium">
                 Privacy Policy
               </Link>
-              <span className="text-porcelain/20">|</span>
-              <Link to="/terms" className="text-[11px] text-porcelain/45 hover:text-porcelain/80 transition">
+              <span className="text-porcelain/30">|</span>
+              <Link to="/terms" className="text-[11px] text-porcelain/60 hover:text-porcelain transition font-medium">
                 Terms of Service
               </Link>
             </div>
           </div>
-          <div className="mt-3 pt-3 border-t border-porcelain/10 text-center">
-            <p className="text-[10px] text-porcelain/30">
+          <div className="mt-4 pt-4 border-t border-porcelain/10 text-center">
+            <p className="text-[10px] text-porcelain/40 tracking-wide">
               Designed & Developed by{' '}
               <a
                 href="https://zwolfconsultancy.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-porcelain/50 hover:text-porcelain/80 transition font-medium"
+                className="text-porcelain/70 hover:text-porcelain transition font-semibold"
               >
                 Zwolf Consultancy
               </a>

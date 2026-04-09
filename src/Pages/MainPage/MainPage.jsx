@@ -5,6 +5,7 @@ import WhyChooseUs from "../../Components/HomePage/Whychooseus/Whychooseus";
 import FAQSection from "../../Components/HomePage/Faq/Faq";
 import HowWeWork from "../../Components/HomePage/Howwework/Howwework";
 import VideoTestimonials from "../../Components/HomePage/VideoTestimonials/VideoTestimonials";
+import FloatingMusicPlayer from "../../Components/Floatingmusicplayer/Floatingmusicplayer";
 //import ToolsSection from "../../Components/HomePage/Toolssection/Toolssection";
 //import PortfolioSection from "../../Components/Portfoliosection/Portfoliosection";
 
@@ -21,6 +22,7 @@ const MainPage = () => {
 
       <FAQSection />
       <VideoTestimonials />
+        <FloatingMusicPlayer />
     </div>
   );
 };
