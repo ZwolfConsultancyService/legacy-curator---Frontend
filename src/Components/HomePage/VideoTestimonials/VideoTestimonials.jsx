@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const testimonials = [
   {
@@ -46,123 +46,92 @@ const CSS = `
     50%       { box-shadow: 0 0 0 12px rgba(255,255,255,0.08); }
   }
 
-  .lc-card {
-    animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both;
-  }
+  .lc-card { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both; }
   .lc-card:nth-child(1) { animation-delay: 0.05s; }
   .lc-card:nth-child(2) { animation-delay: 0.18s; }
   .lc-card:nth-child(3) { animation-delay: 0.31s; }
 
   .lc-wrap {
-    position: relative;
-    cursor: pointer;
-    border-radius: 16px;
-    overflow: hidden;
-    /* Vertical / reel aspect ratio */
+    position: relative; cursor: pointer; border-radius: 16px; overflow: hidden;
     aspect-ratio: 9 / 15;
     box-shadow: 0 8px 32px rgba(100,80,40,0.13), 0 1px 4px rgba(100,80,40,0.08);
-    transition: transform 0.45s cubic-bezier(0.22,1,0.36,1),
-                box-shadow 0.45s ease;
+    transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), box-shadow 0.45s ease;
   }
-  .lc-wrap:hover {
-    transform: translateY(-12px) scale(1.012);
-    box-shadow: 0 32px 72px rgba(100,80,40,0.22), 0 2px 8px rgba(100,80,40,0.10);
-  }
+  .lc-wrap:hover { transform: translateY(-12px) scale(1.012); box-shadow: 0 32px 72px rgba(100,80,40,0.22), 0 2px 8px rgba(100,80,40,0.10); }
 
-  .lc-img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.85s cubic-bezier(0.22,1,0.36,1);
-  }
+  .lc-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.85s cubic-bezier(0.22,1,0.36,1); }
   .lc-wrap:hover .lc-img { transform: scale(1.06); }
 
-  /* Bottom gradient strong */
-  .lc-grad {
-    position: absolute; inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0,0,0,0.0) 0%,
-      rgba(0,0,0,0.08) 40%,
-      rgba(10,6,2,0.82) 100%
-    );
-  }
-  /* Sepia top wash */
-  .lc-sepia {
-    position: absolute; inset: 0;
-    background: rgba(70,44,8,0.18);
-  }
+  .lc-grad { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.08) 40%, rgba(10,6,2,0.82) 100%); }
+  .lc-sepia { position: absolute; inset: 0; background: rgba(70,44,8,0.18); }
 
-  /* Duration pill top-right */
   .lc-duration {
-    position: absolute;
-    top: 16px; right: 16px;
-    font-family: 'EB Garamond', serif;
-    font-size: 13px;
-    color: #f5ead0;
-    background: rgba(0,0,0,0.48);
-    border: 0.5px solid rgba(255,220,140,0.3);
-    padding: 4px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.06em;
-    backdrop-filter: blur(4px);
+    position: absolute; top: 16px; right: 16px;
+    font-family: 'EB Garamond', serif; font-size: 13px; color: #f5ead0;
+    background: rgba(0,0,0,0.48); border: 0.5px solid rgba(255,220,140,0.3);
+    padding: 4px 12px; border-radius: 20px; letter-spacing: 0.06em; backdrop-filter: blur(4px);
   }
 
-  /* Play button center */
-  .lc-play-wrap {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-  }
+  .lc-play-wrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
   .lc-play {
-    width: 72px; height: 72px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255,255,255,0.8);
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(8px);
-    display: flex; align-items: center; justify-content: center;
-    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1),
-                background 0.3s ease;
-    animation: pulse 2.8s ease-in-out infinite;
-    padding-left: 5px;
+    width: 72px; height: 72px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.8); background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background 0.3s ease;
+    animation: pulse 2.8s ease-in-out infinite; padding-left: 5px;
   }
-  .lc-wrap:hover .lc-play {
-    transform: scale(1.15);
-    background: rgba(255,255,255,0.28);
-    animation: none;
-    box-shadow: 0 0 0 18px rgba(255,255,255,0.1);
+  .lc-wrap:hover .lc-play { transform: scale(1.15); background: rgba(255,255,255,0.28); animation: none; box-shadow: 0 0 0 18px rgba(255,255,255,0.1); }
+
+  .lc-bottom { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 22px 24px; }
+  .lc-quote { font-family: 'EB Garamond', serif; font-style: italic; font-size: 16px; line-height: 1.55; color: #f0e4cc; text-shadow: 0 1px 10px rgba(0,0,0,0.8); margin: 0; }
+  .lc-watch-bar { margin-top: 10px; display: flex; align-items: center; gap: 8px; }
+  .lc-watch-line { width: 20px; height: 1px; background: rgba(212,184,122,0.7); flex-shrink: 0; }
+  .lc-watch-label { font-family: 'EB Garamond', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #d4b87a; }
+
+  /* Desktop grid */
+  .lc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 960px; margin: 0 auto; }
+
+  @media (max-width: 900px) and (min-width: 601px) {
+    .lc-grid { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
+  }
+  @media (max-width: 600px) { .lc-grid { display: none; } }
+
+  /* Carousel */
+  .lc-carousel { display: none; }
+  @media (max-width: 600px) { .lc-carousel { display: block; } }
+
+  .lc-track {
+    display: flex; gap: 16px; padding: 4px 24px 16px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none; scroll-behavior: smooth;
+  }
+  .lc-track::-webkit-scrollbar { display: none; }
+  .lc-track-item { flex: 0 0 75vw; max-width: 280px; scroll-snap-align: center; }
+
+  .lc-dots { display: flex; justify-content: center; gap: 7px; padding-top: 14px; }
+  .lc-dot { width: 7px; height: 7px; border-radius: 50%; background: #c8a96e; opacity: 0.28; border: none; padding: 0; cursor: pointer; transition: opacity 0.3s, transform 0.3s; }
+  .lc-dot.active { opacity: 1; transform: scale(1.4); }
+
+  /* Section — NO top padding, flush after FAQ */
+  .lc-section {
+    background: #ffffff;
+    padding: 0 28px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 600px) {
+    .lc-section { padding: 0 0 40px; }
   }
 
-  /* Quote bottom */
-  .lc-bottom {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 20px 22px 24px;
+  /* Header */
+  .lc-header {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 56px;
+    padding: 56px 28px 0;
   }
-  .lc-quote {
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    font-size: 16px;
-    line-height: 1.55;
-    color: #f0e4cc;
-    text-shadow: 0 1px 10px rgba(0,0,0,0.8);
-    margin: 0;
-  }
-
-  /* Watch bar at very bottom */
-  .lc-watch-bar {
-    margin-top: 10px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .lc-watch-line {
-    width: 20px; height: 1px;
-    background: rgba(212,184,122,0.7);
-    flex-shrink: 0;
-  }
-  .lc-watch-label {
-    font-family: 'EB Garamond', serif;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #d4b87a;
+  @media (max-width: 600px) {
+    .lc-header { margin-bottom: 28px; padding: 40px 20px 0; }
   }
 
   /* Modal */
@@ -170,45 +139,12 @@ const CSS = `
     position: fixed; inset: 0; z-index: 9999;
     background: rgba(20,12,2,0.82);
     display: flex; align-items: center; justify-content: center;
-    padding: 24px;
-    animation: backdropIn 0.28s ease;
-    backdrop-filter: blur(16px);
+    padding: 24px; animation: backdropIn 0.28s ease; backdrop-filter: blur(16px);
   }
-  .lc-modal {
-    width: min(860px, 100%);
-    animation: modalIn 0.38s cubic-bezier(0.22,1,0.36,1);
-    background: #fefcf8;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #e0d4be;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
-  }
-  .lc-modal-bar {
-    padding: 14px 24px;
-    background: #faf6ee;
-    border-bottom: 1px solid #ede5d8;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .lc-modal-title {
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    color: #9b8360;
-    font-size: 15px;
-    letter-spacing: 0.05em;
-  }
-  .lc-close {
-    font-family: 'EB Garamond', serif;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    color: #5c4310;
-    text-transform: uppercase;
-    border: 0.5px solid rgba(139,105,20,0.4);
-    padding: 7px 22px;
-    border-radius: 2px;
-    background: rgba(139,105,20,0.06);
-    cursor: pointer;
-    transition: background 0.2s;
-  }
+  .lc-modal { width: min(860px, 100%); animation: modalIn 0.38s cubic-bezier(0.22,1,0.36,1); background: #fefcf8; border-radius: 12px; overflow: hidden; border: 1px solid #e0d4be; box-shadow: 0 40px 100px rgba(0,0,0,0.4); }
+  .lc-modal-bar { padding: 14px 24px; background: #faf6ee; border-bottom: 1px solid #ede5d8; display: flex; align-items: center; justify-content: space-between; }
+  .lc-modal-title { font-family: 'EB Garamond', serif; font-style: italic; color: #9b8360; font-size: 15px; letter-spacing: 0.05em; }
+  .lc-close { font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: 0.15em; color: #5c4310; text-transform: uppercase; border: 0.5px solid rgba(139,105,20,0.4); padding: 7px 22px; border-radius: 2px; background: rgba(139,105,20,0.06); cursor: pointer; transition: background 0.2s; }
   .lc-close:hover { background: rgba(139,105,20,0.14); }
 `;
 
@@ -220,41 +156,28 @@ const Modal = ({ item, onClose }) => (
         <button className="lc-close" onClick={onClose}>Close</button>
       </div>
       <div style={{ position: "relative", paddingTop: "56.25%" }}>
-        <iframe
-          src={item.videoUrl}
-          title="Testimonial"
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
-        />
+        <iframe src={item.videoUrl} title="Testimonial" allow="autoplay; fullscreen" allowFullScreen style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }} />
       </div>
     </div>
   </div>
 );
 
-const Card = ({ item, onClick, index }) => (
-  <div className="lc-card">
-    <div className="lc-wrap" onClick={() => onClick(item)}>
-      <img className="lc-img" src={item.thumbnail} alt="testimonial" />
-      <div className="lc-sepia" />
-      <div className="lc-grad" />
-
-      <div className="lc-duration">{item.duration}</div>
-
-      <div className="lc-play-wrap">
-        <div className="lc-play">
-          <svg viewBox="0 0 24 24" fill="#fff" width="28" height="28">
-            <path d="M8 5.14v14l11-7-11-7z" />
-          </svg>
-        </div>
+const CardInner = ({ item, onClick }) => (
+  <div className="lc-wrap" onClick={() => onClick(item)}>
+    <img className="lc-img" src={item.thumbnail} alt="testimonial" />
+    <div className="lc-sepia" />
+    <div className="lc-grad" />
+    <div className="lc-duration">{item.duration}</div>
+    <div className="lc-play-wrap">
+      <div className="lc-play">
+        <svg viewBox="0 0 24 24" fill="#fff" width="28" height="28"><path d="M8 5.14v14l11-7-11-7z" /></svg>
       </div>
-
-      <div className="lc-bottom">
-        <p className="lc-quote">"{item.quote}"</p>
-        <div className="lc-watch-bar">
-          <div className="lc-watch-line" />
-          <span className="lc-watch-label">Watch Story</span>
-        </div>
+    </div>
+    <div className="lc-bottom">
+      <p className="lc-quote">"{item.quote}"</p>
+      <div className="lc-watch-bar">
+        <div className="lc-watch-line" />
+        <span className="lc-watch-label">Watch Story</span>
       </div>
     </div>
   </div>
@@ -262,82 +185,90 @@ const Card = ({ item, onClick, index }) => (
 
 export default function VideoTestimonials() {
   const [activeVideo, setActiveVideo] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const trackRef = useRef(null);
+  const autoRef = useRef(null);
+  const userTouching = useRef(false);
+
+  const startAuto = () => {
+    clearInterval(autoRef.current);
+    autoRef.current = setInterval(() => {
+      if (userTouching.current) return;
+      setActiveIndex(prev => { const next = (prev + 1) % testimonials.length; snapTo(next); return next; });
+    }, 2600);
+  };
+
+  const snapTo = (i) => {
+    const track = trackRef.current; if (!track) return;
+    const child = track.children[i]; if (!child) return;
+    track.scrollTo({ left: child.offsetLeft - (track.clientWidth - child.offsetWidth) / 2, behavior: "smooth" });
+  };
+
+  useEffect(() => { startAuto(); return () => clearInterval(autoRef.current); }, []);
+
+  const onScroll = () => {
+    const track = trackRef.current; if (!track) return;
+    const center = track.scrollLeft + track.clientWidth / 2;
+    let closest = 0, minD = Infinity;
+    Array.from(track.children).forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center); if (d < minD) { minD = d; closest = i; } });
+    setActiveIndex(closest);
+  };
+
+  const dotClick = (i) => { clearInterval(autoRef.current); setActiveIndex(i); snapTo(i); setTimeout(startAuto, 3000); };
 
   useEffect(() => {
-    const handler = e => { if (e.key === "Escape") setActiveVideo(null); };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+    const h = e => { if (e.key === "Escape") setActiveVideo(null); };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
   }, []);
 
   return (
     <>
       <style>{CSS}</style>
+      <section className="lc-section">
 
-      <section style={{
-        background:'#ffffff',
-        minHeight: "100vh",
-        padding: "88px 28px 100px",
-        position: "relative",
-        overflow: "hidden",
-      }}>
-
-        {/* Header */}
-        <header style={{ textAlign: "center", maxWidth: "560px", margin: "0 auto 72px" }}>
+        <header className="lc-header">
           <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "26px" }}>
             <div style={{ flex: 1, height: "0.5px", background: "linear-gradient(90deg,transparent,#c8a96e)" }} />
-            <span style={{ fontFamily: "'EB Garamond', serif", color: "#b8a07a", fontSize: "11px", letterSpacing: "0.35em", textTransform: "uppercase" }}>
-              Legacy Curator
-            </span>
+            <span style={{ fontFamily: "'EB Garamond', serif", color: "#b8a07a", fontSize: "11px", letterSpacing: "0.35em", textTransform: "uppercase" }}>Legacy Curator</span>
             <div style={{ flex: 1, height: "0.5px", background: "linear-gradient(90deg,#c8a96e,transparent)" }} />
           </div>
-
-          <h2 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontWeight: 400,
-            fontSize: "clamp(28px, 4vw, 46px)",
-            color: "#1e1408",
-            margin: 0,
-            lineHeight: 1.18,
-          }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: "clamp(28px, 4vw, 46px)", color: "#1e1408", margin: 0, lineHeight: 1.18 }}>
             Trusted by over<br />one million families
           </h2>
-
-          <p style={{
-            fontFamily: "'EB Garamond', serif",
-            fontStyle: "italic",
-            fontSize: "18px",
-            color: "#9b8360",
-            marginTop: "14px",
-            lineHeight: 1.6,
-          }}>
+          <p style={{ fontFamily: "'EB Garamond', serif", fontStyle: "italic", fontSize: "18px", color: "#9b8360", marginTop: "14px", lineHeight: 1.6 }}>
             Real voices. Real stories. Preserved for generations.
           </p>
-
           <div style={{ marginTop: "24px", display: "flex", alignItems: "center", justifyContent: "center", gap: "12px" }}>
             <div style={{ width: "32px", height: "0.5px", background: "#d4b87a" }} />
-            <svg viewBox="0 0 20 20" fill="#c8a96e" width="12" height="12" opacity="0.75">
-              <path d="M10 1l2.4 6.4H19l-5.3 3.9 2 6.5L10 14l-5.7 3.8 2-6.5L1 7.4h6.6z" />
-            </svg>
+            <svg viewBox="0 0 20 20" fill="#c8a96e" width="12" height="12" opacity="0.75"><path d="M10 1l2.4 6.4H19l-5.3 3.9 2 6.5L10 14l-5.7 3.8 2-6.5L1 7.4h6.6z" /></svg>
             <div style={{ width: "32px", height: "0.5px", background: "#d4b87a" }} />
           </div>
         </header>
 
-        {/* Vertical reel cards grid */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "28px",
-          maxWidth: "960px",
-          margin: "0 auto",
-        }}>
-          {testimonials.map((item, i) => (
-            <Card key={item.id} item={item} index={i} onClick={setActiveVideo} />
+        <div className="lc-grid">
+          {testimonials.map((item) => (
+            <div className="lc-card" key={item.id}><CardInner item={item} onClick={setActiveVideo} /></div>
           ))}
         </div>
 
-        
-      </section>
+        <div className="lc-carousel">
+          <div className="lc-track" ref={trackRef} onScroll={onScroll}
+            onTouchStart={() => { userTouching.current = true; clearInterval(autoRef.current); }}
+            onTouchEnd={() => { setTimeout(() => { userTouching.current = false; startAuto(); }, 2000); }}
+          >
+            {testimonials.map((item) => (
+              <div className="lc-track-item" key={item.id}><CardInner item={item} onClick={setActiveVideo} /></div>
+            ))}
+          </div>
+          <div className="lc-dots">
+            {testimonials.map((_, i) => (
+              <button key={i} className={`lc-dot${activeIndex === i ? " active" : ""}`} onClick={() => dotClick(i)} />
+            ))}
+          </div>
+        </div>
 
+      </section>
       {activeVideo && <Modal item={activeVideo} onClose={() => setActiveVideo(null)} />}
     </>
   );
