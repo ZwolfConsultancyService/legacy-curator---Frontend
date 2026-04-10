@@ -52,8 +52,8 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  const isTransparent   = isHome && !scrolled;
-  const mode            = isTransparent ? "transparent" : "solid";
+  const isTransparent    = isHome && !scrolled;
+  const mode             = isTransparent ? "transparent" : "solid";
   const isServicesActive = location.pathname.startsWith("/services");
 
   return (
@@ -89,6 +89,7 @@ const Navbar = () => {
           opacity: 0;
           transform: translateY(-8px);
           transition: opacity 0.5s ease, transform 0.5s ease;
+          position: relative;
         }
         .nav-inner.vis { opacity: 1; transform: translateY(0); }
 
@@ -355,9 +356,7 @@ const Navbar = () => {
           flex-shrink: 0;
           padding: 0 32px;
         }
-        @media (max-width: 899px) {
-          .nav-center { display: none; }
-        }
+        @media (max-width: 899px) { .nav-center { display: none; } }
 
         .nav-logo-wrap {
           display: flex;
@@ -426,25 +425,26 @@ const Navbar = () => {
         }
         .solid .nav-btn:hover { background: #8B6A3E; }
 
-        /* ── MOBILE LOGO ── */
+        /* ── MOBILE LOGO — LEFT ── */
         .nav-mobile-logo {
           display: none;
           align-items: center;
           text-decoration: none;
+          flex-shrink: 0;
         }
         @media (max-width: 899px) { .nav-mobile-logo { display: flex; } }
 
         .mobile-logo-img {
-          height: 60px;
+          height: 100px;
           width: auto;
           object-fit: contain;
-          margin-top: 6px;
+          display: block;
           transition: filter 0.35s ease, opacity 0.35s ease;
         }
-        .transparent .mobile-logo-img { filter: brightness(0) invert(1); opacity: 0.92; }
+        .transparent .mobile-logo-img { filter: brightness(0) invert(1); opacity: 0.95; }
         .solid .mobile-logo-img { filter: none; opacity: 1; }
 
-        /* ── HAMBURGER ── */
+        /* ── HAMBURGER — RIGHT ── */
         .nav-hamburger {
           display: none;
           align-items: center;
@@ -493,12 +493,12 @@ const Navbar = () => {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 24px 28px;
+          padding: 20px 24px;
           border-bottom: 1px solid rgba(20,32,26,0.07);
           flex-shrink: 0;
         }
         .drawer-logo-img {
-          height: 52px;
+          height: 56px;
           width: auto;
           object-fit: contain;
         }
@@ -671,12 +671,12 @@ const Navbar = () => {
       <nav className={`nav-root ${mode}`}>
         <div className={`nav-inner${mounted ? " vis" : ""}`}>
 
-          {/* Mobile Logo */}
+          {/* Mobile Logo — LEFT */}
           <Link to="/" className="nav-mobile-logo">
             <img src={logo} alt="Legacy Curator" className="mobile-logo-img" />
           </Link>
 
-          {/* Left Links — desktop */}
+          {/* Left Links — desktop only */}
           <div className="nav-left">
             {navLinks.map((link) => (
               <Link
@@ -704,7 +704,6 @@ const Navbar = () => {
               </button>
 
               <div className={`nav-dropdown${dropOpen ? " open" : ""}`} role="menu">
-                {/* Header */}
                 <div className="drop-header">
                   <div className="drop-header-left">
                     <span className="drop-label">Explore</span>
@@ -713,7 +712,6 @@ const Navbar = () => {
                   <span className="drop-badge">8 Book Types</span>
                 </div>
 
-                {/* Grid */}
                 <div className="drop-grid">
                   {serviceLinks.map((svc) => (
                     <Link
@@ -736,7 +734,6 @@ const Navbar = () => {
                   ))}
                 </div>
 
-                {/* Footer */}
                 <div className="drop-footer">
                   <span className="drop-footer-note">Heirloom quality · Handcrafted</span>
                   <Link
@@ -752,27 +749,28 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Center Logo — desktop */}
+          {/* Center Logo — desktop only */}
           <div className="nav-center">
             <Link to="/" className="nav-logo-wrap">
               <img src={logo} alt="Legacy Curator" className="logo-img" />
             </Link>
           </div>
 
-          {/* Right — desktop */}
+          {/* Right — desktop only */}
           <div className="nav-right">
             <span className="nav-divider" />
             <Link to="/contact" className="nav-btn">Contact Us</Link>
           </div>
 
-          {/* Hamburger — mobile */}
+          {/* Hamburger — RIGHT on mobile */}
           <button
             className="nav-hamburger"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
           >
-            <Menu size={20} color={isTransparent ? "#ffffff" : "#14201a"} />
+            <Menu size={22} color={isTransparent ? "#ffffff" : "#14201a"} />
           </button>
+
         </div>
       </nav>
 
@@ -810,7 +808,6 @@ const Navbar = () => {
             </Link>
           ))}
 
-          {/* Portfolio Accordion */}
           <button
             className={`drawer-portfolio-toggle${isServicesActive ? " active" : ""}`}
             onClick={() => setMobileServOpen((v) => !v)}
