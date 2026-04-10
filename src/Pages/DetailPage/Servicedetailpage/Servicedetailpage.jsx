@@ -1,20 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import services from '../../../data/Services.js';
 
 // ─── Color Theme ─────────────────────────────────────────────────────────────
 const THEME = {
-  forest:    '#36615A',
+  forest:    '#d5b18f',
   forestDark:'#274842',
   saddle:    '#8B542B',
   copper:    '#A7703D',
   copperLight:'#C8915A',
   eggshell:  '#F3F0E1',
   porcelain: '#FDFFFC',
-  ink:       '#1C1C1A',
+  ink:       '#274842',
   inkLight:  '#3D3D39',
-  muted:     '#7A776C',
+  muted:     '#2E2E2B',      // darkened from #7A776C
   border:    'rgba(54,97,90,0.14)',
 };
 
@@ -48,7 +50,15 @@ const ServiceDetailPage = () => {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const autoRef = useRef(null);
 
-  // Auto-advance carousel
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 80,
+    });
+  }, []);
+
   useEffect(() => {
     if (!service) return;
     autoRef.current = setInterval(() => {
@@ -125,11 +135,11 @@ const ServiceDetailPage = () => {
           font-size: 10.5px;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: ${THEME.muted};
+          color: ${THEME.inkLight};
           text-decoration: none;
           margin-bottom: 36px;
           font-family: 'Lato', sans-serif;
-          font-weight: 400;
+          font-weight: 600;
           transition: color 0.2s;
         }
         .sdp-hero-back:hover { color: ${THEME.forest}; }
@@ -167,9 +177,9 @@ const ServiceDetailPage = () => {
           border-radius: 1px;
         }
         .sdp-hero-tagline {
-          font-size: 14px;
-          font-weight: 300;
-          color: ${THEME.muted};
+          font-size: 15px;
+          font-weight: 400;
+          color: ${THEME.inkLight};
           line-height: 1.75;
           font-family: 'Lato', sans-serif;
         }
@@ -273,8 +283,8 @@ const ServiceDetailPage = () => {
         }
         .sdp-pkg-desc {
           font-size: 15.5px;
-          font-weight: 300;
-          color: ${THEME.muted};
+          font-weight: 400;
+          color: ${THEME.inkLight};
           line-height: 1.9;
           max-width: 640px;
           margin: 0 auto;
@@ -296,9 +306,9 @@ const ServiceDetailPage = () => {
         }
         .sdp-features-subheading {
           text-align: center;
-          font-size: 13px;
-          font-weight: 300;
-          color: ${THEME.muted};
+          font-size: 14px;
+          font-weight: 400;
+          color: ${THEME.inkLight};
           font-family: 'Lato', sans-serif;
           letter-spacing: 0.04em;
           margin-bottom: 52px;
@@ -342,9 +352,9 @@ const ServiceDetailPage = () => {
           margin: 0;
         }
         .sdp-feature-cell ul li {
-          font-size: 12.5px;
-          font-weight: 300;
-          color: ${THEME.muted};
+          font-size: 13px;
+          font-weight: 400;
+          color: ${THEME.inkLight};
           line-height: 1.5;
           padding: 6px 0;
           border-bottom: 1px solid rgba(54,97,90,0.08);
@@ -402,8 +412,8 @@ const ServiceDetailPage = () => {
         }
         .sdp-carousel-desc {
           font-size: 14px;
-          font-weight: 300;
-          color: ${THEME.muted};
+          font-weight: 400;
+          color: ${THEME.inkLight};
           line-height: 1.75;
           max-width: 460px;
           margin: 0 auto;
@@ -467,8 +477,8 @@ const ServiceDetailPage = () => {
           font-size: 11.5px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.78);
-          font-weight: 400;
+          color: rgba(255,255,255,0.9);
+          font-weight: 600;
           font-family: 'Lato', sans-serif;
         }
 
@@ -563,9 +573,7 @@ const ServiceDetailPage = () => {
         }
 
         /* CTA btn */
-        .sdp-carousel-cta {
-          text-align: center;
-        }
+        .sdp-carousel-cta { text-align: center; }
         .sdp-pricing-btn {
           display: inline-flex;
           align-items: center;
@@ -716,9 +724,9 @@ const ServiceDetailPage = () => {
           color: ${THEME.copperLight};
         }
         .sdp-cta-sub {
-          font-size: 14px;
-          font-weight: 300;
-          color: rgba(253,255,252,0.5);
+          font-size: 15px;
+          font-weight: 400;
+          color: rgba(253,255,252,0.75);
           max-width: 480px;
           margin: 0 auto 44px;
           line-height: 1.85;
@@ -778,15 +786,14 @@ const ServiceDetailPage = () => {
 
         {/* ── HERO ── */}
         <section className="sdp-hero">
-          <div className="sdp-hero-left">
-           
+          <div className="sdp-hero-left" data-aos="fade-right" data-aos-duration="900">
             <p className="sdp-hero-eyebrow">{service.packageLabel}</p>
             <h1 className="sdp-hero-title">{service.title}</h1>
             <p className="sdp-hero-subtitle">{service.subtitle}</p>
             <div className="sdp-hero-divider" />
             <p className="sdp-hero-tagline">{service.tagline}</p>
           </div>
-          <div className="sdp-hero-right">
+          <div className="sdp-hero-right" data-aos="fade-left" data-aos-duration="900">
             <img src={service.heroImage} alt={service.title} loading="eager" />
             <div className="sdp-hero-badge">
               <div className="sdp-hero-badge-top">Package</div>
@@ -797,24 +804,32 @@ const ServiceDetailPage = () => {
 
         {/* ── PACKAGE INTRO ── */}
         <section className="sdp-pkg">
-          <p className="sdp-pkg-label">{service.packageLabel}</p>
-          <h2 className="sdp-pkg-name">{service.packageName}</h2>
-          <p className="sdp-pkg-edition">{service.packageSubtitle}</p>
-          <div className="sdp-pkg-ornament">
+          <p className="sdp-pkg-label" data-aos="fade-up">{service.packageLabel}</p>
+          <h2 className="sdp-pkg-name" data-aos="fade-up" data-aos-delay="100">{service.packageName}</h2>
+          <p className="sdp-pkg-edition" data-aos="fade-up" data-aos-delay="150">{service.packageSubtitle}</p>
+          <div className="sdp-pkg-ornament" data-aos="fade-up" data-aos-delay="200">
             <span className="sdp-pkg-ornament-line" />
             <span className="sdp-pkg-ornament-dot" />
             <span className="sdp-pkg-ornament-line" />
           </div>
-          <p className="sdp-pkg-desc">{service.packageDesc}</p>
+          <p className="sdp-pkg-desc" data-aos="fade-up" data-aos-delay="250">{service.packageDesc}</p>
         </section>
 
         {/* ── FEATURES GRID ── */}
         <section className="sdp-features">
-          <h2 className="sdp-features-heading">{service.detailTitle}</h2>
-          <p className="sdp-features-subheading">Everything is included. Nothing is left to chance.</p>
+          <h2 className="sdp-features-heading" data-aos="fade-up">{service.detailTitle}</h2>
+          <p className="sdp-features-subheading" data-aos="fade-up" data-aos-delay="100">
+            Everything is included. Nothing is left to chance.
+          </p>
           <div className="sdp-feature-grid" role="list">
             {service.featureGroups.map((group, i) => (
-              <div key={i} className="sdp-feature-cell" role="listitem">
+              <div
+                key={i}
+                className="sdp-feature-cell"
+                role="listitem"
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+              >
                 <div className="sdp-feature-cell-num">0{i + 1}</div>
                 <h3 className="sdp-feature-cell-title">{group.title}</h3>
                 <ul>
@@ -829,15 +844,14 @@ const ServiceDetailPage = () => {
 
         {/* ── IMAGE CAROUSEL ── */}
         <section className="sdp-carousel">
-          <div className="sdp-carousel-header">
+          <div className="sdp-carousel-header" data-aos="fade-up">
             <p className="sdp-carousel-eyebrow">Gallery</p>
             <h2 className="sdp-carousel-title">{service.carouselTitle}</h2>
             <p className="sdp-carousel-edition">{service.carouselEdition}</p>
             <p className="sdp-carousel-desc">{service.carouselDesc}</p>
           </div>
 
-          {/* Stage */}
-          <div className="sdp-carousel-stage">
+          <div className="sdp-carousel-stage" data-aos="zoom-in" data-aos-delay="100">
             <div
               className="sdp-carousel-film"
               style={{ transform: `translateX(-${carouselIndex * 100}%)` }}
@@ -857,25 +871,15 @@ const ServiceDetailPage = () => {
                 </div>
               ))}
             </div>
-
-            <button
-              className="sdp-carousel-arrow prev"
-              onClick={() => goTo(carouselIndex - 1)}
-              aria-label="Previous image"
-            >
+            <button className="sdp-carousel-arrow prev" onClick={() => goTo(carouselIndex - 1)} aria-label="Previous image">
               <ChevronLeft size={20} color={THEME.forest} />
             </button>
-            <button
-              className="sdp-carousel-arrow next"
-              onClick={() => goTo(carouselIndex + 1)}
-              aria-label="Next image"
-            >
+            <button className="sdp-carousel-arrow next" onClick={() => goTo(carouselIndex + 1)} aria-label="Next image">
               <ChevronRight size={20} color={THEME.forest} />
             </button>
           </div>
 
-          {/* Thumbnails */}
-          <div className="sdp-carousel-thumbs">
+          <div className="sdp-carousel-thumbs" data-aos="fade-up" data-aos-delay="150">
             {service.carouselImages.map((slide, i) => (
               <div
                 key={i}
@@ -892,8 +896,7 @@ const ServiceDetailPage = () => {
             ))}
           </div>
 
-          {/* Dots */}
-          <div className="sdp-carousel-dots" role="tablist">
+          <div className="sdp-carousel-dots" role="tablist" data-aos="fade-up" data-aos-delay="200">
             {service.carouselImages.map((_, i) => (
               <button
                 key={i}
@@ -904,9 +907,6 @@ const ServiceDetailPage = () => {
               />
             ))}
           </div>
-
-          {/* CTA */}
-      
         </section>
 
         {/* ── TESTIMONIAL ── */}
@@ -914,18 +914,17 @@ const ServiceDetailPage = () => {
           <button className="sdp-testimonial-nav prev" aria-label="Previous testimonial">
             <ChevronLeft size={18} color="rgba(253,255,252,0.6)" />
           </button>
-
-          <div className="sdp-testimonial-ornament">
-            <span />
-            <i>Client Stories</i>
-            <span />
+          <div data-aos="fade-up">
+            <div className="sdp-testimonial-ornament">
+              <span />
+              <i>Client Stories</i>
+              <span />
+            </div>
+            <blockquote>
+              <p className="sdp-testimonial-quote">{service.testimonial}</p>
+              <footer className="sdp-testimonial-author">{service.testimonialAuthor}</footer>
+            </blockquote>
           </div>
-
-          <blockquote>
-            <p className="sdp-testimonial-quote">{service.testimonial}</p>
-            <footer className="sdp-testimonial-author">{service.testimonialAuthor}</footer>
-          </blockquote>
-
           <button className="sdp-testimonial-nav next" aria-label="Next testimonial">
             <ChevronRight size={18} color="rgba(253,255,252,0.6)" />
           </button>
@@ -933,14 +932,16 @@ const ServiceDetailPage = () => {
 
         {/* ── CTA DARK ── */}
         <section className="sdp-cta" id="contact">
-          <p className="sdp-cta-eyebrow">Begin Your Journey</p>
-          <h2 className="sdp-cta-title">
+          <p className="sdp-cta-eyebrow" data-aos="fade-up">Begin Your Journey</p>
+          <h2 className="sdp-cta-title" data-aos="fade-up" data-aos-delay="100">
             Don't wait for <em>{service.ctaItalic1}</em>;<br />start <em>{service.ctaItalic2}</em>
           </h2>
-          <p className="sdp-cta-sub">{service.ctaSubtitle}</p>
-          <a href="/contact" className="sdp-cta-btn">
-            Get in Touch <ArrowRight size={13} />
-          </a>
+          <p className="sdp-cta-sub" data-aos="fade-up" data-aos-delay="150">{service.ctaSubtitle}</p>
+          <div data-aos="fade-up" data-aos-delay="200">
+            <a href="/contact" className="sdp-cta-btn">
+              Get in Touch <ArrowRight size={13} />
+            </a>
+          </div>
         </section>
 
       </div>
