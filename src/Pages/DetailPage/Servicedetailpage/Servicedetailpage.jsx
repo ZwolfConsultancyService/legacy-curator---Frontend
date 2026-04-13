@@ -1097,8 +1097,7 @@ const FaqItem = ({ faq, index, isOpen, onToggle }) => (
   </div>
 );
 
-// ─── Sub-Type Selector (shown only on parent photo-book page) ─────────────────
-const SubTypeSelector = ({ subTypes, parentSlug }) => {
+ const SubTypeSelector = ({ subTypes, parentSlug }) => {
   const subList = Object.entries(subTypes);
   return (
     <section
@@ -1154,8 +1153,22 @@ const SubTypeSelector = ({ subTypes, parentSlug }) => {
 
       <div
         style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 12,
+          marginBottom: 48,
+        }}
+      >
+        <span style={{ width: 56, height: 1, background: THEME.border, display: 'block' }} />
+        <span style={{ width: 5, height: 5, borderRadius: '50%', background: THEME.copper, display: 'block' }} />
+        <span style={{ width: 56, height: 1, background: THEME.border, display: 'block' }} />
+      </div>
+
+      <div
+        style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
           gap: 24,
           maxWidth: 1080,
           margin: '0 auto',
@@ -1170,94 +1183,166 @@ const SubTypeSelector = ({ subTypes, parentSlug }) => {
             style={{
               display: 'block',
               textDecoration: 'none',
-              borderRadius: 4,
+              borderRadius: 6,
               overflow: 'hidden',
               border: `1px solid ${THEME.border}`,
-              background: THEME.eggshell,
-              transition: 'transform 0.25s, box-shadow 0.25s',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              position: 'relative',
+              height: 360,
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-4px)';
-              e.currentTarget.style.boxShadow = '0 12px 40px rgba(54,97,90,0.12)';
+              e.currentTarget.style.transform = 'translateY(-6px)';
+              e.currentTarget.style.boxShadow = '0 20px 52px rgba(39,72,66,0.18)';
+              const img = e.currentTarget.querySelector('.sub-card-img');
+              if (img) img.style.transform = 'scale(1.06)';
+              const overlay = e.currentTarget.querySelector('.sub-card-overlay');
+              if (overlay) overlay.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(39,72,66,0.92) 100%)';
+              const hoverContent = e.currentTarget.querySelector('.sub-card-hover');
+              if (hoverContent) hoverContent.style.opacity = '1';
+              const hoverContent2 = e.currentTarget.querySelector('.sub-card-hover');
+              if (hoverContent2) hoverContent2.style.transform = 'translateY(0px)';
             }}
             onMouseLeave={e => {
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = 'none';
+              const img = e.currentTarget.querySelector('.sub-card-img');
+              if (img) img.style.transform = 'scale(1)';
+              const overlay = e.currentTarget.querySelector('.sub-card-overlay');
+              if (overlay) overlay.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(39,72,66,0.82) 100%)';
+              const hoverContent = e.currentTarget.querySelector('.sub-card-hover');
+              if (hoverContent) hoverContent.style.opacity = '0';
+              const hoverContent2 = e.currentTarget.querySelector('.sub-card-hover');
+              if (hoverContent2) hoverContent2.style.transform = 'translateY(8px)';
             }}
           >
-            {/* Thumbnail */}
-            <div style={{ height: 180, overflow: 'hidden', position: 'relative' }}>
-              <img
-                src={sub.heroImage}
-                alt={sub.title}
-                loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s' }}
-              />
-              {/* Overlay */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(to bottom, transparent 40%, rgba(39,72,66,0.55) 100%)',
+            {/* Full bleed image */}
+            <img
+              className="sub-card-img"
+              src={sub.heroImage}
+              alt={sub.title}
+              loading="lazy"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block',
+                transition: 'transform 0.6s ease',
+              }}
+            />
+
+            {/* Gradient overlay */}
+            <div
+              className="sub-card-overlay"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(39,72,66,0.82) 100%)',
+                transition: 'background 0.4s ease',
                 pointerEvents: 'none',
-              }} />
-              {/* Badge */}
-              <div style={{
-                position: 'absolute', bottom: 12, left: 12,
-                background: 'rgba(253,255,252,0.92)',
-                padding: '6px 12px',
-                borderLeft: `3px solid ${THEME.copper}`,
+              }}
+            />
+
+            {/* Top-left edition badge — always visible */}
+            <div style={{
+              position: 'absolute',
+              top: 14,
+              left: 14,
+              background: 'rgba(253,255,252,0.92)',
+              padding: '5px 12px',
+              borderLeft: `3px solid ${THEME.copper}`,
+              zIndex: 2,
+            }}>
+              <span style={{
+                fontFamily: "'Lato', sans-serif",
+                fontSize: 8,
+                letterSpacing: '0.24em',
+                textTransform: 'uppercase',
+                color: THEME.copper,
+                fontWeight: 700,
               }}>
-                <div style={{ fontFamily: "'Lato', sans-serif", fontSize: 8, letterSpacing: '0.22em', textTransform: 'uppercase', color: THEME.copper, fontWeight: 700 }}>
-                  {sub.packageSubtitle}
-                </div>
-              </div>
+                {sub.packageSubtitle}
+              </span>
             </div>
 
-            {/* Card body */}
-            <div style={{ padding: '20px 22px 24px' }}>
+            {/* Bottom content — always visible: title + tagline */}
+            <div style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              padding: '20px 22px',
+              zIndex: 2,
+            }}>
+              {/* Hover-only: Explore pill — slides up on hover */}
+              <div
+                className="sub-card-hover"
+                style={{
+                  marginBottom: 10,
+                  opacity: 0,
+                  transform: 'translateY(8px)',
+                  transition: 'opacity 0.3s ease, transform 0.3s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <span style={{
+                  fontFamily: "'Lato', sans-serif",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.90)',
+                  borderBottom: `1px solid ${THEME.copper}`,
+                  paddingBottom: 2,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                }}>
+                  Explore <ArrowRight size={10} color="rgba(255,255,255,0.90)" />
+                </span>
+                <span style={{
+                  fontFamily: "'Lato', sans-serif",
+                  fontSize: 9,
+                  fontWeight: 700,
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                  color: THEME.copper,
+                  background: 'rgba(253,255,252,0.12)',
+                  border: `1px solid rgba(167,112,61,0.50)`,
+                  borderRadius: 100,
+                  padding: '4px 10px',
+                }}>
+                  {sub.packageName || 'View Details'}
+                </span>
+              </div>
+
+              {/* Title — always visible */}
               <p style={{
                 fontFamily: "'Libre Baskerville', serif",
-                fontSize: 15,
+                fontSize: 20,
                 fontWeight: 700,
-                color: THEME.ink,
-                margin: '0 0 6px',
-                lineHeight: 1.3,
+                color: '#fff',
+                margin: '0 0 5px',
+                lineHeight: 1.2,
+                textShadow: '0 1px 8px rgba(0,0,0,0.3)',
               }}>
                 {sub.title}
               </p>
+
+              {/* Tagline — always visible */}
               <p style={{
                 fontFamily: "'Libre Baskerville', serif",
                 fontSize: 13,
                 fontStyle: 'italic',
-                color: THEME.copper,
-                margin: '0 0 12px',
+                color: 'rgba(255,255,255,0.78)',
+                margin: 0,
+                lineHeight: 1.4,
               }}>
                 {sub.tagline}
               </p>
-              <p style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: 12,
-                color: THEME.inkLight,
-                margin: 0,
-                lineHeight: 1.6,
-              }}>
-                {sub.subtitle}
-              </p>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                marginTop: 16,
-                fontFamily: "'Lato', sans-serif",
-                fontSize: 10,
-                fontWeight: 700,
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-                color: THEME.forestDark,
-                borderBottom: `1px solid ${THEME.copper}`,
-                paddingBottom: 2,
-              }}>
-                Explore <ArrowRight size={10} color={THEME.forestDark} />
-              </div>
             </div>
           </Link>
         ))}
