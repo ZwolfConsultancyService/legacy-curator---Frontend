@@ -11,6 +11,8 @@ import ContactPage from "./Pages/Routes/Contactpage/Contactpage";
 import BlogPage from "./Pages/Routes/Blogpage/Blogpage";
 import ServiceDetailPage from "./Pages/DetailPage/Servicedetailpage/Servicedetailpage";
 import BlogDetailPage from "./Pages/DetailPage/Blogdetailpage/Blogdetailpage";
+import FoundersPage from "./Pages/Routes/Founderspage/Founderspage";
+import TeamPage from "./Pages/Routes/Founderspage/Teampage";
 
 const App = () => {
   return (
@@ -24,10 +26,14 @@ const App = () => {
           {/* <Route path="/services" element={<ServicesPage />} /> */}
           {/* <Route path="/portfolio" element={<PortfolioPage />} /> */}
           <Route path="/contact" element={<ContactPage />} />
-             <Route path="/blog" element={<BlogPage />} />
-              <Route path="/services/:slug" element={<ServiceDetailPage />} />
-               
-                 <Route path="/blog/:slug" element={<BlogDetailPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+         <Route path="/services/:slug" element={<ServiceDetailPage />} />
+<Route path="/services/:slug/:subSlug" element={<ServiceDetailPage />} />  {/* ← yeh add karo */}
+
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
+             <Route path="/founder" element={<FoundersPage />} />
+              <Route path="/team" element={<TeamPage />} />
+
         </Route>
       </Routes>
     </>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import video from "../../../assets/video.mp4"
 
 const HeroSection = () => {
   const [loaded, setLoaded] = useState(false);
@@ -34,15 +35,28 @@ const HeroSection = () => {
           font-family: 'Jost', sans-serif;
         }
 
-        /* ─── BG IMAGE ─── */
-        .hero-bg {
+        /* ─── BG VIDEO ─── */
+        .hero-video-wrap {
           position: absolute;
           inset: 0;
-          background-image: url('https://i.pinimg.com/736x/0d/68/9f/0d689fb4de5f90eff89fe58278658abc.jpg');
-          background-size: cover;
-          background-position: center top;
+          z-index: 0;
+          overflow: hidden;
           will-change: transform;
           transition: transform 0.1s linear;
+        }
+
+        .hero-video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          transform: translate(-50%, -50%);
+          object-fit: cover;
+          object-position: center top;
+          display: block;
         }
 
         /* ─── OVERLAYS ─── */
@@ -51,9 +65,9 @@ const HeroSection = () => {
           inset: 0;
           background: linear-gradient(
             170deg,
-            rgba(8,12,10,0.78) 0%,
-            rgba(8,12,10,0.42) 48%,
-            rgba(8,12,10,0.10) 72%,
+            rgba(8,12,10,0.82) 0%,
+            rgba(8,12,10,0.50) 48%,
+            rgba(8,12,10,0.18) 72%,
             transparent 100%
           );
           z-index: 1;
@@ -69,6 +83,14 @@ const HeroSection = () => {
           );
           z-index: 1;
         }
+        /* Extra dark vignette so text always readable over moving video */
+        .hero-overlay-vignette {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.35) 100%);
+          z-index: 1;
+          pointer-events: none;
+        }
 
         /* ─── DECORATIVE LINES ─── */
         .hero-lines {
@@ -82,7 +104,7 @@ const HeroSection = () => {
           position: absolute;
           top: 0; bottom: 0;
           width: 1px;
-          background: rgba(255,255,255,0.05);
+          background: rgba(255,255,255,0.04);
         }
         .hero-line-v:nth-child(1) { left: 20%; }
         .hero-line-v:nth-child(2) { left: 50%; }
@@ -196,7 +218,7 @@ const HeroSection = () => {
         .hero-sub {
           font-size: clamp(14px, 1.9vw, 17px);
           font-weight: 300;
-          color: rgba(255,255,255,0.60);
+          color: rgba(255, 241, 241, 0.72);
           line-height: 1.85;
           max-width: 580px;
           margin: 0 0 44px;
@@ -206,90 +228,6 @@ const HeroSection = () => {
           transition: opacity 0.7s ease 0.45s, transform 0.7s ease 0.45s;
         }
         .hero-sub.vis { opacity: 1; transform: translateY(0); }
-
-        /* ─── BUTTONS ─── */
-        .hero-btns {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          gap: 14px;
-          flex-wrap: wrap;
-          opacity: 0;
-          transform: translateY(14px);
-          transition: opacity 0.7s ease 0.6s, transform 0.7s ease 0.6s;
-        }
-        .hero-btns.vis { opacity: 1; transform: translateY(0); }
-
-        .hero-btn-primary {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: #ffffff;
-          color: #14201a;
-          font-family: 'Jost', sans-serif;
-          font-size: 10px;
-          font-weight: 500;
-          letter-spacing: 0.28em;
-          text-transform: uppercase;
-          text-decoration: none;
-          padding: 18px 36px;
-          border-radius: 4px;
-          border: none;
-          cursor: pointer;
-          transition: background 0.3s, color 0.3s, transform 0.2s;
-          white-space: nowrap;
-        }
-        .hero-btn-primary:hover {
-          background: #D4A96A;
-          color: #ffffff;
-          transform: translateY(-2px);
-        }
-
-        .hero-btn-secondary {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: transparent;
-          color: rgba(255,255,255,0.85);
-          font-family: 'Jost', sans-serif;
-          font-size: 10px;
-          font-weight: 500;
-          letter-spacing: 0.28em;
-          text-transform: uppercase;
-          text-decoration: none;
-          padding: 17px 36px;
-          border-radius: 4px;
-          border: 1px solid rgba(255,255,255,0.28);
-          cursor: pointer;
-          transition: border-color 0.3s, color 0.3s, background 0.3s, transform 0.2s;
-          white-space: nowrap;
-        }
-        .hero-btn-secondary:hover {
-          border-color: rgba(212,169,106,0.7);
-          color: #D4A96A;
-          background: rgba(212,169,106,0.06);
-          transform: translateY(-2px);
-        }
-
-        .btn-arrow {
-          width: 16px; height: 1px;
-          background: currentColor;
-          position: relative;
-          flex-shrink: 0;
-          transition: width 0.3s;
-        }
-        .btn-arrow::after {
-          content: '';
-          position: absolute;
-          right: 0; top: -3px;
-          width: 6px; height: 6px;
-          border-right: 1px solid currentColor;
-          border-top: 1px solid currentColor;
-          transform: rotate(45deg);
-        }
-        .hero-btn-primary:hover .btn-arrow,
-        .hero-btn-secondary:hover .btn-arrow { width: 22px; }
 
         /* ─── STATS ROW ─── */
         .hero-stats {
@@ -372,45 +310,26 @@ const HeroSection = () => {
         }
 
         /* ─── RESPONSIVE ─── */
-
-        /* Small phones (≤380px) */
         @media (max-width: 380px) {
           .hero-content { padding: 100px 20px 130px; }
-          .hero-btns { flex-direction: column; width: 100%; }
-          .hero-btn-primary, .hero-btn-secondary {
-            width: 100%;
-            justify-content: center;
-            padding: 17px 24px;
-          }
           .hero-stat { padding: 0 16px; }
-          .hero-stats { gap: 0; }
           .hero-eyebrow-pill { font-size: 8px; padding: 7px 14px; letter-spacing: 0.25em; }
         }
 
-        /* Mobile (381–640px) */
         @media (min-width: 381px) and (max-width: 640px) {
           .hero-content { padding: 100px 24px 130px; }
-          .hero-btns { flex-direction: column; width: 100%; max-width: 320px; }
-          .hero-btn-primary, .hero-btn-secondary {
-            width: 100%;
-            justify-content: center;
-          }
         }
 
-        /* Tablet (641–1024px) */
         @media (min-width: 641px) and (max-width: 1024px) {
           .hero-content { padding: 110px 40px 150px; max-width: 720px; }
-          .hero-btns { flex-direction: row; }
           .hero-stat { padding: 0 24px; }
         }
 
-        /* Desktop (1025px+) */
         @media (min-width: 1025px) {
           .hero-content { padding: 120px 48px 160px; }
           .hero-stat { padding: 0 36px; }
         }
 
-        /* Hide scroll hint on mobile/small */
         @media (max-width: 640px) {
           .hero-scroll { display: none; }
           .hero-stats { margin-top: 40px; }
@@ -418,19 +337,36 @@ const HeroSection = () => {
           .hero-divider { margin: 18px 0 22px; }
           .hero-sub { margin-bottom: 36px; }
         }
+
+        /* Reduce motion — pause video for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+          .hero-video { animation: none; }
+          .hero-scroll-line { animation: none; }
+        }
       `}</style>
 
       <section className="hero-section" ref={sectionRef}>
 
-        {/* Parallax BG */}
+        {/* Parallax Video BG */}
         <div
-          className="hero-bg"
-          style={{ transform: `translateY(${scrollY * 0.22}px) scale(1.08)` }}
-        />
+          className="hero-video-wrap"
+          style={{ transform: `translateY(${scrollY * 0.18}px) scale(1.06)` }}
+        >
+          <video
+            className="hero-video"
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
+        </div>
 
         {/* Overlays */}
         <div className="hero-overlay-top" />
         <div className="hero-overlay-bottom" />
+        <div className="hero-overlay-vignette" />
 
         {/* Subtle vertical lines */}
         <div className="hero-lines">
@@ -445,14 +381,14 @@ const HeroSection = () => {
           {/* Eyebrow */}
           <div className={`hero-eyebrow${loaded ? ' vis' : ''}`}>
             <span className="hero-eyebrow-dot" />
-            <span className="hero-eyebrow-pill">Premium Storytelling & Publishing</span>
+            <span className="hero-eyebrow-pill">From Memories to Masterpiece</span>
             <span className="hero-eyebrow-dot" />
           </div>
 
           {/* Headline */}
           <h1 className={`hero-h1${loaded ? ' vis' : ''}`}>
-            <span className="hero-h1-main">Your Legacy</span>
-            <span className="hero-h1-accent">Starts Here</span>
+            <span className="hero-h1-main">Where Every Page </span>
+            <span className="hero-h1-accent">Deserves a Place</span>
           </h1>
 
           {/* Divider */}
@@ -464,35 +400,13 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p className={`hero-sub${loaded ? ' vis' : ''}`}>
-            Transform your personal, family, and business stories into timeless
-            coffee table books — preserving journeys, values, and identities
-            for generations to come.
+            Your story, your legacy, your vision — beautifully crafted into a timeless book that lives on for generations.
           </p>
 
-          {/* Buttons */}
-          <div className={`hero-btns${loaded ? ' vis' : ''}`}>
-            <Link to="/about" className="hero-btn-primary">
-              Get Started
-              <span className="btn-arrow" />
-            </Link>
-            <Link to="/contact" className="hero-btn-secondary">
-              Contact Us
-              <span className="btn-arrow" />
-            </Link>
-          </div>
-
-         
-
+        
         </div>
 
-        {/* Scroll hint */}
-        <div className={`hero-scroll${loaded ? ' vis' : ''}`}>
-          <span className="hero-scroll-label">Scroll</span>
-          <div className="hero-scroll-track">
-            <div className="hero-scroll-line" />
-          </div>
-        </div>
-
+      
         {/* Wave */}
         <div className="hero-wave">
           <svg viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">

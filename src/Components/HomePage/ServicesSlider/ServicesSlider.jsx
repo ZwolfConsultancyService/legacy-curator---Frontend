@@ -1,5 +1,3 @@
-
-
 // import React, { useRef } from 'react';
 // import { Link } from 'react-router-dom';
 
@@ -132,20 +130,20 @@
 //           box-shadow: none !important; /* Strictly no shadow */
 //           border: 1px solid rgba(30, 43, 36, 0.05); /* Very light border instead of shadow */
 //         }
-        
+
 //         .sv-card-img {
 //           width: 100%;
 //           height: 100%;
 //           object-fit: cover;
 //           transition: transform 1s ease;
 //         }
-        
+
 //         .sv-card-overlay {
 //           position: absolute;
 //           inset: 0;
 //           background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
 //         }
-        
+
 //         .sv-card-content {
 //           position: absolute;
 //           bottom: 0;
@@ -153,14 +151,14 @@
 //           padding: 24px;
 //           z-index: 2;
 //         }
-        
+
 //         .sv-card-title {
 //           font-family: 'Cormorant Garamond', serif;
 //           font-size: 24px;
 //           color: #fff;
 //           margin-bottom: 4px;
 //         }
-        
+
 //         .sv-card-cta {
 //           font-size: 10px;
 //           text-transform: uppercase;
@@ -185,7 +183,7 @@
 //             <p className="sv-desc">
 //               Explore our curated book types designed to preserve your life's greatest moments.
 //             </p>
-            
+
 //             {/* MANUAL NAVIGATION BUTTONS */}
 //             <div className="sv-nav-btns">
 //               <button className="sv-btn" onClick={() => handleManualScroll('left')} aria-label="Scroll Left">
@@ -223,20 +221,69 @@
 
 // export default ServicesCards;
 
-
-
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const services = [
-  { title: 'Photo Books', tagline: 'Memories Frozen in Time.', desc: 'Relive your most cherished moments through stunning, professionally printed photo books that tell your story beautifully.', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80', path: '/services/photo-book' },
-  { title: 'Travel Books', tagline: 'Every Journey Deserves a Story.', desc: 'Document your adventures across the globe in a handcrafted travel book that captures every destination, memory, and emotion.', image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80', path: '/services/travel-book' },
-  { title: 'Legacy Books', tagline: 'Stories Passed Down Forever.', desc: 'Preserve your family history, wisdom, and values in a timeless legacy book that future generations will treasure forever.', image: 'https://images.unsplash.com/photo-1491841573634-28140fc7ced7?w=800&q=80', path: '/services/legacy-book' },
-  { title: 'Coffee Table Books', tagline: 'Art You Can Hold.', desc: 'Transform your finest photography or artwork into a breathtaking coffee table book that becomes the centerpiece of any room.', image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80', path: '/services/coffee-table' },
-  { title: 'Memoir Books', tagline: 'Your Life. Your Words. Forever.', desc: 'Turn your personal experiences and life story into a beautifully written memoir that captures who you truly are.', image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=800&q=80', path: '/services/memoir' },
-  { title: 'Wedding Books', tagline: 'Love Captured. Love Kept.', desc: 'Celebrate your special day with an elegant wedding book that immortalizes every emotion, vow, and precious moment.', image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80', path: '/services/wedding-book' },
-];
+  {
+    title: "Coffee Table Books",
+    tagline: "Art You Can Hold.",
+    desc: "Our coffee table books are crafted to be seen, felt, and admired, turning every page into a visual experience and a timeless conversation piece.",
+    image:
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80",
+    path: "/services/coffee-table",
+  },
+  {
+    title: "Family Legacy Books",
+    tagline: "Stories Passed Down Forever.",
+    desc: "Our family legacy books preserve generations of love, values, and memories, ensuring your story continues to live on and inspire forever.",
+    image:
+      "https://images.unsplash.com/photo-1491841573634-28140fc7ced7?w=800&q=80",
+    path: "/services/legacy-book",
+  },
+  {
+    title: "Business Story Books",
+    tagline: "The story behind the empire.",
+    desc: "Our business story books capture your journey from vision to success, turning it into a powerful narrative that builds trust and inspires growth",
+    image:
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+    path: "/services/business-book",
+  },
+  {
+    title: "Memoir Books",
+    tagline: "A life, in your own words.",
+    desc: "Our memoir and tribute books reflect life most heartfelt moments, honouring stories that deserve to be cherished and remembered forever.",
+    image:
+      "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=800&q=80",
+    path: "/services/memoir",
+  },
 
+  {
+    title: "Photo Books",
+    tagline: "Moments that refuse to fade.",
+    desc: "Our photo books beautifully capture and curate your special moments, designed to help you relive your memories again and again.",
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+    path: "/services/photo-book",
+  },
+  {
+    title: "Vision & Passion Books",
+    tagline: "Write what comes next",
+    desc: "Our vision and passion books bring your dreams, ideas, and purpose together, shaping them into a story that inspires and guides.",
+    image:
+      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&q=80",
+    path: "/services/vision-passion-book",
+  },
+  {
+    title: 'Devotional Books',
+    tagline: 'Where faith finds its voice.',
+    desc: 'Our devotional books express faith and spirituality in a soulful way, crafted to bring peace, meaning, and a deeper connection.',
+    image: 'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=800&q=80',
+    path: '/services/devotional-book'
+  }
+ 
+];
+//business stories book
 const ServicesCards = () => {
   return (
     <>
@@ -407,19 +454,20 @@ const ServicesCards = () => {
 
       <section className="sv-section">
         <div className="sv-container">
-
           {/* TOP HEADER */}
           <div className="sv-top">
             <p className="sv-eyebrow">Our Services</p>
             <h2 className="sv-main-title">
-              Crafting <em>Legacy</em> in Every Page
+        turn your <em> stories</em> into timeless masterpieces.
             </h2>
           </div>
 
           {/* ZIGZAG ROWS */}
           {services.map((service, index) => (
-            <div key={index} className={`sv-row ${index % 2 !== 0 ? 'reverse' : ''}`}>
-
+            <div
+              key={index}
+              className={`sv-row ${index % 2 !== 0 ? "reverse" : ""}`}
+            >
               {/* IMAGE */}
               <div className="sv-img-wrap">
                 <img src={service.image} alt={service.title} />
@@ -437,10 +485,8 @@ const ServicesCards = () => {
                   Explore Collection &nbsp;→
                 </Link>
               </div>
-
             </div>
           ))}
-
         </div>
       </section>
     </>
