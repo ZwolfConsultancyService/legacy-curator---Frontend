@@ -271,7 +271,7 @@ const services = [
     tagline: "Write what comes next",
     desc: "Our vision and passion books bring your dreams, ideas, and purpose together, shaping them into a story that inspires and guides.",
     image:
-      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&q=80",
+      "https://i.pinimg.com/736x/7e/59/bf/7e59bfdb255b71519113b568e35c8f42.jpg",
     path: "/services/vision-passion-book",
   },
   {
