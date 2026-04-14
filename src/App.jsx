@@ -13,11 +13,14 @@ import ServiceDetailPage from "./Pages/DetailPage/Servicedetailpage/Servicedetai
 import BlogDetailPage from "./Pages/DetailPage/Blogdetailpage/Blogdetailpage";
 import FoundersPage from "./Pages/Routes/Founderspage/Founderspage";
 import TeamPage from "./Pages/Routes/Founderspage/Teampage";
+import FloatingMusicPlayer from "./Components/Floatingmusicplayer/Floatingmusicplayer";
 
 const App = () => {
   return (
     <>
       <ScrollToTop />
+
+            <FloatingMusicPlayer />
       <Routes>
         <Route element={<Layout />}>
           {/* ── Main Pages ── */}

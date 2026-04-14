@@ -44,7 +44,6 @@ const MainPage = () => {
         <VideoTestimonials />
       </div>
 
-      <FloatingMusicPlayer />
     </div>
   );
 };
