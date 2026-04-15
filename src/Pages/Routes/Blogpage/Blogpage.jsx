@@ -20,6 +20,21 @@ export function slugify(title) {
   return title.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
 }
 
+// ─── BREAKPOINT HOOK ─────────────────────────────────────────
+function useBreakpoint() {
+  const [bp, setBp] = useState({ isMobile: false, isTablet: false });
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setBp({ isMobile: w <= 640, isTablet: w > 640 && w <= 1024 });
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return bp;
+}
+
 // ─── SKELETON ────────────────────────────────────────────────
 function SkeletonCard() {
   return (
@@ -37,6 +52,8 @@ function SkeletonCard() {
 // ─── FEATURED CARD ───────────────────────────────────────────
 function FeaturedCard({ post, onClick }) {
   const [hovered, setHovered] = useState(false);
+  const { isMobile, isTablet } = useBreakpoint();
+
   return (
     <div
       onMouseEnter={() => setHovered(true)}
@@ -44,7 +61,7 @@ function FeaturedCard({ post, onClick }) {
       onClick={onClick}
       style={{
         display: "grid",
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
         borderRadius: 6,
         overflow: "hidden",
         boxShadow: hovered ? "0 28px 60px rgba(54,97,90,0.16)" : "0 4px 24px rgba(0,0,0,0.07)",
@@ -54,29 +71,46 @@ function FeaturedCard({ post, onClick }) {
         background: colors.porcelain,
       }}
     >
-      <div style={{ background: post.accentBg || "linear-gradient(135deg,#36615A,#2a4a44)", minHeight: 380, display: "flex", alignItems: "center", justifyContent: "center", padding: 48, position: "relative" }}>
+      {/* Left visual panel */}
+      <div style={{
+        background: post.accentBg || "linear-gradient(135deg,#36615A,#2a4a44)",
+        minHeight: isMobile ? 200 : isTablet ? 280 : 380,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: isMobile ? 32 : 48,
+        position: "relative",
+      }}>
         {post.tag && (
-          <div style={{ position: "absolute", top: 24, left: 24 }}>
+          <div style={{ position: "absolute", top: 20, left: 20 }}>
             <span style={{ fontSize: "0.62rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.25)", padding: "4px 10px", borderRadius: 2 }}>
               {post.tag}
             </span>
           </div>
         )}
         <div style={{ textAlign: "center" }}>
-          <div style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "6rem", fontWeight: 300, fontStyle: "italic", color: "rgba(255,255,255,0.12)", lineHeight: 1 }}>LC</div>
+          <div style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? "4rem" : "6rem", fontWeight: 300, fontStyle: "italic", color: "rgba(255,255,255,0.12)", lineHeight: 1 }}>LC</div>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.3)", margin: "16px auto" }} />
           <div style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(255,255,255,0.5)" }}>{post.category}</div>
         </div>
       </div>
-      <div style={{ padding: "48px 44px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+
+      {/* Right info panel */}
+      <div style={{
+        padding: isMobile ? "28px 24px 32px" : isTablet ? "36px 32px" : "48px 44px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        gap: 16,
+      }}>
         <div>
           <span style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.15em", color: colors.copper, fontWeight: 500 }}>{post.category}</span>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "2rem", fontWeight: 300, color: "#111", lineHeight: 1.2, marginTop: 12, marginBottom: 20 }}>{post.title}</h2>
-          <p style={{ fontSize: "0.88rem", lineHeight: 1.8, color: "#666" }}>{post.excerpt}</p>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? "1.5rem" : isTablet ? "1.7rem" : "2rem", fontWeight: 300, color: "#111", lineHeight: 1.2, marginTop: 12, marginBottom: 16 }}>{post.title}</h2>
+          <p style={{ fontSize: isMobile ? "0.82rem" : "0.88rem", lineHeight: 1.8, color: "#666" }}>{post.excerpt}</p>
         </div>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 36, paddingTop: 24, borderTop: "1px solid rgba(54,97,90,0.1)" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: isMobile ? 20 : 36, paddingTop: 20, borderTop: "1px solid rgba(54,97,90,0.1)", flexWrap: "wrap", gap: 10 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ width: 34, height: 34, borderRadius: "50%", backgroundColor: post.avatarBg || colors.forest, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "0.9rem", fontWeight: 600, color: colors.porcelain }}>
+            <div style={{ width: 34, height: 34, borderRadius: "50%", backgroundColor: post.avatarBg || colors.forest, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "0.9rem", fontWeight: 600, color: colors.porcelain, flexShrink: 0 }}>
               {post.authorInitial || post.author?.[0] || "A"}
             </div>
             <div>
@@ -109,6 +143,7 @@ function BlogCard({ post, onClick }) {
         transition: "all 0.35s cubic-bezier(0.25,0.8,0.25,1)",
         display: "flex",
         flexDirection: "column",
+        WebkitTapHighlightColor: "transparent",
       }}
     >
       <div style={{ height: 160, background: post.accentBg || "linear-gradient(135deg,#36615A,#2a4a44)", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
@@ -126,7 +161,7 @@ function BlogCard({ post, onClick }) {
         </div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 24, paddingTop: 16, borderTop: "1px solid rgba(54,97,90,0.08)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div style={{ width: 28, height: 28, borderRadius: "50%", backgroundColor: post.avatarBg || colors.forest, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 600, color: colors.porcelain, fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+            <div style={{ width: 28, height: 28, borderRadius: "50%", backgroundColor: post.avatarBg || colors.forest, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 600, color: colors.porcelain, fontFamily: "'Cormorant Garamond', Georgia, serif", flexShrink: 0 }}>
               {post.authorInitial || post.author?.[0] || "A"}
             </div>
             <span style={{ fontSize: "0.75rem", color: "#888" }}>{post.author}</span>
@@ -146,12 +181,14 @@ export default function BlogPage() {
   const [loading, setLoading]     = useState(true);
   const [error, setError]         = useState("");
   const navigate = useNavigate();
+  const { isMobile, isTablet } = useBreakpoint();
+
+  const px = isMobile ? "20px" : isTablet ? "40px" : "60px";
 
   const fetchBlogs = async (category) => {
     setLoading(true);
     setError("");
     try {
-      // ── 1. Featured (always fresh, ignore category filter) ──
       if (category === "All") {
         const fRes  = await fetch(`${API_BASE}/blogs/featured`);
         const fData = await fRes.json();
@@ -161,10 +198,9 @@ export default function BlogPage() {
           setFeatured(null);
         }
       } else {
-        setFeatured(null); // category filter mein featured band karo
+        setFeatured(null);
       }
 
-      // ── 2. All blogs list (content/toc excluded by backend) ──
       const params = new URLSearchParams();
       if (category !== "All") params.set("category", category);
 
@@ -182,8 +218,10 @@ export default function BlogPage() {
 
   useEffect(() => { fetchBlogs(activeCategory); }, [activeCategory]);
 
-  // Featured ko grid se alag karo
   const gridBlogs = featured ? blogs.filter((b) => b._id !== featured._id) : blogs;
+
+  // Grid columns based on screen
+  const gridCols = isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)";
 
   return (
     <div style={{ backgroundColor: "#ffffff", minHeight: "100vh", fontFamily: "'DM Sans', sans-serif" }}>
@@ -193,17 +231,28 @@ export default function BlogPage() {
         .fade-up { animation: fadeUp 0.55s ease both; }
         .cat-btn:hover { border-color: rgba(54,97,90,0.5) !important; color: #444 !important; }
         @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+        .cat-scroll {
+          display: flex;
+          overflow-x: auto;
+          gap: 10px;
+          padding-bottom: 4px;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+        }
+        .cat-scroll::-webkit-scrollbar { display: none; }
+        .cat-scroll button { flex-shrink: 0; }
       `}</style>
 
       {/* HERO BAND */}
-      <div style={{ backgroundColor: colors.forest, padding: "60px 60px 50px" }}>
+      <div style={{ backgroundColor: colors.forest, padding: isMobile ? "44px 20px 36px" : isTablet ? "52px 40px 42px" : "60px 60px 50px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(253,255,252,0.5)", marginBottom: 16 }}>LegacyCurator · Journal</p>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 24 }}>
-            <h1 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "clamp(3.5rem, 7vw, 6rem)", fontWeight: 300, color: colors.porcelain, lineHeight: 0.9 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: isMobile ? 16 : 24 }}>
+            <h1 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? "3rem" : "clamp(3.5rem, 7vw, 6rem)", fontWeight: 300, color: colors.porcelain, lineHeight: 0.9 }}>
               Stories &<br /><em style={{ fontStyle: "italic", color: "#a8d4cc" }}>Perspectives.</em>
             </h1>
-            <p style={{ fontSize: "0.88rem", lineHeight: 1.8, color: "rgba(253,255,252,0.55)", maxWidth: 340 }}>
+            <p style={{ fontSize: isMobile ? "0.82rem" : "0.88rem", lineHeight: 1.8, color: "rgba(253,255,252,0.55)", maxWidth: isMobile ? "100%" : 340 }}>
               Thoughts on curation, craft, and the creative lives worth documenting.
             </p>
           </div>
@@ -213,23 +262,49 @@ export default function BlogPage() {
       <div style={{ height: 1, background: `linear-gradient(90deg,${colors.forest} 0%,${colors.copper} 40%,transparent 100%)` }} />
 
       {/* CATEGORY FILTER */}
-     
-      
+      <div style={{ padding: isMobile ? "20px 20px 0" : isTablet ? "24px 40px 0" : "28px 60px 0", maxWidth: 1200, margin: "0 auto" }}>
+        <div className="cat-scroll">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className="cat-btn"
+              onClick={() => setActiveCategory(cat)}
+              style={{
+                background: activeCategory === cat ? colors.forest : "transparent",
+                color: activeCategory === cat ? colors.porcelain : "#888",
+                border: `1px solid ${activeCategory === cat ? colors.forest : "rgba(0,0,0,0.12)"}`,
+                borderRadius: 2,
+                padding: isMobile ? "7px 14px" : "8px 18px",
+                fontSize: "0.68rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                cursor: "pointer",
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 500,
+                transition: "all 0.2s ease",
+                WebkitTapHighlightColor: "transparent",
+              }}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
 
       {/* ERROR */}
       {error && (
-        <div style={{ maxWidth: 1200, margin: "24px auto 0", padding: "0 60px" }}>
-          <div style={{ background: "#fff0f0", border: "1px solid #f5c2c2", borderRadius: 4, padding: "14px 20px", fontSize: "0.84rem", color: "#c0392b", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ maxWidth: 1200, margin: "24px auto 0", padding: `0 ${px}` }}>
+          <div style={{ background: "#fff0f0", border: "1px solid #f5c2c2", borderRadius: 4, padding: "14px 20px", fontSize: "0.84rem", color: "#c0392b", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
             <span>⚠ {error}</span>
-            <button onClick={() => fetchBlogs(activeCategory)} style={{ background: "none", border: "none", color: "#c0392b", textDecoration: "underline", cursor: "pointer", fontFamily: "'DM Sans', sans-serif" }}>Retry</button>
+            <button onClick={() => fetchBlogs(activeCategory)} style={{ background: "none", border: "none", color: "#c0392b", textDecoration: "underline", cursor: "pointer", fontFamily: "'DM Sans', sans-serif", flexShrink: 0 }}>Retry</button>
           </div>
         </div>
       )}
 
       {/* FEATURED */}
-      <div className="fade-up" style={{ maxWidth: 1200, margin: "44px auto 0", padding: "0 60px" }}>
+      <div className="fade-up" style={{ maxWidth: 1200, margin: "36px auto 0", padding: `0 ${px}` }}>
         {loading && activeCategory === "All" ? (
-          <div style={{ height: 380, borderRadius: 6, background: "linear-gradient(90deg,#e8e8e8 25%,#f4f4f4 50%,#e8e8e8 75%)", backgroundSize: "200% 100%", animation: "shimmer 1.4s infinite" }} />
+          <div style={{ height: isMobile ? 200 : 380, borderRadius: 6, background: "linear-gradient(90deg,#e8e8e8 25%,#f4f4f4 50%,#e8e8e8 75%)", backgroundSize: "200% 100%", animation: "shimmer 1.4s infinite" }} />
         ) : featured && activeCategory === "All" ? (
           <>
             <div style={{ fontSize: "0.68rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "#bbb", marginBottom: 16 }}>✦ Featured Story</div>
@@ -239,12 +314,12 @@ export default function BlogPage() {
       </div>
 
       {/* GRID */}
-      <section style={{ maxWidth: 1200, margin: "52px auto 0", padding: "0 60px 80px" }}>
+      <section style={{ maxWidth: 1200, margin: "44px auto 0", padding: `0 ${px} ${isMobile ? "52px" : "80px"}` }}>
         {loading ? (
           <>
             <div style={{ fontSize: "0.68rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "#ddd", marginBottom: 28 }}>Loading articles…</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
-              {[1, 2, 3].map((i) => <SkeletonCard key={i} />)}
+            <div style={{ display: "grid", gridTemplateColumns: gridCols, gap: isMobile ? 20 : 28 }}>
+              {[1, 2, isMobile ? null : 3].filter(Boolean).map((i) => <SkeletonCard key={i} />)}
             </div>
           </>
         ) : gridBlogs.length > 0 ? (
@@ -252,7 +327,7 @@ export default function BlogPage() {
             <div style={{ fontSize: "0.68rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "#bbb", marginBottom: 28 }}>
               {activeCategory === "All" ? "Latest Articles" : activeCategory}
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
+            <div style={{ display: "grid", gridTemplateColumns: gridCols, gap: isMobile ? 20 : 28 }}>
               {gridBlogs.map((post, i) => (
                 <div key={post._id} className="fade-up" style={{ animationDelay: `${0.05 + i * 0.08}s` }}>
                   <BlogCard post={post} onClick={() => navigate(`/blog/${post.slug}`)} />
