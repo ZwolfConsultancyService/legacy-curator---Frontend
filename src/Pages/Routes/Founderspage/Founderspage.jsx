@@ -388,7 +388,7 @@ export default function FounderPage() {
               )
             }
             <div className="fp-hero-img-overlay" />
-            <div className="fp-hero-tag">Founder &amp; Legacy Curator</div>
+           
           </div>
 
           <div className="fp-hero-right">
