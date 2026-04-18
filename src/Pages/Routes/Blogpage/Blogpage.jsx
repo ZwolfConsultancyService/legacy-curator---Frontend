@@ -261,35 +261,7 @@ export default function BlogPage() {
 
       <div style={{ height: 1, background: `linear-gradient(90deg,${colors.forest} 0%,${colors.copper} 40%,transparent 100%)` }} />
 
-      {/* CATEGORY FILTER */}
-      <div style={{ padding: isMobile ? "20px 20px 0" : isTablet ? "24px 40px 0" : "28px 60px 0", maxWidth: 1200, margin: "0 auto" }}>
-        <div className="cat-scroll">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className="cat-btn"
-              onClick={() => setActiveCategory(cat)}
-              style={{
-                background: activeCategory === cat ? colors.forest : "transparent",
-                color: activeCategory === cat ? colors.porcelain : "#888",
-                border: `1px solid ${activeCategory === cat ? colors.forest : "rgba(0,0,0,0.12)"}`,
-                borderRadius: 2,
-                padding: isMobile ? "7px 14px" : "8px 18px",
-                fontSize: "0.68rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.14em",
-                cursor: "pointer",
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 500,
-                transition: "all 0.2s ease",
-                WebkitTapHighlightColor: "transparent",
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
+    
 
       {/* ERROR */}
       {error && (
