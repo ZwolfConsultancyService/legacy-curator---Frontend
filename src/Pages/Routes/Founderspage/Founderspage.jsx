@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import founder from '../../../assets/Founder.jpeg'
+import founder from '../../../assets/Founder.jpeg';
+import cofounder from '../../../assets/Abhishek.jpeg';
 
 const FOUNDER_IMAGE = founder;
+const COFOUNDER_IMAGE = cofounder;
 
 const poemLines = [
   "I spent years in clinics and corridors,",
@@ -19,6 +21,13 @@ const storyParas = [
   "That's when the path changed. From healing with medicine to preserving with meaning. From writing prescriptions to writing legacies.",
   "Today, through Fior Legacy Curator, he works with individuals, families, and founders to shape their journeys into something lasting — books that can be held, shared, and passed on.",
   "Because while health sustains life, it is stories that give it depth — and ensure it is never forgotten.",
+];
+
+const abhishekParas = [
+  "His journey began by supporting his elder brother, Dr. Ashish Sharma — taking on the responsibility of organizing, managing, and streamlining day-to-day functions. What started as support soon evolved into a larger mission: building a scalable and lasting legacy.",
+  "Abhishek brings a unique blend of strategic thinking and hands-on management. He specializes in creating efficient workflows, optimizing time and resources, and ensuring that vision is not lost in complexity.",
+  "His approach is simple yet powerful: build systems that allow leaders to focus on what they do best, while the foundation remains strong and growth-ready.",
+  "As a Legacy Curator, his role goes beyond operations. He is deeply committed to preserving the intent behind every vision while enabling it to expand and evolve. He believes that true success lies not just in achieving goals, but in creating structures that sustain success across generations.",
 ];
 
 export default function FounderPage() {
@@ -41,8 +50,6 @@ export default function FounderPage() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
-
         .fp *{box-sizing:border-box;margin:0;padding:0}
         :root {
           --forest: #2d5249;
@@ -60,7 +67,7 @@ export default function FounderPage() {
 
         .fp-root {
           background: var(--page);
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Montserrat', sans-serif;
           color: var(--ink);
           overflow-x: hidden;
         }
@@ -290,6 +297,202 @@ export default function FounderPage() {
           margin: 36px 0; border-radius: 0;
         }
 
+        /* ── CO-FOUNDER SECTION ── */
+        .fp-cofounder {
+          background: var(--ink);
+          border-top: 1px solid rgba(216,208,184,0.12);
+        }
+
+        .fp-cofounder-inner {
+          max-width: 1200px; margin: 0 auto;
+          padding: 100px 64px;
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: 80px; align-items: start;
+          opacity: 0; transform: translateY(40px);
+          transition: opacity 0.9s, transform 0.9s;
+        }
+        .fp-cofounder-inner.vis { opacity: 1; transform: none; }
+
+        .fp-cofounder-img-wrap {
+          position: relative;
+          aspect-ratio: 4/5;
+          overflow: hidden;
+        }
+
+        .fp-cofounder-img-wrap img {
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: top center;
+          display: block;
+          filter: grayscale(20%) contrast(1.05);
+        }
+
+        .fp-cofounder-img-placeholder {
+          width: 100%; height: 100%;
+          background: linear-gradient(160deg, #1e2d3a 0%, #1a1816 55%, #1e3530 100%);
+          display: flex; align-items: center; justify-content: center;
+          position: relative; overflow: hidden;
+          aspect-ratio: 4/5;
+        }
+
+        .fp-cofounder-img-tag {
+          position: absolute; bottom: 28px; left: 28px;
+          background: var(--forest); color: var(--egg);
+          font-size: 10px; font-weight: 500;
+          letter-spacing: 0.18em; text-transform: uppercase;
+          padding: 8px 18px;
+        }
+
+        .fp-cofounder-corner {
+          position: absolute;
+          width: 28px; height: 28px;
+        }
+        .fp-cofounder-tl { top: 20px; left: 20px; border-top: 1.5px solid rgba(45,82,73,.5); border-left: 1.5px solid rgba(45,82,73,.5); }
+        .fp-cofounder-tr { top: 20px; right: 20px; border-top: 1.5px solid rgba(45,82,73,.5); border-right: 1.5px solid rgba(45,82,73,.5); }
+        .fp-cofounder-bl { bottom: 20px; left: 20px; border-bottom: 1.5px solid rgba(45,82,73,.5); border-left: 1.5px solid rgba(45,82,73,.5); }
+        .fp-cofounder-br { bottom: 20px; right: 20px; border-bottom: 1.5px solid rgba(45,82,73,.5); border-right: 1.5px solid rgba(45,82,73,.5); }
+
+        .fp-cf-initials {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(90px, 14vw, 160px);
+          font-weight: 300;
+          color: rgba(243,240,225,0.05);
+          letter-spacing: 0.06em;
+          user-select: none;
+          line-height: 1;
+        }
+
+        .fp-cofounder-right {
+          display: flex; flex-direction: column;
+          justify-content: center; padding-top: 16px;
+        }
+
+        .fp-cf-overline {
+          display: inline-flex; align-items: center; gap: 12px;
+          font-size: 10px; font-weight: 500;
+          letter-spacing: 0.22em; text-transform: uppercase;
+          color: var(--forest-light); margin-bottom: 14px;
+        }
+        .fp-cf-overline::before {
+          content: ''; width: 32px; height: 1px;
+          background: var(--forest-light); flex-shrink: 0;
+        }
+
+        .fp-cf-label {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(14px, 1.6vw, 19px);
+          font-weight: 400; letter-spacing: 0.12em;
+          color: rgba(45,97,90,0.8);
+          margin-bottom: 16px; text-transform: uppercase;
+        }
+
+        .fp-cf-name {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(42px, 5.5vw, 76px);
+          font-weight: 300; line-height: 0.9;
+          letter-spacing: -0.04em; color: var(--egg);
+          margin-bottom: 22px;
+        }
+        .fp-cf-name em { font-style: italic; color: #6fada3; }
+
+        .fp-cf-role {
+          font-size: 11px; font-weight: 400;
+          letter-spacing: 0.22em; text-transform: uppercase;
+          color: var(--faint); margin-bottom: 28px; padding-bottom: 28px;
+          border-bottom: 1px solid rgba(216,208,184,0.15);
+        }
+
+        .fp-cf-tagline {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(17px, 1.9vw, 23px);
+          font-style: italic; font-weight: 300;
+          color: #6fada3; line-height: 1.55; margin-bottom: 24px;
+        }
+
+        .fp-cf-blurb {
+          font-size: 14px; font-weight: 300;
+          color: rgba(243,240,225,0.5); line-height: 1.9;
+        }
+
+        /* ── ABHISHEK STORY ── */
+        .fp-cf-story {
+          background: var(--page);
+          border-top: 1px solid var(--rule);
+        }
+
+        .fp-cf-story-inner {
+          max-width: 1200px; margin: 0 auto;
+          padding: 100px 64px;
+          display: grid; grid-template-columns: 300px 1fr;
+          gap: 80px;
+          opacity: 0; transform: translateY(40px);
+          transition: opacity 0.9s, transform 0.9s;
+        }
+        .fp-cf-story-inner.vis { opacity: 1; transform: none; }
+
+        .fp-cf-story-left { position: sticky; top: 60px; align-self: start; }
+
+        .fp-cf-big-initial {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 180px; font-weight: 300;
+          line-height: 0.8; color: rgba(45,82,73,0.08);
+          user-select: none; margin-bottom: -20px;
+        }
+
+        .fp-cf-story-heading {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(30px, 3.2vw, 44px);
+          font-weight: 300; line-height: 1.05;
+          color: var(--forest); margin-bottom: 20px;
+        }
+        .fp-cf-story-heading em { font-style: italic; color: var(--saddle); }
+
+        .fp-cf-story-sub {
+          font-size: 13px; font-weight: 300;
+          color: var(--faint); line-height: 1.8;
+        }
+
+        .fp-cf-paras p {
+          font-size: 17px; font-weight: 300;
+          color: var(--muted); line-height: 1.95; margin-bottom: 24px;
+        }
+        .fp-cf-paras p:last-child { margin-bottom: 0; }
+
+        .fp-cf-pullquote {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 22px; font-style: italic;
+          color: var(--forest); line-height: 1.55;
+          padding: 28px 0 28px 28px;
+          border-left: 2px solid var(--forest-light);
+          margin: 36px 0;
+        }
+
+        /* ── PILLARS ── */
+        .fp-pillars {
+          display: grid; grid-template-columns: repeat(3, 1fr);
+          gap: 2px; margin-top: 48px;
+          border: 1px solid var(--rule);
+        }
+        .fp-pillar {
+          padding: 28px 24px;
+          border-right: 1px solid var(--rule);
+        }
+        .fp-pillar:last-child { border-right: none; }
+        .fp-pillar-num {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 36px; font-weight: 300;
+          color: rgba(45,82,73,0.2); line-height: 1;
+          margin-bottom: 10px;
+        }
+        .fp-pillar-label {
+          font-size: 11px; font-weight: 500;
+          letter-spacing: 0.16em; text-transform: uppercase;
+          color: var(--forest); margin-bottom: 8px;
+        }
+        .fp-pillar-text {
+          font-size: 13px; font-weight: 300;
+          color: var(--faint); line-height: 1.75;
+        }
+
         /* ── CLOSING ── */
         .fp-closing {
           max-width: 1200px; margin: 0 auto;
@@ -347,6 +550,12 @@ export default function FounderPage() {
           .fp-poem-section { grid-template-columns: 1fr; gap: 48px; padding: 64px 32px; }
           .fp-story-inner { grid-template-columns: 1fr; gap: 40px; padding: 64px 32px; }
           .fp-story-left { position: static; }
+          .fp-cofounder-inner { grid-template-columns: 1fr; gap: 48px; padding: 64px 32px; }
+          .fp-cf-story-inner { grid-template-columns: 1fr; gap: 40px; padding: 64px 32px; }
+          .fp-cf-story-left { position: static; }
+          .fp-pillars { grid-template-columns: 1fr; }
+          .fp-pillar { border-right: none; border-bottom: 1px solid var(--rule); }
+          .fp-pillar:last-child { border-bottom: none; }
           .fp-closing { grid-template-columns: 1fr; gap: 40px; padding: 64px 32px; }
           .fp-footer-strip-in { flex-direction: column; align-items: flex-start; padding: 28px 32px; gap: 12px; }
           .fp-rule-wrap { padding: 0 32px; }
@@ -354,6 +563,7 @@ export default function FounderPage() {
         @media (max-width: 600px) {
           .fp-hero-right { padding: 36px 24px; }
           .fp-poem-section, .fp-story-inner, .fp-closing { padding: 48px 24px; }
+          .fp-cofounder-inner, .fp-cf-story-inner { padding: 48px 24px; }
           .fp-rule-wrap { padding: 0 24px; }
         }
       `}</style>
@@ -388,7 +598,6 @@ export default function FounderPage() {
               )
             }
             <div className="fp-hero-img-overlay" />
-           
           </div>
 
           <div className="fp-hero-right">
@@ -444,7 +653,7 @@ export default function FounderPage() {
           <div className="fp-rule" />
         </div>
 
-        {/* ── STORY SECTION ── */}
+        {/* ── DR. ASHISH STORY SECTION ── */}
         <section className="fp-story">
           <div
             className={`fp-story-inner${visible.has('story') ? ' vis' : ''}`}
@@ -478,6 +687,109 @@ export default function FounderPage() {
           </div>
         </section>
 
+        {/* ── CO-FOUNDER HERO ── */}
+        <section className="fp-cofounder">
+          <div
+            className={`fp-cofounder-inner${visible.has('cf-hero') ? ' vis' : ''}`}
+            ref={r('cf-hero')}
+          >
+            <div className="fp-cofounder-img-wrap">
+              {COFOUNDER_IMAGE
+                ? (
+                  <>
+                    <img src={COFOUNDER_IMAGE} alt="Abhishek Sharma" />
+                    <div className="fp-cofounder-img-tag">Co-Founder</div>
+                  </>
+                )
+                : (
+                  <div className="fp-cofounder-img-placeholder">
+                    <div className="fp-placeholder-dots" style={{ backgroundImage: 'radial-gradient(circle, rgba(45,82,73,0.25) 1px, transparent 1px)' }} />
+                    <div className="fp-cofounder-corner fp-cofounder-tl" />
+                    <div className="fp-cofounder-corner fp-cofounder-tr" />
+                    <div className="fp-cofounder-corner fp-cofounder-bl" />
+                    <div className="fp-cofounder-corner fp-cofounder-br" />
+                    <span className="fp-cf-initials">AS</span>
+                    <div className="fp-cofounder-img-tag">Co-Founder</div>
+                  </div>
+                )
+              }
+            </div>
+
+            <div className="fp-cofounder-right">
+              <p className="fp-cf-overline">Fior Legacy Curator</p>
+              <p className="fp-cf-label">Abhishek Sharma</p>
+              <h2 className="fp-cf-name">
+                Structure<br />
+                behind every<br />
+                <em>vision.</em>
+              </h2>
+              <p className="fp-cf-role">Co-Founder · Legacy Curator · Operations & Growth</p>
+              <p className="fp-cf-tagline">
+                "True success lies not just in achieving goals,<br />
+                but in creating structures that sustain them."
+              </p>
+              <p className="fp-cf-blurb">
+                The force that transforms ideas into sustainable systems —
+                Abhishek ensures that every vision built at Fior Legacy Curator
+                is matched with the discipline and structure to last across generations.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── ABHISHEK STORY ── */}
+        <section className="fp-cf-story">
+          <div
+            className={`fp-cf-story-inner${visible.has('cf-story') ? ' vis' : ''}`}
+            ref={r('cf-story')}
+          >
+            <div className="fp-cf-story-left">
+              <div className="fp-cf-big-initial">A</div>
+              <h2 className="fp-cf-story-heading">
+                Vision meets<br />
+                <em>structure.</em>
+              </h2>
+              <p className="fp-cf-story-sub">
+                Behind every enduring vision is someone who ensures it is built
+                with clarity, discipline, and purpose.
+              </p>
+            </div>
+
+            <div className="fp-cf-paras">
+              <p className="fp-section-label" style={{ marginBottom: 32 }}>The co-founder's story</p>
+
+              {abhishekParas.map((para, i) => (
+                <React.Fragment key={i}>
+                  {i === 2 && (
+                    <blockquote className="fp-cf-pullquote">
+                      "Build systems that allow leaders to focus on what they do best — while the foundation remains strong and growth-ready."
+                    </blockquote>
+                  )}
+                  <p>{para}</p>
+                </React.Fragment>
+              ))}
+
+              <div className="fp-pillars">
+                <div className="fp-pillar">
+                  <div className="fp-pillar-num">01</div>
+                  <div className="fp-pillar-label">Strategic Thinking</div>
+                  <p className="fp-pillar-text">Translating vision into actionable, scalable systems that endure.</p>
+                </div>
+                <div className="fp-pillar">
+                  <div className="fp-pillar-num">02</div>
+                  <div className="fp-pillar-label">Operational Clarity</div>
+                  <p className="fp-pillar-text">Creating efficient workflows so complexity never obscures purpose.</p>
+                </div>
+                <div className="fp-pillar">
+                  <div className="fp-pillar-num">03</div>
+                  <div className="fp-pillar-label">Generational Impact</div>
+                  <p className="fp-pillar-text">Ensuring every legacy is structured to sustain and grow across time.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── CLOSING ── */}
         <section
           className={`fp-closing${visible.has('closing') ? ' vis' : ''}`}
@@ -495,7 +807,7 @@ export default function FounderPage() {
               held, shared, and passed on across generations. Every life
               deserves to be remembered with the depth it lived.
             </p>
-            <a href="/contact" className="fp-cta">
+            <a href="/contacts" className="fp-cta">
               Start your legacy
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11"

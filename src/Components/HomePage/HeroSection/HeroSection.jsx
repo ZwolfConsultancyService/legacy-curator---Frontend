@@ -21,8 +21,6 @@ const HeroSection = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&display=swap');
-
         .hero-section {
           position: relative;
           width: 100%;
@@ -32,10 +30,9 @@ const HeroSection = () => {
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          font-family: 'Jost', sans-serif;
+          font-family: 'Montserrat', sans-serif;
         }
 
-        /* ─── BG VIDEO ─── */
         .hero-video-wrap {
           position: absolute;
           inset: 0;
@@ -59,7 +56,6 @@ const HeroSection = () => {
           display: block;
         }
 
-        /* ─── OVERLAYS ─── */
         .hero-overlay-top {
           position: absolute;
           inset: 0;
@@ -83,7 +79,6 @@ const HeroSection = () => {
           );
           z-index: 1;
         }
-        /* Extra dark vignette so text always readable over moving video */
         .hero-overlay-vignette {
           position: absolute;
           inset: 0;
@@ -92,7 +87,6 @@ const HeroSection = () => {
           pointer-events: none;
         }
 
-        /* ─── DECORATIVE LINES ─── */
         .hero-lines {
           position: absolute;
           inset: 0;
@@ -110,7 +104,6 @@ const HeroSection = () => {
         .hero-line-v:nth-child(2) { left: 50%; }
         .hero-line-v:nth-child(3) { left: 80%; }
 
-        /* ─── WAVE ─── */
         .hero-wave {
           position: absolute;
           bottom: -2px;
@@ -120,7 +113,6 @@ const HeroSection = () => {
         }
         .hero-wave svg { display: block; width: 100%; }
 
-        /* ─── CONTENT ─── */
         .hero-content {
           position: relative;
           z-index: 5;
@@ -135,7 +127,6 @@ const HeroSection = () => {
           gap: 0;
         }
 
-        /* ─── EYEBROW ─── */
         .hero-eyebrow {
           display: inline-flex;
           align-items: center;
@@ -160,6 +151,7 @@ const HeroSection = () => {
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
           white-space: nowrap;
+          font-family: 'Montserrat', sans-serif;
         }
 
         .hero-eyebrow-dot {
@@ -169,7 +161,6 @@ const HeroSection = () => {
           flex-shrink: 0;
         }
 
-        /* ─── HEADLINE ─── */
         .hero-h1 {
           font-family: 'Cormorant Garamond', serif;
           font-size: clamp(52px, 10vw, 110px);
@@ -193,7 +184,6 @@ const HeroSection = () => {
           letter-spacing: 0.01em;
         }
 
-        /* ─── DIVIDER ─── */
         .hero-divider {
           display: flex;
           align-items: center;
@@ -214,7 +204,6 @@ const HeroSection = () => {
           flex-shrink: 0;
         }
 
-        /* ─── SUBTITLE ─── */
         .hero-sub {
           font-size: clamp(14px, 1.9vw, 17px);
           font-weight: 300;
@@ -226,10 +215,10 @@ const HeroSection = () => {
           opacity: 0;
           transform: translateY(14px);
           transition: opacity 0.7s ease 0.45s, transform 0.7s ease 0.45s;
+          font-family: 'Montserrat', sans-serif;
         }
         .hero-sub.vis { opacity: 1; transform: translateY(0); }
 
-        /* ─── STATS ROW ─── */
         .hero-stats {
           display: flex;
           align-items: center;
@@ -253,9 +242,9 @@ const HeroSection = () => {
           border-left: 1px solid rgba(255,255,255,0.12);
         }
         .hero-stat-num {
-          font-family: 'Cormorant Garamond', serif;
+          font-family: 'Montserrat', sans-serif;
           font-size: clamp(26px, 4vw, 38px);
-          font-weight: 600;
+          font-weight: 700;
           color: #D4A96A;
           line-height: 1;
         }
@@ -265,9 +254,9 @@ const HeroSection = () => {
           letter-spacing: 0.2em;
           text-transform: uppercase;
           color: rgba(255,255,255,0.35);
+          font-family: 'Montserrat', sans-serif;
         }
 
-        /* ─── SCROLL HINT ─── */
         .hero-scroll {
           position: absolute;
           bottom: 110px;
@@ -287,6 +276,7 @@ const HeroSection = () => {
           letter-spacing: 0.35em;
           text-transform: uppercase;
           color: rgba(255,255,255,0.3);
+          font-family: 'Montserrat', sans-serif;
         }
         .hero-scroll-track {
           width: 1px;
@@ -309,27 +299,22 @@ const HeroSection = () => {
           100% { top: 100%; }
         }
 
-        /* ─── RESPONSIVE ─── */
         @media (max-width: 380px) {
           .hero-content { padding: 100px 20px 130px; }
           .hero-stat { padding: 0 16px; }
           .hero-eyebrow-pill { font-size: 8px; padding: 7px 14px; letter-spacing: 0.25em; }
         }
-
         @media (min-width: 381px) and (max-width: 640px) {
           .hero-content { padding: 100px 24px 130px; }
         }
-
         @media (min-width: 641px) and (max-width: 1024px) {
           .hero-content { padding: 110px 40px 150px; max-width: 720px; }
           .hero-stat { padding: 0 24px; }
         }
-
         @media (min-width: 1025px) {
           .hero-content { padding: 120px 48px 160px; }
           .hero-stat { padding: 0 36px; }
         }
-
         @media (max-width: 640px) {
           .hero-scroll { display: none; }
           .hero-stats { margin-top: 40px; }
@@ -337,8 +322,6 @@ const HeroSection = () => {
           .hero-divider { margin: 18px 0 22px; }
           .hero-sub { margin-bottom: 36px; }
         }
-
-        /* Reduce motion — pause video for accessibility */
         @media (prefers-reduced-motion: reduce) {
           .hero-video { animation: none; }
           .hero-scroll-line { animation: none; }
@@ -347,7 +330,6 @@ const HeroSection = () => {
 
       <section className="hero-section" ref={sectionRef}>
 
-        {/* Parallax Video BG */}
         <div
           className="hero-video-wrap"
           style={{ transform: `translateY(${scrollY * 0.18}px) scale(1.06)` }}
@@ -363,51 +345,41 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* Overlays */}
         <div className="hero-overlay-top" />
         <div className="hero-overlay-bottom" />
         <div className="hero-overlay-vignette" />
 
-        {/* Subtle vertical lines */}
         <div className="hero-lines">
           <div className="hero-line-v" />
           <div className="hero-line-v" />
           <div className="hero-line-v" />
         </div>
 
-        {/* Content */}
         <div className="hero-content">
 
-          {/* Eyebrow */}
           <div className={`hero-eyebrow${loaded ? ' vis' : ''}`}>
             <span className="hero-eyebrow-dot" />
             <span className="hero-eyebrow-pill">From Memories to Masterpiece</span>
             <span className="hero-eyebrow-dot" />
           </div>
 
-          {/* Headline */}
           <h1 className={`hero-h1${loaded ? ' vis' : ''}`}>
             <span className="hero-h1-main">Where Every Page </span>
             <span className="hero-h1-accent">Deserves a Place</span>
           </h1>
 
-          {/* Divider */}
           <div className={`hero-divider${loaded ? ' vis' : ''}`}>
             <span className="hero-divider-line" />
             <span className="hero-divider-diamond" />
             <span className="hero-divider-line" />
           </div>
 
-          {/* Subtitle */}
           <p className={`hero-sub${loaded ? ' vis' : ''}`}>
             Your story, your legacy, your vision — beautifully crafted into a timeless book that lives on for generations.
           </p>
 
-        
         </div>
 
-      
-        {/* Wave */}
         <div className="hero-wave">
           <svg viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path d="M0,45 C240,90 480,0 720,45 C960,90 1200,10 1440,45 L1440,90 L0,90 Z" fill="#F5F0EA" />

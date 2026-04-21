@@ -32,22 +32,21 @@ const YoutubeIcon = () => (
   </svg>
 );
 
-// ─── Updated to match services array exactly ─────────────────────────────────
 const footerLinks = {
   "Our Portfolio": [
-    { name: "Coffee Table Books",   path: "/services/coffee-table" },
-    { name: "Family Legacy Books",  path: "/services/legacy-book" },
-    { name: "Business Story Books", path: "/services/business-book" },
-    { name: "Memoir Books",         path: "/services/memoir" },
-    { name: "Photo Books",          path: "/services/photo-book" },
+    { name: "Coffee Table Books",     path: "/services/coffee-table" },
+    { name: "Family Legacy Books",    path: "/services/legacy-book" },
+    { name: "Business Story Books",   path: "/services/business-book" },
+    { name: "Memoir Books",           path: "/services/memoir" },
+    { name: "Photo Books",            path: "/services/photo-book" },
     { name: "Vision & Passion Books", path: "/services/vision-passion-book" },
-    { name: "Devotional Books",     path: "/services/devotional-book" },
+    { name: "Devotional Books",       path: "/services/devotional-book" },
   ],
   Company: [
     { name: "About Us",   path: "/about" },
     { name: "Our Team",   path: "/team" },
     { name: "Blog",       path: "/blog" },
-    { name: "Contact Us", path: "/contact" },
+    { name: "Contact Us", path: "/contacts" },
   ],
 };
 
@@ -61,133 +60,139 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FAF7F2]">
-      {/* Decorative top line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-saddle/40 to-transparent" />
+    <>
+      <style>{`
+        .footer-root, .footer-root * {
+          font-family: 'Montserrat', sans-serif !important;
+        }
+      `}</style>
 
-      {/* ── Main Footer Body ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-8">
+      <footer className="footer-root bg-[#FAF7F2]">
+        {/* Decorative top line */}
+        <div className="h-px bg-gradient-to-r from-transparent via-saddle/40 to-transparent" />
 
-          {/* ── Brand Column ── */}
-          <div className="sm:col-span-2 lg:col-span-4 flex flex-col items-start">
-            <Link to="/" className="inline-block mb-5 group">
-              <img
-                src={logo}
-                alt="Legacy Curator"
-                className="h-20 w-auto object-contain transition-opacity duration-300 group-hover:opacity-75"
-              />
-            </Link>
-            <p className="text-sm text-forest/85 leading-relaxed mb-7 max-w-[280px] font-medium">
-              Transforming personal, family, and business legacies into timeless
-              coffee table books — preserving your story for generations.
-            </p>
-            <div className="flex items-center gap-2.5">
-              {socialLinks.map(({ label, href, icon }) => (
+        {/* ── Main Footer Body ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-8">
+
+            {/* ── Brand Column ── */}
+            <div className="sm:col-span-2 lg:col-span-4 flex flex-col items-start">
+              <Link to="/" className="inline-block mb-5 group">
+                <img
+                  src={logo}
+                  alt="Legacy Curator"
+                  className="h-20 w-auto object-contain transition-opacity duration-300 group-hover:opacity-75"
+                />
+              </Link>
+              <p className="text-sm text-forest/85 leading-relaxed mb-7 max-w-[280px] font-medium">
+                Transforming personal, family, and business legacies into timeless
+                coffee table books — preserving your story for generations.
+              </p>
+              <div className="flex items-center gap-2.5">
+                {socialLinks.map(({ label, href, icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    className="
+                      w-8 h-8 flex items-center justify-center
+                      rounded-full border border-saddle/35 bg-white/50
+                      text-forest/70
+                      hover:text-saddle hover:border-saddle hover:bg-white hover:shadow-sm
+                      transition-all duration-200
+                    "
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Spacer */}
+            <div className="hidden lg:block lg:col-span-1" />
+
+            {/* ── Our Portfolio ── */}
+            <div className="lg:col-span-3">
+              <h3 className="text-[10px] font-bold tracking-[0.15em] uppercase text-forest/90 mb-4 pb-2 border-b border-saddle/30">
+                Our Portfolio
+              </h3>
+              <ul className="space-y-2.5">
+                {footerLinks["Our Portfolio"].map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.path}
+                      className="group flex items-center text-[13px] text-forest/80 hover:text-saddle font-medium transition-colors duration-200"
+                    >
+                      <span className="block h-px bg-saddle w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* ── Company ── */}
+            <div className="lg:col-span-2">
+              <h3 className="text-[10px] font-bold tracking-[0.15em] uppercase text-forest/90 mb-4 pb-2 border-b border-saddle/30">
+                Company
+              </h3>
+              <ul className="space-y-2.5">
+                {footerLinks["Company"].map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.path}
+                      className="group flex items-center text-[13px] text-forest/80 hover:text-saddle font-medium transition-colors duration-200"
+                    >
+                      <span className="block h-px bg-saddle w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ── Divider ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="h-px bg-saddle/25" />
+        </div>
+
+        {/* ── Bottom Bar ── */}
+        <div className="bg-[#1B2B24]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
+              <p className="text-[11px] text-porcelain/60 text-center sm:text-left order-2 sm:order-1 font-medium">
+                © 2026 Legacy Curator. All rights reserved.
+              </p>
+              <div className="flex items-center gap-4 order-1 sm:order-2">
+                <Link to="/privacy-policy" className="text-[11px] text-porcelain/60 hover:text-porcelain transition font-medium">
+                  Privacy Policy
+                </Link>
+                <span className="text-porcelain/30">|</span>
+                <Link to="/terms" className="text-[11px] text-porcelain/60 hover:text-porcelain transition font-medium">
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
+            <div className="mt-4 pt-4 border-t border-porcelain/10 text-center">
+              <p className="text-[10px] text-porcelain/40 tracking-wide">
+                Designed & Developed by{" "}
                 <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="
-                    w-8 h-8 flex items-center justify-center
-                    rounded-full border border-saddle/35 bg-white/50
-                    text-forest/70
-                    hover:text-saddle hover:border-saddle hover:bg-white hover:shadow-sm
-                    transition-all duration-200
-                  "
+                  href="https://zwolfconsultancy.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-porcelain/70 hover:text-porcelain transition font-semibold"
                 >
-                  {icon}
+                  Zwolf Consultancy
                 </a>
-              ))}
+              </p>
             </div>
           </div>
-
-          {/* Spacer */}
-          <div className="hidden lg:block lg:col-span-1" />
-
-          {/* ── Our Portfolio ── */}
-          <div className="lg:col-span-3">
-            <h3 className="text-[10px] font-bold tracking-[0.15em] uppercase text-forest/90 mb-4 pb-2 border-b border-saddle/30">
-              Our Portfolio
-            </h3>
-            <ul className="space-y-2.5">
-              {footerLinks["Our Portfolio"].map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="group flex items-center text-[13px] text-forest/80 hover:text-saddle font-medium transition-colors duration-200"
-                  >
-                    <span className="block h-px bg-saddle w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Company ── */}
-          <div className="lg:col-span-2">
-            <h3 className="text-[10px] font-bold tracking-[0.15em] uppercase text-forest/90 mb-4 pb-2 border-b border-saddle/30">
-              Company
-            </h3>
-            <ul className="space-y-2.5">
-              {footerLinks["Company"].map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="group flex items-center text-[13px] text-forest/80 hover:text-saddle font-medium transition-colors duration-200"
-                  >
-                    <span className="block h-px bg-saddle w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-        
-
         </div>
-      </div>
-
-      {/* ── Divider ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-saddle/25" />
-      </div>
-
-      {/* ── Bottom Bar ── */}
-      <div className="bg-[#1B2B24]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
-            <p className="text-[11px] text-porcelain/60 text-center sm:text-left order-2 sm:order-1 font-medium">
-              © 2026 Legacy Curator. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4 order-1 sm:order-2">
-              <Link to="/privacy-policy" className="text-[11px] text-porcelain/60 hover:text-porcelain transition font-medium">
-                Privacy Policy
-              </Link>
-              <span className="text-porcelain/30">|</span>
-              <Link to="/terms" className="text-[11px] text-porcelain/60 hover:text-porcelain transition font-medium">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
-          <div className="mt-4 pt-4 border-t border-porcelain/10 text-center">
-            <p className="text-[10px] text-porcelain/40 tracking-wide">
-              Designed & Developed by{" "}
-              <a
-                href="https://zwolfconsultancy.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-porcelain/70 hover:text-porcelain transition font-semibold"
-              >
-                Zwolf Consultancy
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 

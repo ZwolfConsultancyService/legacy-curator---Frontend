@@ -25,8 +25,6 @@ const testimonials = [
 ];
 
 const CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
-
   * { box-sizing: border-box; }
 
   @keyframes fadeUp {
@@ -67,7 +65,7 @@ const CSS = `
 
   .lc-duration {
     position: absolute; top: 16px; right: 16px;
-    font-family: 'EB Garamond', serif; font-size: 13px; color: #f5ead0;
+    font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; color: #f5ead0;
     background: rgba(0,0,0,0.48); border: 0.5px solid rgba(255,220,140,0.3);
     padding: 4px 12px; border-radius: 20px; letter-spacing: 0.06em; backdrop-filter: blur(4px);
   }
@@ -83,10 +81,10 @@ const CSS = `
   .lc-wrap:hover .lc-play { transform: scale(1.15); background: rgba(255,255,255,0.28); animation: none; box-shadow: 0 0 0 18px rgba(255,255,255,0.1); }
 
   .lc-bottom { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 22px 24px; }
-  .lc-quote { font-family: 'EB Garamond', serif; font-style: italic; font-size: 16px; line-height: 1.55; color: #f0e4cc; text-shadow: 0 1px 10px rgba(0,0,0,0.8); margin: 0; }
+  .lc-quote { font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 14px; font-weight: 300; line-height: 1.6; color: #f0e4cc; text-shadow: 0 1px 10px rgba(0,0,0,0.8); margin: 0; }
   .lc-watch-bar { margin-top: 10px; display: flex; align-items: center; gap: 8px; }
   .lc-watch-line { width: 20px; height: 1px; background: rgba(212,184,122,0.7); flex-shrink: 0; }
-  .lc-watch-label { font-family: 'EB Garamond', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #d4b87a; }
+  .lc-watch-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #d4b87a; }
 
   /* Desktop grid */
   .lc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 960px; margin: 0 auto; }
@@ -112,7 +110,6 @@ const CSS = `
   .lc-dot { width: 7px; height: 7px; border-radius: 50%; background: #c8a96e; opacity: 0.28; border: none; padding: 0; cursor: pointer; transition: opacity 0.3s, transform 0.3s; }
   .lc-dot.active { opacity: 1; transform: scale(1.4); }
 
-  /* Section — NO top padding, flush after FAQ */
   .lc-section {
     background: #ffffff;
     padding: 0 28px 80px;
@@ -123,7 +120,6 @@ const CSS = `
     .lc-section { padding: 0 0 40px; }
   }
 
-  /* Header */
   .lc-header {
     text-align: center;
     max-width: 560px;
@@ -143,8 +139,8 @@ const CSS = `
   }
   .lc-modal { width: min(860px, 100%); animation: modalIn 0.38s cubic-bezier(0.22,1,0.36,1); background: #fefcf8; border-radius: 12px; overflow: hidden; border: 1px solid #e0d4be; box-shadow: 0 40px 100px rgba(0,0,0,0.4); }
   .lc-modal-bar { padding: 14px 24px; background: #faf6ee; border-bottom: 1px solid #ede5d8; display: flex; align-items: center; justify-content: space-between; }
-  .lc-modal-title { font-family: 'EB Garamond', serif; font-style: italic; color: #9b8360; font-size: 15px; letter-spacing: 0.05em; }
-  .lc-close { font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: 0.15em; color: #5c4310; text-transform: uppercase; border: 0.5px solid rgba(139,105,20,0.4); padding: 7px 22px; border-radius: 2px; background: rgba(139,105,20,0.06); cursor: pointer; transition: background 0.2s; }
+  .lc-modal-title { font-family: 'Montserrat', sans-serif; font-style: italic; font-weight: 300; color: #9b8360; font-size: 13px; letter-spacing: 0.04em; }
+  .lc-close { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; color: #5c4310; text-transform: uppercase; border: 0.5px solid rgba(139,105,20,0.4); padding: 7px 22px; border-radius: 2px; background: rgba(139,105,20,0.06); cursor: pointer; transition: background 0.2s; }
   .lc-close:hover { background: rgba(139,105,20,0.14); }
 `;
 
@@ -230,13 +226,13 @@ export default function VideoTestimonials() {
         <header className="lc-header">
           <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "26px" }}>
             <div style={{ flex: 1, height: "0.5px", background: "linear-gradient(90deg,transparent,#c8a96e)" }} />
-            <span style={{ fontFamily: "'EB Garamond', serif", color: "#b8a07a", fontSize: "11px", letterSpacing: "0.35em", textTransform: "uppercase" }}>Legacy Curator</span>
+            <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, color: "#b8a07a", fontSize: "10px", letterSpacing: "0.35em", textTransform: "uppercase" }}>Legacy Curator</span>
             <div style={{ flex: 1, height: "0.5px", background: "linear-gradient(90deg,#c8a96e,transparent)" }} />
           </div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: "clamp(28px, 4vw, 46px)", color: "#1e1408", margin: 0, lineHeight: 1.18 }}>
+          <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "clamp(26px, 4vw, 42px)", color: "#1e1408", margin: 0, lineHeight: 1.18 }}>
             Trusted by over<br />one million families
           </h2>
-          <p style={{ fontFamily: "'EB Garamond', serif", fontStyle: "italic", fontSize: "18px", color: "#9b8360", marginTop: "14px", lineHeight: 1.6 }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontStyle: "italic", fontWeight: 300, fontSize: "16px", color: "#9b8360", marginTop: "14px", lineHeight: 1.6 }}>
             Real voices. Real stories. Preserved for generations.
           </p>
           <div style={{ marginTop: "24px", display: "flex", alignItems: "center", justifyContent: "center", gap: "12px" }}>

@@ -1158,7 +1158,7 @@ export default function ServicesPage() {
             Tell us where you are in your journey. We will take care of everything from here — beautifully.
           </p>
           <div className="sv-cta-row">
-            <Link to="/contact" className="sv-btn-primary">
+            <Link to="/contacts" className="sv-btn-primary">
               Begin your book
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

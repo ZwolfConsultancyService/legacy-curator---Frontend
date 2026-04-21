@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useRef, useEffect } from "react";
 import bgVideo from "../../../assets/step.mp4";
 
@@ -83,10 +80,10 @@ const steps = [
 ];
 
 export default function TrustPinboard() {
-  const [active, setActive]       = useState(0);
-  const [phase, setPhase]         = useState("idle"); // 'idle' | 'out' | 'in'
-  const [dir, setDir]             = useState("left"); // slide direction
-  const [shown, setShown]         = useState(0);      // card currently rendered
+  const [active, setActive] = useState(0);
+  const [phase, setPhase]   = useState("idle");
+  const [dir, setDir]       = useState("left");
+  const [shown, setShown]   = useState(0);
   const animRef = useRef(false);
 
   const goTo = (idx) => {
@@ -109,7 +106,6 @@ export default function TrustPinboard() {
   const prev = () => goTo(active > 0 ? active - 1 : steps.length - 1);
   const next = () => goTo(active < steps.length - 1 ? active + 1 : 0);
 
-  // keyboard nav
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "ArrowLeft")  prev();
@@ -119,7 +115,6 @@ export default function TrustPinboard() {
     return () => window.removeEventListener("keydown", onKey);
   }, [active]);
 
-  // touch/swipe support
   const touchStartX = useRef(null);
   const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
   const onTouchEnd   = (e) => {
@@ -131,7 +126,6 @@ export default function TrustPinboard() {
 
   const s = steps[shown];
 
-  // animation class for the card
   const cardAnim =
     phase === "out" ? (dir === "left"  ? "pb-out-left"  : "pb-out-right") :
     phase === "in"  ? (dir === "left"  ? "pb-in-left"   : "pb-in-right")  :
@@ -140,7 +134,13 @@ export default function TrustPinboard() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Lora:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+        /* ── ALL FONTS → Montserrat only ──
+           700 italic  = big headings / titles
+           600         = card title, tag labels
+           500         = eyebrow, counter, num
+           400         = body text, detail items
+           300         = watermark ghost number
+        */
 
         :root {
           --copper:    #A7703D;
@@ -148,7 +148,6 @@ export default function TrustPinboard() {
           --muted:     #5a5248;
         }
 
-        /* ── ROOT ── */
         .pb-root {
           position: relative;
           min-height: 100vh;
@@ -156,26 +155,20 @@ export default function TrustPinboard() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Montserrat', sans-serif;
           overflow: hidden;
           padding: 60px 24px 72px;
         }
         .pb-root *, .pb-root *::before, .pb-root *::after { box-sizing: border-box; }
 
-        /* ── VIDEO BG (fixed, no parallax) ── */
+        /* ── VIDEO BG ── */
         .pb-vbg {
-          position: absolute;
-          inset: 0;
-          z-index: 0;
-          overflow: hidden;
+          position: absolute; inset: 0; z-index: 0; overflow: hidden;
         }
         .pb-vbg video {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
+          position: absolute; inset: 0;
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: center;
         }
         .pb-vbg-ov {
           position: absolute; inset: 0; z-index: 1;
@@ -200,30 +193,37 @@ export default function TrustPinboard() {
         }
         .pb-eyebrow {
           display: inline-flex; align-items: center; gap: 12px;
-          font-size: 11px; font-weight: 500; letter-spacing: 0.24em;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 10px; font-weight: 600; letter-spacing: 0.3em;
           text-transform: uppercase; color: #d4a96a; margin: 0 0 14px;
         }
         .pb-eyebrow::before, .pb-eyebrow::after {
           content: ''; width: 30px; height: 1px; background: #d4a96a; opacity: 0.5;
         }
+
+        /* Montserrat 700 — main section heading */
         .pb-title {
-          font-family: 'Playfair Display', serif;
-          font-size: clamp(28px, 4.5vw, 52px); font-weight: 800;
-          line-height: 1.08; letter-spacing: -0.025em;
+          font-family: 'Montserrat', sans-serif;
+          font-size: clamp(26px, 4.5vw, 48px);
+          font-weight: 700;
+          line-height: 1.1;
+          letter-spacing: -0.03em;
           color: #fff; margin: 0;
           text-shadow: 0 4px 28px rgba(0,0,0,0.5);
         }
-        .pb-title em { font-style: italic; color: #d4a96a; }
+        /* italic span for "masterpiece" */
+        .pb-title em {
+          font-style: italic;
+          font-weight: 300;
+          color: #d4a96a;
+        }
 
         /* ── SLIDER WRAP ── */
         .pb-slider {
           position: relative; z-index: 10;
-          width: 100%;
-          max-width: 640px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 28px;
+          width: 100%; max-width: 640px;
+          display: flex; flex-direction: column;
+          align-items: center; gap: 28px;
         }
 
         /* ── PROGRESS BAR ── */
@@ -240,11 +240,7 @@ export default function TrustPinboard() {
         }
 
         /* ── CARD STAGE ── */
-        .pb-stage {
-          width: 100%;
-          overflow: hidden;
-          position: relative;
-        }
+        .pb-stage { width: 100%; overflow: hidden; position: relative; }
 
         /* ── CARD ── */
         .pb-card {
@@ -270,7 +266,6 @@ export default function TrustPinboard() {
             inset 0 1px 0 rgba(255,255,255,0.85);
         }
 
-        /* slide animations */
         .pb-out-left  { animation: outLeft  0.30s cubic-bezier(0.4,0,1,1)   forwards; }
         .pb-out-right { animation: outRight 0.30s cubic-bezier(0.4,0,1,1)   forwards; }
         .pb-in-left   { animation: inLeft   0.42s cubic-bezier(0,0,0.2,1)   forwards; }
@@ -308,44 +303,86 @@ export default function TrustPinboard() {
         }
         .pb-card-left { flex: 1; }
         .pb-tag-row   { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-        .pb-num {
-          font-family: 'Playfair Display', serif;
-          font-size: 13px; font-weight: 700; color: var(--copper);
-          letter-spacing: 0.1em; opacity: 0.85; margin: 0;
-        }
-        .pb-tag {
-          font-size: 10px; font-weight: 500; letter-spacing: 0.18em;
-          text-transform: uppercase; padding: 3px 10px; border-radius: 20px;
-          border: 1px solid currentColor; opacity: 0.55;
-        }
-        .pb-card-title {
-          font-family: 'Playfair Display', serif;
-          font-size: clamp(20px, 2.8vw, 27px); font-weight: 800;
-          line-height: 1.12; color: var(--warm-dark); letter-spacing: -0.02em; margin: 0;
-        }
-        .pb-card-title em { font-style: italic; opacity: 0.60; }
-        .pb-watermark {
-          font-family: 'Playfair Display', serif;
-          font-size: 90px; font-weight: 800; line-height: 1;
-          letter-spacing: -0.06em; color: rgba(26,20,10,0.07);
-          user-select: none; flex-shrink: 0; align-self: flex-start; margin-top: -8px;
-        }
-        .pb-divider { width:100%; height:1px; background:rgba(26,20,10,0.10); margin: 20px 0; }
-        .pb-body {
-          font-family: 'Lora', serif; font-size: 14.5px;
-          line-height: 1.88; color: var(--muted); margin: 0 0 22px;
-        }
-        .pb-details { display: flex; flex-direction: column; gap: 9px; }
-        .pb-detail  {
-          display: flex; align-items: flex-start; gap: 12px;
-          font-size: 12.5px; font-weight: 400; color: var(--warm-dark); line-height: 1.5;
-        }
-        .pb-dot { width:5px; height:5px; border-radius:50%; flex-shrink:0; margin-top:6px; }
 
-        /* ── BOTTOM CONTROLS ── */
-        .pb-controls {
-          display: flex; align-items: center; gap: 20px;
+        /* Montserrat 600 — step number */
+        .pb-num {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 11px; font-weight: 700;
+          color: var(--copper);
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          margin: 0;
         }
+
+        /* Montserrat 500 — tag pill */
+        .pb-tag {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 9px; font-weight: 600;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          padding: 3px 10px; border-radius: 20px;
+          border: 1px solid currentColor; opacity: 0.6;
+        }
+
+        /* Montserrat 700 — card title */
+        .pb-card-title {
+          font-family: 'Montserrat', sans-serif;
+          font-size: clamp(18px, 2.6vw, 24px);
+          font-weight: 700;
+          line-height: 1.2;
+          color: var(--warm-dark);
+          letter-spacing: -0.02em;
+          margin: 0;
+        }
+        /* italic lighter line */
+        .pb-card-title em {
+          font-style: italic;
+          font-weight: 300;
+          opacity: 0.55;
+        }
+
+        /* Montserrat 300 — ghost watermark number */
+        .pb-watermark {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 88px; font-weight: 300;
+          line-height: 1; letter-spacing: -0.06em;
+          color: rgba(26,20,10,0.07);
+          user-select: none; flex-shrink: 0;
+          align-self: flex-start; margin-top: -8px;
+        }
+
+        .pb-divider {
+          width: 100%; height: 1px;
+          background: rgba(26,20,10,0.10);
+          margin: 20px 0;
+        }
+
+        /* Montserrat 400 — body paragraph */
+        .pb-body {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 13.5px; font-weight: 400;
+          line-height: 1.9; color: var(--muted);
+          letter-spacing: 0.01em;
+          margin: 0 0 22px;
+        }
+
+        .pb-details { display: flex; flex-direction: column; gap: 9px; }
+
+        /* Montserrat 400 — detail items */
+        .pb-detail {
+          display: flex; align-items: flex-start; gap: 12px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 12px; font-weight: 400;
+          color: var(--warm-dark); line-height: 1.6;
+          letter-spacing: 0.01em;
+        }
+        .pb-dot {
+          width: 5px; height: 5px; border-radius: 50%;
+          flex-shrink: 0; margin-top: 7px;
+        }
+
+        /* ── CONTROLS ── */
+        .pb-controls { display: flex; align-items: center; gap: 20px; }
         .pb-arrow {
           width: 48px; height: 48px; border-radius: 50%;
           border: 1px solid rgba(255,255,255,0.25);
@@ -361,9 +398,13 @@ export default function TrustPinboard() {
           transform: scale(1.08);
         }
         .pb-arrow:active { transform: scale(0.94); }
-        .pb-arrow svg { width:18px; height:18px; stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+        .pb-arrow svg {
+          width: 18px; height: 18px;
+          stroke: currentColor; stroke-width: 2;
+          fill: none; stroke-linecap: round; stroke-linejoin: round;
+        }
 
-        .pb-pips { display:flex; align-items:center; gap:8px; }
+        .pb-pips { display: flex; align-items: center; gap: 8px; }
         .pb-pip {
           height: 8px; border-radius: 4px;
           border: none; padding: 0; cursor: pointer;
@@ -371,27 +412,27 @@ export default function TrustPinboard() {
           transition: background 0.24s, width 0.32s cubic-bezier(0.22,1,0.36,1);
           width: 8px;
         }
-        .pb-pip.on {
-          background: #d4a96a;
-          width: 26px;
-        }
+        .pb-pip.on { background: #d4a96a; width: 26px; }
 
-        /* ── STEP COUNTER ── */
+        /* Montserrat 500 — step counter */
         .pb-counter {
-          font-family: 'Playfair Display', serif;
-          font-size: 13px; color: rgba(255,255,255,0.45);
-          letter-spacing: 0.08em; min-width: 36px; text-align: center;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 12px; font-weight: 500;
+          color: rgba(255,255,255,0.45);
+          letter-spacing: 0.12em;
+          min-width: 36px; text-align: center;
         }
 
         @media (max-width: 600px) {
           .pb-card { padding: 38px 28px 34px; }
-          .pb-watermark { font-size: 64px; }
+          .pb-watermark { font-size: 60px; }
+          .pb-card-title { font-size: 18px; }
         }
       `}</style>
 
       <div className="pb-root">
 
-        {/* ── VIDEO BACKGROUND ── */}
+        {/* VIDEO BACKGROUND */}
         <div className="pb-vbg">
           <video autoPlay muted loop playsInline>
             <source src={bgVideo} type="video/mp4" />
@@ -400,21 +441,19 @@ export default function TrustPinboard() {
           <div className="pb-vbg-dots" />
         </div>
 
-        {/* ── HEADER ── */}
+        {/* HEADER */}
         <div className="pb-header">
           <p className="pb-eyebrow">Our Process</p>
           <h1 className="pb-title">From moments to <em>masterpiece.</em></h1>
         </div>
 
-        {/* ── SLIDER ── */}
+        {/* SLIDER */}
         <div className="pb-slider">
 
-          {/* Progress bar */}
           <div className="pb-bar">
             <div className="pb-bar-fill" style={{ width: `${((active + 1) / steps.length) * 100}%` }} />
           </div>
 
-          {/* Card stage */}
           <div
             className="pb-stage"
             onTouchStart={onTouchStart}
@@ -425,13 +464,11 @@ export default function TrustPinboard() {
               className={`pb-card ${cardAnim}`}
               style={{ "--rot": s.rot, background: s.bg }}
             >
-              {/* Pin */}
               <div className="pb-pin">
                 <div className="pb-pin-head" style={{ background: s.pin }} />
                 <div className="pb-pin-needle" />
               </div>
 
-              {/* Card top */}
               <div className="pb-card-top">
                 <div className="pb-card-left">
                   <div className="pb-tag-row">
@@ -459,12 +496,10 @@ export default function TrustPinboard() {
             </div>
           </div>
 
-          {/* Controls */}
           <div className="pb-controls">
             <button className="pb-arrow" onClick={prev} aria-label="Previous">
               <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
             </button>
-
             <div className="pb-pips">
               {steps.map((_, i) => (
                 <button
@@ -475,13 +510,11 @@ export default function TrustPinboard() {
                 />
               ))}
             </div>
-
             <button className="pb-arrow" onClick={next} aria-label="Next">
               <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
             </button>
           </div>
 
-          {/* Step counter */}
           <div className="pb-counter">{active + 1} / {steps.length}</div>
 
         </div>

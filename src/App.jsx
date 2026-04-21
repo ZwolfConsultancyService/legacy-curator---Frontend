@@ -20,7 +20,7 @@ const App = () => {
     <>
       <ScrollToTop />
 
-            <FloatingMusicPlayer />
+      <FloatingMusicPlayer />
       <Routes>
         <Route element={<Layout />}>
           {/* ── Main Pages ── */}
@@ -28,15 +28,17 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           {/* <Route path="/services" element={<ServicesPage />} /> */}
           {/* <Route path="/portfolio" element={<PortfolioPage />} /> */}
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-         <Route path="/services/:slug" element={<ServiceDetailPage />} />
-<Route path="/services/:slug/:subSlug" element={<ServiceDetailPage />} />  {/* ← yeh add karo */}
-
+          <Route path="/contacts" element={<ContactPage />} />
+          <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route
+            path="/services/:slug/:subSlug"
+            element={<ServiceDetailPage />}
+          />{" "}
+          {/* ← yeh add karo */}
           <Route path="/blog/:slug" element={<BlogDetailPage />} />
-             <Route path="/founder" element={<FoundersPage />} />
-              <Route path="/team" element={<TeamPage />} />
-
+          <Route path="/founder" element={<FoundersPage />} />
+          <Route path="/team" element={<TeamPage />} />
         </Route>
       </Routes>
     </>
