@@ -1,1967 +1,3 @@
-// // import React, { useState, useEffect, useRef } from "react";
-// // import { Link, useLocation } from "react-router-dom";
-// // import { Menu, X, ChevronDown } from "lucide-react";
-// // import logo from "../../../assets/LegacyCuratorlogo.png";
-
-// // const serviceLinks = [
-// //   { name: "Photo Books",        slug: "photo-book",           icon: "📷", sub: "Memories, preserved" },
-// //   { name: "Travel Books",       slug: "travel-book",          icon: "✈️", sub: "Journeys, immortalised" },
-// //   { name: "Legacy Books",       slug: "legacy-book",          icon: "🏛️", sub: "Lineage, honoured" },
-// //   { name: "Coffee Table Books", slug: "coffee-table",         icon: "☕", sub: "Statement, displayed" },
-// //   { name: "Memoir Books",       slug: "memoir",               icon: "📖", sub: "Your story, told" },
-// //   { name: "Wedding Books",      slug: "wedding-book",         icon: "💍", sub: "Love, curated" },
-// //   { name: "Vision & Passion",   slug: "vision-passion-book",  icon: "✨", sub: "Dreams, realised" },
-// //   { name: "Business Story",     slug: "business-book",        icon: "🏢", sub: "Brand, celebrated" },
-// //   { name: "Devotional Books",   slug: "devotional-book",      icon: "🕊️", sub: "Faith, expressed" },
-// // ];
-
-// // const navLinks = [
-// //   { name: "Home",  path: "/" },
-// //   { name: "About", path: "/about" },
-// //   { name: "Blog",  path: "/blog" },
-// //   { name: "Founder",  path: "/founder" }
-// // ];
-
-// // const Navbar = () => {
-// //   const [menuOpen,       setMenuOpen]       = useState(false);
-// //   const [scrolled,       setScrolled]       = useState(false);
-// //   const [mounted,        setMounted]        = useState(false);
-// //   const [dropOpen,       setDropOpen]       = useState(false);
-// //   const [mobileServOpen, setMobileServOpen] = useState(false);
-// //   const dropRef   = useRef(null);
-// //   const location  = useLocation();
-// //   const isHome    = location.pathname === "/";
-
-// //   useEffect(() => {
-// //     setMounted(true);
-// //     const onScroll = () => setScrolled(window.scrollY > 60);
-// //     window.addEventListener("scroll", onScroll, { passive: true });
-// //     return () => window.removeEventListener("scroll", onScroll);
-// //   }, []);
-
-// //   useEffect(() => { setMenuOpen(false); setDropOpen(false); }, [location.pathname]);
-
-// //   useEffect(() => {
-// //     document.body.style.overflow = menuOpen ? "hidden" : "";
-// //     return () => { document.body.style.overflow = ""; };
-// //   }, [menuOpen]);
-
-// //   useEffect(() => {
-// //     const handler = (e) => {
-// //       if (dropRef.current && !dropRef.current.contains(e.target)) setDropOpen(false);
-// //     };
-// //     document.addEventListener("mousedown", handler);
-// //     return () => document.removeEventListener("mousedown", handler);
-// //   }, []);
-
-// //   const isTransparent    = isHome && !scrolled;
-// //   const mode             = isTransparent ? "transparent" : "solid";
-// //   const isServicesActive = location.pathname.startsWith("/services");
-
-// //   return (
-// //     <>
-// //       <style>{`
-// //         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@200;300;400;500;600&display=swap');
-
-// //         /* ── ROOT ── */
-// //         .nav-root {
-// //           position: fixed;
-// //           top: 0; left: 0; right: 0;
-// //           z-index: 9999;
-// //           transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
-// //         }
-// //         .nav-root.transparent { background: transparent; box-shadow: none; }
-// //         .nav-root.solid {
-// //           background: rgba(250,247,242,0.97);
-// //           backdrop-filter: blur(20px);
-// //           -webkit-backdrop-filter: blur(20px);
-// //           box-shadow: 0 1px 0 rgba(20,32,26,0.08);
-// //         }
-
-// //         /* ── INNER ── */
-// //         .nav-inner {
-// //           max-width: 1280px;
-// //           margin: 0 auto;
-// //           padding: 0 48px;
-// //           height: 84px;
-// //           display: flex;
-// //           align-items: center;
-// //           justify-content: space-between;
-// //           gap: 24px;
-// //           opacity: 0;
-// //           transform: translateY(-8px);
-// //           transition: opacity 0.5s ease, transform 0.5s ease;
-// //           position: relative;
-// //         }
-// //         .nav-inner.vis { opacity: 1; transform: translateY(0); }
-
-// //         /* ── LEFT ── */
-// //         .nav-left {
-// //           display: none;
-// //           align-items: center;
-// //           gap: 40px;
-// //           flex: 1;
-// //         }
-// //         @media (min-width: 900px) { .nav-left { display: flex; } }
-
-// //         .nav-link {
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 10.5px;
-// //           font-weight: 500;
-// //           letter-spacing: 0.25em;
-// //           text-transform: uppercase;
-// //           text-decoration: none;
-// //           position: relative;
-// //           padding-bottom: 2px;
-// //           white-space: nowrap;
-// //           transition: color 0.3s ease;
-// //         }
-// //         .nav-link::after {
-// //           content: '';
-// //           position: absolute;
-// //           bottom: -2px; left: 0;
-// //           height: 1px; width: 0;
-// //           transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
-// //         }
-// //         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-
-// //         .transparent .nav-link { color: rgba(255,255,255,0.92); }
-// //         .transparent .nav-link:hover,
-// //         .transparent .nav-link.active { color: #fff; }
-// //         .transparent .nav-link::after { background: rgba(212,169,106,0.85); }
-
-// //         .solid .nav-link { color: rgba(20,32,26,0.85); }
-// //         .solid .nav-link:hover,
-// //         .solid .nav-link.active { color: #14201a; }
-// //         .solid .nav-link::after { background: #8B6A3E; }
-
-// //         /* ── PORTFOLIO DROPDOWN BUTTON ── */
-// //         .nav-services-wrap { position: relative; }
-
-// //         .nav-services-btn {
-// //           display: inline-flex;
-// //           align-items: center;
-// //           gap: 5px;
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 10.5px;
-// //           font-weight: 500;
-// //           letter-spacing: 0.25em;
-// //           text-transform: uppercase;
-// //           background: none;
-// //           border: none;
-// //           cursor: pointer;
-// //           position: relative;
-// //           padding-bottom: 2px;
-// //           transition: color 0.3s ease;
-// //           white-space: nowrap;
-// //         }
-// //         .nav-services-btn::after {
-// //           content: '';
-// //           position: absolute;
-// //           bottom: -2px; left: 0;
-// //           height: 1px; width: 0;
-// //           transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
-// //         }
-// //         .nav-services-btn:hover::after,
-// //         .nav-services-btn.active::after { width: 100%; }
-
-// //         .transparent .nav-services-btn { color: rgba(255,255,255,0.92); }
-// //         .transparent .nav-services-btn:hover,
-// //         .transparent .nav-services-btn.active { color: #fff; }
-// //         .transparent .nav-services-btn::after { background: rgba(212,169,106,0.85); }
-
-// //         .solid .nav-services-btn { color: rgba(20,32,26,0.85); }
-// //         .solid .nav-services-btn:hover,
-// //         .solid .nav-services-btn.active { color: #14201a; }
-// //         .solid .nav-services-btn::after { background: #8B6A3E; }
-
-// //         .nav-chevron {
-// //           transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-// //           flex-shrink: 0;
-// //           margin-top: 1px;
-// //         }
-// //         .nav-chevron.open { transform: rotate(180deg); }
-
-// //         /* ── DROPDOWN PANEL ── */
-// //         .nav-dropdown {
-// //           position: absolute;
-// //           top: calc(100% + 24px);
-// //           left: 50%;
-// //           transform: translateX(-50%) translateY(-10px);
-// //           width: 420px;
-// //           background: #ffffff;
-// //           border: 1px solid rgba(20,32,26,0.08);
-// //           border-radius: 16px;
-// //           box-shadow:
-// //             0 0 0 1px rgba(20,32,26,0.03),
-// //             0 8px 16px rgba(20,32,26,0.06),
-// //             0 24px 60px rgba(20,32,26,0.14);
-// //           overflow: hidden;
-// //           opacity: 0;
-// //           pointer-events: none;
-// //           transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4,0,0.2,1);
-// //           z-index: 100;
-// //         }
-// //         .nav-dropdown.open {
-// //           opacity: 1;
-// //           pointer-events: all;
-// //           transform: translateX(-50%) translateY(0);
-// //         }
-// //         .nav-dropdown::before {
-// //           content: '';
-// //           position: absolute;
-// //           top: -5px; left: 50%;
-// //           transform: translateX(-50%) rotate(45deg);
-// //           width: 10px; height: 10px;
-// //           background: #ffffff;
-// //           border-left: 1px solid rgba(20,32,26,0.08);
-// //           border-top: 1px solid rgba(20,32,26,0.08);
-// //         }
-
-// //         /* Dropdown Header */
-// //         .drop-header {
-// //           padding: 20px 24px 16px;
-// //           display: flex;
-// //           align-items: center;
-// //           justify-content: space-between;
-// //           border-bottom: 1px solid rgba(20,32,26,0.06);
-// //         }
-// //         .drop-header-left { display: flex; flex-direction: column; gap: 3px; }
-// //         .drop-label {
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 9px;
-// //           letter-spacing: 0.35em;
-// //           text-transform: uppercase;
-// //           color: rgba(20,32,26,0.3);
-// //           font-weight: 500;
-// //         }
-// //         .drop-title {
-// //           font-family: 'Cormorant Garamond', serif;
-// //           font-size: 20px;
-// //           font-weight: 400;
-// //           color: #14201a;
-// //           letter-spacing: 0.02em;
-// //           line-height: 1;
-// //         }
-// //         .drop-badge {
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 9px;
-// //           font-weight: 500;
-// //           letter-spacing: 0.15em;
-// //           text-transform: uppercase;
-// //           color: #8B6A3E;
-// //           background: rgba(139,106,62,0.08);
-// //           border: 1px solid rgba(139,106,62,0.18);
-// //           padding: 4px 10px;
-// //           border-radius: 20px;
-// //         }
-
-// //         /* Dropdown Grid */
-// //         .drop-grid {
-// //           display: grid;
-// //           grid-template-columns: 1fr 1fr;
-// //           padding: 8px 12px;
-// //         }
-// //         .drop-item {
-// //           display: flex;
-// //           align-items: center;
-// //           gap: 12px;
-// //           padding: 12px 14px;
-// //           border-radius: 10px;
-// //           text-decoration: none;
-// //           transition: background 0.18s ease;
-// //           position: relative;
-// //         }
-// //         .drop-item:hover { background: rgba(20,32,26,0.04); }
-// //         .drop-item.active { background: rgba(139,106,62,0.07); }
-
-// //         .drop-icon-wrap {
-// //           width: 34px; height: 34px;
-// //           border-radius: 9px;
-// //           background: rgba(20,32,26,0.05);
-// //           display: flex;
-// //           align-items: center;
-// //           justify-content: center;
-// //           flex-shrink: 0;
-// //           font-size: 15px;
-// //           transition: background 0.18s, transform 0.18s;
-// //         }
-// //         .drop-item:hover .drop-icon-wrap {
-// //           background: rgba(139,106,62,0.1);
-// //           transform: scale(1.05);
-// //         }
-// //         .drop-item.active .drop-icon-wrap { background: rgba(139,106,62,0.12); }
-
-// //         .drop-text { flex: 1; min-width: 0; }
-// //         .drop-name {
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 12px;
-// //           font-weight: 500;
-// //           color: rgba(20,32,26,0.65);
-// //           letter-spacing: 0.01em;
-// //           line-height: 1.2;
-// //           transition: color 0.18s;
-// //         }
-// //         .drop-item:hover .drop-name,
-// //         .drop-item.active .drop-name { color: #14201a; }
-// //         .drop-item.active .drop-name { color: #8B6A3E; }
-
-// //         .drop-sub {
-// //           font-family: 'Cormorant Garamond', serif;
-// //           font-size: 11px;
-// //           font-style: italic;
-// //           color: rgba(20,32,26,0.3);
-// //           letter-spacing: 0.02em;
-// //           margin-top: 1px;
-// //         }
-
-// //         .drop-arrow {
-// //           opacity: 0;
-// //           color: rgba(139,106,62,0.6);
-// //           flex-shrink: 0;
-// //           transition: opacity 0.18s, transform 0.18s;
-// //         }
-// //         .drop-item:hover .drop-arrow { opacity: 1; transform: translateX(2px); }
-
-// //         /* Dropdown Footer */
-// //         .drop-footer {
-// //           padding: 12px 24px 16px;
-// //           border-top: 1px solid rgba(20,32,26,0.06);
-// //           display: flex;
-// //           align-items: center;
-// //           justify-content: space-between;
-// //         }
-// //         .drop-footer-note {
-// //           font-family: 'Cormorant Garamond', serif;
-// //           font-size: 12px;
-// //           font-style: italic;
-// //           color: rgba(20,32,26,0.3);
-// //           letter-spacing: 0.03em;
-// //         }
-// //         .drop-footer-link {
-// //           display: inline-flex;
-// //           align-items: center;
-// //           gap: 5px;
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 9.5px;
-// //           font-weight: 600;
-// //           letter-spacing: 0.2em;
-// //           text-transform: uppercase;
-// //           color: #8B6A3E;
-// //           text-decoration: none;
-// //           transition: gap 0.2s;
-// //         }
-// //         .drop-footer-link:hover { gap: 9px; }
-
-// //         /* ── CENTER LOGO ── */
-// //         .nav-center {
-// //           flex-shrink: 0;
-// //           padding: 0 32px;
-// //         }
-// //         @media (max-width: 899px) { .nav-center { display: none; } }
-
-// //         .nav-logo-wrap {
-// //           display: flex;
-// //           align-items: center;
-// //           text-decoration: none;
-// //           padding: 6px 20px;
-// //           border-radius: 40px;
-// //           transition: background 0.3s;
-// //         }
-// //         .transparent .nav-logo-wrap:hover { background: rgba(255,255,255,0.07); }
-// //         .solid .nav-logo-wrap:hover { background: rgba(20,32,26,0.04); }
-
-// //         .logo-img {
-// //           height: 90px;
-// //           width: auto;
-// //           object-fit: contain;
-// //           transition: filter 0.35s ease, opacity 0.35s ease;
-// //           margin-top: 10px;
-// //         }
-// //         .transparent .logo-img { filter: brightness(0) invert(1); opacity: 0.92; }
-// //         .solid .logo-img { filter: none; opacity: 1; }
-
-// //         /* ── RIGHT ── */
-// //         .nav-right {
-// //           display: none;
-// //           align-items: center;
-// //           justify-content: flex-end;
-// //           gap: 20px;
-// //           flex: 1;
-// //         }
-// //         @media (min-width: 900px) { .nav-right { display: flex; } }
-
-// //         .nav-divider {
-// //           width: 1px; height: 20px;
-// //           flex-shrink: 0;
-// //           transition: background 0.35s;
-// //         }
-// //         .transparent .nav-divider { background: rgba(255,255,255,0.15); }
-// //         .solid .nav-divider { background: rgba(20,32,26,0.12); }
-
-// //         .nav-btn {
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 9.5px;
-// //           font-weight: 600;
-// //           letter-spacing: 0.22em;
-// //           text-transform: uppercase;
-// //           text-decoration: none;
-// //           padding: 11px 26px;
-// //           border-radius: 40px;
-// //           white-space: nowrap;
-// //           transition: all 0.28s ease;
-// //         }
-// //         .transparent .nav-btn {
-// //           color: #fff;
-// //           background: rgba(212,169,106,0.2);
-// //           border: 1px solid rgba(212,169,106,0.35);
-// //         }
-// //         .transparent .nav-btn:hover {
-// //           background: rgba(212,169,106,0.35);
-// //           border-color: rgba(212,169,106,0.6);
-// //         }
-// //         .solid .nav-btn {
-// //           color: #faf7f2;
-// //           background: #14201a;
-// //           border: 1px solid transparent;
-// //         }
-// //         .solid .nav-btn:hover { background: #8B6A3E; }
-
-// //         /* ── MOBILE LOGO — LEFT ── */
-// //         .nav-mobile-logo {
-// //           display: none;
-// //           align-items: center;
-// //           text-decoration: none;
-// //           flex-shrink: 0;
-// //         }
-// //         @media (max-width: 899px) { .nav-mobile-logo { display: flex; } }
-
-// //         .mobile-logo-img {
-// //           height: 100px;
-// //           width: auto;
-// //           object-fit: contain;
-// //           display: block;
-// //           transition: filter 0.35s ease, opacity 0.35s ease;
-// //         }
-// //         .transparent .mobile-logo-img { filter: brightness(0) invert(1); opacity: 0.95; }
-// //         .solid .mobile-logo-img { filter: none; opacity: 1; }
-
-// //         /* ── HAMBURGER — RIGHT ── */
-// //         .nav-hamburger {
-// //           display: none;
-// //           align-items: center;
-// //           justify-content: center;
-// //           width: 42px; height: 42px;
-// //           border-radius: 50%;
-// //           background: transparent;
-// //           cursor: pointer;
-// //           flex-shrink: 0;
-// //           transition: all 0.2s;
-// //           border: none;
-// //         }
-// //         @media (max-width: 899px) { .nav-hamburger { display: flex; } }
-
-// //         /* ── BACKDROP ── */
-// //         .nav-backdrop {
-// //           position: fixed; inset: 0;
-// //           z-index: 9998;
-// //           background: rgba(8,14,10,0.6);
-// //           backdrop-filter: blur(4px);
-// //           -webkit-backdrop-filter: blur(4px);
-// //           opacity: 0; pointer-events: none;
-// //           transition: opacity 0.35s ease;
-// //         }
-// //         .nav-backdrop.open { opacity: 1; pointer-events: all; }
-
-// //         /* ── MOBILE DRAWER ── */
-// //         .nav-drawer {
-// //           position: fixed;
-// //           top: 0; right: 0;
-// //           width: min(360px, 90vw);
-// //           height: 100dvh;
-// //           z-index: 9999;
-// //           background: #faf7f2;
-// //           display: flex;
-// //           flex-direction: column;
-// //           transform: translateX(100%);
-// //           transition: transform 0.42s cubic-bezier(0.4,0,0.2,1);
-// //         }
-// //         .nav-drawer.open { transform: translateX(0); }
-// //         @media (min-width: 900px) {
-// //           .nav-drawer, .nav-backdrop { display: none !important; }
-// //         }
-
-// //         .drawer-header {
-// //           display: flex;
-// //           align-items: center;
-// //           justify-content: space-between;
-// //           padding: 20px 24px;
-// //           border-bottom: 1px solid rgba(20,32,26,0.07);
-// //           flex-shrink: 0;
-// //         }
-// //         .drawer-logo-img {
-// //           height: 56px;
-// //           width: auto;
-// //           object-fit: contain;
-// //         }
-// //         .drawer-close {
-// //           width: 36px; height: 36px;
-// //           border-radius: 50%;
-// //           border: 1px solid rgba(20,32,26,0.12);
-// //           background: transparent;
-// //           display: flex; align-items: center; justify-content: center;
-// //           cursor: pointer;
-// //           color: #14201a;
-// //           transition: background 0.2s;
-// //         }
-// //         .drawer-close:hover { background: rgba(20,32,26,0.06); }
-
-// //         .drawer-links {
-// //           display: flex;
-// //           flex-direction: column;
-// //           padding: 8px 0;
-// //           flex: 1;
-// //           overflow-y: auto;
-// //         }
-
-// //         .drawer-link {
-// //           display: flex;
-// //           align-items: center;
-// //           justify-content: space-between;
-// //           padding: 18px 28px;
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 12px;
-// //           font-weight: 400;
-// //           letter-spacing: 0.15em;
-// //           text-transform: uppercase;
-// //           color: rgba(20,32,26,0.45);
-// //           text-decoration: none;
-// //           border-bottom: 1px solid rgba(20,32,26,0.05);
-// //           transition: all 0.2s;
-// //           position: relative;
-// //         }
-// //         .drawer-link:hover {
-// //           color: #14201a;
-// //           background: rgba(20,32,26,0.02);
-// //           padding-left: 36px;
-// //         }
-// //         .drawer-link.active { color: #14201a; font-weight: 500; }
-// //         .drawer-link.active::before {
-// //           content: '';
-// //           position: absolute;
-// //           left: 0; top: 0; bottom: 0;
-// //           width: 2px;
-// //           background: #D4A96A;
-// //           border-radius: 0 2px 2px 0;
-// //         }
-// //         .drawer-num {
-// //           font-family: 'Cormorant Garamond', serif;
-// //           font-size: 11px;
-// //           font-style: italic;
-// //           color: rgba(20,32,26,0.18);
-// //         }
-
-// //         /* Mobile Portfolio Accordion */
-// //         .drawer-portfolio-toggle {
-// //           display: flex;
-// //           align-items: center;
-// //           justify-content: space-between;
-// //           padding: 18px 28px;
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 12px;
-// //           font-weight: 400;
-// //           letter-spacing: 0.15em;
-// //           text-transform: uppercase;
-// //           color: rgba(20,32,26,0.45);
-// //           border-bottom: 1px solid rgba(20,32,26,0.05);
-// //           cursor: pointer;
-// //           background: none;
-// //           border-left: none;
-// //           border-right: none;
-// //           border-top: none;
-// //           width: 100%;
-// //           text-align: left;
-// //           transition: all 0.2s;
-// //           position: relative;
-// //         }
-// //         .drawer-portfolio-toggle.active { color: #14201a; font-weight: 500; }
-// //         .drawer-portfolio-toggle.active::before {
-// //           content: '';
-// //           position: absolute;
-// //           left: 0; top: 0; bottom: 0;
-// //           width: 2px;
-// //           background: #D4A96A;
-// //           border-radius: 0 2px 2px 0;
-// //         }
-// //         .drawer-portfolio-toggle:hover { color: #14201a; background: rgba(20,32,26,0.02); }
-
-// //         .drawer-chevron {
-// //           transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-// //           color: rgba(20,32,26,0.3);
-// //         }
-// //         .drawer-chevron.open { transform: rotate(180deg); }
-
-// //         .drawer-sub {
-// //           overflow: hidden;
-// //           max-height: 0;
-// //           transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-// //           background: rgba(20,32,26,0.015);
-// //           border-bottom: 1px solid rgba(20,32,26,0.05);
-// //         }
-// //         .drawer-sub.open { max-height: 700px; }
-
-// //         .drawer-sub-item {
-// //           display: flex;
-// //           align-items: center;
-// //           gap: 14px;
-// //           padding: 14px 28px 14px 42px;
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 11.5px;
-// //           font-weight: 400;
-// //           color: rgba(20,32,26,0.45);
-// //           letter-spacing: 0.04em;
-// //           text-decoration: none;
-// //           border-bottom: 1px solid rgba(20,32,26,0.035);
-// //           transition: all 0.15s;
-// //         }
-// //         .drawer-sub-item:last-child { border-bottom: none; }
-// //         .drawer-sub-item:hover { color: #14201a; background: rgba(139,106,62,0.04); }
-// //         .drawer-sub-item.active { color: #8B6A3E; font-weight: 500; }
-
-// //         .drawer-sub-icon { font-size: 15px; flex-shrink: 0; }
-// //         .drawer-sub-num {
-// //           margin-left: auto;
-// //           font-family: 'Cormorant Garamond', serif;
-// //           font-size: 11px;
-// //           font-style: italic;
-// //           color: rgba(20,32,26,0.18);
-// //         }
-
-// //         .drawer-footer {
-// //           padding: 24px 28px 40px;
-// //           border-top: 1px solid rgba(20,32,26,0.07);
-// //           flex-shrink: 0;
-// //         }
-// //         .drawer-cta {
-// //           display: block;
-// //           text-align: center;
-// //           font-family: 'Jost', sans-serif;
-// //           font-size: 9.5px;
-// //           font-weight: 600;
-// //           letter-spacing: 0.25em;
-// //           text-transform: uppercase;
-// //           text-decoration: none;
-// //           padding: 16px 28px;
-// //           border-radius: 40px;
-// //           color: #faf7f2;
-// //           background: #14201a;
-// //           transition: background 0.25s;
-// //         }
-// //         .drawer-cta:hover { background: #8B6A3E; }
-// //         .drawer-footer-note {
-// //           text-align: center;
-// //           margin-top: 14px;
-// //           font-family: 'Cormorant Garamond', serif;
-// //           font-size: 12px;
-// //           font-style: italic;
-// //           color: rgba(20,32,26,0.3);
-// //           letter-spacing: 0.03em;
-// //         }
-// //       `}</style>
-
-// //       {/* ── MAIN NAV ── */}
-// //       <nav className={`nav-root ${mode}`}>
-// //         <div className={`nav-inner${mounted ? " vis" : ""}`}>
-
-// //           {/* Mobile Logo — LEFT */}
-// //           <Link to="/" className="nav-mobile-logo">
-// //             <img src={logo} alt="Legacy Curator" className="mobile-logo-img" />
-// //           </Link>
-
-// //           {/* Left Links — desktop only */}
-// //           <div className="nav-left">
-// //             {navLinks.map((link) => (
-// //               <Link
-// //                 key={link.name}
-// //                 to={link.path}
-// //                 className={`nav-link${location.pathname === link.path ? " active" : ""}`}
-// //               >
-// //                 {link.name}
-// //               </Link>
-// //             ))}
-
-// //             {/* Portfolio Dropdown */}
-// //             <div className="nav-services-wrap" ref={dropRef}>
-// //               <button
-// //                 className={`nav-services-btn${isServicesActive ? " active" : ""}`}
-// //                 onClick={() => setDropOpen((v) => !v)}
-// //                 aria-haspopup="true"
-// //                 aria-expanded={dropOpen}
-// //               >
-// //                 Portfolio
-// //                 <ChevronDown
-// //                   size={12}
-// //                   className={`nav-chevron${dropOpen ? " open" : ""}`}
-// //                 />
-// //               </button>
-
-// //               <div className={`nav-dropdown${dropOpen ? " open" : ""}`} role="menu">
-// //                 <div className="drop-header">
-// //                   <div className="drop-header-left">
-// //                     <span className="drop-label">Explore</span>
-// //                     <span className="drop-title">Our Collections</span>
-// //                   </div>
-// //                   <span className="drop-badge">8 Book Types</span>
-// //                 </div>
-
-// //                 <div className="drop-grid">
-// //                   {serviceLinks.map((svc) => (
-// //                     <Link
-// //                       key={svc.slug}
-// //                       to={`/services/${svc.slug}`}
-// //                       className={`drop-item${location.pathname === `/services/${svc.slug}` ? " active" : ""}`}
-// //                       role="menuitem"
-// //                       onClick={() => setDropOpen(false)}
-// //                     >
-// //                       <div className="drop-text">
-// //                         <div className="drop-name">{svc.name}</div>
-// //                         <div className="drop-sub">{svc.sub}</div>
-// //                       </div>
-// //                       <ChevronDown
-// //                         size={11}
-// //                         className="drop-arrow"
-// //                         style={{ transform: "rotate(-90deg)" }}
-// //                       />
-// //                     </Link>
-// //                   ))}
-// //                 </div>
-
-// //                 <div className="drop-footer">
-// //                   <span className="drop-footer-note">Heirloom quality · Handcrafted</span>
-// //                   <Link
-// //                     to="/services"
-// //                     className="drop-footer-link"
-// //                     onClick={() => setDropOpen(false)}
-// //                   >
-// //                     View all
-// //                     <ChevronDown size={10} style={{ transform: "rotate(-90deg)" }} />
-// //                   </Link>
-// //                 </div>
-// //               </div>
-// //             </div>
-// //           </div>
-
-// //           {/* Center Logo — desktop only */}
-// //           <div className="nav-center">
-// //             <Link to="/" className="nav-logo-wrap">
-// //               <img src={logo} alt="Legacy Curator" className="logo-img" />
-// //             </Link>
-// //           </div>
-
-// //           {/* Right — desktop only */}
-// //           <div className="nav-right">
-// //             <span className="nav-divider" />
-// //             <Link to="/contact" className="nav-btn">Contact Us</Link>
-// //           </div>
-
-// //           {/* Hamburger — RIGHT on mobile */}
-// //           <button
-// //             className="nav-hamburger"
-// //             onClick={() => setMenuOpen(true)}
-// //             aria-label="Open menu"
-// //           >
-// //             <Menu size={22} color={isTransparent ? "#ffffff" : "#14201a"} />
-// //           </button>
-
-// //         </div>
-// //       </nav>
-
-// //       {/* Backdrop */}
-// //       <div
-// //         className={`nav-backdrop${menuOpen ? " open" : ""}`}
-// //         onClick={() => setMenuOpen(false)}
-// //       />
-
-// //       {/* Mobile Drawer */}
-// //       <div className={`nav-drawer${menuOpen ? " open" : ""}`}>
-// //         <div className="drawer-header">
-// //           <Link to="/" onClick={() => setMenuOpen(false)}>
-// //             <img src={logo} alt="Legacy Curator" className="drawer-logo-img" />
-// //           </Link>
-// //           <button
-// //             className="drawer-close"
-// //             onClick={() => setMenuOpen(false)}
-// //             aria-label="Close"
-// //           >
-// //             <X size={15} />
-// //           </button>
-// //         </div>
-
-// //         <div className="drawer-links">
-// //           {navLinks.map((link, i) => (
-// //             <Link
-// //               key={link.name}
-// //               to={link.path}
-// //               className={`drawer-link${location.pathname === link.path ? " active" : ""}`}
-// //               onClick={() => setMenuOpen(false)}
-// //             >
-// //               {link.name}
-// //               <span className="drawer-num">0{i + 1}</span>
-// //             </Link>
-// //           ))}
-
-// //           <button
-// //             className={`drawer-portfolio-toggle${isServicesActive ? " active" : ""}`}
-// //             onClick={() => setMobileServOpen((v) => !v)}
-// //           >
-// //             Portfolio
-// //             <ChevronDown
-// //               size={14}
-// //               className={`drawer-chevron${mobileServOpen ? " open" : ""}`}
-// //             />
-// //           </button>
-
-// //           <div className={`drawer-sub${mobileServOpen ? " open" : ""}`}>
-// //             {serviceLinks.map((svc, i) => (
-// //               <Link
-// //                 key={svc.slug}
-// //                 to={`/services/${svc.slug}`}
-// //                 className={`drawer-sub-item${location.pathname === `/services/${svc.slug}` ? " active" : ""}`}
-// //                 onClick={() => setMenuOpen(false)}
-// //               >
-// //                 {svc.name}
-// //                 <span className="drawer-sub-num">0{i + 1}</span>
-// //               </Link>
-// //             ))}
-// //           </div>
-// //         </div>
-
-// //         <div className="drawer-footer">
-// //           <Link
-// //             to="/contact"
-// //             className="drawer-cta"
-// //             onClick={() => setMenuOpen(false)}
-// //           >
-// //             Contact Us
-// //           </Link>
-// //           <p className="drawer-footer-note">Crafting heirloom books since 2018</p>
-// //         </div>
-// //       </div>
-// //     </>
-// //   );
-// // };
-
-// // export default Navbar;
-
-// import React, { useState, useEffect, useRef } from "react";
-// import { Link, useLocation } from "react-router-dom";
-// import { Menu, X, ChevronDown } from "lucide-react";
-// import logo from "../../../assets/LegacyCuratorlogo.png";
-
-// const serviceLinks = [
-//   {
-//     name: "Photo Books",
-//     slug: "photo-book",
-//     icon: "📷",
-//     sub: "Memories, preserved",
-//   },
-//   {
-//     name: "Travel Books",
-//     slug: "travel-book",
-//     icon: "✈️",
-//     sub: "Journeys, immortalised",
-//   },
-//   {
-//     name: "Legacy Books",
-//     slug: "legacy-book",
-//     icon: "🏛️",
-//     sub: "Lineage, honoured",
-//   },
-//   {
-//     name: "Coffee Table Books",
-//     slug: "coffee-table",
-//     icon: "☕",
-//     sub: "Statement, displayed",
-//   },
-//   { name: "Memoir Books", slug: "memoir", icon: "📖", sub: "Your story, told" },
-
-//   {
-//     name: "Vision & Passion",
-//     slug: "vision-passion-book",
-//     icon: "✨",
-//     sub: "Dreams, realised",
-//   },
-//   {
-//     name: "Business Story",
-//     slug: "business-book",
-//     icon: "🏢",
-//     sub: "Brand, celebrated",
-//   },
-//   {
-//     name: "Devotional Books",
-//     slug: "devotional-book",
-//     icon: "🕊️",
-//     sub: "Faith, expressed",
-//   },
-// ];
-
-// const companyLinks = [
-//   {
-//     name: "About Us",
-//     path: "/about",
-//     icon: "◈",
-//     sub: "Our story & values",
-//   },
-//   {
-//     name: "Our Founder",
-//     path: "/founder",
-//     icon: "◉",
-//     sub: "The vision behind it all",
-//   },
-//   {
-//     name: "Our Team",
-//     path: "/team",
-//     icon: "◎",
-//     sub: "The people behind the craft",
-//   },
-// ];
-
-// const navLinks = [
-//   { name: "Home", path: "/" },
-//   { name: "Blog", path: "/blog" },
-// ];
-
-// const Navbar = () => {
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-//   const [mounted, setMounted] = useState(false);
-//   const [dropOpen, setDropOpen] = useState(false);
-//   const [companyDropOpen, setCompanyDropOpen] = useState(false);
-//   const [mobileServOpen, setMobileServOpen] = useState(false);
-//   const [mobileCompOpen, setMobileCompOpen] = useState(false);
-
-//   const dropRef = useRef(null);
-//   const companyRef = useRef(null);
-//   const location = useLocation();
-//   const isHome = location.pathname === "/";
-
-//   useEffect(() => {
-//     setMounted(true);
-//     const onScroll = () => setScrolled(window.scrollY > 60);
-//     window.addEventListener("scroll", onScroll, { passive: true });
-//     return () => window.removeEventListener("scroll", onScroll);
-//   }, []);
-
-//   useEffect(() => {
-//     setMenuOpen(false);
-//     setDropOpen(false);
-//     setCompanyDropOpen(false);
-//   }, [location.pathname]);
-
-//   useEffect(() => {
-//     document.body.style.overflow = menuOpen ? "hidden" : "";
-//     return () => {
-//       document.body.style.overflow = "";
-//     };
-//   }, [menuOpen]);
-
-//   // Close dropdowns on outside click
-//   useEffect(() => {
-//     const handler = (e) => {
-//       if (dropRef.current && !dropRef.current.contains(e.target))
-//         setDropOpen(false);
-//       if (companyRef.current && !companyRef.current.contains(e.target))
-//         setCompanyDropOpen(false);
-//     };
-//     document.addEventListener("mousedown", handler);
-//     return () => document.removeEventListener("mousedown", handler);
-//   }, []);
-
-//   const isTransparent = isHome && !scrolled;
-//   const mode = isTransparent ? "transparent" : "solid";
-//   const isServicesActive = location.pathname.startsWith("/services");
-//   const isCompanyActive = companyLinks.some(
-//     (l) => location.pathname === l.path,
-//   );
-
-//   return (
-//     <>
-//       <style>{`
-//        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@400;500;600&display=swap');
-
-//         /* ── ROOT ── */
-//         .nav-root {
-//           position: fixed;
-//           top: 0; left: 0; right: 0;
-//           z-index: 9999;
-//           transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
-//         }
-//         .nav-root.transparent { background: transparent; box-shadow: none; }
-//         .nav-root.solid {
-//           background: rgba(250,247,242,0.97);
-//           backdrop-filter: blur(20px);
-//           -webkit-backdrop-filter: blur(20px);
-//           box-shadow: 0 1px 0 rgba(20,32,26,0.08);
-//         }
-
-//         /* ── INNER ── */
-//         .nav-inner {
-//           max-width: 1280px;
-//           margin: 0 auto;
-//           padding: 0 48px;
-//           height: 84px;
-//           display: flex;
-//           align-items: center;
-//           justify-content: space-between;
-//           gap: 24px;
-//           opacity: 0;
-//           transform: translateY(-8px);
-//           transition: opacity 0.5s ease, transform 0.5s ease;
-//           position: relative;
-//         }
-//         .nav-inner.vis { opacity: 1; transform: translateY(0); }
-
-//         /* ── LEFT ── */
-//         .nav-left {
-//           display: none;
-//           align-items: center;
-//           gap: 28px;
-//           flex: 1;
-//            flex-wrap: nowrap;      /* ← yeh fix karega neeche jaana */
-//   overflow: visible;
-//         }
-//         @media (min-width: 900px) { .nav-left { display: flex; } }
-
-//         .nav-link {
-//           font-family: 'Montserrat', sans-serif;
-//           font-size: 10.5px;
-//           font-weight: 500;
-//           letter-spacing: 0.25em;
-//           text-transform: uppercase;
-//           text-decoration: none;
-//           position: relative;
-//           padding-bottom: 2px;
-//           white-space: nowrap;
-//           transition: color 0.3s ease;
-
-//         }
-//         .nav-link::after {
-//           content: '';
-//           position: absolute;
-//           bottom: -2px; left: 0;
-//           height: 1px; width: 0;
-//           transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
-//            flex-shrink: 0;
-//         }
-//         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-
-//         .transparent .nav-link { color: rgba(255,255,255,0.92); }
-//         .transparent .nav-link:hover,
-//         .transparent .nav-link.active { color: #fff; }
-//         .transparent .nav-link::after { background: rgba(212,169,106,0.85); }
-
-//         .solid .nav-link { color: rgba(20,32,26,0.85); }
-//         .solid .nav-link:hover,
-//         .solid .nav-link.active { color: #14201a; }
-//         .solid .nav-link::after { background: #8B6A3E; }
-
-//         /* ── SHARED DROPDOWN BUTTON STYLE ── */
-//         .nav-drop-btn {
-//           display: inline-flex;
-//           align-items: center;
-//           gap: 5px;
-//       font-family: 'Montserrat', sans-serif;
-//           font-size: 10.5px;
-//           font-weight: 500;
-//           letter-spacing: 0.25em;
-//           text-transform: uppercase;
-//           background: none;
-//           border: none;
-//           cursor: pointer;
-//           position: relative;
-//           padding-bottom: 2px;
-//           transition: color 0.3s ease;
-//           white-space: nowrap;
-//            flex-shrink: 0;
-//         }
-//         .nav-drop-btn::after {
-//           content: '';
-//           position: absolute;
-//           bottom: -2px; left: 0;
-//           height: 1px; width: 0;
-//           transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
-//         }
-//         .nav-drop-btn:hover::after,
-//         .nav-drop-btn.active::after { width: 100%; }
-
-//         .transparent .nav-drop-btn { color: rgba(255,255,255,0.92); }
-//         .transparent .nav-drop-btn:hover,
-//         .transparent .nav-drop-btn.active { color: #fff; }
-//         .transparent .nav-drop-btn::after { background: rgba(212,169,106,0.85); }
-
-//         .solid .nav-drop-btn { color: rgba(20,32,26,0.85); }
-//         .solid .nav-drop-btn:hover,
-//         .solid .nav-drop-btn.active { color: #14201a; }
-//         .solid .nav-drop-btn::after { background: #8B6A3E; }
-
-//         .nav-chevron {
-//           transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-//           flex-shrink: 0;
-//           margin-top: 1px;
-//         }
-//         .nav-chevron.open { transform: rotate(180deg); }
-
-//         /* ── SHARED DROPDOWN PANEL ── */
-//         .nav-dropdown-wrap { position: relative; }
-
-//         .nav-dropdown {
-//           position: absolute;
-//           top: calc(100% + 24px);
-//           left: 50%;
-//           transform: translateX(-50%) translateY(-10px);
-//           background: #ffffff;
-//           border: 1px solid rgba(20,32,26,0.08);
-//           border-radius: 16px;
-//           box-shadow:
-//             0 0 0 1px rgba(20,32,26,0.03),
-//             0 8px 16px rgba(20,32,26,0.06),
-//             0 24px 60px rgba(20,32,26,0.14);
-//           overflow: hidden;
-//           opacity: 0;
-//           pointer-events: none;
-//           transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4,0,0.2,1);
-//           z-index: 100;
-//         }
-//         .nav-dropdown.open {
-//           opacity: 1;
-//           pointer-events: all;
-//           transform: translateX(-50%) translateY(0);
-//         }
-//         .nav-dropdown::before {
-//           content: '';
-//           position: absolute;
-//           top: -5px; left: 50%;
-//           transform: translateX(-50%) rotate(45deg);
-//           width: 10px; height: 10px;
-//           background: #ffffff;
-//           border-left: 1px solid rgba(20,32,26,0.08);
-//           border-top: 1px solid rgba(20,32,26,0.08);
-//         }
-
-//         /* Portfolio dropdown — wide */
-//         .nav-dropdown.portfolio { width: 420px; }
-
-//         /* Company dropdown — narrower */
-//         .nav-dropdown.company { width: 300px; }
-
-//         /* Dropdown Header */
-//         .drop-header {
-//           padding: 20px 24px 16px;
-//           display: flex;
-//           align-items: center;
-//           justify-content: space-between;
-//           border-bottom: 1px solid rgba(20,32,26,0.06);
-//         }
-//         .drop-header-left { display: flex; flex-direction: column; gap: 3px; }
-//         .drop-label {
-//           font-family: 'Jost', sans-serif;
-//           font-size: 9px;
-//           letter-spacing: 0.35em;
-//           text-transform: uppercase;
-//           color: rgba(20,32,26,0.3);
-//           font-weight: 500;
-//         }
-//         .drop-title {
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 20px;
-//           font-weight: 400;
-//           color: #14201a;
-//           letter-spacing: 0.02em;
-//           line-height: 1;
-//         }
-//         .drop-badge {
-//           font-family: 'Jost', sans-serif;
-//           font-size: 9px;
-//           font-weight: 500;
-//           letter-spacing: 0.15em;
-//           text-transform: uppercase;
-//           color: #8B6A3E;
-//           background: rgba(139,106,62,0.08);
-//           border: 1px solid rgba(139,106,62,0.18);
-//           padding: 4px 10px;
-//           border-radius: 20px;
-//           white-space: nowrap;
-//         }
-
-//         /* Portfolio Grid */
-//         .drop-grid {
-//           display: grid;
-//           grid-template-columns: 1fr 1fr;
-//           padding: 8px 12px;
-//         }
-//         .drop-item {
-//           display: flex;
-//           align-items: center;
-//           gap: 12px;
-//           padding: 12px 14px;
-//           border-radius: 10px;
-//           text-decoration: none;
-//           transition: background 0.18s ease;
-//         }
-//         .drop-item:hover { background: rgba(20,32,26,0.04); }
-//         .drop-item.active { background: rgba(139,106,62,0.07); }
-
-//         .drop-text { flex: 1; min-width: 0; }
-//         .drop-name {
-//           font-family: 'Jost', sans-serif;
-//           font-size: 12px;
-//           font-weight: 500;
-//           color: rgba(20,32,26,0.65);
-//           letter-spacing: 0.01em;
-//           line-height: 1.2;
-//           transition: color 0.18s;
-//         }
-//         .drop-item:hover .drop-name,
-//         .drop-item.active .drop-name { color: #14201a; }
-//         .drop-item.active .drop-name { color: #8B6A3E; }
-
-//         .drop-sub {
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 11px;
-//           font-style: italic;
-//           color: rgba(20,32,26,0.3);
-//           letter-spacing: 0.02em;
-//           margin-top: 1px;
-//         }
-//         .drop-arrow {
-//           opacity: 0;
-//           color: rgba(139,106,62,0.6);
-//           flex-shrink: 0;
-//           transition: opacity 0.18s, transform 0.18s;
-//         }
-//         .drop-item:hover .drop-arrow { opacity: 1; transform: translateX(2px); }
-
-//         /* Company list */
-//         .company-list {
-//           padding: 10px 12px;
-//           display: flex;
-//           flex-direction: column;
-//           gap: 2px;
-//         }
-//         .company-item {
-//           display: flex;
-//           align-items: center;
-//           gap: 14px;
-//           padding: 13px 16px;
-//           border-radius: 10px;
-//           text-decoration: none;
-//           transition: background 0.18s;
-//         }
-//         .company-item:hover { background: rgba(20,32,26,0.04); }
-//         .company-item.active { background: rgba(139,106,62,0.07); }
-
-//         .company-icon {
-//           width: 34px; height: 34px;
-//           border-radius: 9px;
-//           background: rgba(20,32,26,0.05);
-//           display: flex;
-//           align-items: center;
-//           justify-content: center;
-//           flex-shrink: 0;
-//           font-size: 13px;
-//           color: rgba(20,32,26,0.4);
-//           transition: background 0.18s, color 0.18s;
-//           font-family: sans-serif;
-//         }
-//         .company-item:hover .company-icon { background: rgba(139,106,62,0.1); color: #8B6A3E; }
-//         .company-item.active .company-icon { background: rgba(139,106,62,0.12); color: #8B6A3E; }
-
-//         .company-text { flex: 1; }
-//         .company-name {
-//           font-family: 'Jost', sans-serif;
-//           font-size: 12px;
-//           font-weight: 500;
-//           color: rgba(20,32,26,0.65);
-//           letter-spacing: 0.01em;
-//           line-height: 1.2;
-//           transition: color 0.18s;
-//         }
-//         .company-item:hover .company-name { color: #14201a; }
-//         .company-item.active .company-name { color: #8B6A3E; }
-
-//         .company-sub {
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 11px;
-//           font-style: italic;
-//           color: rgba(20,32,26,0.3);
-//           margin-top: 2px;
-//           letter-spacing: 0.02em;
-//         }
-//         .company-chevron {
-//           opacity: 0;
-//           color: rgba(139,106,62,0.6);
-//           flex-shrink: 0;
-//           transition: opacity 0.18s, transform 0.18s;
-//         }
-//         .company-item:hover .company-chevron { opacity: 1; transform: translateX(2px); }
-
-//         /* Dropdown Footer */
-//         .drop-footer {
-//           padding: 12px 24px 16px;
-//           border-top: 1px solid rgba(20,32,26,0.06);
-//           display: flex;
-//           align-items: center;
-//           justify-content: space-between;
-//         }
-//         .drop-footer-note {
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 12px;
-//           font-style: italic;
-//           color: rgba(20,32,26,0.3);
-//           letter-spacing: 0.03em;
-//         }
-//         .drop-footer-link {
-//           display: inline-flex;
-//           align-items: center;
-//           gap: 5px;
-//           font-family: 'Jost', sans-serif;
-//           font-size: 9.5px;
-//           font-weight: 600;
-//           letter-spacing: 0.2em;
-//           text-transform: uppercase;
-//           color: #8B6A3E;
-//           text-decoration: none;
-//           transition: gap 0.2s;
-//         }
-//         .drop-footer-link:hover { gap: 9px; }
-
-//         /* ── CENTER LOGO ── */
-//         .nav-center { flex-shrink: 0; padding: 0 32px; }
-//         @media (max-width: 899px) { .nav-center { display: none; } }
-
-//         .nav-logo-wrap {
-//           display: flex;
-//           align-items: center;
-//           text-decoration: none;
-//           padding: 6px 20px;
-//           border-radius: 40px;
-//           transition: background 0.3s;
-//         }
-//         .transparent .nav-logo-wrap:hover { background: rgba(255,255,255,0.07); }
-//         .solid .nav-logo-wrap:hover { background: rgba(20,32,26,0.04); }
-
-//         .logo-img {
-//           height: 90px;
-//           width: auto;
-//           object-fit: contain;
-//           transition: filter 0.35s ease, opacity 0.35s ease;
-//           margin-top: 10px;
-//         }
-//         .transparent .logo-img { filter: brightness(0) invert(1); opacity: 0.92; }
-//         .solid .logo-img { filter: none; opacity: 1; }
-
-//         /* ── RIGHT ── */
-//         .nav-right {
-//           display: none;
-//           align-items: center;
-//           justify-content: flex-end;
-//           gap: 20px;
-//           flex: 1;
-//         }
-//         @media (min-width: 900px) { .nav-right { display: flex; } }
-
-//         .nav-divider {
-//           width: 1px; height: 20px;
-//           flex-shrink: 0;
-//           transition: background 0.35s;
-//         }
-//         .transparent .nav-divider { background: rgba(255,255,255,0.15); }
-//         .solid .nav-divider { background: rgba(20,32,26,0.12); }
-
-//         .nav-btn {
-//           font-family: 'Jost', sans-serif;
-//           font-size: 9.5px;
-//           font-weight: 600;
-//           letter-spacing: 0.22em;
-//           text-transform: uppercase;
-//           text-decoration: none;
-//           padding: 11px 26px;
-//           border-radius: 40px;
-//           white-space: nowrap;
-//           transition: all 0.28s ease;
-//         }
-//         .transparent .nav-btn {
-//           color: #fff;
-//           background: rgba(212,169,106,0.2);
-//           border: 1px solid rgba(212,169,106,0.35);
-//         }
-//         .transparent .nav-btn:hover {
-//           background: rgba(212,169,106,0.35);
-//           border-color: rgba(212,169,106,0.6);
-//         }
-//         .solid .nav-btn {
-//           color: #faf7f2;
-//           background: #14201a;
-//           border: 1px solid transparent;
-//         }
-//         .solid .nav-btn:hover { background: #8B6A3E; }
-
-//         /* ── MOBILE LOGO ── */
-//         .nav-mobile-logo {
-//           display: none;
-//           align-items: center;
-//           text-decoration: none;
-//           flex-shrink: 0;
-//         }
-//         @media (max-width: 899px) { .nav-mobile-logo { display: flex; } }
-
-//         .mobile-logo-img {
-//           height: 100px;
-//           width: auto;
-//           object-fit: contain;
-//           display: block;
-//           transition: filter 0.35s ease, opacity 0.35s ease;
-//         }
-//         .transparent .mobile-logo-img { filter: brightness(0) invert(1); opacity: 0.95; }
-//         .solid .mobile-logo-img { filter: none; opacity: 1; }
-
-//         /* ── HAMBURGER ── */
-//         .nav-hamburger {
-//           display: none;
-//           align-items: center;
-//           justify-content: center;
-//           width: 42px; height: 42px;
-//           border-radius: 50%;
-//           background: transparent;
-//           cursor: pointer;
-//           flex-shrink: 0;
-//           transition: all 0.2s;
-//           border: none;
-//         }
-//         @media (max-width: 899px) { .nav-hamburger { display: flex; } }
-
-//         /* ── BACKDROP ── */
-//         .nav-backdrop {
-//           position: fixed; inset: 0;
-//           z-index: 9998;
-//           background: rgba(8,14,10,0.6);
-//           backdrop-filter: blur(4px);
-//           -webkit-backdrop-filter: blur(4px);
-//           opacity: 0; pointer-events: none;
-//           transition: opacity 0.35s ease;
-//         }
-//         .nav-backdrop.open { opacity: 1; pointer-events: all; }
-
-//         /* ── MOBILE DRAWER ── */
-//         .nav-drawer {
-//           position: fixed;
-//           top: 0; right: 0;
-//           width: min(360px, 90vw);
-//           height: 100dvh;
-//           z-index: 9999;
-//           background: #faf7f2;
-//           display: flex;
-//           flex-direction: column;
-//           transform: translateX(100%);
-//           transition: transform 0.42s cubic-bezier(0.4,0,0.2,1);
-//         }
-//         .nav-drawer.open { transform: translateX(0); }
-//         @media (min-width: 900px) {
-//           .nav-drawer, .nav-backdrop { display: none !important; }
-//         }
-
-//         .drawer-header {
-//           display: flex;
-//           align-items: center;
-//           justify-content: space-between;
-//           padding: 20px 24px;
-//           border-bottom: 1px solid rgba(20,32,26,0.07);
-//           flex-shrink: 0;
-//         }
-//         .drawer-logo-img {
-//           height: 56px;
-//           width: auto;
-//           object-fit: contain;
-//         }
-//         .drawer-close {
-//           width: 36px; height: 36px;
-//           border-radius: 50%;
-//           border: 1px solid rgba(20,32,26,0.12);
-//           background: transparent;
-//           display: flex; align-items: center; justify-content: center;
-//           cursor: pointer;
-//           color: #14201a;
-//           transition: background 0.2s;
-//         }
-//         .drawer-close:hover { background: rgba(20,32,26,0.06); }
-
-//         .drawer-links {
-//           display: flex;
-//           flex-direction: column;
-//           padding: 8px 0;
-//           flex: 1;
-//           overflow-y: auto;
-//         }
-
-//         .drawer-link {
-//           display: flex;
-//           align-items: center;
-//           justify-content: space-between;
-//           padding: 18px 28px;
-//           font-family: 'Jost', sans-serif;
-//           font-size: 12px;
-//           font-weight: 400;
-//           letter-spacing: 0.15em;
-//           text-transform: uppercase;
-//           color: rgba(20,32,26,0.45);
-//           text-decoration: none;
-//           border-bottom: 1px solid rgba(20,32,26,0.05);
-//           transition: all 0.2s;
-//           position: relative;
-//         }
-//         .drawer-link:hover {
-//           color: #14201a;
-//           background: rgba(20,32,26,0.02);
-//           padding-left: 36px;
-//         }
-//         .drawer-link.active { color: #14201a; font-weight: 500; }
-//         .drawer-link.active::before {
-//           content: '';
-//           position: absolute;
-//           left: 0; top: 0; bottom: 0;
-//           width: 2px;
-//           background: #D4A96A;
-//           border-radius: 0 2px 2px 0;
-//         }
-//         .drawer-num {
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 11px;
-//           font-style: italic;
-//           color: rgba(20,32,26,0.18);
-//         }
-
-//         /* Mobile Accordion Toggle — shared */
-//         .drawer-accordion-toggle {
-//           display: flex;
-//           align-items: center;
-//           justify-content: space-between;
-//           padding: 18px 28px;
-//           font-family: 'Jost', sans-serif;
-//           font-size: 12px;
-//           font-weight: 400;
-//           letter-spacing: 0.15em;
-//           text-transform: uppercase;
-//           color: rgba(20,32,26,0.45);
-//           border-bottom: 1px solid rgba(20,32,26,0.05);
-//           cursor: pointer;
-//           background: none;
-//           border-left: none;
-//           border-right: none;
-//           border-top: none;
-//           width: 100%;
-//           text-align: left;
-//           transition: all 0.2s;
-//           position: relative;
-//         }
-//         .drawer-accordion-toggle.active { color: #14201a; font-weight: 500; }
-//         .drawer-accordion-toggle.active::before {
-//           content: '';
-//           position: absolute;
-//           left: 0; top: 0; bottom: 0;
-//           width: 2px;
-//           background: #D4A96A;
-//           border-radius: 0 2px 2px 0;
-//         }
-//         .drawer-accordion-toggle:hover { color: #14201a; background: rgba(20,32,26,0.02); }
-
-//         .drawer-chevron {
-//           transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-//           color: rgba(20,32,26,0.3);
-//           flex-shrink: 0;
-//         }
-//         .drawer-chevron.open { transform: rotate(180deg); }
-
-//         .drawer-sub {
-//           overflow: hidden;
-//           max-height: 0;
-//           transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-//           background: rgba(20,32,26,0.015);
-//           border-bottom: 1px solid rgba(20,32,26,0.05);
-//         }
-//         .drawer-sub.open { max-height: 800px; }
-
-//         /* Portfolio sub items */
-//         .drawer-sub-item {
-//           display: flex;
-//           align-items: center;
-//           gap: 14px;
-//           padding: 14px 28px 14px 42px;
-//           font-family: 'Jost', sans-serif;
-//           font-size: 11.5px;
-//           font-weight: 400;
-//           color: rgba(20,32,26,0.45);
-//           letter-spacing: 0.04em;
-//           text-decoration: none;
-//           border-bottom: 1px solid rgba(20,32,26,0.035);
-//           transition: all 0.15s;
-//         }
-//         .drawer-sub-item:last-child { border-bottom: none; }
-//         .drawer-sub-item:hover { color: #14201a; background: rgba(139,106,62,0.04); }
-//         .drawer-sub-item.active { color: #8B6A3E; font-weight: 500; }
-//         .drawer-sub-num {
-//           margin-left: auto;
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 11px;
-//           font-style: italic;
-//           color: rgba(20,32,26,0.18);
-//         }
-
-//         /* Company sub items */
-//         .drawer-company-item {
-//           display: flex;
-//           align-items: center;
-//           gap: 16px;
-//           padding: 16px 28px 16px 38px;
-//           font-family: 'Jost', sans-serif;
-//           font-size: 11.5px;
-//           font-weight: 400;
-//           color: rgba(20,32,26,0.5);
-//           letter-spacing: 0.06em;
-//           text-decoration: none;
-//           border-bottom: 1px solid rgba(20,32,26,0.035);
-//           transition: all 0.15s;
-//         }
-//         .drawer-company-item:last-child { border-bottom: none; }
-//         .drawer-company-item:hover { color: #14201a; background: rgba(139,106,62,0.04); }
-//         .drawer-company-item.active { color: #8B6A3E; font-weight: 500; }
-
-//         .drawer-company-icon {
-//           width: 28px; height: 28px;
-//           border-radius: 7px;
-//           background: rgba(20,32,26,0.06);
-//           display: flex; align-items: center; justify-content: center;
-//           font-size: 11px;
-//           color: rgba(20,32,26,0.35);
-//           flex-shrink: 0;
-//           transition: background 0.15s, color 0.15s;
-//           font-family: sans-serif;
-//         }
-//         .drawer-company-item:hover .drawer-company-icon,
-//         .drawer-company-item.active .drawer-company-icon {
-//           background: rgba(139,106,62,0.1);
-//           color: #8B6A3E;
-//         }
-//         .drawer-company-text { flex: 1; }
-//         .drawer-company-name { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; }
-//         .drawer-company-sub {
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 11px;
-//           font-style: italic;
-//           color: rgba(20,32,26,0.28);
-//           margin-top: 1px;
-//           letter-spacing: 0.02em;
-//         }
-
-//         .drawer-footer {
-//           padding: 24px 28px 40px;
-//           border-top: 1px solid rgba(20,32,26,0.07);
-//           flex-shrink: 0;
-//         }
-//         .drawer-cta {
-//           display: block;
-//           text-align: center;
-//           font-family: 'Jost', sans-serif;
-//           font-size: 9.5px;
-//           font-weight: 600;
-//           letter-spacing: 0.25em;
-//           text-transform: uppercase;
-//           text-decoration: none;
-//           padding: 16px 28px;
-//           border-radius: 40px;
-//           color: #faf7f2;
-//           background: #14201a;
-//           transition: background 0.25s;
-//         }
-//         .drawer-cta:hover { background: #8B6A3E; }
-//         .drawer-footer-note {
-//           text-align: center;
-//           margin-top: 14px;
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 12px;
-//           font-style: italic;
-//           color: rgba(20,32,26,0.3);
-//           letter-spacing: 0.03em;
-//         }
-//       `}</style>
-
-//       {/* ── MAIN NAV ── */}
-//       <nav className={`nav-root ${mode}`}>
-//         <div className={`nav-inner${mounted ? " vis" : ""}`}>
-//           {/* Mobile Logo */}
-//           <Link to="/" className="nav-mobile-logo">
-//             <img src={logo} alt="Legacy Curator" className="mobile-logo-img" />
-//           </Link>
-
-//           {/* Left Links — desktop */}
-//           <div className="nav-left">
-//             {navLinks.map((link) => (
-//               <Link
-//                 key={link.name}
-//                 to={link.path}
-//                 className={`nav-link${location.pathname === link.path ? " active" : ""}`}
-//               >
-//                 {link.name}
-//               </Link>
-//             ))}
-
-//             {/* The Company Dropdown */}
-//             <div className="nav-dropdown-wrap" ref={companyRef}>
-//               <button
-//                 className={`nav-drop-btn${isCompanyActive ? " active" : ""}`}
-//                 onClick={() => {
-//                   setCompanyDropOpen((v) => !v);
-//                   setDropOpen(false);
-//                 }}
-//                 aria-haspopup="true"
-//                 aria-expanded={companyDropOpen}
-//               >
-//                 The Company
-//                 <ChevronDown
-//                   size={12}
-//                   className={`nav-chevron${companyDropOpen ? " open" : ""}`}
-//                 />
-//               </button>
-
-//               <div
-//                 className={`nav-dropdown company${companyDropOpen ? " open" : ""}`}
-//                 role="menu"
-//               >
-//                 <div className="drop-header">
-//                   <div className="drop-header-left">
-//                     <span className="drop-label">Who we are</span>
-//                     <span className="drop-title">The Company</span>
-//                   </div>
-//                   <span className="drop-badge">Our Story</span>
-//                 </div>
-
-//                 <div className="company-list">
-//                   {companyLinks.map((item) => (
-//                     <Link
-//                       key={item.path}
-//                       to={item.path}
-//                       className={`company-item${location.pathname === item.path ? " active" : ""}`}
-//                       role="menuitem"
-//                       onClick={() => setCompanyDropOpen(false)}
-//                     >
-//                       <div className="company-icon">{item.icon}</div>
-//                       <div className="company-text">
-//                         <div className="company-name">{item.name}</div>
-//                         <div className="company-sub">{item.sub}</div>
-//                       </div>
-//                       <ChevronDown
-//                         size={11}
-//                         className="company-chevron"
-//                         style={{ transform: "rotate(-90deg)" }}
-//                       />
-//                     </Link>
-//                   ))}
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Portfolio Dropdown */}
-//             <div className="nav-dropdown-wrap" ref={dropRef}>
-//               <button
-//                 className={`nav-drop-btn${isServicesActive ? " active" : ""}`}
-//                 onClick={() => {
-//                   setDropOpen((v) => !v);
-//                   setCompanyDropOpen(false);
-//                 }}
-//                 aria-haspopup="true"
-//                 aria-expanded={dropOpen}
-//               >
-//                 Portfolio
-//                 <ChevronDown
-//                   size={12}
-//                   className={`nav-chevron${dropOpen ? " open" : ""}`}
-//                 />
-//               </button>
-
-//               <div
-//                 className={`nav-dropdown portfolio${dropOpen ? " open" : ""}`}
-//                 role="menu"
-//               >
-//                 <div className="drop-header">
-//                   <div className="drop-header-left">
-//                     <span className="drop-label">Explore</span>
-//                     <span className="drop-title">Our Collections</span>
-//                   </div>
-//                   <span className="drop-badge">9 Book Types</span>
-//                 </div>
-
-//                 <div className="drop-grid">
-//                   {serviceLinks.map((svc) => (
-//                     <Link
-//                       key={svc.slug}
-//                       to={`/services/${svc.slug}`}
-//                       className={`drop-item${location.pathname === `/services/${svc.slug}` ? " active" : ""}`}
-//                       role="menuitem"
-//                       onClick={() => setDropOpen(false)}
-//                     >
-//                       <div className="drop-text">
-//                         <div className="drop-name">{svc.name}</div>
-//                         <div className="drop-sub">{svc.sub}</div>
-//                       </div>
-//                       <ChevronDown
-//                         size={11}
-//                         className="drop-arrow"
-//                         style={{ transform: "rotate(-90deg)" }}
-//                       />
-//                     </Link>
-//                   ))}
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Center Logo — desktop */}
-//           <div className="nav-center">
-//             <Link to="/" className="nav-logo-wrap">
-//               <img src={logo} alt="Legacy Curator" className="logo-img" />
-//             </Link>
-//           </div>
-
-//           {/* Right — desktop */}
-//           <div className="nav-right">
-//             <span className="nav-divider" />
-//             <Link to="/contact" className="nav-btn">
-//               Contact Us
-//             </Link>
-//           </div>
-
-//           {/* Hamburger */}
-//           <button
-//             className="nav-hamburger"
-//             onClick={() => setMenuOpen(true)}
-//             aria-label="Open menu"
-//           >
-//             <Menu size={22} color={isTransparent ? "#ffffff" : "#14201a"} />
-//           </button>
-//         </div>
-//       </nav>
-
-//       {/* Backdrop */}
-//       <div
-//         className={`nav-backdrop${menuOpen ? " open" : ""}`}
-//         onClick={() => setMenuOpen(false)}
-//       />
-
-//       {/* ── MOBILE DRAWER ── */}
-//       <div className={`nav-drawer${menuOpen ? " open" : ""}`}>
-//         <div className="drawer-header">
-//           <Link to="/" onClick={() => setMenuOpen(false)}>
-//             <img src={logo} alt="Legacy Curator" className="drawer-logo-img" />
-//           </Link>
-//           <button
-//             className="drawer-close"
-//             onClick={() => setMenuOpen(false)}
-//             aria-label="Close"
-//           >
-//             <X size={15} />
-//           </button>
-//         </div>
-
-//         <div className="drawer-links">
-//           {/* Simple nav links */}
-//           {navLinks.map((link, i) => (
-//             <Link
-//               key={link.name}
-//               to={link.path}
-//               className={`drawer-link${location.pathname === link.path ? " active" : ""}`}
-//               onClick={() => setMenuOpen(false)}
-//             >
-//               {link.name}
-//               <span className="drawer-num">0{i + 1}</span>
-//             </Link>
-//           ))}
-
-//           {/* The Company accordion */}
-//           <button
-//             className={`drawer-accordion-toggle${isCompanyActive ? " active" : ""}`}
-//             onClick={() => setMobileCompOpen((v) => !v)}
-//           >
-//             The Company
-//             <ChevronDown
-//               size={14}
-//               className={`drawer-chevron${mobileCompOpen ? " open" : ""}`}
-//             />
-//           </button>
-
-//           <div className={`drawer-sub${mobileCompOpen ? " open" : ""}`}>
-//             {companyLinks.map((item) => (
-//               <Link
-//                 key={item.path}
-//                 to={item.path}
-//                 className={`drawer-company-item${location.pathname === item.path ? " active" : ""}`}
-//                 onClick={() => setMenuOpen(false)}
-//               >
-//                 <div className="drawer-company-icon">{item.icon}</div>
-//                 <div className="drawer-company-text">
-//                   <div className="drawer-company-name">{item.name}</div>
-//                   <div className="drawer-company-sub">{item.sub}</div>
-//                 </div>
-//               </Link>
-//             ))}
-//           </div>
-
-//           {/* Portfolio accordion */}
-//           <button
-//             className={`drawer-accordion-toggle${isServicesActive ? " active" : ""}`}
-//             onClick={() => setMobileServOpen((v) => !v)}
-//           >
-//             Portfolio
-//             <ChevronDown
-//               size={14}
-//               className={`drawer-chevron${mobileServOpen ? " open" : ""}`}
-//             />
-//           </button>
-
-//           <div className={`drawer-sub${mobileServOpen ? " open" : ""}`}>
-//             {serviceLinks.map((svc, i) => (
-//               <Link
-//                 key={svc.slug}
-//                 to={`/services/${svc.slug}`}
-//                 className={`drawer-sub-item${location.pathname === `/services/${svc.slug}` ? " active" : ""}`}
-//                 onClick={() => setMenuOpen(false)}
-//               >
-//                 {svc.name}
-//                 <span className="drawer-sub-num">0{i + 1}</span>
-//               </Link>
-//             ))}
-//           </div>
-//         </div>
-
-//         <div className="drawer-footer">
-//           <Link
-//             to="/contact"
-//             className="drawer-cta"
-//             onClick={() => setMenuOpen(false)}
-//           >
-//             Contact Us
-//           </Link>
-//           <p className="drawer-footer-note">
-//             Crafting heirloom books since 2018
-//           </p>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Navbar;
-
-
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -1984,9 +20,13 @@ const companyLinks = [
   { name: "Our Team",    path: "/team",    icon: "◎", sub: "The people behind the craft" },
 ];
 
-const navLinks = [
-  { name: "Home", path: "/" },
+const leftNavLinks  = [
+  { name: "Home",  path: "/" },
   { name: "Blogs", path: "/blogs" },
+];
+
+const rightNavLinks = [
+  // Right side plain links (before CTA button) — add more if needed
 ];
 
 const Navbar = () => {
@@ -2030,468 +70,529 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  const isTransparent   = isHome && !scrolled;
-  const mode            = isTransparent ? "transparent" : "solid";
+  const isTransparent    = isHome && !scrolled;
+  const mode             = isTransparent ? "transparent" : "solid";
   const isServicesActive = location.pathname.startsWith("/services");
   const isCompanyActive  = companyLinks.some(l => location.pathname === l.path);
 
   return (
     <>
       <style>{`
-    
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500;600&display=swap');
 
-        /* ── ROOT ── */
-        .nav-root {
+        /* ─── CSS VARIABLES ─── */
+        :root {
+          --gold:        #C9A84C;
+          --gold-light:  #D4A96A;
+          --gold-pale:   rgba(201,168,76,0.15);
+          --forest:      #14201a;
+          --forest-mid:  rgba(20,32,26,0.7);
+          --forest-soft: rgba(20,32,26,0.45);
+          --forest-faint:rgba(20,32,26,0.06);
+          --cream:       #FAF7F2;
+          --white:       #FFFFFF;
+          --nav-h:       100px;
+        }
+
+        /* ─── ROOT ─── */
+        .lc-nav {
           position: fixed;
           top: 0; left: 0; right: 0;
           z-index: 9999;
-          transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
-        }
-        .nav-root.transparent { background: transparent; box-shadow: none; }
-        .nav-root.solid {
-          background: rgba(250,247,242,0.97);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          box-shadow: 0 1px 0 rgba(20,32,26,0.08);
+          transition: background 0.55s cubic-bezier(0.4,0,0.2,1),
+                      box-shadow 0.55s ease,
+                      border-color 0.55s ease;
         }
 
-        /* ── INNER ── */
-        .nav-inner {
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 0 48px;
-          height: 84px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 16px;
-          opacity: 0;
-          transform: translateY(-8px);
-          transition: opacity 0.5s ease, transform 0.5s ease;
-          position: relative;
+        /* Transparent state (home + not scrolled) */
+        .lc-nav.transparent {
+          background: transparent;
+          box-shadow: none;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
         }
-        .nav-inner.vis { opacity: 1; transform: translateY(0); }
 
-        /* ── LEFT ── */
-        .nav-left {
-          display: none;
-          align-items: center;
-          gap: 28px;
-          flex-shrink: 0;       /* ← flex:1 hata diya, flex-shrink:0 diya */
-          flex-wrap: nowrap;    /* ← wrap bilkul nahi hoga */
+        /* Solid state */
+        .lc-nav.solid {
+          background: rgba(250,247,242,0.96);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          box-shadow:
+            0 1px 0 rgba(20,32,26,0.07),
+            0 4px 32px rgba(20,32,26,0.06);
+          border-bottom: 1px solid rgba(20,32,26,0.06);
         }
-        @media (min-width: 900px) { .nav-left { display: flex; } }
 
-        /* ── NAV LINKS ── */
-        .nav-link {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 10.5px;
-          font-weight: 500;
-          letter-spacing: 0.22em;
-          text-transform: uppercase;
-          text-decoration: none;
-          position: relative;
-          padding-bottom: 2px;
-          white-space: nowrap;
-          flex-shrink: 0;       /* ← shrink nahi hoga */
-          transition: color 0.3s ease;
-        }
-        .nav-link::after {
+        /* Golden accent line at very top */
+        .lc-nav::before {
           content: '';
           position: absolute;
-          bottom: -2px; left: 0;
-          height: 1px; width: 0;
-          transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
+          top: 0; left: 0; right: 0;
+          height: 1.5px;
+          background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+          opacity: 0;
+          transition: opacity 0.55s ease;
         }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .lc-nav.solid::before { opacity: 1; }
 
-        .transparent .nav-link { color: rgba(255,255,255,0.92); }
-        .transparent .nav-link:hover,
-        .transparent .nav-link.active { color: #fff; }
-        .transparent .nav-link::after { background: rgba(212,169,106,0.85); }
-
-        .solid .nav-link { color: rgba(20,32,26,0.85); }
-        .solid .nav-link:hover,
-        .solid .nav-link.active { color: #14201a; }
-        .solid .nav-link::after { background: #8B6A3E; }
-
-        /* ── DROPDOWN WRAP ── */
-        .nav-dropdown-wrap {
-          position: relative;
-          flex-shrink: 0;       /* ← wrap bhi shrink nahi hoga */
-        }
-
-        /* ── DROPDOWN BUTTON ── */
-        .nav-drop-btn {
-          display: inline-flex;
+        /* ─── INNER WRAPPER ─── */
+        .lc-inner {
+          max-width: 1360px;
+          margin: 0 auto;
+          padding: 0 48px;
+          height: var(--nav-h);
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
           align-items: center;
-          gap: 4px;
+          gap: 16px;
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: opacity 0.6s ease 0.05s, transform 0.6s cubic-bezier(0.22,1,0.36,1) 0.05s;
+        }
+        .lc-inner.vis { opacity: 1; transform: translateY(0); }
+
+        /* ─── LEFT CLUSTER ─── */
+        .lc-left {
+          display: none;
+          align-items: center;
+          gap: 32px;
+          justify-content: flex-start;
+        }
+        @media (min-width: 960px) { .lc-left { display: flex; } }
+
+        /* ─── RIGHT CLUSTER ─── */
+        .lc-right {
+          display: none;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 32px;
+        }
+        @media (min-width: 960px) { .lc-right { display: flex; } }
+
+        /* ─── SHARED NAV LINK / BUTTON STYLE ─── */
+        .lc-link, .lc-drop-btn {
           font-family: 'Montserrat', sans-serif;
-          font-size: 10.5px;
+          font-size: 9.5px;
           font-weight: 500;
-          letter-spacing: 0.22em;
+          letter-spacing: 0.28em;
           text-transform: uppercase;
+          text-decoration: none;
+          white-space: nowrap;
+          flex-shrink: 0;
+          position: relative;
+          padding-bottom: 3px;
           background: none;
           border: none;
           cursor: pointer;
-          position: relative;
-          padding-bottom: 2px;
-          white-space: nowrap;
-          flex-shrink: 0;       /* ← shrink nahi hoga */
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
           transition: color 0.3s ease;
         }
-        .nav-drop-btn::after {
+
+        /* Underline animation */
+        .lc-link::after, .lc-drop-btn::after {
           content: '';
           position: absolute;
-          bottom: -2px; left: 0;
+          bottom: 0; left: 0;
           height: 1px; width: 0;
-          transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
+          transition: width 0.38s cubic-bezier(0.4,0,0.2,1);
         }
-        .nav-drop-btn:hover::after,
-        .nav-drop-btn.active::after { width: 100%; }
+        .lc-link:hover::after, .lc-link.active::after,
+        .lc-drop-btn:hover::after, .lc-drop-btn.active::after { width: 100%; }
 
-        .transparent .nav-drop-btn { color: rgba(255,255,255,0.92); }
-        .transparent .nav-drop-btn:hover,
-        .transparent .nav-drop-btn.active { color: #fff; }
-        .transparent .nav-drop-btn::after { background: rgba(212,169,106,0.85); }
+        /* Transparent mode colours */
+        .transparent .lc-link,
+        .transparent .lc-drop-btn { color: rgba(255,255,255,0.88); }
+        .transparent .lc-link:hover,  .transparent .lc-link.active,
+        .transparent .lc-drop-btn:hover, .transparent .lc-drop-btn.active { color: #fff; }
+        .transparent .lc-link::after, .transparent .lc-drop-btn::after { background: var(--gold-light); }
 
-        .solid .nav-drop-btn { color: rgba(20,32,26,0.85); }
-        .solid .nav-drop-btn:hover,
-        .solid .nav-drop-btn.active { color: #14201a; }
-        .solid .nav-drop-btn::after { background: #8B6A3E; }
+        /* Solid mode colours */
+        .solid .lc-link,
+        .solid .lc-drop-btn { color: var(--forest-mid); }
+        .solid .lc-link:hover, .solid .lc-link.active,
+        .solid .lc-drop-btn:hover, .solid .lc-drop-btn.active { color: var(--forest); }
+        .solid .lc-link::after, .solid .lc-drop-btn::after { background: var(--gold); }
 
-        .nav-chevron {
-          transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+        /* Chevron */
+        .lc-chevron {
+          transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
           flex-shrink: 0;
           margin-top: 1px;
         }
-        .nav-chevron.open { transform: rotate(180deg); }
+        .lc-chevron.open { transform: rotate(180deg); }
 
-        /* ── DROPDOWN PANEL ── */
-        .nav-dropdown {
+        /* ─── DROPDOWN WRAP ─── */
+        .lc-drop-wrap { position: relative; flex-shrink: 0; }
+
+        /* ─── DROPDOWN PANEL ─── */
+        .lc-dropdown {
           position: absolute;
-          top: calc(100% + 24px);
+          top: calc(100% + 22px);
           left: 50%;
-          transform: translateX(-50%) translateY(-10px);
-          background: #ffffff;
-          border: 1px solid rgba(20,32,26,0.08);
-          border-radius: 16px;
+          transform: translateX(-50%) translateY(-8px);
+          background: var(--white);
+          border: 1px solid rgba(20,32,26,0.07);
+          border-radius: 18px;
           box-shadow:
-            0 0 0 1px rgba(20,32,26,0.03),
-            0 8px 16px rgba(20,32,26,0.06),
-            0 24px 60px rgba(20,32,26,0.14);
+            0 0 0 1px rgba(201,168,76,0.06),
+            0 8px 24px rgba(20,32,26,0.07),
+            0 32px 64px rgba(20,32,26,0.13);
           overflow: hidden;
           opacity: 0;
           pointer-events: none;
-          transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4,0,0.2,1);
-          z-index: 100;
+          transition: opacity 0.24s ease, transform 0.24s cubic-bezier(0.4,0,0.2,1);
+          z-index: 200;
         }
-        .nav-dropdown.open {
+        .lc-dropdown.open {
           opacity: 1;
           pointer-events: all;
           transform: translateX(-50%) translateY(0);
         }
-        .nav-dropdown::before {
+
+        /* Small caret */
+        .lc-dropdown::before {
           content: '';
           position: absolute;
           top: -5px; left: 50%;
           transform: translateX(-50%) rotate(45deg);
           width: 10px; height: 10px;
-          background: #ffffff;
-          border-left: 1px solid rgba(20,32,26,0.08);
-          border-top: 1px solid rgba(20,32,26,0.08);
+          background: var(--white);
+          border-left: 1px solid rgba(20,32,26,0.07);
+          border-top: 1px solid rgba(20,32,26,0.07);
         }
 
-        .nav-dropdown.portfolio { width: 420px; }
-        .nav-dropdown.company  { width: 300px; }
+        .lc-dropdown.portfolio { width: 440px; }
+        .lc-dropdown.company   { width: 310px; }
 
-        /* Dropdown Header */
-        .drop-header {
-          padding: 20px 24px 16px;
+        /* Dropdown header */
+        .dd-head {
+          padding: 18px 22px 14px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          border-bottom: 1px solid rgba(20,32,26,0.06);
+          border-bottom: 1px solid rgba(20,32,26,0.05);
+          background: linear-gradient(180deg, rgba(201,168,76,0.03) 0%, transparent 100%);
         }
-        .drop-header-left { display: flex; flex-direction: column; gap: 3px; }
-        .drop-label {
+        .dd-head-left { display: flex; flex-direction: column; gap: 3px; }
+        .dd-eyebrow {
           font-family: 'Montserrat', sans-serif;
-          font-size: 9px;
-          letter-spacing: 0.35em;
+          font-size: 8.5px;
+          letter-spacing: 0.38em;
           text-transform: uppercase;
-          color: rgba(20,32,26,0.3);
+          color: rgba(20,32,26,0.28);
           font-weight: 500;
         }
-        .drop-title {
+        .dd-title {
           font-family: 'Cormorant Garamond', serif;
-          font-size: 20px;
+          font-size: 21px;
           font-weight: 400;
-          color: #14201a;
+          color: var(--forest);
           letter-spacing: 0.02em;
           line-height: 1;
         }
-        .drop-badge {
+        .dd-badge {
           font-family: 'Montserrat', sans-serif;
-          font-size: 9px;
-          font-weight: 500;
-          letter-spacing: 0.12em;
+          font-size: 8px;
+          font-weight: 600;
+          letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: #8B6A3E;
-          background: rgba(139,106,62,0.08);
-          border: 1px solid rgba(139,106,62,0.18);
-          padding: 4px 10px;
+          color: var(--gold);
+          background: rgba(201,168,76,0.1);
+          border: 1px solid rgba(201,168,76,0.22);
+          padding: 4px 12px;
           border-radius: 20px;
           white-space: nowrap;
         }
 
-        /* Portfolio Grid */
-        .drop-grid {
+        /* Portfolio grid */
+        .dd-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          padding: 8px 12px;
+          padding: 10px 12px;
+          gap: 2px;
         }
-        .drop-item {
+        .dd-item {
           display: flex;
           align-items: center;
-          gap: 12px;
-          padding: 12px 14px;
-          border-radius: 10px;
+          gap: 11px;
+          padding: 11px 13px;
+          border-radius: 11px;
           text-decoration: none;
-          transition: background 0.18s ease;
+          transition: background 0.16s ease;
         }
-        .drop-item:hover  { background: rgba(20,32,26,0.04); }
-        .drop-item.active { background: rgba(139,106,62,0.07); }
+        .dd-item:hover  { background: rgba(20,32,26,0.04); }
+        .dd-item.active { background: rgba(201,168,76,0.08); }
 
-        .drop-text { flex: 1; min-width: 0; }
-        .drop-name {
+        .dd-text { flex: 1; min-width: 0; }
+        .dd-name {
           font-family: 'Montserrat', sans-serif;
-          font-size: 11.5px;
+          font-size: 11px;
           font-weight: 500;
-          color: rgba(20,32,26,0.65);
-          letter-spacing: 0.01em;
-          line-height: 1.2;
-          transition: color 0.18s;
+          color: rgba(20,32,26,0.6);
+          letter-spacing: 0.02em;
+          line-height: 1.25;
+          transition: color 0.16s;
         }
-        .drop-item:hover .drop-name  { color: #14201a; }
-        .drop-item.active .drop-name { color: #8B6A3E; }
+        .dd-item:hover .dd-name  { color: var(--forest); }
+        .dd-item.active .dd-name { color: var(--gold); }
 
-        .drop-sub {
+        .dd-sub {
           font-family: 'Cormorant Garamond', serif;
           font-size: 11px;
           font-style: italic;
-          color: rgba(20,32,26,0.3);
+          color: rgba(20,32,26,0.28);
           letter-spacing: 0.02em;
-          margin-top: 1px;
+          margin-top: 2px;
         }
-        .drop-arrow {
+        .dd-arr {
           opacity: 0;
-          color: rgba(139,106,62,0.6);
+          color: rgba(201,168,76,0.7);
           flex-shrink: 0;
-          transition: opacity 0.18s, transform 0.18s;
+          transition: opacity 0.16s, transform 0.16s;
         }
-        .drop-item:hover .drop-arrow { opacity: 1; transform: translateX(2px); }
+        .dd-item:hover .dd-arr { opacity: 1; transform: translateX(3px); }
 
         /* Company list */
-        .company-list {
+        .dd-company-list {
           padding: 10px 12px;
           display: flex;
           flex-direction: column;
-          gap: 2px;
+          gap: 3px;
         }
-        .company-item {
+        .dd-co-item {
           display: flex;
           align-items: center;
           gap: 14px;
           padding: 13px 16px;
-          border-radius: 10px;
+          border-radius: 11px;
           text-decoration: none;
-          transition: background 0.18s;
+          transition: background 0.16s;
         }
-        .company-item:hover  { background: rgba(20,32,26,0.04); }
-        .company-item.active { background: rgba(139,106,62,0.07); }
+        .dd-co-item:hover  { background: rgba(20,32,26,0.04); }
+        .dd-co-item.active { background: rgba(201,168,76,0.08); }
 
-        .company-icon {
-          width: 34px; height: 34px;
-          border-radius: 9px;
-          background: rgba(20,32,26,0.05);
+        .dd-co-icon {
+          width: 36px; height: 36px;
+          border-radius: 10px;
+          background: rgba(20,32,26,0.04);
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          font-size: 13px;
-          color: rgba(20,32,26,0.4);
-          transition: background 0.18s, color 0.18s;
+          font-size: 14px;
+          color: rgba(20,32,26,0.38);
+          transition: background 0.16s, color 0.16s;
           font-family: sans-serif;
         }
-        .company-item:hover  .company-icon { background: rgba(139,106,62,0.1);  color: #8B6A3E; }
-        .company-item.active .company-icon { background: rgba(139,106,62,0.12); color: #8B6A3E; }
+        .dd-co-item:hover  .dd-co-icon { background: rgba(201,168,76,0.12); color: var(--gold); }
+        .dd-co-item.active .dd-co-icon { background: rgba(201,168,76,0.14); color: var(--gold); }
 
-        .company-text { flex: 1; }
-        .company-name {
+        .dd-co-text { flex: 1; }
+        .dd-co-name {
           font-family: 'Montserrat', sans-serif;
           font-size: 12px;
           font-weight: 500;
-          color: rgba(20,32,26,0.65);
-          letter-spacing: 0.01em;
-          line-height: 1.2;
-          transition: color 0.18s;
+          color: rgba(20,32,26,0.62);
+          letter-spacing: 0.02em;
+          transition: color 0.16s;
         }
-        .company-item:hover  .company-name { color: #14201a; }
-        .company-item.active .company-name { color: #8B6A3E; }
+        .dd-co-item:hover  .dd-co-name { color: var(--forest); }
+        .dd-co-item.active .dd-co-name { color: var(--gold); }
 
-        .company-sub {
+        .dd-co-sub {
           font-family: 'Cormorant Garamond', serif;
           font-size: 11px;
           font-style: italic;
-          color: rgba(20,32,26,0.3);
+          color: rgba(20,32,26,0.28);
           margin-top: 2px;
-          letter-spacing: 0.02em;
         }
-        .company-chevron {
+        .dd-co-chevron {
           opacity: 0;
-          color: rgba(139,106,62,0.6);
+          color: rgba(201,168,76,0.7);
           flex-shrink: 0;
-          transition: opacity 0.18s, transform 0.18s;
+          transition: opacity 0.16s, transform 0.16s;
         }
-        .company-item:hover .company-chevron { opacity: 1; transform: translateX(2px); }
+        .dd-co-item:hover .dd-co-chevron { opacity: 1; transform: translateX(3px); }
 
-        /* ── CENTER LOGO ── */
-        .nav-center { flex-shrink: 0; padding: 0 24px; }
-        @media (max-width: 899px) { .nav-center { display: none; } }
+        /* ─── CENTER LOGO ─── */
+        .lc-logo-wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
 
-        .nav-logo-wrap {
+        .lc-logo-link {
           display: flex;
           align-items: center;
+          justify-content: center;
           text-decoration: none;
-          padding: 6px 16px;
-          border-radius: 40px;
+          padding: 6px 20px;
+          border-radius: 50px;
           transition: background 0.3s;
+          position: relative;
         }
-        .transparent .nav-logo-wrap:hover { background: rgba(255,255,255,0.07); }
-        .solid       .nav-logo-wrap:hover { background: rgba(20,32,26,0.04); }
+        .transparent .lc-logo-link:hover { background: rgba(255,255,255,0.07); }
+        .solid       .lc-logo-link:hover { background: var(--forest-faint); }
 
-        .logo-img {
-          height: 90px;
+        .lc-logo-img {
+          height: 100px;
           width: auto;
+          max-width: 260px;
           object-fit: contain;
-          transition: filter 0.35s ease, opacity 0.35s ease;
-          margin-top: 10px;
+          display: block;
+          transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
         }
-        .transparent .logo-img { filter: brightness(0) invert(1); opacity: 0.92; }
-        .solid       .logo-img { filter: none; opacity: 1; }
-
-        /* ── RIGHT ── */
-        .nav-right {
-          display: none;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 16px;
-          flex-shrink: 0;       /* ← flex:1 hata diya */
+        .transparent .lc-logo-img {
+          filter: brightness(0) invert(1);
+          opacity: 0.93;
         }
-        @media (min-width: 900px) { .nav-right { display: flex; } }
-
-        .nav-divider {
-          width: 1px; height: 20px;
-          flex-shrink: 0;
-          transition: background 0.35s;
+        .solid .lc-logo-img {
+          filter: none;
+          opacity: 1;
         }
-        .transparent .nav-divider { background: rgba(255,255,255,0.15); }
-        .solid       .nav-divider { background: rgba(20,32,26,0.12); }
+        .lc-logo-link:hover .lc-logo-img { transform: scale(1.02); }
 
-        .nav-btn {
+        /* ─── CTA BUTTON ─── */
+        .lc-cta {
           font-family: 'Montserrat', sans-serif;
-          font-size: 9px;
+          font-size: 8.5px;
           font-weight: 600;
-          letter-spacing: 0.2em;
+          letter-spacing: 0.24em;
           text-transform: uppercase;
           text-decoration: none;
-          padding: 11px 22px;
-          border-radius: 40px;
+          padding: 11px 24px;
+          border-radius: 50px;
           white-space: nowrap;
           flex-shrink: 0;
-          transition: all 0.28s ease;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
         }
-        .transparent .nav-btn {
+        .lc-cta::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+          pointer-events: none;
+        }
+        .transparent .lc-cta {
           color: #fff;
-          background: rgba(212,169,106,0.2);
-          border: 1px solid rgba(212,169,106,0.35);
+          background: rgba(201,168,76,0.18);
+          border: 1px solid rgba(201,168,76,0.4);
+          box-shadow: 0 0 20px rgba(201,168,76,0.15);
         }
-        .transparent .nav-btn:hover {
-          background: rgba(212,169,106,0.35);
-          border-color: rgba(212,169,106,0.6);
+        .transparent .lc-cta:hover {
+          background: rgba(201,168,76,0.32);
+          border-color: rgba(201,168,76,0.65);
+          box-shadow: 0 0 28px rgba(201,168,76,0.25);
+          transform: translateY(-1px);
         }
-        .solid .nav-btn {
-          color: #faf7f2;
-          background: #14201a;
+        .solid .lc-cta {
+          color: var(--cream);
+          background: var(--forest);
           border: 1px solid transparent;
+          box-shadow: 0 2px 12px rgba(20,32,26,0.2);
         }
-        .solid .nav-btn:hover { background: #8B6A3E; }
+        .solid .lc-cta:hover {
+          background: var(--gold);
+          box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+          transform: translateY(-1px);
+        }
 
-        /* ── MOBILE LOGO ── */
-        .nav-mobile-logo {
+        /* Divider */
+        .lc-divider {
+          width: 1px; height: 18px;
+          flex-shrink: 0;
+          transition: background 0.4s;
+        }
+        .transparent .lc-divider { background: rgba(255,255,255,0.15); }
+        .solid       .lc-divider { background: rgba(20,32,26,0.1); }
+
+        /* ─── MOBILE LOGO ─── */
+        .lc-mobile-logo {
           display: none;
-          align-items: center;
           text-decoration: none;
           flex-shrink: 0;
         }
-        @media (max-width: 899px) { .nav-mobile-logo { display: flex; } }
+        @media (max-width: 959px) { .lc-mobile-logo { display: block; } }
 
-        .mobile-logo-img {
-          height: 100px;
+        .lc-mobile-logo-img {
+          height: 70px;
           width: auto;
           object-fit: contain;
           display: block;
-          transition: filter 0.35s ease, opacity 0.35s ease;
+          transition: filter 0.4s ease, opacity 0.4s ease;
         }
-        .transparent .mobile-logo-img { filter: brightness(0) invert(1); opacity: 0.95; }
-        .solid       .mobile-logo-img { filter: none; opacity: 1; }
+        .transparent .lc-mobile-logo-img { filter: brightness(0) invert(1); opacity: 0.93; }
+        .solid       .lc-mobile-logo-img { filter: none; opacity: 1; }
 
-        /* ── HAMBURGER ── */
-        .nav-hamburger {
+        /* ─── HAMBURGER ─── */
+        .lc-burger {
           display: none;
           align-items: center;
           justify-content: center;
-          width: 42px; height: 42px;
+          width: 40px; height: 40px;
           border-radius: 50%;
           background: transparent;
           cursor: pointer;
           flex-shrink: 0;
-          transition: all 0.2s;
           border: none;
+          transition: background 0.2s;
         }
-        @media (max-width: 899px) { .nav-hamburger { display: flex; } }
+        .lc-burger:hover { background: rgba(20,32,26,0.06); }
+        @media (max-width: 959px) { .lc-burger { display: flex; } }
 
-        /* ── BACKDROP ── */
-        .nav-backdrop {
+        /* Mobile inner wrapper */
+        .lc-mobile-row {
+          display: none;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 20px;
+          height: var(--nav-h);
+        }
+        @media (max-width: 959px) { .lc-mobile-row { display: flex; } }
+        @media (max-width: 959px) { .lc-inner { display: none; } }
+
+        /* ─── BACKDROP ─── */
+        .lc-backdrop {
           position: fixed; inset: 0;
           z-index: 9998;
-          background: rgba(8,14,10,0.6);
-          backdrop-filter: blur(4px);
-          -webkit-backdrop-filter: blur(4px);
+          background: rgba(8,14,10,0.55);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
           opacity: 0; pointer-events: none;
-          transition: opacity 0.35s ease;
+          transition: opacity 0.38s ease;
         }
-        .nav-backdrop.open { opacity: 1; pointer-events: all; }
+        .lc-backdrop.open { opacity: 1; pointer-events: all; }
 
-        /* ── MOBILE DRAWER ── */
-        .nav-drawer {
+        /* ─── MOBILE DRAWER ─── */
+        .lc-drawer {
           position: fixed;
           top: 0; right: 0;
           width: min(360px, 90vw);
           height: 100dvh;
           z-index: 9999;
-          background: #faf7f2;
+          background: var(--cream);
           display: flex;
           flex-direction: column;
           transform: translateX(100%);
-          transition: transform 0.42s cubic-bezier(0.4,0,0.2,1);
+          transition: transform 0.44s cubic-bezier(0.4,0,0.2,1);
+          box-shadow: -8px 0 48px rgba(20,32,26,0.18);
         }
-        .nav-drawer.open { transform: translateX(0); }
-        @media (min-width: 900px) {
-          .nav-drawer, .nav-backdrop { display: none !important; }
+        .lc-drawer.open { transform: translateX(0); }
+
+        /* Gold accent on left edge of drawer */
+        .lc-drawer::before {
+          content: '';
+          position: absolute;
+          left: 0; top: 0; bottom: 0;
+          width: 2px;
+          background: linear-gradient(180deg, transparent 0%, var(--gold) 20%, var(--gold-light) 50%, var(--gold) 80%, transparent 100%);
         }
 
-        .drawer-header {
+        .drawer-head {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -2499,71 +600,73 @@ const Navbar = () => {
           border-bottom: 1px solid rgba(20,32,26,0.07);
           flex-shrink: 0;
         }
-        .drawer-logo-img { height: 56px; width: auto; object-fit: contain; }
+        .drawer-logo { height: 60px; width: auto; object-fit: contain; }
         .drawer-close {
-          width: 36px; height: 36px;
+          width: 34px; height: 34px;
           border-radius: 50%;
           border: 1px solid rgba(20,32,26,0.12);
           background: transparent;
           display: flex; align-items: center; justify-content: center;
           cursor: pointer;
-          color: #14201a;
-          transition: background 0.2s;
+          color: var(--forest);
+          transition: background 0.2s, border-color 0.2s;
         }
-        .drawer-close:hover { background: rgba(20,32,26,0.06); }
+        .drawer-close:hover {
+          background: rgba(20,32,26,0.06);
+          border-color: rgba(20,32,26,0.2);
+        }
 
-        .drawer-links {
-          display: flex;
-          flex-direction: column;
-          padding: 8px 0;
+        .drawer-body {
           flex: 1;
           overflow-y: auto;
+          padding: 6px 0;
         }
 
-        .drawer-link {
+        .drawer-item {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 18px 28px;
+          padding: 17px 28px;
           font-family: 'Montserrat', sans-serif;
-          font-size: 11px;
+          font-size: 10.5px;
           font-weight: 400;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: rgba(20,32,26,0.45);
+          color: var(--forest-soft);
           text-decoration: none;
           border-bottom: 1px solid rgba(20,32,26,0.05);
           transition: all 0.2s;
           position: relative;
         }
-        .drawer-link:hover { color: #14201a; background: rgba(20,32,26,0.02); padding-left: 36px; }
-        .drawer-link.active { color: #14201a; font-weight: 500; }
-        .drawer-link.active::before {
+        .drawer-item:hover { color: var(--forest); background: rgba(20,32,26,0.018); padding-left: 36px; }
+        .drawer-item.active { color: var(--forest); font-weight: 500; }
+        .drawer-item.active::before {
           content: '';
           position: absolute;
           left: 0; top: 0; bottom: 0;
           width: 2px;
-          background: #D4A96A;
+          background: var(--gold);
           border-radius: 0 2px 2px 0;
         }
         .drawer-num {
           font-family: 'Cormorant Garamond', serif;
           font-size: 11px;
           font-style: italic;
-          color: rgba(20,32,26,0.18);
+          color: rgba(20,32,26,0.16);
         }
 
-        .drawer-accordion-toggle {
+        /* Accordion toggle */
+        .drawer-toggle {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 18px 28px;
+          padding: 17px 28px;
           font-family: 'Montserrat', sans-serif;
-          font-size: 11px;
+          font-size: 10.5px;
           font-weight: 400;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: rgba(20,32,26,0.45);
+          color: var(--forest-soft);
           border-bottom: 1px solid rgba(20,32,26,0.05);
           cursor: pointer;
           background: none;
@@ -2573,20 +676,20 @@ const Navbar = () => {
           transition: all 0.2s;
           position: relative;
         }
-        .drawer-accordion-toggle.active { color: #14201a; font-weight: 500; }
-        .drawer-accordion-toggle.active::before {
+        .drawer-toggle.active { color: var(--forest); font-weight: 500; }
+        .drawer-toggle.active::before {
           content: '';
           position: absolute;
           left: 0; top: 0; bottom: 0;
           width: 2px;
-          background: #D4A96A;
+          background: var(--gold);
           border-radius: 0 2px 2px 0;
         }
-        .drawer-accordion-toggle:hover { color: #14201a; background: rgba(20,32,26,0.02); }
+        .drawer-toggle:hover { color: var(--forest); background: rgba(20,32,26,0.018); }
 
         .drawer-chevron {
           transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-          color: rgba(20,32,26,0.3);
+          color: rgba(20,32,26,0.28);
           flex-shrink: 0;
         }
         .drawer-chevron.open { transform: rotate(180deg); }
@@ -2594,84 +697,84 @@ const Navbar = () => {
         .drawer-sub {
           overflow: hidden;
           max-height: 0;
-          transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-          background: rgba(20,32,26,0.015);
+          transition: max-height 0.42s cubic-bezier(0.4,0,0.2,1);
+          background: rgba(20,32,26,0.014);
           border-bottom: 1px solid rgba(20,32,26,0.05);
         }
-        .drawer-sub.open { max-height: 800px; }
+        .drawer-sub.open { max-height: 900px; }
 
         .drawer-sub-item {
           display: flex;
           align-items: center;
-          gap: 14px;
-          padding: 14px 28px 14px 42px;
+          justify-content: space-between;
+          padding: 13px 28px 13px 40px;
           font-family: 'Montserrat', sans-serif;
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 400;
-          color: rgba(20,32,26,0.45);
-          letter-spacing: 0.04em;
+          color: var(--forest-soft);
+          letter-spacing: 0.05em;
           text-decoration: none;
-          border-bottom: 1px solid rgba(20,32,26,0.035);
+          border-bottom: 1px solid rgba(20,32,26,0.032);
           transition: all 0.15s;
         }
         .drawer-sub-item:last-child { border-bottom: none; }
-        .drawer-sub-item:hover  { color: #14201a; background: rgba(139,106,62,0.04); }
-        .drawer-sub-item.active { color: #8B6A3E; font-weight: 500; }
+        .drawer-sub-item:hover  { color: var(--forest); background: rgba(201,168,76,0.04); }
+        .drawer-sub-item.active { color: var(--gold); font-weight: 500; }
         .drawer-sub-num {
-          margin-left: auto;
           font-family: 'Cormorant Garamond', serif;
           font-size: 11px;
           font-style: italic;
-          color: rgba(20,32,26,0.18);
+          color: rgba(20,32,26,0.16);
         }
 
-        .drawer-company-item {
+        .drawer-co-item {
           display: flex;
           align-items: center;
-          gap: 16px;
-          padding: 16px 28px 16px 38px;
-          font-family: 'Montserrat', sans-serif;
-          font-size: 11px;
-          font-weight: 400;
-          color: rgba(20,32,26,0.5);
-          letter-spacing: 0.04em;
+          gap: 14px;
+          padding: 14px 28px 14px 36px;
           text-decoration: none;
-          border-bottom: 1px solid rgba(20,32,26,0.035);
+          border-bottom: 1px solid rgba(20,32,26,0.032);
           transition: all 0.15s;
         }
-        .drawer-company-item:last-child { border-bottom: none; }
-        .drawer-company-item:hover  { color: #14201a; background: rgba(139,106,62,0.04); }
-        .drawer-company-item.active { color: #8B6A3E; font-weight: 500; }
+        .drawer-co-item:last-child { border-bottom: none; }
+        .drawer-co-item:hover  { background: rgba(201,168,76,0.04); }
+        .drawer-co-item.active { background: rgba(201,168,76,0.06); }
 
-        .drawer-company-icon {
+        .drawer-co-icon {
           width: 28px; height: 28px;
           border-radius: 7px;
-          background: rgba(20,32,26,0.06);
+          background: rgba(20,32,26,0.05);
           display: flex; align-items: center; justify-content: center;
           font-size: 11px;
-          color: rgba(20,32,26,0.35);
+          color: rgba(20,32,26,0.32);
           flex-shrink: 0;
           transition: background 0.15s, color 0.15s;
           font-family: sans-serif;
         }
-        .drawer-company-item:hover  .drawer-company-icon,
-        .drawer-company-item.active .drawer-company-icon {
-          background: rgba(139,106,62,0.1);
-          color: #8B6A3E;
+        .drawer-co-item:hover  .drawer-co-icon,
+        .drawer-co-item.active .drawer-co-icon { background: rgba(201,168,76,0.12); color: var(--gold); }
+
+        .drawer-co-text { flex: 1; }
+        .drawer-co-name {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 11px;
+          font-weight: 500;
+          color: var(--forest-soft);
+          letter-spacing: 0.04em;
+          transition: color 0.15s;
         }
-        .drawer-company-text { flex: 1; }
-        .drawer-company-name { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; }
-        .drawer-company-sub {
+        .drawer-co-item:hover  .drawer-co-name { color: var(--forest); }
+        .drawer-co-item.active .drawer-co-name { color: var(--gold); }
+        .drawer-co-sub {
           font-family: 'Cormorant Garamond', serif;
           font-size: 11px;
           font-style: italic;
-          color: rgba(20,32,26,0.28);
+          color: rgba(20,32,26,0.26);
           margin-top: 1px;
-          letter-spacing: 0.02em;
         }
 
-        .drawer-footer {
-          padding: 24px 28px 40px;
+        .drawer-foot {
+          padding: 22px 24px 36px;
           border-top: 1px solid rgba(20,32,26,0.07);
           flex-shrink: 0;
         }
@@ -2679,125 +782,123 @@ const Navbar = () => {
           display: block;
           text-align: center;
           font-family: 'Montserrat', sans-serif;
-          font-size: 9px;
+          font-size: 8.5px;
           font-weight: 600;
-          letter-spacing: 0.25em;
+          letter-spacing: 0.26em;
           text-transform: uppercase;
           text-decoration: none;
-          padding: 16px 28px;
-          border-radius: 40px;
-          color: #faf7f2;
-          background: #14201a;
-          transition: background 0.25s;
+          padding: 15px 24px;
+          border-radius: 50px;
+          color: var(--cream);
+          background: var(--forest);
+          transition: background 0.28s, transform 0.28s;
+          box-shadow: 0 2px 12px rgba(20,32,26,0.18);
         }
-        .drawer-cta:hover { background: #8B6A3E; }
-        .drawer-footer-note {
+        .drawer-cta:hover { background: var(--gold); transform: translateY(-1px); }
+        .drawer-tagline {
           text-align: center;
-          margin-top: 14px;
+          margin-top: 13px;
           font-family: 'Cormorant Garamond', serif;
           font-size: 12px;
           font-style: italic;
-          color: rgba(20,32,26,0.3);
-          letter-spacing: 0.03em;
+          color: rgba(20,32,26,0.28);
+          letter-spacing: 0.04em;
         }
       `}</style>
 
-      {/* ── MAIN NAV ── */}
-      <nav className={`nav-root ${mode}`}>
-        <div className={`nav-inner${mounted ? " vis" : ""}`}>
+      {/* ═══════════════════════════════════════════════════ */}
+      {/*  MAIN NAV                                          */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <nav className={`lc-nav ${mode}`}>
 
-          {/* Mobile Logo */}
-          <Link to="/" className="nav-mobile-logo">
-            <img src={logo} alt="Legacy Curator" className="mobile-logo-img" />
-          </Link>
+        {/* ── DESKTOP (3-column grid) ── */}
+        <div className={`lc-inner${mounted ? " vis" : ""}`}>
 
-          {/* Left Links — desktop */}
-          <div className="nav-left">
-            {navLinks.map((link) => (
+          {/* LEFT */}
+          <div className="lc-left">
+            {leftNavLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`nav-link${location.pathname === link.path ? " active" : ""}`}
+                className={`lc-link${location.pathname === link.path ? " active" : ""}`}
               >
                 {link.name}
               </Link>
             ))}
 
-            {/* The Company Dropdown */}
-            <div className="nav-dropdown-wrap" ref={companyRef}>
+            {/* Company dropdown */}
+            <div className="lc-drop-wrap" ref={companyRef}>
               <button
-                className={`nav-drop-btn${isCompanyActive ? " active" : ""}`}
+                className={`lc-drop-btn${isCompanyActive ? " active" : ""}`}
                 onClick={() => { setCompanyDropOpen(v => !v); setDropOpen(false); }}
-                aria-haspopup="true"
-                aria-expanded={companyDropOpen}
+                aria-haspopup="true" aria-expanded={companyDropOpen}
               >
                 The Company
-                <ChevronDown size={12} className={`nav-chevron${companyDropOpen ? " open" : ""}`} />
+                <ChevronDown size={11} className={`lc-chevron${companyDropOpen ? " open" : ""}`} />
               </button>
 
-              <div className={`nav-dropdown company${companyDropOpen ? " open" : ""}`} role="menu">
-                <div className="drop-header">
-                  <div className="drop-header-left">
-                    <span className="drop-label">Who we are</span>
-                    <span className="drop-title">The Company</span>
+              <div className={`lc-dropdown company${companyDropOpen ? " open" : ""}`} role="menu">
+                <div className="dd-head">
+                  <div className="dd-head-left">
+                    <span className="dd-eyebrow">Who we are</span>
+                    <span className="dd-title">The Company</span>
                   </div>
-                  <span className="drop-badge">Our Story</span>
+                  <span className="dd-badge">Our Story</span>
                 </div>
-                <div className="company-list">
+                <div className="dd-company-list">
                   {companyLinks.map((item) => (
                     <Link
                       key={item.path}
                       to={item.path}
-                      className={`company-item${location.pathname === item.path ? " active" : ""}`}
+                      className={`dd-co-item${location.pathname === item.path ? " active" : ""}`}
                       role="menuitem"
                       onClick={() => setCompanyDropOpen(false)}
                     >
-                      <div className="company-icon">{item.icon}</div>
-                      <div className="company-text">
-                        <div className="company-name">{item.name}</div>
-                        <div className="company-sub">{item.sub}</div>
+                      <div className="dd-co-icon">{item.icon}</div>
+                      <div className="dd-co-text">
+                        <div className="dd-co-name">{item.name}</div>
+                        <div className="dd-co-sub">{item.sub}</div>
                       </div>
-                      <ChevronDown size={11} className="company-chevron" style={{ transform: "rotate(-90deg)" }} />
+                      <ChevronDown size={10} className="dd-co-chevron" style={{ transform: "rotate(-90deg)" }} />
                     </Link>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Portfolio Dropdown */}
-            <div className="nav-dropdown-wrap" ref={dropRef}>
+            {/* Portfolio dropdown */}
+            <div className="lc-drop-wrap" ref={dropRef}>
               <button
-                className={`nav-drop-btn${isServicesActive ? " active" : ""}`}
+                className={`lc-drop-btn${isServicesActive ? " active" : ""}`}
                 onClick={() => { setDropOpen(v => !v); setCompanyDropOpen(false); }}
-                aria-haspopup="true"
-                aria-expanded={dropOpen}
+                aria-haspopup="true" aria-expanded={dropOpen}
               >
                 Portfolio
-                <ChevronDown size={12} className={`nav-chevron${dropOpen ? " open" : ""}`} />
+                <ChevronDown size={11} className={`lc-chevron${dropOpen ? " open" : ""}`} />
               </button>
 
-              <div className={`nav-dropdown portfolio${dropOpen ? " open" : ""}`} role="menu">
-                <div className="drop-header">
-                  <div className="drop-header-left">
-                    <span className="drop-label">Explore</span>
-                    <span className="drop-title">Our Collections</span>
+              <div className={`lc-dropdown portfolio${dropOpen ? " open" : ""}`} role="menu">
+                <div className="dd-head">
+                  <div className="dd-head-left">
+                    <span className="dd-eyebrow">Explore</span>
+                    <span className="dd-title">Our Collections</span>
                   </div>
-                  <span className="drop-badge">8 Book Types</span>
+                  <span className="dd-badge">8 Book Types</span>
                 </div>
-                <div className="drop-grid">
+                <div className="dd-grid">
                   {serviceLinks.map((svc) => (
                     <Link
                       key={svc.slug}
                       to={`/services/${svc.slug}`}
-                      className={`drop-item${location.pathname === `/services/${svc.slug}` ? " active" : ""}`}
+                      className={`dd-item${location.pathname === `/services/${svc.slug}` ? " active" : ""}`}
                       role="menuitem"
                       onClick={() => setDropOpen(false)}
                     >
-                      <div className="drop-text">
-                        <div className="drop-name">{svc.name}</div>
-                        <div className="drop-sub">{svc.sub}</div>
+                      <div className="dd-text">
+                        <div className="dd-name">{svc.name}</div>
+                        <div className="dd-sub">{svc.sub}</div>
                       </div>
-                      <ChevronDown size={11} className="drop-arrow" style={{ transform: "rotate(-90deg)" }} />
+                      <ChevronDown size={10} className="dd-arr" style={{ transform: "rotate(-90deg)" }} />
                     </Link>
                   ))}
                 </div>
@@ -2805,54 +906,60 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Center Logo — desktop */}
-          <div className="nav-center">
-            <Link to="/" className="nav-logo-wrap">
-              <img src={logo} alt="Legacy Curator" className="logo-img" />
+          {/* CENTER LOGO */}
+          <div className="lc-logo-wrap">
+            <Link to="/" className="lc-logo-link">
+              <img src={logo} alt="Legacy Curator" className="lc-logo-img" />
             </Link>
           </div>
 
-          {/* Right — desktop */}
-          <div className="nav-right">
-            <span className="nav-divider" />
-            <Link to="/contacts" className="nav-btn">Contact Us</Link>
+          {/* RIGHT */}
+          <div className="lc-right">
+            <span className="lc-divider" />
+            <Link to="/contacts" className="lc-cta">Contact Us</Link>
           </div>
+        </div>
 
-          {/* Hamburger */}
+        {/* ── MOBILE ROW ── */}
+        <div className={`lc-mobile-row${mounted ? " vis" : ""}`} style={{
+          opacity: mounted ? 1 : 0,
+          transition: 'opacity 0.6s ease 0.05s',
+        }}>
+          <Link to="/" className="lc-mobile-logo">
+            <img src={logo} alt="Legacy Curator" className="lc-mobile-logo-img" />
+          </Link>
           <button
-            className="nav-hamburger"
+            className="lc-burger"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
           >
-            <Menu size={22} color={isTransparent ? "#ffffff" : "#14201a"} />
+            <Menu size={20} color={isTransparent ? "#ffffff" : "#14201a"} />
           </button>
-
         </div>
       </nav>
 
       {/* Backdrop */}
-      <div
-        className={`nav-backdrop${menuOpen ? " open" : ""}`}
-        onClick={() => setMenuOpen(false)}
-      />
+      <div className={`lc-backdrop${menuOpen ? " open" : ""}`} onClick={() => setMenuOpen(false)} />
 
-      {/* ── MOBILE DRAWER ── */}
-      <div className={`nav-drawer${menuOpen ? " open" : ""}`}>
-        <div className="drawer-header">
+      {/* ═══════════════════════════════════════════════════ */}
+      {/*  MOBILE DRAWER                                     */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <div className={`lc-drawer${menuOpen ? " open" : ""}`}>
+        <div className="drawer-head">
           <Link to="/" onClick={() => setMenuOpen(false)}>
-            <img src={logo} alt="Legacy Curator" className="drawer-logo-img" />
+            <img src={logo} alt="Legacy Curator" className="drawer-logo" />
           </Link>
           <button className="drawer-close" onClick={() => setMenuOpen(false)} aria-label="Close">
-            <X size={15} />
+            <X size={14} />
           </button>
         </div>
 
-        <div className="drawer-links">
-          {navLinks.map((link, i) => (
+        <div className="drawer-body">
+          {leftNavLinks.map((link, i) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`drawer-link${location.pathname === link.path ? " active" : ""}`}
+              className={`drawer-item${location.pathname === link.path ? " active" : ""}`}
               onClick={() => setMenuOpen(false)}
             >
               {link.name}
@@ -2860,26 +967,26 @@ const Navbar = () => {
             </Link>
           ))}
 
-          {/* The Company accordion */}
+          {/* Company accordion */}
           <button
-            className={`drawer-accordion-toggle${isCompanyActive ? " active" : ""}`}
+            className={`drawer-toggle${isCompanyActive ? " active" : ""}`}
             onClick={() => setMobileCompOpen(v => !v)}
           >
             The Company
-            <ChevronDown size={14} className={`drawer-chevron${mobileCompOpen ? " open" : ""}`} />
+            <ChevronDown size={13} className={`drawer-chevron${mobileCompOpen ? " open" : ""}`} />
           </button>
           <div className={`drawer-sub${mobileCompOpen ? " open" : ""}`}>
             {companyLinks.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`drawer-company-item${location.pathname === item.path ? " active" : ""}`}
+                className={`drawer-co-item${location.pathname === item.path ? " active" : ""}`}
                 onClick={() => setMenuOpen(false)}
               >
-                <div className="drawer-company-icon">{item.icon}</div>
-                <div className="drawer-company-text">
-                  <div className="drawer-company-name">{item.name}</div>
-                  <div className="drawer-company-sub">{item.sub}</div>
+                <div className="drawer-co-icon">{item.icon}</div>
+                <div className="drawer-co-text">
+                  <div className="drawer-co-name">{item.name}</div>
+                  <div className="drawer-co-sub">{item.sub}</div>
                 </div>
               </Link>
             ))}
@@ -2889,9 +996,21 @@ const Navbar = () => {
           <button
             className={`drawer-accordion-toggle${isServicesActive ? " active" : ""}`}
             onClick={() => setMobileServOpen(v => !v)}
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '17px 28px',
+              fontFamily: "'Montserrat', sans-serif", fontSize: '10.5px', fontWeight: 400,
+              letterSpacing: '0.18em', textTransform: 'uppercase',
+              color: isServicesActive ? '#14201a' : 'rgba(20,32,26,0.45)',
+              borderBottom: '1px solid rgba(20,32,26,0.05)',
+              cursor: 'pointer', background: 'none',
+              borderLeft: 'none', borderRight: 'none', borderTop: 'none',
+              width: '100%', textAlign: 'left', transition: 'all 0.2s',
+              position: 'relative', fontWeight: isServicesActive ? 500 : 400,
+            }}
           >
             Portfolio
-            <ChevronDown size={14} className={`drawer-chevron${mobileServOpen ? " open" : ""}`} />
+            <ChevronDown size={13} className={`drawer-chevron${mobileServOpen ? " open" : ""}`} />
           </button>
           <div className={`drawer-sub${mobileServOpen ? " open" : ""}`}>
             {serviceLinks.map((svc, i) => (
@@ -2908,11 +1027,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="drawer-footer">
+        <div className="drawer-foot">
           <Link to="/contacts" className="drawer-cta" onClick={() => setMenuOpen(false)}>
             Contact Us
           </Link>
-          <p className="drawer-footer-note">Crafting heirloom books since 2018</p>
+          <p className="drawer-tagline">Crafting heirloom books since 2018</p>
         </div>
       </div>
     </>

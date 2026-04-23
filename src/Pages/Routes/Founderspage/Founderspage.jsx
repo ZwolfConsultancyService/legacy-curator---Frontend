@@ -24,14 +24,17 @@ const storyParas = [
 ];
 
 const abhishekParas = [
-  "His journey began by supporting his elder brother, Dr. Ashish Sharma — taking on the responsibility of organizing, managing, and streamlining day-to-day functions. What started as support soon evolved into a larger mission: building a scalable and lasting legacy.",
-  "Abhishek brings a unique blend of strategic thinking and hands-on management. He specializes in creating efficient workflows, optimizing time and resources, and ensuring that vision is not lost in complexity.",
-  "His approach is simple yet powerful: build systems that allow leaders to focus on what they do best, while the foundation remains strong and growth-ready.",
+  "Behind every enduring vision is someone who ensures it is built with structure, clarity, and purpose. Abhishek Sharma, Co-Founder of Legacy Curator, is the force that transforms ideas into sustainable systems and long-term impact.",
+  "With a sharp focus on execution and growth, Abhishek plays a critical role in shaping and managing the operational backbone of the organization. His journey began by supporting his elder brother, Dr. Ashish Sharma — taking on the responsibility of organizing, managing, and streamlining day-to-day functions. What started as support soon evolved into a larger mission: building a scalable and lasting legacy.",
+  "Abhishek brings a unique blend of strategic thinking and hands-on management. He specializes in creating efficient workflows, optimizing time and resources, and ensuring that vision is not lost in complexity. His approach is simple yet powerful: build systems that allow leaders to focus on what they do best, while the foundation remains strong and growth-ready.",
   "As a Legacy Curator, his role goes beyond operations. He is deeply committed to preserving the intent behind every vision while enabling it to expand and evolve. He believes that true success lies not just in achieving goals, but in creating structures that sustain success across generations.",
+  "Today, as Co-Founder, Abhishek Sharma continues to drive Legacy Curator with discipline, foresight, and a clear mission — to help transform meaningful visions into enduring legacies.",
 ];
 
 export default function FounderPage() {
   const [visible, setVisible] = useState(new Set());
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
   const refs = useRef({});
 
   useEffect(() => {
@@ -47,9 +50,16 @@ export default function FounderPage() {
 
   const r = (k) => (el) => { refs.current[k] = el; if (el) el.dataset.vi = k; };
 
+  const handleContact = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
         .fp *{box-sizing:border-box;margin:0;padding:0}
         :root {
           --forest: #2d5249;
@@ -493,6 +503,162 @@ export default function FounderPage() {
           color: var(--faint); line-height: 1.75;
         }
 
+        /* ── CONTACT SECTION ── */
+        .fp-contact {
+          background: var(--cream);
+          border-top: 1px solid var(--rule);
+          border-bottom: 1px solid var(--rule);
+        }
+
+        .fp-contact-inner {
+          max-width: 1200px; margin: 0 auto;
+          padding: 100px 64px;
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: 80px; align-items: start;
+          opacity: 0; transform: translateY(40px);
+          transition: opacity 0.9s, transform 0.9s;
+        }
+        .fp-contact-inner.vis { opacity: 1; transform: none; }
+
+        .fp-contact-left {}
+
+        .fp-contact-big {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(40px, 5vw, 68px);
+          font-weight: 300; line-height: 0.95;
+          letter-spacing: -0.03em; color: var(--ink);
+          margin-bottom: 28px;
+        }
+        .fp-contact-big em { font-style: italic; color: var(--forest); }
+
+        .fp-contact-desc {
+          font-size: 15px; font-weight: 300;
+          color: var(--muted); line-height: 1.9;
+          margin-bottom: 40px;
+        }
+
+        /* Contact info cards */
+        .fp-contact-cards {
+          display: flex; flex-direction: column; gap: 12px;
+        }
+
+        .fp-contact-card {
+          display: flex; align-items: center; gap: 16px;
+          padding: 18px 20px;
+          background: var(--page);
+          border: 1px solid var(--rule);
+          border-radius: 2px;
+          transition: border-color 0.2s, transform 0.2s;
+          text-decoration: none;
+        }
+        .fp-contact-card:hover {
+          border-color: var(--copper);
+          transform: translateX(4px);
+        }
+
+        .fp-contact-card-icon {
+          width: 42px; height: 42px; flex-shrink: 0;
+          background: var(--forest);
+          display: flex; align-items: center; justify-content: center;
+        }
+
+        .fp-contact-card-label {
+          font-size: 9px; font-weight: 600;
+          letter-spacing: 0.18em; text-transform: uppercase;
+          color: var(--faint); margin-bottom: 4px;
+        }
+
+        .fp-contact-card-val {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 18px; font-weight: 400;
+          color: var(--ink); letter-spacing: 0.01em;
+        }
+
+        /* Form */
+        .fp-form {
+          display: flex; flex-direction: column; gap: 16px;
+        }
+
+        .fp-form-title {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(26px, 2.8vw, 36px);
+          font-weight: 300; color: var(--ink);
+          margin-bottom: 4px; line-height: 1.1;
+        }
+        .fp-form-title em { font-style: italic; color: var(--forest); }
+
+        .fp-form-sub {
+          font-size: 13px; font-weight: 300;
+          color: var(--faint); line-height: 1.7;
+          margin-bottom: 8px;
+        }
+
+        .fp-form-row {
+          display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+        }
+
+        .fp-field {
+          display: flex; flex-direction: column; gap: 6px;
+        }
+
+        .fp-field label {
+          font-size: 9px; font-weight: 600;
+          letter-spacing: 0.18em; text-transform: uppercase;
+          color: var(--faint);
+        }
+
+        .fp-field input,
+        .fp-field textarea {
+          padding: 13px 16px;
+          border: 1px solid var(--rule);
+          background: var(--page);
+          font-family: 'Montserrat', sans-serif;
+          font-size: 14px; font-weight: 300;
+          color: var(--ink);
+          outline: none;
+          transition: border-color 0.2s;
+          resize: none;
+          border-radius: 0;
+        }
+        .fp-field input:focus,
+        .fp-field textarea:focus {
+          border-color: var(--forest);
+        }
+        .fp-field input::placeholder,
+        .fp-field textarea::placeholder { color: var(--faint); }
+
+        .fp-submit {
+          display: inline-flex; align-items: center; gap: 10px;
+          font-size: 11px; font-weight: 500;
+          letter-spacing: 0.16em; text-transform: uppercase;
+          color: var(--egg); background: var(--forest);
+          padding: 16px 32px;
+          border: none; cursor: pointer;
+          transition: background 0.2s;
+          align-self: flex-start;
+          font-family: 'Montserrat', sans-serif;
+        }
+        .fp-submit:hover { background: var(--saddle); }
+
+        .fp-form-success {
+          padding: 28px;
+          background: rgba(45,82,73,0.07);
+          border: 1px solid var(--forest);
+          text-align: center;
+        }
+        .fp-form-success-icon {
+          font-size: 32px; margin-bottom: 12px;
+        }
+        .fp-form-success-title {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 24px; font-weight: 300;
+          color: var(--forest); margin-bottom: 8px;
+        }
+        .fp-form-success-sub {
+          font-size: 13px; font-weight: 300;
+          color: var(--faint); line-height: 1.7;
+        }
+
         /* ── CLOSING ── */
         .fp-closing {
           max-width: 1200px; margin: 0 auto;
@@ -556,14 +722,16 @@ export default function FounderPage() {
           .fp-pillars { grid-template-columns: 1fr; }
           .fp-pillar { border-right: none; border-bottom: 1px solid var(--rule); }
           .fp-pillar:last-child { border-bottom: none; }
+          .fp-contact-inner { grid-template-columns: 1fr; gap: 48px; padding: 64px 32px; }
           .fp-closing { grid-template-columns: 1fr; gap: 40px; padding: 64px 32px; }
           .fp-footer-strip-in { flex-direction: column; align-items: flex-start; padding: 28px 32px; gap: 12px; }
           .fp-rule-wrap { padding: 0 32px; }
+          .fp-form-row { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
           .fp-hero-right { padding: 36px 24px; }
           .fp-poem-section, .fp-story-inner, .fp-closing { padding: 48px 24px; }
-          .fp-cofounder-inner, .fp-cf-story-inner { padding: 48px 24px; }
+          .fp-cofounder-inner, .fp-cf-story-inner, .fp-contact-inner { padding: 48px 24px; }
           .fp-rule-wrap { padding: 0 24px; }
         }
       `}</style>
@@ -582,17 +750,6 @@ export default function FounderPage() {
                   <div className="fp-bracket fp-bracket-tr" />
                   <div className="fp-bracket fp-bracket-bl" />
                   <div className="fp-bracket fp-bracket-br" />
-                  <svg className="fp-silhouette" viewBox="0 0 300 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="150" cy="72" rx="42" ry="48" fill="rgba(167,112,61,0.18)" />
-                    <ellipse cx="150" cy="68" rx="32" ry="36" fill="rgba(167,112,61,0.28)" />
-                    <rect x="132" y="108" width="36" height="28" rx="4" fill="rgba(167,112,61,0.22)" />
-                    <path d="M50 420 C50 300 90 240 130 220 L150 230 L170 220 C210 240 250 300 250 420 Z" fill="rgba(167,112,61,0.15)" />
-                    <path d="M70 420 C70 310 105 255 135 236 L150 244 L165 236 C195 255 230 310 230 420 Z" fill="rgba(167,112,61,0.25)" />
-                    <path d="M135 236 L150 270 L120 250 Z" fill="rgba(243,240,225,0.08)" />
-                    <path d="M165 236 L150 270 L180 250 Z" fill="rgba(243,240,225,0.08)" />
-                    <path d="M146 244 L154 244 L158 310 L150 322 L142 310 Z" fill="rgba(167,112,61,0.35)" />
-                    <text x="150" y="370" textAnchor="middle" fontFamily="'Cormorant Garamond', serif" fontSize="52" fontWeight="300" fill="rgba(243,240,225,0.12)" letterSpacing="4">AS</text>
-                  </svg>
                   <span className="fp-initials-bg">AS</span>
                 </div>
               )
@@ -649,11 +806,9 @@ export default function FounderPage() {
           </div>
         </section>
 
-        <div className="fp-rule-wrap">
-          <div className="fp-rule" />
-        </div>
+        <div className="fp-rule-wrap"><div className="fp-rule" /></div>
 
-        {/* ── DR. ASHISH STORY SECTION ── */}
+        {/* ── DR. ASHISH STORY ── */}
         <section className="fp-story">
           <div
             className={`fp-story-inner${visible.has('story') ? ' vis' : ''}`}
@@ -670,7 +825,6 @@ export default function FounderPage() {
                 Dr. Ashish Sharma's journey across two callings.
               </p>
             </div>
-
             <div className="fp-story-paras">
               <p className="fp-section-label" style={{ marginBottom: 32 }}>The founder's story</p>
               {storyParas.map((para, i) => (
@@ -723,7 +877,7 @@ export default function FounderPage() {
                 behind every<br />
                 <em>vision.</em>
               </h2>
-              <p className="fp-cf-role">Co-Founder · Legacy Curator · Operations & Growth</p>
+              <p className="fp-cf-role">Co-Founder & Legacy Curator · Operations & Growth</p>
               <p className="fp-cf-tagline">
                 "True success lies not just in achieving goals,<br />
                 but in creating structures that sustain them."
@@ -812,7 +966,7 @@ export default function FounderPage() {
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11"
                   stroke="currentColor" strokeWidth="1.5"
-                  strokeLinecap="round" strokeLinejoin="round" />
+                  strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
           </div>

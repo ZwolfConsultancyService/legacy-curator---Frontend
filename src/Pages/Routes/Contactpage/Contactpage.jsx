@@ -183,20 +183,7 @@ export default function ContactPage() {
                 <input name="subject" value={form.subject} onChange={handleChange} onFocus={() => setFocused("subject")} onBlur={() => setFocused("")} placeholder="What's this about?" style={inputStyle("subject")} />
               </div>
 
-              <div style={{ marginBottom: 32 }}>
-                <label style={{ fontSize: "0.68rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "#999", display: "block", marginBottom: 12, fontFamily: "'Montserrat', sans-serif", fontWeight: 600 }}>I'm interested in</label>
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                  {["Portfolio Creation", "Collaboration", "Prints & Editions", "General Inquiry"].map((tag) => (
-                    <button
-                      key={tag}
-                      onClick={() => setForm({ ...form, interestedIn: tag })}
-                      style={{ padding: "6px 16px", borderRadius: 100, border: `1px solid ${form.interestedIn === tag ? colors.forest : "rgba(54,97,90,0.25)"}`, background: form.interestedIn === tag ? colors.forest : "transparent", color: form.interestedIn === tag ? colors.porcelain : "#777", fontSize: "0.73rem", cursor: "pointer", transition: "all 0.2s", fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}
-                    >
-                      {tag}
-                    </button>
-                  ))}
-                </div>
-              </div>
+             
 
               <div style={{ marginBottom: 40 }}>
                 <label style={{ fontSize: "0.68rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "#999", display: "block", marginBottom: 4, fontFamily: "'Montserrat', sans-serif", fontWeight: 600 }}>Message *</label>
