@@ -5,8 +5,8 @@ import logo from "../../../assets/LegacyCuratorlogo.png";
 
 const serviceLinks = [
   { name: "Photo Books",        slug: "photo-book",          icon: "📷", sub: "Memories, preserved"   },
-  { name: "Travel Books",       slug: "travel-book",         icon: "✈️", sub: "Journeys, immortalised" },
-  { name: "Legacy Books",       slug: "legacy-book",         icon: "🏛️", sub: "Lineage, honoured"      },
+  // { name: "Travel Books",       slug: "travel-book",         icon: "✈️", sub: "Journeys, immortalised" },
+  // { name: "Legacy Books",       slug: "legacy-book",         icon: "🏛️", sub: "Lineage, honoured"      },
   { name: "Coffee Table Books", slug: "coffee-table",        icon: "☕", sub: "Statement, displayed"   },
   { name: "Memoir Books",       slug: "memoir",              icon: "📖", sub: "Your story, told"       },
   { name: "Vision & Passion",   slug: "vision-passion-book", icon: "✨", sub: "Dreams, realised"       },
@@ -25,9 +25,6 @@ const leftNavLinks  = [
   { name: "Blogs", path: "/blogs" },
 ];
 
-const rightNavLinks = [
-  // Right side plain links (before CTA button) — add more if needed
-];
 
 const Navbar = () => {
   const [menuOpen,        setMenuOpen]        = useState(false);
@@ -223,7 +220,7 @@ const Navbar = () => {
         .lc-chevron.open { transform: rotate(180deg); }
 
         /* ─── DROPDOWN WRAP ─── */
-        .lc-drop-wrap { position: relative; flex-shrink: 0; }
+        .lc-drop-wrap { position: relative; flex-shrink: 0; margin-bottom: 9px; }
 
         /* ─── DROPDOWN PANEL ─── */
         .lc-dropdown {
@@ -518,7 +515,7 @@ const Navbar = () => {
         @media (max-width: 959px) { .lc-mobile-logo { display: block; } }
 
         .lc-mobile-logo-img {
-          height: 70px;
+          height: 100px;
           width: auto;
           object-fit: contain;
           display: block;

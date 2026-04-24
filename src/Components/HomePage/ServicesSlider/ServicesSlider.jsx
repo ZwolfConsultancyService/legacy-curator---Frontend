@@ -1,295 +1,25 @@
-
-
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// const services = [
-//   {
-//     title: "Coffee Table Books",
-//     tagline: "Art You Can Hold.",
-//     desc: "Our coffee table books are crafted to be seen, felt, and admired, turning every page into a visual experience and a timeless conversation piece.",
-//     image:
-//       "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80",
-//     path: "/services/coffee-table",
-//   },
-//   {
-//     title: "Family Legacy Books",
-//     tagline: "Stories Passed Down Forever.",
-//     desc: "Our family legacy books preserve generations of love, values, and memories, ensuring your story continues to live on and inspire forever.",
-//     image:
-//       "https://images.unsplash.com/photo-1491841573634-28140fc7ced7?w=800&q=80",
-//     path: "/services/legacy-book",
-//   },
-//   {
-//     title: "Business Story Books",
-//     tagline: "The story behind the empire.",
-//     desc: "Our business story books capture your journey from vision to success, turning it into a powerful narrative that builds trust and inspires growth",
-//     image:
-//       "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
-//     path: "/services/business-book",
-//   },
-//   {
-//     title: "Memoir Books",
-//     tagline: "A life, in your own words.",
-//     desc: "Our memoir and tribute books reflect life most heartfelt moments, honouring stories that deserve to be cherished and remembered forever.",
-//     image:
-//       "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=800&q=80",
-//     path: "/services/memoir",
-//   },
-
-//   {
-//     title: "Photo Books",
-//     tagline: "Moments that refuse to fade.",
-//     desc: "Our photo books beautifully capture and curate your special moments, designed to help you relive your memories again and again.",
-//     image:
-//       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-//     path: "/services/photo-book",
-//   },
-//   {
-//     title: "Vision & Passion Books",
-//     tagline: "Write what comes next",
-//     desc: "Our vision and passion books bring your dreams, ideas, and purpose together, shaping them into a story that inspires and guides.",
-//     image:
-//       "https://i.pinimg.com/736x/7e/59/bf/7e59bfdb255b71519113b568e35c8f42.jpg",
-//     path: "/services/vision-passion-book",
-//   },
-//   {
-//     title: 'Devotional Books',
-//     tagline: 'Where faith finds its voice.',
-//     desc: 'Our devotional books express faith and spirituality in a soulful way, crafted to bring peace, meaning, and a deeper connection.',
-//     image: 'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=800&q=80',
-//     path: '/services/devotional-book'
-//   }
- 
-// ];
-// //business stories book
-// const ServicesCards = () => {
-//   return (
-//     <>
-//       <style>{`
-//         .sv-section {
-//           background: #F5F0EA;
-//           padding: 80px 0;
-//           font-family: 'DM Sans', sans-serif;
-//         }
-//         .sv-container {
-//           max-width: 1200px;
-//           margin: 0 auto;
-//           padding: 0 48px;
-//         }
-
-//         /* --- SECTION HEADER --- */
-//         .sv-top {
-//           text-align: center;
-//           margin-bottom: 80px;
-//         }
-//         .sv-eyebrow {
-//           font-size: 11px;
-//           letter-spacing: 0.3em;
-//           text-transform: uppercase;
-//           color: #8B6A3E;
-//           font-weight: 600;
-//           margin-bottom: 16px;
-//         }
-//         .sv-main-title {
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 52px;
-//           font-weight: 600;
-//           color: #1E2B24;
-//           line-height: 1.1;
-//         }
-//         .sv-main-title em {
-//           font-style: italic;
-//           color: #8B6A3E;
-//         }
-
-//         /* --- ZIGZAG ROW --- */
-//         .sv-row {
-//           display: flex;
-//           align-items: center;
-//           gap: 64px;
-//           margin-bottom: 100px;
-//         }
-//         .sv-row:last-child { margin-bottom: 0; }
-
-//         /* Even index = image left, text right (default) */
-//         /* Odd index = image right, text left (reverse) */
-//         .sv-row.reverse { flex-direction: row-reverse; }
-
-//         /* --- IMAGE SIDE --- */
-//         .sv-img-wrap {
-//           flex: 0 0 48%;
-//           position: relative;
-//           border-radius: 20px;
-//           overflow: hidden;
-//           aspect-ratio: 4 / 3;
-//         }
-//         .sv-img-wrap img {
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//           display: block;
-//           transition: transform 0.8s ease;
-//         }
-//         .sv-row:hover .sv-img-wrap img {
-//           transform: scale(1.04);
-//         }
-//         .sv-img-number {
-//           position: absolute;
-//           top: 20px;
-//           left: 24px;
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 64px;
-//           font-weight: 700;
-//           color: rgba(255,255,255,0.2);
-//           line-height: 1;
-//           pointer-events: none;
-//         }
-
-//         /* --- TEXT SIDE --- */
-//         .sv-text {
-//           flex: 1;
-//           display: flex;
-//           flex-direction: column;
-//         }
-//         .sv-tag {
-//           display: inline-block;
-//           font-size: 10px;
-//           letter-spacing: 0.25em;
-//           text-transform: uppercase;
-//           color: #8B6A3E;
-//           font-weight: 700;
-//           margin-bottom: 16px;
-//         }
-//         .sv-card-title {
-//           font-family: 'Cormorant Garamond', serif;
-//           font-size: 42px;
-//           font-weight: 600;
-//           color: #1E2B24;
-//           line-height: 1.1;
-//           margin-bottom: 12px;
-//         }
-//         .sv-tagline {
-//           font-size: 16px;
-//           color: #8B6A3E;
-//           font-style: italic;
-//           margin-bottom: 20px;
-//         }
-//         .sv-divider {
-//           width: 48px;
-//           height: 1px;
-//           background: #8B6A3E;
-//           margin-bottom: 20px;
-//         }
-//         .sv-desc {
-//           font-size: 15px;
-//           line-height: 1.8;
-//           color: #4A554F;
-//           margin-bottom: 32px;
-//         }
-//         .sv-cta {
-//           display: inline-flex;
-//           align-items: center;
-//           gap: 10px;
-//           font-size: 12px;
-//           letter-spacing: 0.15em;
-//           text-transform: uppercase;
-//           font-weight: 700;
-//           color: #1E2B24;
-//           text-decoration: none;
-//           border: 1px solid #1E2B24;
-//           padding: 14px 28px;
-//           border-radius: 50px;
-//           transition: all 0.3s ease;
-//           align-self: flex-start;
-//         }
-//         .sv-cta:hover {
-//           background: #1E2B24;
-//           color: #F5F0EA;
-//         }
-
-//         /* --- RESPONSIVE --- */
-//         @media (max-width: 900px) {
-//           .sv-container { padding: 0 32px; }
-//           .sv-row, .sv-row.reverse {
-//             flex-direction: column;
-//             gap: 32px;
-//             margin-bottom: 64px;
-//           }
-//           .sv-img-wrap { flex: none; width: 100%; aspect-ratio: 16 / 9; }
-//           .sv-card-title { font-size: 34px; }
-//           .sv-main-title { font-size: 38px; }
-//         }
-//         @media (max-width: 540px) {
-//           .sv-section { padding: 60px 0; }
-//           .sv-container { padding: 0 20px; }
-//           .sv-main-title { font-size: 30px; }
-//           .sv-top { margin-bottom: 48px; }
-//           .sv-card-title { font-size: 28px; }
-//           .sv-row { margin-bottom: 48px; }
-//           .sv-img-number { font-size: 44px; }
-//         }
-//       `}</style>
-
-//       <section className="sv-section">
-//         <div className="sv-container">
-//           {/* TOP HEADER */}
-//           <div className="sv-top">
-//             <p className="sv-eyebrow">Our Services</p>
-//             <h2 className="sv-main-title">
-//         turn your <em> stories</em> into timeless masterpieces.
-//             </h2>
-//           </div>
-
-//           {/* ZIGZAG ROWS */}
-//           {services.map((service, index) => (
-//             <div
-//               key={index}
-//               className={`sv-row ${index % 2 !== 0 ? "reverse" : ""}`}
-//             >
-//               {/* IMAGE */}
-//               <div className="sv-img-wrap">
-//                 <img src={service.image} alt={service.title} />
-//                 <span className="sv-img-number">0{index + 1}</span>
-//               </div>
-
-//               {/* TEXT */}
-//               <div className="sv-text">
-//                 <span className="sv-tag">Collection</span>
-//                 <h3 className="sv-card-title">{service.title}</h3>
-//                 <p className="sv-tagline">{service.tagline}</p>
-//                 <div className="sv-divider" />
-//                 <p className="sv-desc">{service.desc}</p>
-//                 <Link to={service.path} className="sv-cta">
-//                   Explore Collection &nbsp;→
-//                 </Link>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-//     </>
-//   );
-// };
-
-// export default ServicesCards;
-
 import React from "react";
 import { Link } from "react-router-dom";
+import Coffee from '../../../assets/stories/CoffeeTableBooks.jpg'
+import Family from '../../../assets/stories/FamilyLegacy.jpg'
+import Memoir from '../../../assets/stories/MemoirBooks.jpg'
+import Photo from '../../../assets/stories/PhotoBooks.jpg'
+import Book from '../../../assets/stories/Books.jpg'
+import Devotional from '../../../assets/stories/Devotional.jpg'
 
 const services = [
   {
     title: "Coffee Table Books",
     tagline: "Art You Can Hold.",
     desc: "Our coffee table books are crafted to be seen, felt, and admired, turning every page into a visual experience and a timeless conversation piece.",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80",
+    image:Coffee,
     path: "/services/coffee-table",
   },
   {
     title: "Family Legacy Books",
     tagline: "Stories Passed Down Forever.",
     desc: "Our family legacy books preserve generations of love, values, and memories, ensuring your story continues to live on and inspire forever.",
-    image: "https://images.unsplash.com/photo-1491841573634-28140fc7ced7?w=800&q=80",
+    image: Family,
     path: "/services/legacy-book",
   },
   {
@@ -303,28 +33,28 @@ const services = [
     title: "Memoir Books",
     tagline: "A life, in your own words.",
     desc: "Our memoir and tribute books reflect life's most heartfelt moments, honouring stories that deserve to be cherished and remembered forever.",
-    image: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=800&q=80",
+    image: Memoir,
     path: "/services/memoir",
   },
   {
     title: "Photo Books",
     tagline: "Moments that refuse to fade.",
     desc: "Our photo books beautifully capture and curate your special moments, designed to help you relive your memories again and again.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+    image: Photo,
     path: "/services/photo-book",
   },
   {
     title: "Vision & Passion Books",
     tagline: "Write what comes next.",
     desc: "Our vision and passion books bring your dreams, ideas, and purpose together, shaping them into a story that inspires and guides.",
-    image: "https://i.pinimg.com/736x/7e/59/bf/7e59bfdb255b71519113b568e35c8f42.jpg",
+    image: Book,
     path: "/services/vision-passion-book",
   },
   {
     title: "Devotional Books",
     tagline: "Where faith finds its voice.",
     desc: "Our devotional books express faith and spirituality in a soulful way, crafted to bring peace, meaning, and a deeper connection.",
-    image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=800&q=80",
+    image: Devotional,
     path: "/services/devotional-book",
   },
 ];
