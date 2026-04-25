@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Coffee from '../../../assets/stories/CoffeeTableBooks.jpg'
+import Coffee from '../../../assets/stories/CoffeeTableBooks.jpeg'
 import Family from '../../../assets/stories/FamilyLegacy.jpg'
 import Memoir from '../../../assets/stories/MemoirBooks.jpg'
 import Photo from '../../../assets/stories/PhotoBooks.jpg'
-import Book from '../../../assets/stories/Books.jpg'
+import Book from '../../../assets/stories/Books.jpeg'
 import Devotional from '../../../assets/stories/Devotional.jpg'
+import Business from '../../../assets/stories/Business.jpeg'
 
 const services = [
   {
@@ -26,7 +27,7 @@ const services = [
     title: "Business Story Books",
     tagline: "The story behind the empire.",
     desc: "Our business story books capture your journey from vision to success, turning it into a powerful narrative that builds trust and inspires growth.",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+    image: Business,
     path: "/services/business-book",
   },
   {

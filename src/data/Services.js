@@ -1,9 +1,19 @@
-import Coffee from '../assets/stories/CoffeeTableBooks.jpg'
+import Coffee from '../assets/stories/CoffeeTableBooks.jpeg'
 import Family from '../assets/stories/FamilyLegacy.jpg'
 import Memoir from '../assets/stories/MemoirBooks.jpg'
 import Photo from '../assets/stories/PhotoBooks.jpg'
-import Book from '../assets/stories/Books.jpg'
+import Book from '../assets/stories/Books.jpeg'
 import Devotional from '../assets/stories/Devotional.jpg'
+import Business from '../assets/stories/Business.jpeg'
+import Travel from '../assets/stories/Travel.webp'
+import Wedding from '../assets/stories/Wedding.jpeg'
+import Individual from '../assets/stories/Individual.png'
+import Customized from '../assets/stories/Customized.png'
+import Children from '../assets/stories/Children.jpeg'
+import Product from '../assets/stories/Product.png'
+
+
+
 
 // ─── All Service Data ────────────────────────────────────────────────────────
 const services = {
@@ -72,7 +82,7 @@ const services = {
         tagline: 'Every Mile, a Memory.',
         metaTitle: 'Custom Travel Photo Books | Professionally Printed & Bound',
         metaDescription: 'Turn your travel photographs into a stunning custom photo book. Professionally printed, beautifully bound, and tailored to your adventures.',
-        heroImage: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&q=85',
+        heroImage: Travel,
         packageDesc: 'From sunlit streets to mountain peaks, every destination holds a story waiting to be told. We gather your finest travel photographs and craft them into a beautifully printed keepsake — so every adventure lives on long after the journey ends.',
         detailTitle: 'We take care of every detail',
         featureGroups: [
@@ -125,7 +135,7 @@ const services = {
         tagline: 'Your Day. Forever Yours.',
         metaTitle: 'Custom Wedding Photo Books | Professionally Printed & Bound',
         metaDescription: 'Preserve your wedding memories in a stunning custom photo book. Professionally printed, luxuriously bound, and crafted to last a lifetime.',
-        heroImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=85',
+        heroImage: Wedding,
         packageDesc: 'Your wedding day was filled with moments that words alone cannot hold — the laughter, the tears, the quiet glances shared. We take your most treasured photographs and craft them into a beautifully bound keepsake that tells the story of your love, exactly as it was.',
         detailTitle: 'We take care of every detail',
         featureGroups: [
@@ -178,7 +188,7 @@ const services = {
         tagline: 'One Life. One Story. One Book.',
         metaTitle: 'Individual Photo Books | Personal Portrait Books | Professionally Bound',
         metaDescription: 'Celebrate a single life with a beautifully crafted individual photo book. Milestones, memories, and moments — all in one stunning keepsake.',
-        heroImage: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=85',
+        heroImage: Individual,
         packageDesc: 'A single life holds a world of moments — first steps and final farewells, quiet afternoons and milestone celebrations. We gather the photographs that define a person and craft them into a beautifully bound portrait of who they are, and all they mean.',
         detailTitle: 'We take care of every detail',
         featureGroups: [
@@ -231,7 +241,7 @@ const services = {
         tagline: 'Entirely Yours. Entirely Unique.',
         metaTitle: 'Customized Photo Books | Fully Bespoke Design & Printing',
         metaDescription: 'Create a fully customized photo book tailored to your exact vision. Bespoke design, premium printing, and a finish that is entirely your own.',
-        heroImage: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=900&q=85',
+        heroImage: Customized,
         packageDesc: 'No template. No compromise. Your customized photo book is built entirely around your vision — your format, your feel, your story. We work with you from concept to creation, ensuring every detail reflects exactly what you imagined and more.',
         detailTitle: 'We take care of every detail',
         featureGroups: [
@@ -284,7 +294,7 @@ const services = {
         tagline: 'Your Products. Beautifully Presented.',
         metaTitle: 'Product Catalogue Photo Books | Premium Printed Catalogues',
         metaDescription: 'Present your products in a beautifully crafted printed catalogue. Professional photography editing, luxury binding, and a finish that commands attention.',
-        heroImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=85',
+        heroImage: Product,
         packageDesc: 'First impressions are everything. A beautifully crafted product catalogue transforms the way your offerings are perceived — elevating every item into something worth coveting. We take your product photography and build a showcase that commands attention, inspires trust, and drives desire.',
         detailTitle: 'We take care of every detail',
         featureGroups: [
@@ -337,7 +347,7 @@ const services = {
         tagline: 'Little Moments. Big Memories.',
         metaTitle: "Custom Children's Photo Books | Professionally Printed & Bound",
         metaDescription: "Celebrate your child's story in a beautifully crafted photo book. From first steps to school days — a keepsake they will treasure for a lifetime.",
-        heroImage: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900&q=85',
+        heroImage: Children,
         packageDesc: 'Every giggle, every milestone, every ordinary afternoon made extraordinary — your child\'s world is filled with moments worth holding onto forever. We gather your favourite photographs and craft them into a beautifully bound keepsake that grows more precious with every passing year.',
         detailTitle: 'We take care of every detail',
         featureGroups: [
@@ -659,7 +669,7 @@ const services = {
     tagline: 'Your Brand. Your Legacy.',
     metaTitle: 'Business Story Books | Brand Heritage & Company History Books',
     metaDescription: "Tell your company's story with a beautifully crafted business book. From startup origins to industry leadership — document your brand legacy in print.",
-    heroImage: 'https://i.pinimg.com/736x/56/ca/a8/56caa84f4bdc8c6292a4a91b90b13770.jpg',
+    heroImage: Business,
     packageDesc: 'From a simple idea to a powerful name, a journey of passion, struggle, and fame; every milestone captured, every lesson told, a story of vision courageous and bold, not just success but the purpose behind, a legacy that inspires both heart and mind, built on ambition, grit, and belief, a story that stands as your greatest relief.',
     detailTitle: 'We take care of every detail',
     featureGroups: [

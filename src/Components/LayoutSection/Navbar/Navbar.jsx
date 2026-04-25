@@ -17,7 +17,7 @@ const serviceLinks = [
 const companyLinks = [
   { name: "About Us",    path: "/about",   icon: "◈", sub: "Our story & values"          },
   { name: "Our Founder", path: "/founder", icon: "◉", sub: "The vision behind it all"    },
-  { name: "Our Team",    path: "/team",    icon: "◎", sub: "The people behind the craft" },
+  { name: "Provenance",    path: "/team",    icon: "◎", sub: "The people behind the craft" },
 ];
 
 const leftNavLinks  = [
@@ -870,7 +870,7 @@ const Navbar = () => {
                 onClick={() => { setDropOpen(v => !v); setCompanyDropOpen(false); }}
                 aria-haspopup="true" aria-expanded={dropOpen}
               >
-                Portfolio
+                Curations
                 <ChevronDown size={11} className={`lc-chevron${dropOpen ? " open" : ""}`} />
               </button>
 
