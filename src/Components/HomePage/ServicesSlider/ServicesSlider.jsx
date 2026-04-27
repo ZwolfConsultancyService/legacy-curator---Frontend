@@ -5,7 +5,7 @@ import Family from '../../../assets/stories/FamilyLegacy.jpg'
 import Memoir from '../../../assets/stories/MemoirBooks.jpg'
 import Photo from '../../../assets/stories/PhotoBooks.jpg'
 import Book from '../../../assets/stories/Books.jpeg'
-import Devotional from '../../../assets/stories/Devotional.jpg'
+import Devotional from '../../../assets/stories/Devotional.jpeg'
 import Business from '../../../assets/stories/Business.jpeg'
 
 const services = [
