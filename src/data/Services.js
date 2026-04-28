@@ -10,7 +10,7 @@ import Wedding from '../assets/stories/Wedding.jpeg'
 import Individual from '../assets/stories/Individual.png'
 import Customized from '../assets/stories/Customized.png'
 import Children from '../assets/stories/Children.jpeg'
-import Product from '../assets/stories/Product.png'
+import Product from '../assets/stories/Product.jpeg'
 
 
 

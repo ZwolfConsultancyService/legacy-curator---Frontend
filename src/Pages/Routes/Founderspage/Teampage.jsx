@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import sonam from '../../../assets/TeamSection/sonam.jpeg'
 import Namrata from '../../../assets/TeamSection/Namrata.jpeg'
+import Deewanshi from '../../../assets/TeamSection/Deewanshi.jpeg'
+import Parveen from '../../../assets/TeamSection/sir.jpeg'
+import Abhishek from '../../../assets/Abhishek.jpeg'
 
 const teams = [
   {
@@ -17,7 +20,7 @@ const teams = [
       {
         initials: 'SS',
         name: 'Sonam Sharma',
-        role: 'Chief Editor & Creative Director',
+        role: 'Story & Experience Director',
         image: sonam,
         bio: 'Sonam Sharma serves as the Chief Editor and Creative Director at Legacy Curators, where she co-shapes the vision of the brand alongside Founder, Dr. Ashish Sharma. At the heart of her role lies a singular intention, to transform lived experiences, generational journeys, and personal histories into narratives that endure beyond time.With a foundation rooted in storytelling, human psychology, and brand strategy, Sonam brings depth, direction, and emotional intelligence to every legacy she helps curate. She leads the narrative architecture of each project, crafting stories that are not only documented but felt, stories that carry the weight of identity, memory, and meaning.Working in close collaboration with the design team, she ensures that every word, visual, and detail aligns seamlessly, allowing the creative, aesthetic, and strategic vision to translate into a final form that is both timeless and tangible. Each piece emerges not just as a book, but as a collectible, an heirloom designed to be held, revisited, and passed forward across generations.Beyond Legacy Curators, Sonam is the Founder and Director of Sozart Creative, where she continues to build brands at the intersection of strategy and soul. Yet within this space, her focus remains deeply intentional, to preserve what matters, to give permanence to stories, and to ensure that no meaningful legacy is left undocumented.For her, legacy is not just what is remembered, it is what is consciously preserved.',
       },
@@ -28,12 +31,19 @@ const teams = [
         image: Namrata,
         bio: 'Namrata Chaudhary leads the design vision at Legacy Curators, shaping each project into a timeless work of art. With a deep understanding of visual storytelling, she brings structure, sensitivity, and sophistication to the process of translating legacy into form, where every layout, texture, and detail is intentional.Her approach to design goes beyond aesthetics. For Namrata, it is about preserving meaning, crafting pieces that not only look beautiful but carry emotional and historical depth. Each coffee table book she designs becomes a carefully curated experience, balancing elegance with authenticity.With over seven years of experience in branding and design, she has honed a style that is both refined and expressive, where heritage meets contemporary sensibility. Her work reflects a quiet luxury, allowing stories to unfold visually with grace and permanence.Also the founder of NC Designs and Head of Design at Sozart Creative, Namrata continues to explore design as both discipline and art, but at Legacy Curators, her focus remains singular, to create pieces that endure beyond time.For her, design isn\'t just creation, it is preservation.',
       },
+      {
+  initials: 'D',
+  name: 'Deewanshi',
+  role: 'Marketing Manager',
+  image: Deewanshi,
+  bio: 'Deewanshi is the spellbinding mind behind the social sorcery at Legacy Curators. With a knack for crafting captivating content, mastering algorithms, and igniting conversations, she turns every story into a buzzworthy sensation that resonates deeply with audiences.Her approach to marketing goes beyond promotion. For Deewanshi, it is about creating meaningful connections, ensuring that every campaign not only reaches people but moves them. Each strategy she crafts is a carefully considered blend of creativity and data, where storytelling meets impact.With her expertise in social media and digital marketing, she has developed a style that is both bold and intuitive, where authentic narratives meet contemporary trends. Her work reflects a vibrant energy, allowing brands to speak with clarity, confidence, and cultural relevance.At Legacy Curators, her focus remains singular, to amplify stories that deserve to be heard, felt, and remembered. For her, marketing is not just communication, it is connection.',
+},
     ],
   },
   {
     id: 'webdev',
     slug: '02',
-    label: 'Engineering',
+    label: 'Tech Strategist',
     tagline: 'Architects of the invisible',
     color: '#8B542B',
     colorMid: '#b5703a',
@@ -41,12 +51,14 @@ const teams = [
     description:
       'They build the infrastructure that lets creativity flow freely. Fast, reliable, obsessively tested — so creators never notice the machinery humming beneath their work.',
     members: [
-      { initials: 'VN', name: 'Vikram Nair',     role: 'Head of Engineering', image: null, bio: 'Formerly at Razorpay. Believes every millisecond of latency is a broken promise to a creator. Runs on black coffee and pull requests.' },
-      { initials: 'AG', name: 'Ananya Gupta',    role: 'Frontend Lead',       image: null, bio: 'Turns complex design systems into elegant, accessible interfaces. Her components are so clean other engineers study them.' },
-      { initials: 'SK', name: 'Siddharth Kumar', role: 'Backend Engineer',    image: null, bio: 'Architect of the print-rendering pipeline that processes 40k+ books a month. Quietly runs the hardest part of the platform.' },
-      { initials: 'MR', name: 'Meera Rao',       role: 'Full-Stack Engineer', image: null, bio: 'Owns the creator dashboard end-to-end — from first upload to final order. Has touched every corner of the codebase and improved it.' },
-      { initials: 'KP', name: 'Kiran Pandey',    role: 'DevOps Engineer',     image: null, bio: 'Keeps everything at 99.97% uptime. The team calls him the silent guardian. He calls himself a plumber.' },
-      { initials: 'TB', name: 'Tanvi Bhat',      role: 'QA Engineer',         image: null, bio: 'Finds bugs before they find our users. Writes test cases like short stories — precise, complete, and always with a twist ending.' },
+     {
+  initials: 'P',
+  name: 'Praveen',
+  role: 'Developer',
+  image: Parveen,
+  bio: 'Praveen\'s journey didn\'t follow a straight line — it was uncertain, risky, and very real. Originally from Vrindavan, he was living in Agra preparing for NEET when he realized the path ahead wasn\'t truly his own. Leaving that behind wasn\'t easy, but he chose to trust himself over convention.He started his first venture, a social media app called Zwölf — not just a project, but a big vision built from scratch through long nights, honest mistakes, and relentless effort. When funding became a major challenge and he had to shut it down, he didn\'t stop. He pivoted, launching Zwolf Consultancy with greater clarity, a sharper understanding of the market, and a focus on solving real problems.Slowly, clients came. Trust was built. Things took shape.At Legacy Curators, Parveen brings that same spirit — the ability to execute under pressure, adapt without losing direction, and build with patience and consistency. For him, development isn\'t just writing code. It is solving problems that matter, one deliberate step at a time.The journey is still long. But he knows exactly where he is headed.',
+},
+     
     ],
   },
   {
@@ -60,9 +72,21 @@ const teams = [
     description:
       'They build the partnerships, channels, and relationships that turn a great product into a global publishing movement. Every deal they close opens a door for another creator.',
     members: [
-      { initials: 'HA', name: 'Harsh Agarwal',   role: 'Head of Biz Dev',      image: null, bio: 'Closed our first 50 distribution partnerships across 12 countries. Sees every deal not as a transaction but as a door opened for a creator.' },
-      { initials: 'PC', name: 'Pooja Choudhary', role: 'Partnerships Manager', image: null, bio: 'Manages relationships with printers, distributors, and retail chains. Remembers every partner\'s birthday — and their quarterly targets.' },
-      { initials: 'RS', name: 'Raj Sharma',      role: 'Growth Strategist',    image: null, bio: 'Owns the creator acquisition funnel and referral programmes. Grew our creator base 3× in eight months through community-led growth.' },
+     {
+  initials: 'A',
+  name: 'Anisha',
+  role: 'Business Development Manager',
+  image: null,
+  bio: 'Anisha drives strategic growth at Legacy Curators, expanding the company\'s presence in the premium publishing and legacy storytelling space. With a sharp understanding of market trends and client psychology, she identifies high-value opportunities, builds lasting relationships, and turns visionary ideas into impactful collaborations.She leads end-to-end business development — from client acquisition and prospecting to partnership management and revenue generation. Working closely with entrepreneurs, industry leaders, and legacy brands, she helps conceptualize and execute bespoke coffee table books that reflect their journeys, achievements, and vision.Her strengths lie in negotiation, communication, and a client-first mindset. She coordinates seamlessly across creative and editorial teams, ensuring every project is executed with precision and purpose.For Anisha, business development is not just about closing deals. It is about opening doors for stories that deserve to be told, remembered, and celebrated. At Legacy Curators, she continues to strengthen the company\'s reputation as a trusted name in legacy documentation and premium publishing.',
+},
+    
+     {
+  initials: 'AS',
+  name: 'Abhishek Sharma',
+  role: 'Co-Founder',
+  image: Abhishek,
+  bio: 'Behind every enduring vision is someone who ensures it is built with structure, clarity, and purpose. Abhishek Sharma, Co-Founder of Legacy Curators, is the force that transforms ideas into sustainable systems and long-term impact.With a sharp focus on execution and growth, Abhishek shapes and manages the operational backbone of the organization. His journey began by supporting his elder brother, Dr. Ashish Sharma — taking on the responsibility of organizing, managing, and streamlining day-to-day functions. What started as support soon evolved into a larger mission: building a scalable and lasting legacy.Abhishek brings a unique blend of strategic thinking and hands-on management. He specializes in creating efficient workflows, optimizing time and resources, and ensuring that vision is never lost in complexity. His approach is simple yet powerful — build systems that allow leaders to focus on what they do best, while the foundation remains strong and growth-ready.As Co-Founder, his role goes beyond operations. He is deeply committed to preserving the intent behind every vision while enabling it to expand and evolve. For Abhishek, true success lies not just in achieving goals, but in creating structures that sustain success across generations.Today, he continues to drive Legacy Curators with discipline, foresight, and a clear mission — to help transform meaningful visions into enduring legacies.',
+},
     ],
   },
 ];

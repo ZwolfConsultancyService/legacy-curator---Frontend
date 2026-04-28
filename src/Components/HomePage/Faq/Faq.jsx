@@ -2,14 +2,66 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const faqs = [
-  { num: "01", q: `How long does it take to create a legacy book?`, a: `Most projects take between 8–16 weeks depending on complexity, number of pages, and how quickly you share your stories and materials with us. We'll give you a clear timeline at the start.`, tag: "Timeline" },
-  { num: "02", q: `Do I need to be a good writer to get started?`, a: `Not at all. Our in-house writers work closely with you through interviews, voice notes, or written drafts — whatever feels most natural. We shape your words into something beautiful.`, tag: "Process" },
-  { num: "03", q: `How many copies of my book will I receive?`, a: `Every package includes at least one premium bound copy. You can order additional copies at a reduced rate — many clients gift them to family members or loved ones.`, tag: "Delivery" },
-  { num: "04", q: `Can I include photos, documents, and family memorabilia?`, a: `Absolutely. We can incorporate scanned photographs, handwritten letters, certificates, maps, and other keepsakes into the design. We handle everything with the utmost care.`, tag: "Content" },
-  { num: "05", q: `What if I want to make changes after the project starts?`, a: `We build in multiple review rounds throughout the process. Minor edits are always welcome. Significant structural changes after the design phase may incur a small additional fee.`, tag: "Revisions" },
-  { num: "06", q: `Is my story and personal information kept private?`, a: `Completely. All stories, documents, and conversations shared with us are held in strict confidence and never shared with third parties. Your legacy belongs only to you.`, tag: "Privacy" },
-  { num: "07", q: `What binding and paper options are available?`, a: `We offer hardcover cloth and leather bindings, and our paper ranges from standard archival-quality to premium cotton stock. We'll walk you through samples before printing.`, tag: "Materials" },
-  { num: "08", q: `Can I start with a small project before committing to a full book?`, a: `Yes — we offer a Discovery Session where we help you outline your story and assess the scope. It's a great way to see if we're the right fit before diving into a full project.`, tag: "Getting Started" },
+  {
+    num: "01",
+    q: `What is a Coffee Table Book?`,
+    a: `A Coffee Table Book is a beautifully crafted, large-format book designed to be displayed and admired. More than just a book, it is a visual experience — combining stunning photography, elegant design, and meaningful narratives. At Legacy Curators, every coffee table book is a handcrafted piece that tells your story with sophistication, intention, and permanence.`,
+    tag: "What We Make",
+  },
+  {
+    num: "02",
+    q: `What is a Family Legacy Book?`,
+    a: `A Family Legacy Book is a timeless tribute to your family's journey — capturing generations of memories, values, milestones, and traditions in one beautifully designed volume. It preserves the stories that define who you are and passes them forward as a cherished heirloom for generations to come.`,
+    tag: "What We Make",
+  },
+  {
+    num: "03",
+    q: `What is a Business Story Book?`,
+    a: `A Business Story Book documents the journey of your brand or organization — from its founding vision to its milestones, culture, and impact. It is a powerful tool for brand legacy, client gifting, investor relations, and internal pride. It tells the world not just what you built, but why it matters.`,
+    tag: "What We Make",
+  },
+  {
+    num: "04",
+    q: `What is a Memoir Book?`,
+    a: `A Memoir Book is a deeply personal account of an individual's life — their experiences, turning points, lessons, and legacy. Written with care and crafted with elegance, it transforms a lifetime of stories into a beautifully bound narrative that honors who you are and the path you have walked.`,
+    tag: "What We Make",
+  },
+  {
+    num: "05",
+    q: `What is a Photo Book?`,
+    a: `A Photo Book is a curated visual story told through carefully selected and designed photography. Whether it captures a wedding, a family decade, a travel journey, or a brand's evolution, every image is thoughtfully placed to evoke emotion, preserve memory, and create a lasting visual legacy.`,
+    tag: "What We Make",
+  },
+  {
+    num: "06",
+    q: `What is a Vision & Passion Book?`,
+    a: `A Vision & Passion Book is crafted for dreamers, leaders, and creators who want to document their purpose, philosophy, and aspirations. It captures not just what you have achieved, but what drives you — making it a powerful personal manifesto and an inspiring gift for those who follow your journey.`,
+    tag: "What We Make",
+  },
+  {
+    num: "07",
+    q: `What is a Devotional Book?`,
+    a: `A Devotional Book is a sacred and soulful creation that captures spiritual journeys, faith traditions, prayers, teachings, or tributes to revered figures. Crafted with reverence and care, it serves as a meaningful keepsake for families, communities, and institutions who wish to preserve and share their spiritual legacy.`,
+    tag: "What We Make",
+  },
+  {
+    num: "08",
+    q: `What if I want to make changes after the project starts?`,
+    a: `We build in multiple review rounds throughout the process. Minor edits are always welcome. Significant structural changes after the design phase may incur a small additional fee.`,
+    tag: "Revisions",
+  },
+  {
+    num: "09",
+    q: `Is my story and personal information kept private?`,
+    a: `Completely. All stories, documents, and conversations shared with us are held in strict confidence and never shared with third parties. Your legacy belongs only to you.`,
+    tag: "Privacy",
+  },
+  {
+    num: "10",
+    q: `Can I start with a small project before committing to a full book?`,
+    a: `Yes — we offer a Discovery Session where we help you outline your story and assess the scope. It's a great way to see if we're the right fit before diving into a full project.`,
+    tag: "Getting Started",
+  },
 ];
 
 const INITIAL_VISIBLE = 4;
@@ -25,7 +77,12 @@ const FAQSection = () => {
 
   useEffect(() => {
     if (!headerRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setHeaderVisible(true); }, { threshold: 0.2 });
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) setHeaderVisible(true);
+      },
+      { threshold: 0.2 },
+    );
     obs.observe(headerRef.current);
     return () => obs.disconnect();
   }, []);
@@ -33,9 +90,15 @@ const FAQSection = () => {
   useEffect(() => {
     const observers = itemRefs.current.map((el, i) => {
       if (!el) return null;
-      const obs = new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) { setTimeout(() => setItemsVisible((v) => [...v, i]), i * 55); obs.disconnect(); }
-      }, { threshold: 0.05 });
+      const obs = new IntersectionObserver(
+        ([e]) => {
+          if (e.isIntersecting) {
+            setTimeout(() => setItemsVisible((v) => [...v, i]), i * 55);
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.05 },
+      );
       obs.observe(el);
       return obs;
     });
@@ -43,8 +106,17 @@ const FAQSection = () => {
   }, [showAll]);
 
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
-  const handleShowAll = () => { setShowAll(true); setTimeout(() => { if (moreRef.current) moreRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); }, 80); };
-  const handleShowLess = () => { setShowAll(false); setOpenIndex(null); };
+  const handleShowAll = () => {
+    setShowAll(true);
+    setTimeout(() => {
+      if (moreRef.current)
+        moreRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+  };
+  const handleShowLess = () => {
+    setShowAll(false);
+    setOpenIndex(null);
+  };
 
   return (
     <>
@@ -155,30 +227,70 @@ const FAQSection = () => {
       <section className="faq-section">
         <div className="faq-bg-text">FAQ</div>
         <div className="faq-inner">
-          <div ref={headerRef} className={`faq-top${headerVisible ? " vis" : ""}`}>
+          <div
+            ref={headerRef}
+            className={`faq-top${headerVisible ? " vis" : ""}`}
+          >
             <div>
-              <div className="faq-eyebrow"><span className="faq-eyebrow-line" />Frequently Asked</div>
-              <h2 className="faq-h2">Questions,<br /><em>answered honestly</em></h2>
+              <div className="faq-eyebrow">
+                <span className="faq-eyebrow-line" />
+                Frequently Asked
+              </div>
+              <h2 className="faq-h2">
+                Questions,
+                <br />
+                <em>answered honestly</em>
+              </h2>
             </div>
             <div className="faq-right-block">
-              <p className="faq-desc">Everything you need to know before beginning your legacy book journey — from timelines and privacy to materials and revisions.</p>
+              <p className="faq-desc">
+                Everything you need to know before beginning your legacy book
+                journey — from timelines and privacy to materials and revisions.
+              </p>
               <div className="faq-count-row">
-                <div className="faq-count-num">08<span>+</span></div>
-                <div className="faq-count-label">Common questions<br />answered below</div>
+                <div className="faq-count-num">
+                  08<span>+</span>
+                </div>
+                <div className="faq-count-label">
+                  Common questions
+                  <br />
+                  answered below
+                </div>
               </div>
             </div>
           </div>
 
           <div className="faq-list">
             {faqs.slice(0, INITIAL_VISIBLE).map((item, i) => (
-              <div key={i} ref={(el) => (itemRefs.current[i] = el)} className={`faq-row${itemsVisible.includes(i) ? " vis" : ""}${openIndex === i ? " open" : ""}`} onClick={() => toggle(i)}>
+              <div
+                key={i}
+                ref={(el) => (itemRefs.current[i] = el)}
+                className={`faq-row${itemsVisible.includes(i) ? " vis" : ""}${openIndex === i ? " open" : ""}`}
+                onClick={() => toggle(i)}
+              >
                 <div className="faq-row-head">
                   <span className="faq-row-num">{item.num}</span>
                   <p className="faq-row-q">{item.q}</p>
                   <span className="faq-tag">{item.tag}</span>
-                  <div className="faq-toggle"><svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></div>
+                  <div className="faq-toggle">
+                    <svg viewBox="0 0 13 13" fill="none">
+                      <path
+                        d="M6.5 1v11M1 6.5h11"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
-                <div className="faq-answer-wrap"><div className="faq-answer-inner"><div className="faq-answer-body"><span /><p className="faq-answer-text">{item.a}</p></div></div></div>
+                <div className="faq-answer-wrap">
+                  <div className="faq-answer-inner">
+                    <div className="faq-answer-body">
+                      <span />
+                      <p className="faq-answer-text">{item.a}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
 
@@ -187,14 +299,36 @@ const FAQSection = () => {
                 {faqs.slice(INITIAL_VISIBLE).map((item, idx) => {
                   const i = INITIAL_VISIBLE + idx;
                   return (
-                    <div key={i} ref={(el) => (itemRefs.current[i] = el)} className={`faq-row${itemsVisible.includes(i) ? " vis" : ""}${openIndex === i ? " open" : ""}`} onClick={() => toggle(i)} style={{ borderTop: idx === 0 ? "none" : undefined }}>
+                    <div
+                      key={i}
+                      ref={(el) => (itemRefs.current[i] = el)}
+                      className={`faq-row${itemsVisible.includes(i) ? " vis" : ""}${openIndex === i ? " open" : ""}`}
+                      onClick={() => toggle(i)}
+                      style={{ borderTop: idx === 0 ? "none" : undefined }}
+                    >
                       <div className="faq-row-head">
                         <span className="faq-row-num">{item.num}</span>
                         <p className="faq-row-q">{item.q}</p>
                         <span className="faq-tag">{item.tag}</span>
-                        <div className="faq-toggle"><svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></div>
+                        <div className="faq-toggle">
+                          <svg viewBox="0 0 13 13" fill="none">
+                            <path
+                              d="M6.5 1v11M1 6.5h11"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        </div>
                       </div>
-                      <div className="faq-answer-wrap"><div className="faq-answer-inner"><div className="faq-answer-body"><span /><p className="faq-answer-text">{item.a}</p></div></div></div>
+                      <div className="faq-answer-wrap">
+                        <div className="faq-answer-inner">
+                          <div className="faq-answer-body">
+                            <span />
+                            <p className="faq-answer-text">{item.a}</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
@@ -203,18 +337,46 @@ const FAQSection = () => {
           </div>
 
           <div className="faq-more-wrap" ref={moreRef}>
-            <button className={`faq-more-btn${showAll ? " less" : ""}`} onClick={showAll ? handleShowLess : handleShowAll}>
-              {showAll ? "Show Less" : (<>View More Questions<span className="faq-remaining-badge">+{faqs.length - INITIAL_VISIBLE}</span></>)}
-              <span className="btn-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" /></svg></span>
+            <button
+              className={`faq-more-btn${showAll ? " less" : ""}`}
+              onClick={showAll ? handleShowLess : handleShowAll}
+            >
+              {showAll ? (
+                "Show Less"
+              ) : (
+                <>
+                  View More Questions
+                  <span className="faq-remaining-badge">
+                    +{faqs.length - INITIAL_VISIBLE}
+                  </span>
+                </>
+              )}
+              <span className="btn-icon">
+                <svg viewBox="0 0 10 10" fill="none">
+                  <path
+                    d="M5 2v6M2 5h6"
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
 
           <div className="faq-footer">
             <div>
-              <p className="faq-footer-title">Still have a question? <em>Let's talk.</em></p>
-              <p className="faq-footer-sub">Our team typically responds within one business day.</p>
+              <p className="faq-footer-title">
+                Still have a question? <em>Let's talk.</em>
+              </p>
+              <p className="faq-footer-sub">
+                Our team typically responds within one business day.
+              </p>
             </div>
-            <Link to="/contacts" className="faq-footer-btn">Get in Touch<span className="faq-footer-arrow" /></Link>
+            <Link to="/contacts" className="faq-footer-btn">
+              Get in Touch
+              <span className="faq-footer-arrow" />
+            </Link>
           </div>
         </div>
       </section>

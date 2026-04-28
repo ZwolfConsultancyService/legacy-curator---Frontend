@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import music from '../../assets/sound.mpeg'
 // 👇 FUTURE ME LOCAL MUSIC DALNE KE LIYE YAHAN PATH CHANGE KAREN
 // Example: const MUSIC_URL = "/assets/my-local-song.mp3";
-const MUSIC_URL = "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3"; 
+const MUSIC_URL =music; 
 
 const FloatingMusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -129,16 +129,7 @@ const FloatingMusicPlayer = () => {
           </div>
         )}
 
-        {/* Info card — shown when playing */}
-        {isPlaying && (
-          <div className="fmp-fade-up flex items-center gap-2.5 bg-[#36615A] text-[#F3F0E1] text-[11px] px-3.5 py-2.5 rounded-2xl shadow-xl whitespace-nowrap border border-[#A7703D]/40">
-            <span className="text-sm leading-none">📖</span>
-            <div className="flex flex-col leading-tight">
-              <span className="font-semibold text-[#F3F0E1] tracking-wide">Lo-fi Study</span>
-              <span className="text-[#F3F0E1]/55 text-[10px]">ambient · focus · calm</span>
-            </div>
-          </div>
-        )}
+      
 
         {/* Visualizer bars */}
         {isPlaying && (

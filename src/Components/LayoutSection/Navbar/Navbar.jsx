@@ -17,7 +17,7 @@ const serviceLinks = [
 const companyLinks = [
   { name: "About Us",    path: "/about",   icon: "◈", sub: "Our story & values"          },
   { name: "Our Founder", path: "/founder", icon: "◉", sub: "The vision behind it all"    },
-  { name: "Provenance",    path: "/team",    icon: "◎", sub: "The people behind the craft" },
+  { name: "Our team",    path: "/team",    icon: "◎", sub: "The people behind the craft" },
 ];
 
 const leftNavLinks  = [
@@ -830,7 +830,7 @@ const Navbar = () => {
                 onClick={() => { setCompanyDropOpen(v => !v); setDropOpen(false); }}
                 aria-haspopup="true" aria-expanded={companyDropOpen}
               >
-                The Company
+                Provenance
                 <ChevronDown size={11} className={`lc-chevron${companyDropOpen ? " open" : ""}`} />
               </button>
 
@@ -969,7 +969,7 @@ const Navbar = () => {
             className={`drawer-toggle${isCompanyActive ? " active" : ""}`}
             onClick={() => setMobileCompOpen(v => !v)}
           >
-            The Company
+            The Provenance
             <ChevronDown size={13} className={`drawer-chevron${mobileCompOpen ? " open" : ""}`} />
           </button>
           <div className={`drawer-sub${mobileCompOpen ? " open" : ""}`}>
