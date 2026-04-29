@@ -4,6 +4,7 @@ import Namrata from '../../../assets/TeamSection/Namrata.jpeg'
 import Deewanshi from '../../../assets/TeamSection/Deewanshi.jpeg'
 import Parveen from '../../../assets/TeamSection/sir.jpeg'
 import Abhishek from '../../../assets/Abhishek.jpeg'
+import Anisha from '../../../assets/Anisha.jpeg'
 
 const teams = [
   {
@@ -76,7 +77,7 @@ const teams = [
   initials: 'A',
   name: 'Anisha',
   role: 'Business Development Manager',
-  image: null,
+  image: Anisha,
   bio: 'Anisha drives strategic growth at Legacy Curators, expanding the company\'s presence in the premium publishing and legacy storytelling space. With a sharp understanding of market trends and client psychology, she identifies high-value opportunities, builds lasting relationships, and turns visionary ideas into impactful collaborations.She leads end-to-end business development — from client acquisition and prospecting to partnership management and revenue generation. Working closely with entrepreneurs, industry leaders, and legacy brands, she helps conceptualize and execute bespoke coffee table books that reflect their journeys, achievements, and vision.Her strengths lie in negotiation, communication, and a client-first mindset. She coordinates seamlessly across creative and editorial teams, ensuring every project is executed with precision and purpose.For Anisha, business development is not just about closing deals. It is about opening doors for stories that deserve to be told, remembered, and celebrated. At Legacy Curators, she continues to strengthen the company\'s reputation as a trusted name in legacy documentation and premium publishing.',
 },
     
