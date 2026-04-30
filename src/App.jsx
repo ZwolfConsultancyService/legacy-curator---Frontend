@@ -14,6 +14,8 @@ import BlogDetailPage from "./Pages/DetailPage/Blogdetailpage/Blogdetailpage";
 import FoundersPage from "./Pages/Routes/Founderspage/Founderspage";
 import TeamPage from "./Pages/Routes/Founderspage/Teampage";
 import FloatingMusicPlayer from "./Components/Floatingmusicplayer/Floatingmusicplayer";
+import TermsAndConditions from "./Pages/Termsandconditions/Termsandconditions";
+import PrivacyPolicy from "./Pages/Privacypolicy/Privacypolicy";
 
 const App = () => {
   return (
@@ -39,6 +41,8 @@ const App = () => {
           <Route path="/blog/:slug" element={<BlogDetailPage />} />
           <Route path="/founder" element={<FoundersPage />} />
           <Route path="/team" element={<TeamPage />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
+             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </>
