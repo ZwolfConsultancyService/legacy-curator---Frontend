@@ -247,7 +247,7 @@ const ServicesCards = () => {
           <div className="sv-top">
             <p className="sv-eyebrow">Our Services</p>
             <h2 className="sv-main-title">
-              Turn your <em>stories</em> into timeless masterpieces.
+              Turn Your <em>Stories</em> Into Timeless Masterpieces.
             </h2>
           </div>
 
