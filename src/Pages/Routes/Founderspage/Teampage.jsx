@@ -5,6 +5,7 @@ import Deewanshi from '../../../assets/TeamSection/Deewanshi.jpeg'
 import Parveen from '../../../assets/TeamSection/sir.jpeg'
 import Abhishek from '../../../assets/Abhishek.jpeg'
 import Anisha from '../../../assets/Anisha.jpeg'
+import Tanushree from '../../../assets/Tanushree.jpeg'
 
 const teams = [
   {
@@ -38,6 +39,13 @@ const teams = [
   role: 'Marketing Manager',
   image: Deewanshi,
   bio: 'Deewanshi is the spellbinding mind behind the social sorcery at Legacy Curators. With a knack for crafting captivating content, mastering algorithms, and igniting conversations, she turns every story into a buzzworthy sensation that resonates deeply with audiences.Her approach to marketing goes beyond promotion. For Deewanshi, it is about creating meaningful connections, ensuring that every campaign not only reaches people but moves them. Each strategy she crafts is a carefully considered blend of creativity and data, where storytelling meets impact.With her expertise in social media and digital marketing, she has developed a style that is both bold and intuitive, where authentic narratives meet contemporary trends. Her work reflects a vibrant energy, allowing brands to speak with clarity, confidence, and cultural relevance.At Legacy Curators, her focus remains singular, to amplify stories that deserve to be heard, felt, and remembered. For her, marketing is not just communication, it is connection.',
+},
+{
+  initials: 'T',
+  name: 'Tanushree Chakrabarti',
+  role: 'Creative Visualiser & Content Developer',
+  image: Tanushree,
+  bio: "Tanushree Chakrabarti doesn't just \"edit\" content at Legacy Curators—she builds worlds. As a Creative Visualiser and Content Developer, she takes the scattered pieces of a personal journey and weaves them into a narrative that's as visually striking as it is emotionally grounded. Her creative process is a bit of a hybrid: one part discipline, one part raw expression, and a heavy dose of aesthetic intuition. With a background that jumps from entrepreneurship to martial arts and fitness modeling, she brings a certain \"heavy-lifting\" mindset to storytelling. For Tanushree, clarity is just as important as creativity; she ensures every detail serves a purpose, making sure legacies aren't just preserved, but felt. At the heart of her work at Legacy Curators is a drive to balance modern edge with timeless elegance. She's focused on shaping stories that don't just sit on a shelf, but actually carry weight. For Tanushree, legacy isn't a static look at the past—it's the art of moving a story forward with intention.",
 },
     ],
   },
