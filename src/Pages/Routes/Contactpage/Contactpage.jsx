@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
@@ -87,6 +88,7 @@ export default function ContactPage() {
   });
 
   return (
+
     <div
       style={{
         backgroundColor: "#ffffff",
@@ -94,6 +96,22 @@ export default function ContactPage() {
         fontFamily: "'Montserrat', sans-serif",
       }}
     >
+      <Helmet>
+  <title>Contact Us | Legacy Curator</title>
+  <meta name="description" content="Get in touch with Legacy Curator. Call us at +91 8076206304 or email editor@legacycurator.in — Mon to Sat, 10am to 6pm IST. Let's talk about your vision." />
+
+  <meta property="og:title" content="Contact Legacy Curator | Let's Talk About Your Vision" />
+  <meta property="og:description" content="Have a question or want to work with us? Fill in the form or give us a call — we'd love to hear from you." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://legacycurator.in/contacts" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact Legacy Curator" />
+  <meta name="twitter:description" content="Have a question or want to work with us? Fill in the form or give us a call — we'd love to hear from you." />
+
+  <link rel="canonical" href="https://legacycurator.in/contacts" />
+  <meta name="robots" content="index, follow" />
+</Helmet>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
 

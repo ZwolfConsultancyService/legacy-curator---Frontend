@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import video from "../../../assets/video.mp4"
+import { Helmet } from 'react-helmet-async';
 
 const HeroSection = () => {
   const [loaded, setLoaded] = useState(false);
@@ -20,6 +21,32 @@ const HeroSection = () => {
 
   return (
     <>
+
+   <Helmet>
+  <title>Legacy Curator | Bespoke Memory Books & Timeless Heirlooms</title>
+  <meta name="description" content="Legacy Curator turns your photos, memories, and family stories into beautifully crafted, timeless books and heirlooms — preserved for generations to come." />
+
+  {/* Open Graph */}
+  <meta property="og:site_name" content="Legacy Curator" />
+  <meta property="og:title" content="Legacy Curator | Where Every Page Deserves a Place" />
+  <meta property="og:description" content="From memories to masterpiece — bespoke books and keepsakes that preserve your story and legacy for generations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://legacycurator.in/" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Legacy Curator | Where Every Page Deserves a Place" />
+  <meta name="twitter:description" content="From memories to masterpiece — bespoke books and keepsakes that preserve your story and legacy for generations." />
+
+  {/* SEO */}
+  <meta name="keywords" content="legacy book, memory book, family heirloom, bespoke photobook, legacy curator, timeless book, memories preserved" />
+  <link rel="canonical" href="https://legacycurator.in/" />
+  <meta name="robots" content="index, follow" />
+
+  {/* Fonts preload */}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+</Helmet>
       <style>{`
         .hero-section {
           position: relative;

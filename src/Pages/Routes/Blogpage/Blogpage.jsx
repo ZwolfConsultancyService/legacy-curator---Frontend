@@ -1,6 +1,7 @@
 // src/Pages/Routes/Blogpage/Blogpage.jsx
 
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
@@ -217,6 +218,22 @@ export default function BlogPage() {
 
   return (
     <div style={{ backgroundColor: "#ffffff", minHeight: "100vh", fontFamily: "'Montserrat', sans-serif" }}>
+     <Helmet>
+ <title>Legacy Curator Journal | Curation, Craft & Creative Stories</title>
+ <meta name="description" content="The Legacy Curator Journal — explore stories on memory preservation, bespoke book curation, design craft, and the creative lives worth documenting." />
+
+  <meta property="og:title" content="Journal | Stories & Perspectives | Legacy Curator" />
+  <meta property="og:description" content="Thoughts on curation, craft, and the creative lives worth documenting — from the Legacy Curator editorial team." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://legacycurator.in/blog" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Journal | Legacy Curator" />
+  <meta name="twitter:description" content="Thoughts on curation, craft, and the creative lives worth documenting." />
+
+  <link rel="canonical" href="https://legacycurator.in/blog" />
+  <meta name="robots" content="index, follow" />
+</Helmet>
       <style>{`
         @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
         .fade-up { animation: fadeUp 0.55s ease both; }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 export default function AboutPage() {
   const [mounted, setMounted] = useState(false);
@@ -32,6 +33,24 @@ export default function AboutPage() {
 
   return (
     <>
+    <Helmet>
+  <title>About Us | Legacy Curator</title>
+  <meta name="description" content="Legacy Curator believes every story deserves a beautiful, lasting book. Learn about our mission to put the power of publishing back into the hands of those who have something to say." />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="About Legacy Curator | We Make Books That Last" />
+  <meta property="og:description" content="We started with a simple belief — anyone with a story worth telling deserves a platform worthy of telling it. Not a template. A real, beautiful, printed book." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://legacycurator.in/about" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="About Legacy Curator | We Make Books That Last" />
+  <meta name="twitter:description" content="We started with a simple belief — anyone with a story worth telling deserves a platform worthy of telling it." />
+
+  <link rel="canonical" href="https://legacycurator.in/about" />
+  <meta name="robots" content="index, follow" />
+</Helmet>
       <style>{`
         :root {
           --color-forest: #36615A;

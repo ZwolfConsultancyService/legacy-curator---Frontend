@@ -5,6 +5,7 @@ import Deewanshi from '../../../assets/TeamSection/Deewanshi.jpeg'
 import Parveen from '../../../assets/TeamSection/sir.jpeg'
 import Anisha from '../../../assets/Anisha.jpeg'
 import Tanushree from '../../../assets/Tanushree.jpeg'
+import { Helmet } from 'react-helmet-async';
 
 const teams = [
   {
@@ -312,6 +313,22 @@ export default function TeamPage() {
 
   return (
     <>
+    <Helmet>
+  <title>Our Team | Legacy Curator</title>
+  <meta name="description" content="Meet the team behind Legacy Curator — editorial minds, creative designers, tech builders, and business developers working together to preserve stories that matter." />
+
+  <meta property="og:title" content="The People Behind Every Great Book | Legacy Curator" />
+  <meta property="og:description" content="Behind every book we help create is a team that genuinely cares — about words, craft, and the creator holding a finished copy for the first time." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://legacycurator.in/team" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Our Team | Legacy Curator" />
+  <meta name="twitter:description" content="Editorial, design, tech, and business — the people who make every legacy book possible." />
+
+  <link rel="canonical" href="https://legacycurator.in/team" />
+  <meta name="robots" content="index, follow" />
+</Helmet>
       <style>{`
         .tp {
           background: #FDFFFC;

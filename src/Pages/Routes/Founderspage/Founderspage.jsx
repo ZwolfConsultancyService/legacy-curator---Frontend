@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import founder from '../../../assets/Founder.jpeg';
-import cofounder from '../../../assets/Abhishek.jpeg';
+import React, { useState, useEffect, useRef } from "react";
+import founder from "../../../assets/Founder.jpeg";
+import cofounder from "../../../assets/Abhishek.jpeg";
+import { Helmet } from "react-helmet-async";
 
 const FOUNDER_IMAGE = founder;
 const COFOUNDER_IMAGE = cofounder;
@@ -33,22 +34,32 @@ const abhishekParas = [
 
 export default function FounderPage() {
   const [visible, setVisible] = useState(new Set());
-  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
   const refs = useRef({});
 
   useEffect(() => {
     const obs = new IntersectionObserver(
-      (entries) => entries.forEach(e => {
-        if (e.isIntersecting) setVisible(p => new Set([...p, e.target.dataset.vi]));
-      }),
-      { threshold: 0.1 }
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting)
+            setVisible((p) => new Set([...p, e.target.dataset.vi]));
+        }),
+      { threshold: 0.1 },
     );
-    Object.values(refs.current).forEach(el => el && obs.observe(el));
+    Object.values(refs.current).forEach((el) => el && obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
-  const r = (k) => (el) => { refs.current[k] = el; if (el) el.dataset.vi = k; };
+  const r = (k) => (el) => {
+    refs.current[k] = el;
+    if (el) el.dataset.vi = k;
+  };
 
   const handleContact = (e) => {
     e.preventDefault();
@@ -57,6 +68,47 @@ export default function FounderPage() {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Our Founders | Dr. Ashish Sharma & Abhishek Sharma | Legacy Curator
+        </title>
+        <meta
+          name="description"
+          content="Meet the founders of Legacy Curator — Dr. Ashish Sharma, a medical practitioner turned legacy curator, and Abhishek Sharma, the operational force behind the vision. From medicine to memory."
+        />
+
+        <meta
+          property="og:title"
+          content="Meet the Founders | From Medicine to Memory | Legacy Curator"
+        />
+        <meta
+          property="og:description"
+          content="Dr. Ashish Sharma spent years listening to patients carry stories beyond illness. That realisation became Legacy Curator — books that preserve lives for generations."
+        />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://legacycurator.in/founders" />
+        <meta
+          property="og:image"
+          content="https://legacycurator.in/assets/Founder.jpeg"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Meet the Founders | Legacy Curator"
+        />
+        <meta
+          name="twitter:description"
+          content="Dr. Ashish Sharma — from medical practitioner to legacy curator. Because every life deserves a book worthy of it."
+        />
+        <meta
+          name="twitter:image"
+          content="https://legacycurator.in/assets/Founder.jpeg"
+        />
+
+        <link rel="canonical" href="https://legacycurator.in/founders" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
@@ -737,23 +789,21 @@ export default function FounderPage() {
       `}</style>
 
       <div className="fp-root">
-
         {/* ── HERO ── */}
         <section className="fp-hero">
           <div className="fp-hero-img">
-            {FOUNDER_IMAGE
-              ? <img src={FOUNDER_IMAGE} alt="Dr. Ashish Sharma" />
-              : (
-                <div className="fp-hero-img-placeholder">
-                  <div className="fp-placeholder-dots" />
-                  <div className="fp-bracket fp-bracket-tl" />
-                  <div className="fp-bracket fp-bracket-tr" />
-                  <div className="fp-bracket fp-bracket-bl" />
-                  <div className="fp-bracket fp-bracket-br" />
-                  <span className="fp-initials-bg">AS</span>
-                </div>
-              )
-            }
+            {FOUNDER_IMAGE ? (
+              <img src={FOUNDER_IMAGE} alt="Dr. Ashish Sharma" />
+            ) : (
+              <div className="fp-hero-img-placeholder">
+                <div className="fp-placeholder-dots" />
+                <div className="fp-bracket fp-bracket-tl" />
+                <div className="fp-bracket fp-bracket-tr" />
+                <div className="fp-bracket fp-bracket-bl" />
+                <div className="fp-bracket fp-bracket-br" />
+                <span className="fp-initials-bg">AS</span>
+              </div>
+            )}
             <div className="fp-hero-img-overlay" />
           </div>
 
@@ -761,72 +811,85 @@ export default function FounderPage() {
             <p className="fp-overline">Fior Legacy Curator</p>
             <p className="fp-founder-name">Dr. Ashish Sharma</p>
             <h1 className="fp-hero-name">
-              From<br />
-              Medicine<br />
+              From
+              <br />
+              Medicine
+              <br />
               to <em>Memory.</em>
             </h1>
-            <p className="fp-hero-role">Medical Practitioner · Author · Legacy Curator</p>
+            <p className="fp-hero-role">
+              Medical Practitioner · Author · Legacy Curator
+            </p>
             <p className="fp-hero-tagline">
-              "Books are the only technology that has<br />
+              "Books are the only technology that has
+              <br />
               never needed an upgrade."
             </p>
             <p className="fp-hero-blurb">
               A practitioner who listened differently — and built a company
-              around what he heard. Fior Legacy Curator exists because
-              every life deserves a book worthy of it.
+              around what he heard. Fior Legacy Curator exists because every
+              life deserves a book worthy of it.
             </p>
           </div>
         </section>
 
         {/* ── POEM SECTION ── */}
         <section
-          className={`fp-poem-section${visible.has('poem') ? ' vis' : ''}`}
-          ref={r('poem')}
+          className={`fp-poem-section${visible.has("poem") ? " vis" : ""}`}
+          ref={r("poem")}
         >
           <div>
             <p className="fp-section-label">In his words</p>
             <div className="fp-poem">
               {poemLines.map((line, i) => (
-                <span key={i} className={i >= 5 ? 'indent' : ''}>{line}</span>
+                <span key={i} className={i >= 5 ? "indent" : ""}>
+                  {line}
+                </span>
               ))}
             </div>
           </div>
           <div>
             <h2 className="fp-poem-right-head">
-              People don't just<br />
+              People don't just
+              <br />
               carry symptoms —<br />
               they carry <em>stories.</em>
             </h2>
             <p className="fp-poem-right-body">
               Twelve years as a medical practitioner taught him to see beyond
               the clinical. In the pauses between consultations, he began
-              collecting something medicine had no chart for — the full arc
-              of a human life. That realisation became Fior Legacy Curator.
+              collecting something medicine had no chart for — the full arc of a
+              human life. That realisation became Fior Legacy Curator.
             </p>
           </div>
         </section>
 
-        <div className="fp-rule-wrap"><div className="fp-rule" /></div>
+        <div className="fp-rule-wrap">
+          <div className="fp-rule" />
+        </div>
 
         {/* ── DR. ASHISH STORY ── */}
         <section className="fp-story">
           <div
-            className={`fp-story-inner${visible.has('story') ? ' vis' : ''}`}
-            ref={r('story')}
+            className={`fp-story-inner${visible.has("story") ? " vis" : ""}`}
+            ref={r("story")}
           >
             <div className="fp-story-left">
               <div className="fp-story-big-initial">A</div>
               <h2 className="fp-story-heading">
-                The path<br />
+                The path
+                <br />
                 that <em>changed.</em>
               </h2>
               <p className="fp-story-sub">
-                From healing with medicine to preserving with meaning —
-                Dr. Ashish Sharma's journey across two callings.
+                From healing with medicine to preserving with meaning — Dr.
+                Ashish Sharma's journey across two callings.
               </p>
             </div>
             <div className="fp-story-paras">
-              <p className="fp-section-label" style={{ marginBottom: 32 }}>The founder's story</p>
+              <p className="fp-section-label" style={{ marginBottom: 32 }}>
+                The founder's story
+              </p>
               {storyParas.map((para, i) => (
                 <React.Fragment key={i}>
                   {i === 2 && (
@@ -844,48 +907,57 @@ export default function FounderPage() {
         {/* ── CO-FOUNDER HERO ── */}
         <section className="fp-cofounder">
           <div
-            className={`fp-cofounder-inner${visible.has('cf-hero') ? ' vis' : ''}`}
-            ref={r('cf-hero')}
+            className={`fp-cofounder-inner${visible.has("cf-hero") ? " vis" : ""}`}
+            ref={r("cf-hero")}
           >
             <div className="fp-cofounder-img-wrap">
-              {COFOUNDER_IMAGE
-                ? (
-                  <>
-                    <img src={COFOUNDER_IMAGE} alt="Abhishek Sharma" />
-                    <div className="fp-cofounder-img-tag">Co-Founder</div>
-                  </>
-                )
-                : (
-                  <div className="fp-cofounder-img-placeholder">
-                    <div className="fp-placeholder-dots" style={{ backgroundImage: 'radial-gradient(circle, rgba(45,82,73,0.25) 1px, transparent 1px)' }} />
-                    <div className="fp-cofounder-corner fp-cofounder-tl" />
-                    <div className="fp-cofounder-corner fp-cofounder-tr" />
-                    <div className="fp-cofounder-corner fp-cofounder-bl" />
-                    <div className="fp-cofounder-corner fp-cofounder-br" />
-                    <span className="fp-cf-initials">AS</span>
-                    <div className="fp-cofounder-img-tag">Co-Founder</div>
-                  </div>
-                )
-              }
+              {COFOUNDER_IMAGE ? (
+                <>
+                  <img src={COFOUNDER_IMAGE} alt="Abhishek Sharma" />
+                  <div className="fp-cofounder-img-tag">Co-Founder</div>
+                </>
+              ) : (
+                <div className="fp-cofounder-img-placeholder">
+                  <div
+                    className="fp-placeholder-dots"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle, rgba(45,82,73,0.25) 1px, transparent 1px)",
+                    }}
+                  />
+                  <div className="fp-cofounder-corner fp-cofounder-tl" />
+                  <div className="fp-cofounder-corner fp-cofounder-tr" />
+                  <div className="fp-cofounder-corner fp-cofounder-bl" />
+                  <div className="fp-cofounder-corner fp-cofounder-br" />
+                  <span className="fp-cf-initials">AS</span>
+                  <div className="fp-cofounder-img-tag">Co-Founder</div>
+                </div>
+              )}
             </div>
 
             <div className="fp-cofounder-right">
               <p className="fp-cf-overline">Fior Legacy Curator</p>
               <p className="fp-cf-label">Abhishek Sharma</p>
               <h2 className="fp-cf-name">
-                Structure<br />
-                behind every<br />
+                Structure
+                <br />
+                behind every
+                <br />
                 <em>vision.</em>
               </h2>
-              <p className="fp-cf-role">Co-Founder & Legacy Curator · Operations & Growth</p>
+              <p className="fp-cf-role">
+                Co-Founder & Legacy Curator · Operations & Growth
+              </p>
               <p className="fp-cf-tagline">
-                "True success lies not just in achieving goals,<br />
+                "True success lies not just in achieving goals,
+                <br />
                 but in creating structures that sustain them."
               </p>
               <p className="fp-cf-blurb">
                 The force that transforms ideas into sustainable systems —
                 Abhishek ensures that every vision built at Fior Legacy Curator
-                is matched with the discipline and structure to last across generations.
+                is matched with the discipline and structure to last across
+                generations.
               </p>
             </div>
           </div>
@@ -894,13 +966,14 @@ export default function FounderPage() {
         {/* ── ABHISHEK STORY ── */}
         <section className="fp-cf-story">
           <div
-            className={`fp-cf-story-inner${visible.has('cf-story') ? ' vis' : ''}`}
-            ref={r('cf-story')}
+            className={`fp-cf-story-inner${visible.has("cf-story") ? " vis" : ""}`}
+            ref={r("cf-story")}
           >
             <div className="fp-cf-story-left">
               <div className="fp-cf-big-initial">A</div>
               <h2 className="fp-cf-story-heading">
-                Vision meets<br />
+                Vision meets
+                <br />
                 <em>structure.</em>
               </h2>
               <p className="fp-cf-story-sub">
@@ -910,13 +983,17 @@ export default function FounderPage() {
             </div>
 
             <div className="fp-cf-paras">
-              <p className="fp-section-label" style={{ marginBottom: 32 }}>The co-founder's story</p>
+              <p className="fp-section-label" style={{ marginBottom: 32 }}>
+                The co-founder's story
+              </p>
 
               {abhishekParas.map((para, i) => (
                 <React.Fragment key={i}>
                   {i === 2 && (
                     <blockquote className="fp-cf-pullquote">
-                      "Build systems that allow leaders to focus on what they do best — while the foundation remains strong and growth-ready."
+                      "Build systems that allow leaders to focus on what they do
+                      best — while the foundation remains strong and
+                      growth-ready."
                     </blockquote>
                   )}
                   <p>{para}</p>
@@ -927,17 +1004,26 @@ export default function FounderPage() {
                 <div className="fp-pillar">
                   <div className="fp-pillar-num">01</div>
                   <div className="fp-pillar-label">Strategic Thinking</div>
-                  <p className="fp-pillar-text">Translating vision into actionable, scalable systems that endure.</p>
+                  <p className="fp-pillar-text">
+                    Translating vision into actionable, scalable systems that
+                    endure.
+                  </p>
                 </div>
                 <div className="fp-pillar">
                   <div className="fp-pillar-num">02</div>
                   <div className="fp-pillar-label">Operational Clarity</div>
-                  <p className="fp-pillar-text">Creating efficient workflows so complexity never obscures purpose.</p>
+                  <p className="fp-pillar-text">
+                    Creating efficient workflows so complexity never obscures
+                    purpose.
+                  </p>
                 </div>
                 <div className="fp-pillar">
                   <div className="fp-pillar-num">03</div>
                   <div className="fp-pillar-label">Generational Impact</div>
-                  <p className="fp-pillar-text">Ensuring every legacy is structured to sustain and grow across time.</p>
+                  <p className="fp-pillar-text">
+                    Ensuring every legacy is structured to sustain and grow
+                    across time.
+                  </p>
                 </div>
               </div>
             </div>
@@ -946,12 +1032,14 @@ export default function FounderPage() {
 
         {/* ── CLOSING ── */}
         <section
-          className={`fp-closing${visible.has('closing') ? ' vis' : ''}`}
-          ref={r('closing')}
+          className={`fp-closing${visible.has("closing") ? " vis" : ""}`}
+          ref={r("closing")}
         >
           <div className="fp-closing-text">
-            Because while health<br />
-            sustains life, it is <em>stories</em><br />
+            Because while health
+            <br />
+            sustains life, it is <em>stories</em>
+            <br />
             that give it depth.
           </div>
           <div>
@@ -964,9 +1052,13 @@ export default function FounderPage() {
             <a href="/contacts" className="fp-cta">
               Start your legacy
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11"
-                  stroke="currentColor" strokeWidth="1.5"
-                  strokeLinecap="round" strokeLinejoin="round"/>
+                <path
+                  d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </a>
           </div>
@@ -976,10 +1068,11 @@ export default function FounderPage() {
         <footer className="fp-footer-strip">
           <div className="fp-footer-strip-in">
             <span className="fp-footer-brand">Fior Legacy Curator</span>
-            <span className="fp-footer-label">Preserving lives through the books that hold them</span>
+            <span className="fp-footer-label">
+              Preserving lives through the books that hold them
+            </span>
           </div>
         </footer>
-
       </div>
     </>
   );
