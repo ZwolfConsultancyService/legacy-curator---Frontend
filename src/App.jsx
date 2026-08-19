@@ -16,6 +16,7 @@ import TeamPage from "./Pages/Routes/Founderspage/Teampage";
 import FloatingMusicPlayer from "./Components/Floatingmusicplayer/Floatingmusicplayer";
 import TermsAndConditions from "./Pages/Termsandconditions/Termsandconditions";
 import PrivacyPolicy from "./Pages/Privacypolicy/Privacypolicy";
+import LocationDetailPage from "./Pages/DetailPage/Locationdetailpage/Locationdetailpage";
 
 const App = () => {
   return (
@@ -32,17 +33,19 @@ const App = () => {
           {/* <Route path="/portfolio" element={<PortfolioPage />} /> */}
           <Route path="/contacts" element={<ContactPage />} />
           <Route path="/blogs" element={<BlogPage />} />
+
+          {/* Top-level service page, e.g. /services/photo-book */}
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
-          <Route
-            path="/services/:slug/:subSlug"
-            element={<ServiceDetailPage />}
-          />{" "}
-          {/* ← yeh add karo */}
+
+          {/* City-level location page, e.g. /services/photo-book/delhi
+              Param name MUST be :subSlug to match useParams() in LocationDetailPage.jsx */}
+          <Route path="/services/:slug/:subSlug" element={<LocationDetailPage />} />
+
           <Route path="/blog/:slug" element={<BlogDetailPage />} />
           <Route path="/founder" element={<FoundersPage />} />
           <Route path="/team" element={<TeamPage />} />
-            <Route path="/terms" element={<TermsAndConditions />} />
-             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </>
