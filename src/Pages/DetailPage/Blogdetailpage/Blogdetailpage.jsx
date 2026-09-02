@@ -189,29 +189,6 @@ export default function BlogDetailPage() {
           font-size: 1.35rem; font-style: italic; color: #333;
           font-weight: 300; line-height: 1.65; margin: 0;
         }
-        .bdp-toc-btn {
-          display: flex; align-items: flex-start; gap: 8px; padding: 6px 0;
-          font-size: 0.73rem; line-height: 1.4; color: #bbb;
-          background: none; border: none; text-align: left;
-          font-family: 'Montserrat', sans-serif; width: 100%;
-          cursor: pointer; transition: color 0.2s;
-        }
-        .bdp-toc-btn:hover { color: #36615A; }
-        .bdp-toc-btn.active { color: #36615A; font-weight: 500; }
-        .bdp-dot {
-          width: 5px; height: 5px; border-radius: 50%;
-          background: currentColor; flex-shrink: 0; margin-top: 5px;
-          transition: transform 0.2s;
-        }
-        .bdp-toc-btn.active .bdp-dot { transform: scale(1.7); }
-        .bdp-tag {
-          padding: 4px 13px; border-radius: 100px; font-size: 0.63rem;
-          letter-spacing: 0.13em; text-transform: uppercase;
-          background: rgba(54,97,90,0.07); color: #36615A;
-          border: 1px solid rgba(54,97,90,0.15); cursor: pointer; transition: all 0.2s;
-          font-family: 'Montserrat', sans-serif;
-        }
-        .bdp-tag:hover { background: #36615A; color: #fff; }
         .bdp-rel-card {
           background: #F3F0E1; border-radius: 8px; overflow: hidden;
           cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
@@ -247,19 +224,11 @@ export default function BlogDetailPage() {
           style={{ background: "linear-gradient(to top,rgba(0,0,0,0.15),transparent)" }} />
 
         <div className="bdp-hero-inner relative max-w-3xl mx-auto px-14 py-10 pb-12">
-          {/* Back + tag row */}
+          {/* Back + category row */}
           <div className="bdp-fu flex items-center justify-between flex-wrap gap-3 mb-8">
             <button className="bdp-back" onClick={() => navigate("/blog")}>← Journal</button>
-            <div className="flex items-center gap-2">
-              {post.tag && (
-                <span className="text-[0.57rem] uppercase tracking-[0.18em] text-white/50 border border-white/20 px-3 py-1 rounded-sm"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  {post.tag}
-                </span>
-              )}
-              <span className="text-[0.57rem] uppercase tracking-[0.18em] text-white/40"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}>{post.category}</span>
-            </div>
+            <span className="text-[0.57rem] uppercase tracking-[0.18em] text-white/40"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}>{post.category}</span>
           </div>
 
           {/* Title */}
@@ -280,7 +249,7 @@ export default function BlogDetailPage() {
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full border-2 border-white/25 flex items-center justify-center text-sm font-semibold flex-shrink-0"
                 style={{ background: post.avatarBg || "#36615A", color: "#FDFFFC", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
-                {post.authorInitial || post.author?.[0] || "A"}
+                {post.author?.[0] || "A"}
               </div>
               <div>
                 <div className="text-[0.8rem] font-medium" style={{ color: "#FDFFFC", fontFamily: "'Montserrat', sans-serif" }}>{post.author}</div>
@@ -290,7 +259,6 @@ export default function BlogDetailPage() {
             <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.12)" }} />
             <div className="text-[0.67rem] leading-relaxed" style={{ color: "rgba(255,255,255,0.38)", fontFamily: "'Montserrat', sans-serif" }}>
               <div>{post.date}</div>
-              <div>{post.readTime}</div>
             </div>
           </div>
         </div>
@@ -309,9 +277,12 @@ export default function BlogDetailPage() {
                 style={{ fontFamily: "'Montserrat', sans-serif" }}>✦ The Story</div>
               {introBlocks.map((block, i) =>
                 block.type === "p" ? (
-                  <p key={i} className="bdp-lead" style={{ marginBottom: i < introBlocks.length - 1 ? "1.2rem" : 0 }}>
-                    {block.text}
-                  </p>
+                  <p
+                    key={i}
+                    className="bdp-lead"
+                    style={{ marginBottom: i < introBlocks.length - 1 ? "1.2rem" : 0 }}
+                    dangerouslySetInnerHTML={{ __html: block.text }}
+                  />
                 ) : null
               )}
             </div>
@@ -349,36 +320,37 @@ export default function BlogDetailPage() {
                   </h2>
                 );
               }
-              if (block.type === "p")          return <p key={i} className="bdp-p">{block.text}</p>;
-              if (block.type === "blockquote") return <div key={i} className="bdp-bq"><p>{block.text}</p></div>;
+              if (block.type === "p")
+                return (
+                  <p
+                    key={i}
+                    className="bdp-p"
+                    dangerouslySetInnerHTML={{ __html: block.text }}
+                  />
+                );
+              if (block.type === "blockquote")
+                return (
+                  <div key={i} className="bdp-bq">
+                    <p dangerouslySetInnerHTML={{ __html: block.text }} />
+                  </div>
+                );
               return null;
             })}
-
-            {/* Tags */}
-            {post.tags?.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-10 pt-8 border-t border-forest/8">
-                {post.tags.map((tag) => (
-                  <span key={tag} className="bdp-tag">{tag}</span>
-                ))}
-              </div>
-            )}
 
             {/* Author bio */}
             <div className="mt-8 bg-eggshell rounded-xl p-7 border border-forest/8"
               style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "1.2rem", alignItems: "start" }}>
               <div className="w-12 h-12 rounded-full flex items-center justify-center font-semibold text-lg flex-shrink-0"
                 style={{ background: post.avatarBg || "#36615A", color: "#FDFFFC", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
-                {post.authorInitial || post.author?.[0] || "A"}
+                {post.author?.[0] || "A"}
               </div>
               <div>
                 <div className="text-[0.58rem] uppercase tracking-[0.16em] text-copper mb-1"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}>Written by</div>
                 <div className="font-normal text-gray-900 text-lg mb-1"
                   style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>{post.author}</div>
-                <div className="text-[0.66rem] text-forest/50 italic mb-2"
+                <div className="text-[0.66rem] text-forest/50 italic"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}>{post.authorRole}</div>
-                <p className="text-[0.79rem] leading-[1.72] text-gray-500 m-0"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}>{post.authorBio}</p>
               </div>
             </div>
           </article>
@@ -386,21 +358,6 @@ export default function BlogDetailPage() {
           {/* Sidebar */}
           <aside className="bdp-sidebar">
             <div className="sticky flex flex-col gap-4" style={{ top: "24px" }}>
-
-              {/* TOC */}
-              {post.toc?.length > 0 && (
-                <div className="bg-porcelain rounded-xl border border-forest/10 px-5 py-5">
-                  <div className="text-[0.56rem] uppercase tracking-[0.2em] text-gray-300 mb-4"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}>In this article</div>
-                  <div className="flex flex-col">
-                    {post.toc.map((item, i) => (
-                      <button key={i} className={`bdp-toc-btn ${activeSection === i ? "active" : ""}`}>
-                        <span className="bdp-dot" /><span>{item}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               {/* Progress */}
               <div className="bg-porcelain rounded-xl border border-forest/10 px-5 py-4">
@@ -414,8 +371,6 @@ export default function BlogDetailPage() {
                   <div className="h-full rounded-full transition-all duration-150"
                     style={{ width: `${scrollPct}%`, background: "linear-gradient(90deg,#36615A,#A7703D)" }} />
                 </div>
-                <div className="mt-2 text-[0.61rem] text-gray-300"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}>{post.readTime}</div>
               </div>
 
               {/* Category */}
@@ -482,13 +437,11 @@ export default function BlogDetailPage() {
                       <div className="flex items-center gap-2">
                         <div className="w-5 h-5 rounded-full flex items-center justify-center text-[0.57rem] text-white font-semibold"
                           style={{ background: p.avatarBg || "#36615A", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
-                          {p.authorInitial || p.author?.[0] || "A"}
+                          {p.author?.[0] || "A"}
                         </div>
                         <span className="text-[0.67rem] text-gray-400"
                           style={{ fontFamily: "'Montserrat', sans-serif" }}>{p.author}</span>
                       </div>
-                      <span className="text-[0.62rem] text-gray-300"
-                        style={{ fontFamily: "'Montserrat', sans-serif" }}>{p.readTime}</span>
                     </div>
                   </div>
                 </div>

@@ -78,13 +78,6 @@ function FeaturedCard({ post, onClick }) {
         padding: isMobile ? 32 : 48,
         position: "relative",
       }}>
-        {post.tag && (
-          <div style={{ position: "absolute", top: 20, left: 20 }}>
-            <span style={{ fontSize: "0.62rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.25)", padding: "4px 10px", borderRadius: 2, fontFamily: "'Montserrat', sans-serif" }}>
-              {post.tag}
-            </span>
-          </div>
-        )}
         <div style={{ textAlign: "center" }}>
           <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: isMobile ? "3rem" : "5rem", fontWeight: 700, fontStyle: "italic", color: "rgba(255,255,255,0.12)", lineHeight: 1 }}>LC</div>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.3)", margin: "16px auto" }} />
@@ -108,14 +101,13 @@ function FeaturedCard({ post, onClick }) {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: isMobile ? 20 : 36, paddingTop: 20, borderTop: "1px solid rgba(54,97,90,0.1)", flexWrap: "wrap", gap: 10 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <div style={{ width: 34, height: 34, borderRadius: "50%", backgroundColor: post.avatarBg || colors.forest, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Montserrat', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: colors.porcelain, flexShrink: 0 }}>
-              {post.authorInitial || post.author?.[0] || "A"}
+              {post.author?.[0] || "A"}
             </div>
             <div>
               <div style={{ fontSize: "0.8rem", fontWeight: 500, color: "#333", fontFamily: "'Montserrat', sans-serif" }}>{post.author}</div>
               <div style={{ fontSize: "0.7rem", color: "#aaa", fontFamily: "'Montserrat', sans-serif" }}>{post.date}</div>
             </div>
           </div>
-          <span style={{ fontSize: "0.72rem", color: "#bbb", letterSpacing: "0.05em", fontFamily: "'Montserrat', sans-serif" }}>{post.readTime}</span>
         </div>
       </div>
     </div>
@@ -158,11 +150,10 @@ function BlogCard({ post, onClick }) {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 24, paddingTop: 16, borderTop: "1px solid rgba(54,97,90,0.08)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <div style={{ width: 28, height: 28, borderRadius: "50%", backgroundColor: post.avatarBg || colors.forest, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.72rem", fontWeight: 700, color: colors.porcelain, fontFamily: "'Montserrat', sans-serif", flexShrink: 0 }}>
-              {post.authorInitial || post.author?.[0] || "A"}
+              {post.author?.[0] || "A"}
             </div>
             <span style={{ fontSize: "0.75rem", color: "#888", fontFamily: "'Montserrat', sans-serif" }}>{post.author}</span>
           </div>
-          <span style={{ fontSize: "0.68rem", color: "#bbb", fontFamily: "'Montserrat', sans-serif" }}>{post.readTime}</span>
         </div>
       </div>
     </div>
