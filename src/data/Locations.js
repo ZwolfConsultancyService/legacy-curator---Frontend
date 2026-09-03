@@ -15394,7 +15394,3219 @@ const locationsData = {
 },
 
 
+"business-book": {
+  "delhi": {
+    "citySlug": "delhi",
+    "cityName": "Delhi",
+    "region": "Delhi NCR, India",
+    "seoTitle": "Business Story Books in Delhi | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Delhi. Founder stories, business legacies, and company origin narratives — crafted with care.",
+    "urlPath": "/services/business-story-book/delhi",
+    "h1": "Business Story Books in Delhi — For Companies That Built Something Worth Remembering",
+    "intro": [
+      "Delhi is the political and commercial heart of India — a city where businesses have been built through decades of resilience, political shifts, and economic transformation. From family-run enterprises in Chandni Chowk to modern headquarters in Connaught Place, every successful company has a story that deserves to be told.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a third-generation business owner, a founder who started from scratch, or a leader who scaled a company through India's economic reforms, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Legacy-Minded Business Owners", "desc": "Whether it's a founding story, a family business legacy, or a corporate transformation, we craft books that honour the work and the people behind it." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Delhi Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Delhi's business owners and corporate leaders trust us because we understand the weight of a business legacy. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the number of interviews." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with clients anytime." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Delhi today.",
+    "areasServed": ["South Delhi", "Lutyens' Delhi", "Greater Kailash", "Vasant Vihar", "Dwarka", "Rohini", "Karol Bagh", "Civil Lines", "Connaught Place", "Gurgaon", "Noida", "Faridabad"],
+    "localKeywords": ["business story book Delhi", "company history book Delhi", "founder story book Delhi", "family business book Delhi", "corporate legacy book Delhi"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Delhi)", "Memoir Books (Delhi)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Delhi office desk",
+      "Spread showing a company's founding journey in a business book",
+      "Legacy Curator presentation box delivered in Delhi"
+    ],
+    "famousFor": "Heritage monuments, political power hub, and a city of business dynasties and corporate empires."
+  },
 
+  "mumbai": {
+    "citySlug": "mumbai",
+    "cityName": "Mumbai",
+    "region": "Maharashtra, India",
+    "seoTitle": "Business Story Books in Mumbai | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Mumbai. Founder stories, business legacies, and corporate narratives — crafted with care.",
+    "urlPath": "/services/business-story-book/mumbai",
+    "h1": "Business Story Books in Mumbai — For Companies That Built the City of Dreams",
+    "intro": [
+      "Mumbai is the financial capital of India — where dreams are built, deals are closed, and empires are made. From the textile mills of the 19th century to the fintech startups of today, Mumbai's business landscape is built on stories of risk, ambition, and resilience.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a Bollywood production house, a family-run trading firm, or a startup that scaled from a Bandra office to a BSE listing, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Mumbai's Business Community", "desc": "Whether it's a founder's journey, a corporate legacy, or a family business story, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Mumbai Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Mumbai's business leaders and founders trust us because we understand the relentless drive behind a Mumbai career. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Mumbai today.",
+    "areasServed": ["Bandra", "Juhu", "Worli", "Malabar Hill", "Powai", "Andheri", "Colaba", "Khar", "Navi Mumbai", "Thane"],
+    "localKeywords": ["business story book Mumbai", "company history book Bandra", "founder story book Mumbai", "corporate legacy book Worli", "business book Mumbai"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Mumbai)", "Memoir Books (Mumbai)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Bandra office desk",
+      "Spread showing a company's growth journey in a business book",
+      "Legacy Curator presentation box delivered in Mumbai"
+    ],
+    "famousFor": "Business capital, Bollywood glamour, and a relentless entrepreneurial spirit that defines modern India."
+  },
+
+  "gurgaon": {
+    "citySlug": "gurgaon",
+    "cityName": "Gurgaon",
+    "region": "Haryana, India",
+    "seoTitle": "Business Story Books in Gurgaon | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Gurgaon. Founder stories, corporate legacies, and business narratives.",
+    "urlPath": "/services/business-story-book/gurgaon",
+    "h1": "Business Story Books in Gurgaon — For Companies Built in the Corporate Capital",
+    "intro": [
+      "Gurgaon is the corporate heart of modern India — home to multinational headquarters, unicorn startups, and a new generation of business leaders who built their companies from the ground up. The city's glass towers house stories of ambition, innovation, and relentless execution.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a senior executive, a startup founder, or a family business that moved with the city's growth, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Corporate Professionals & Founders", "desc": "Whether it's a corporate journey, a startup story, or a professional service firm, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Gurgaon Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Gurgaon's corporate leaders and founders trust us because we understand the drive behind a corporate career and the ambition of building something from nothing. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Gurgaon today.",
+    "areasServed": ["Golf Course Road", "DLF Phase 1-5", "Sohna Road", "Cyber City", "Sector 56", "Sector 57", "Sector 62", "Ardee City"],
+    "localKeywords": ["business story book Gurgaon", "company history book DLF", "founder story book Gurugram", "corporate legacy book Cyber City", "business book Gurgaon"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Gurgaon)", "Memoir Books (Gurgaon)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Gurgaon office desk",
+      "Spread showing a corporate journey in a business book",
+      "Legacy Curator presentation box delivered in Gurgaon"
+    ],
+    "famousFor": "Corporate hub, luxury high-rises, and professionals who built careers and companies from the ground up."
+  },
+
+  "bengaluru": {
+    "citySlug": "bengaluru",
+    "cityName": "Bengaluru",
+    "region": "Karnataka, India",
+    "seoTitle": "Business Story Books in Bengaluru | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Bengaluru. Startup stories, founder journeys, and corporate narratives.",
+    "urlPath": "/services/business-story-book/bengaluru",
+    "h1": "Business Story Books in Bengaluru — For Companies Built in India's Startup Capital",
+    "intro": [
+      "Bengaluru is the startup capital of India — a city where ideas become companies, and founders build the future. From garages to unicorns, Bengaluru's business landscape is defined by innovation, risk, and the courage to build something new.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a founder, an early employee, or a leader who scaled a company, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Founders & Tech Leaders", "desc": "Whether it's a startup journey, a tech company story, or a corporate legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Bengaluru Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Bengaluru's founders and tech leaders trust us because we understand the startup journey. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Bengaluru today.",
+    "areasServed": ["Koramangala", "Indiranagar", "Whitefield", "Jayanagar", "JP Nagar", "HSR Layout", "Sadashivanagar", "Electronic City"],
+    "localKeywords": ["business story book Bengaluru", "startup story book Bangalore", "founder journey book Koramangala", "tech company history book Indiranagar", "corporate legacy book Bengaluru"],
+    "semanticKeywords": ["business story book", "startup journey", "founder story", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Bengaluru)", "Memoir Books (Bengaluru)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Bengaluru startup desk",
+      "Spread showing a founder's journey in a startup business book",
+      "Legacy Curator presentation box delivered in Bengaluru"
+    ],
+    "famousFor": "India's tech and startup capital, where founders and innovators are building the future."
+  },
+
+  "hyderabad": {
+    "citySlug": "hyderabad",
+    "cityName": "Hyderabad",
+    "region": "Telangana, India",
+    "seoTitle": "Business Story Books in Hyderabad | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Hyderabad. Founder stories, business legacies, and corporate narratives.",
+    "urlPath": "/services/business-story-book/hyderabad",
+    "h1": "Business Story Books in Hyderabad — For Companies That Bridge Heritage and Innovation",
+    "intro": [
+      "Hyderabad is a city of two worlds — Nizami heritage and modern IT innovation. Businesses here have stories that span centuries — from traditional pearl and textile trading to world-class pharma and tech companies.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a tech founder, a business leader, or someone who carries forward a family legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Heritage & Innovation", "desc": "Whether it's a tech journey, a corporate legacy, or a family business story, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Hyderabad Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Hyderabad's founders, professionals, and heritage families trust us because we understand the duality of the city. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Hyderabad today.",
+    "areasServed": ["Jubilee Hills", "Banjara Hills", "HITEC City", "Gachibowli", "Old City", "Somajiguda", "Begumpet", "Secunderabad"],
+    "localKeywords": ["business story book Hyderabad", "company history book Banjara Hills", "founder story book Hyderabad", "family business book Hyderabad", "corporate legacy book Hyderabad"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Hyderabad)", "Memoir Books (Hyderabad)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Hyderabad office desk",
+      "Spread showing a business journey in a company story book",
+      "Legacy Curator presentation box delivered in Hyderabad"
+    ],
+    "famousFor": "IT wealth, Nizami heritage, and a unique blend of tradition and innovation in business."
+  },
+
+  "chennai": {
+    "citySlug": "chennai",
+    "cityName": "Chennai",
+    "region": "Tamil Nadu, India",
+    "seoTitle": "Business Story Books in Chennai | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Chennai. Founder stories, business legacies, and corporate narratives.",
+    "urlPath": "/services/business-story-book/chennai",
+    "h1": "Business Story Books in Chennai — For Companies Built with Discipline and Heart",
+    "intro": [
+      "Chennai is a city of quiet determination — where old money meets new ambition, and businesses are built with discipline and heart. From textile mills to automotive giants, Chennai's companies have stood the test of time through resilience and integrity.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a family business owner, or a corporate professional, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Discerning Professionals", "desc": "Whether it's a business journey, a corporate legacy, or a family story, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Chennai Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Chennai's professionals and business leaders trust us because we understand the discipline behind a Chennai career. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Chennai today.",
+    "areasServed": ["Mylapore", "Adyar", "T. Nagar", "Besant Nagar", "Nungambakkam", "Anna Nagar", "Kilpauk", "Velachery"],
+    "localKeywords": ["business story book Chennai", "company history book Mylapore", "founder story book Chennai", "family business book Adyar", "corporate legacy book Chennai"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Chennai)", "Memoir Books (Chennai)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Chennai office desk",
+      "Spread showing a professional business journey in a company book",
+      "Legacy Curator presentation box delivered in Chennai"
+    ],
+    "famousFor": "Old money, deep-rooted industrial heritage, and professionals who build with discipline and heart."
+  },
+
+  "pune": {
+    "citySlug": "pune",
+    "cityName": "Pune",
+    "region": "Maharashtra, India",
+    "seoTitle": "Business Story Books in Pune | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Pune. Founder stories, business legacies, and corporate narratives.",
+    "urlPath": "/services/business-story-book/pune",
+    "h1": "Business Story Books in Pune — For Companies That Balance Tradition and Progress",
+    "intro": [
+      "Pune is a city of balance — old Maratha heritage and new IT and auto industry ambition. Businesses here have stories that span generations — from traditional manufacturing to cutting-edge IT services.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a tech professional, an industrialist, or someone who carries forward a family legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Professionals & Industrialists", "desc": "Whether it's a tech journey, a manufacturing legacy, or a corporate career, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Pune Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Pune's professionals and industrialists trust us because we understand the balance that defines a Pune career. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Pune today.",
+    "areasServed": ["Koregaon Park", "Kalyani Nagar", "Baner", "Aundh", "Viman Nagar", "Camp Area", "Hadapsar", "Hinjewadi"],
+    "localKeywords": ["business story book Pune", "company history book Koregaon Park", "founder story book Pune", "family business book Pune", "corporate legacy book Pune"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Pune)", "Memoir Books (Pune)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Pune office desk",
+      "Spread showing an industrial journey in a company story book",
+      "Legacy Curator presentation box delivered in Pune"
+    ],
+    "famousFor": "IT and auto industry wealth, education hub, and a business culture that balances tradition with modernity."
+  },
+
+  "ahmedabad": {
+    "citySlug": "ahmedabad",
+    "cityName": "Ahmedabad",
+    "region": "Gujarat, India",
+    "seoTitle": "Business Story Books in Ahmedabad | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Ahmedabad. Founder stories, business legacies, and entrepreneurial narratives.",
+    "urlPath": "/services/business-story-book/ahmedabad",
+    "h1": "Business Story Books in Ahmedabad — For Companies Built in India's Business Capital",
+    "intro": [
+      "Ahmedabad is a city of enterprise — textile magnates, diamond traders, and entrepreneurs who built business dynasties. The city's business culture is built on trust, relationship, and a relentless drive to build something from nothing.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a founder, a business leader, or someone who carries forward a family legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Business Families & Founders", "desc": "Whether it's a business journey, a family legacy, or a corporate career, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how an Ahmedabad Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Ahmedabad's business families and founders trust us because we understand the drive behind an enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Ahmedabad today.",
+    "areasServed": ["C.G. Road", "Satellite", "Vastrapur", "Paldi", "Navrangpura", "Bodakdev", "Prahlad Nagar"],
+    "localKeywords": ["business story book Ahmedabad", "company history book Satellite", "founder story book Ahmedabad", "family business book Gujarat", "corporate legacy book Ahmedabad"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Ahmedabad)", "Memoir Books (Ahmedabad)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on an Ahmedabad office desk",
+      "Spread showing a business dynasty journey in a company book",
+      "Legacy Curator presentation box delivered in Ahmedabad"
+    ],
+    "famousFor": "Business and textile wealth, entrepreneurship, and a strong legacy of enterprise."
+  },
+
+  "chandigarh": {
+    "citySlug": "chandigarh",
+    "cityName": "Chandigarh",
+    "region": "Punjab, India",
+    "seoTitle": "Business Story Books in Chandigarh | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Chandigarh. Founder stories, business legacies, and corporate narratives.",
+    "urlPath": "/services/business-story-book/chandigarh",
+    "h1": "Business Story Books in Chandigarh — For Companies Built with Elegance and Purpose",
+    "intro": [
+      "Chandigarh is a city of planned perfection — where elegance meets purpose, and businesses are built with design and intention. From architecture firms to service industries, Chandigarh's companies reflect the city's refined aesthetic.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a professional, an entrepreneur, or someone who has built a business of purpose, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Discerning Professionals", "desc": "Whether it's a business journey, a creative enterprise, or a legacy of service, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Chandigarh Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Chandigarh's professionals and business owners trust us because we understand the elegance of a purposeful business. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Chandigarh today.",
+    "areasServed": ["Sector 8", "Sector 11", "Sector 35", "Sector 7", "Sector 10", "Sector 15", "Sector 22", "Sector 26"],
+    "localKeywords": ["business story book Chandigarh", "company history book Sector 8", "founder story book Chandigarh", "family business book Punjab", "corporate legacy book Chandigarh"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Chandigarh)", "Memoir Books (Chandigarh)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Chandigarh office desk",
+      "Spread showing a purposeful business journey in a company book",
+      "Legacy Curator presentation box delivered in Chandigarh"
+    ],
+    "famousFor": "Planned city, Punjab's elite lifestyle, and a unique blend of modernist architecture and Punjabi business culture."
+  },
+
+  "kolkata": {
+    "citySlug": "kolkata",
+    "cityName": "Kolkata",
+    "region": "West Bengal, India",
+    "seoTitle": "Business Story Books in Kolkata | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Kolkata. Founder stories, business legacies, and corporate narratives.",
+    "urlPath": "/services/business-story-book/kolkata",
+    "h1": "Business Story Books in Kolkata — For Companies Built with Culture and Conviction",
+    "intro": [
+      "Kolkata is a city of artists, intellectuals, and old-world aristocracy — and its businesses reflect that same depth. From tea and jute empires to modern IT and media houses, Kolkata's companies are built on a foundation of culture and conviction.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a creative agency, a family business, or a corporate leader, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Culturally Discerning Businesses", "desc": "Whether it's a creative enterprise, a business legacy, or a professional service firm, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Kolkata Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Kolkata's business leaders and professionals trust us because we understand the cultural depth of a Kolkata enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Kolkata today.",
+    "areasServed": ["Alipore", "Park Street", "Ballygunge", "Salt Lake City", "South City", "Rajarhat", "New Town"],
+    "localKeywords": ["business story book Kolkata", "company history book Alipore", "founder story book Kolkata", "family business book Park Street", "corporate legacy book Kolkata"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Kolkata)", "Memoir Books (Kolkata)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Kolkata office desk",
+      "Spread showing a cultural business journey in a company book",
+      "Legacy Curator presentation box delivered in Kolkata"
+    ],
+    "famousFor": "Old aristocracy, colonial heritage, and a rich cultural and intellectual business tradition."
+  },
+
+  "jaipur": {
+    "citySlug": "jaipur",
+    "cityName": "Jaipur",
+    "region": "Rajasthan, India",
+    "seoTitle": "Business Story Books in Jaipur | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Jaipur. Founder stories, business legacies, and royal heritage narratives.",
+    "urlPath": "/services/business-story-book/jaipur",
+    "h1": "Business Story Books in Jaipur — For Companies Built with Royal Grace",
+    "intro": [
+      "Jaipur is a city of palaces, artistry, and royal heritage — and its businesses reflect that same grandeur. From jewellery and textiles to hospitality and modern retail, Jaipur's companies are built on a foundation of beauty and craftsmanship.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're an artisan brand, a business leader, or someone who carries forward a royal legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Artisans & Royal Legacies", "desc": "Whether it's a creative enterprise, a business legacy, or a life of artistry, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Jaipur Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Jaipur's business leaders, artisans, and royal families trust us because we understand the weight of legacy and craftsmanship. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Jaipur today.",
+    "areasServed": ["C-Scheme", "Malviya Nagar", "Vaishali Nagar", "Civil Lines", "Old City (Pink City)", "Mansarovar"],
+    "localKeywords": ["business story book Jaipur", "company history book C-Scheme", "founder story book Jaipur", "family business book Pink City", "corporate legacy book Jaipur"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Jaipur)", "Memoir Books (Jaipur)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Jaipur office desk",
+      "Spread showing a royal business journey in a company book",
+      "Legacy Curator presentation box delivered in Jaipur"
+    ],
+    "famousFor": "Palaces, Pink City heritage, and a deep appreciation for heirlooms and craftsmanship in business."
+  },
+
+  "udaipur": {
+    "citySlug": "udaipur",
+    "cityName": "Udaipur",
+    "region": "Rajasthan, India",
+    "seoTitle": "Business Story Books in Udaipur | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Udaipur. Founder stories, business legacies, and romantic narratives.",
+    "urlPath": "/services/business-story-book/udaipur",
+    "h1": "Business Story Books in Udaipur — For Companies Built with Romance and Heart",
+    "intro": [
+      "Udaipur is a city of lakes and palaces, where romance and royal elegance are woven into everyday life — and businesses here reflect that same beauty. From luxury hospitality to boutique brands, Udaipur's companies are built on a foundation of heart and vision.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a creative, a business leader, or someone who has built a purpose-driven enterprise, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Romantics & Dreamers", "desc": "Whether it's a creative enterprise, a business legacy, or a purpose-driven company, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how an Udaipur Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Udaipur's business leaders, creatives, and dreamers trust us because we understand the romance of a business built with heart. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Udaipur today.",
+    "areasServed": ["Lake City", "Old City", "Hiran Magri", "Sector 4", "Sector 9", "Ambavgarh", "Panchwati"],
+    "localKeywords": ["business story book Udaipur", "company history book Lake City", "founder story book Udaipur", "family business book Rajasthan", "corporate legacy book Udaipur"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Udaipur)", "Memoir Books (Udaipur)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on an Udaipur office desk",
+      "Spread showing a romantic business journey in a company book",
+      "Legacy Curator presentation box delivered in Udaipur"
+    ],
+    "famousFor": "Lake palaces, royal romance, and a business culture built on beauty and heart."
+  },
+
+  "jodhpur": {
+    "citySlug": "jodhpur",
+    "cityName": "Jodhpur",
+    "region": "Rajasthan, India",
+    "seoTitle": "Business Story Books in Jodhpur | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Jodhpur. Founder stories, business legacies, and majestic narratives.",
+    "urlPath": "/services/business-story-book/jodhpur",
+    "h1": "Business Story Books in Jodhpur — For Companies Built with Grandeur and Strength",
+    "intro": [
+      "Jodhpur is a city of grandeur — the towering Mehrangarh Fort, the blue-washed houses, and a deep royal heritage. Businesses here reflect that same strength and majesty.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who carries forward a majestic legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Majestic Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a royal legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Jodhpur Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Jodhpur's business leaders, creatives, and royal families trust us because we understand the weight of grandeur and legacy. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Jodhpur today.",
+    "areasServed": ["Old City", "Sardarpura", "Ratanada", "Jalori Gate", "Umaid Heritage", "Mandal Road", "Circuit House Road"],
+    "localKeywords": ["business story book Jodhpur", "company history book Sardarpura", "founder story book Jodhpur", "family business book Rajasthan", "corporate legacy book Jodhpur"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Jodhpur)", "Memoir Books (Jodhpur)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Jodhpur office desk",
+      "Spread showing a majestic business journey in a company book",
+      "Legacy Curator presentation box delivered in Jodhpur"
+    ],
+    "famousFor": "Mehrangarh Fort, the Blue City, and a deep heritage of Rajput business grandeur."
+  },
+
+  "lucknow": {
+    "citySlug": "lucknow",
+    "cityName": "Lucknow",
+    "region": "Uttar Pradesh, India",
+    "seoTitle": "Business Story Books in Lucknow | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Lucknow. Founder stories, business legacies, and Nawabi narratives.",
+    "urlPath": "/services/business-story-book/lucknow",
+    "h1": "Business Story Books in Lucknow — For Companies Built with Grace and Dignity",
+    "intro": [
+      "Lucknow is a city of Nawabi elegance — the refined culture of the Mughal court, the grandeur of the Imambaras, and a deep appreciation for beauty and courtesy. Businesses here reflect that same grace.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who carries forward a Nawabi legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Elegant Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a Nawabi legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Lucknow Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Lucknow's business leaders, creatives, and families trust us because we understand the grace of a business built with dignity. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Lucknow today.",
+    "areasServed": ["Hazratganj", "Gomti Nagar", "Alambagh", "Indira Nagar", "Rajajipuram", "Mahanagar", "Kaiserbagh"],
+    "localKeywords": ["business story book Lucknow", "company history book Hazratganj", "founder story book Lucknow", "family business book Uttar Pradesh", "corporate legacy book Lucknow"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Lucknow)", "Memoir Books (Lucknow)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Lucknow office desk",
+      "Spread showing a graceful business journey in a company book",
+      "Legacy Curator presentation box delivered in Lucknow"
+    ],
+    "famousFor": "Nawabi elegance, Mughal-era monuments, and a refined cultural business heritage."
+  },
+
+  "indore": {
+    "citySlug": "indore",
+    "cityName": "Indore",
+    "region": "Madhya Pradesh, India",
+    "seoTitle": "Business Story Books in Indore | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Indore. Founder stories, business legacies, and emerging narratives.",
+    "urlPath": "/services/business-story-book/indore",
+    "h1": "Business Story Books in Indore — For Companies Built in India's Rising Business Hub",
+    "intro": [
+      "Indore is a city on the rise — an emerging business hub where wealth is being built, and brands are carving out their place in the market. Businesses here are driven by ambition, innovation, and a relentless work ethic.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a founder, a business leader, or someone who is building a legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Emerging Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a growing legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how an Indore Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Indore's founders and business leaders trust us because we understand the drive of a rising city. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Indore today.",
+    "areasServed": ["Vijay Nagar", "Bhanwar Kua", "Scheme 140", "Scheme 78", "Sapna Sangeeta", "Rajwada", "Mhow"],
+    "localKeywords": ["business story book Indore", "company history book Vijay Nagar", "founder story book Indore", "family business book Madhya Pradesh", "corporate legacy book Indore"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Indore)", "Memoir Books (Indore)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on an Indore office desk",
+      "Spread showing a rising business journey in a company book",
+      "Legacy Curator presentation box delivered in Indore"
+    ],
+    "famousFor": "Emerging business wealth, a fast-growing economy, and a rich Maratha business heritage."
+  },
+
+  "surat": {
+    "citySlug": "surat",
+    "cityName": "Surat",
+    "region": "Gujarat, India",
+    "seoTitle": "Business Story Books in Surat | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Surat. Founder stories, business legacies, and diamond narratives.",
+    "urlPath": "/services/business-story-book/surat",
+    "h1": "Business Story Books in Surat — For Companies Built with Precision and Brilliance",
+    "intro": [
+      "Surat is a city of diamonds and textiles, where precision and quality are non-negotiable. Businesses here are built on a foundation of trust, precision, and relentless pursuit of perfection.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who carries forward a diamond legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Diamond & Textile Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a family legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Surat Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Surat's business leaders and families trust us because we understand the precision and brilliance of a Surat legacy. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Surat today.",
+    "areasServed": ["Adajan", "Vesu", "City Light", "Athwalines", "Piplod", "Dumas Road", "Ghod Dod Road"],
+    "localKeywords": ["business story book Surat", "company history book Adajan", "founder story book Surat", "family business book Gujarat", "corporate legacy book Surat"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Surat)", "Memoir Books (Surat)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Surat office desk",
+      "Spread showing a brilliant business journey in a company book",
+      "Legacy Curator presentation box delivered in Surat"
+    ],
+    "famousFor": "Diamond and textile wealth, entrepreneurship, and a strong legacy of business enterprise."
+  },
+
+  "goa": {
+    "citySlug": "goa",
+    "cityName": "Goa",
+    "region": "Goa, India",
+    "seoTitle": "Business Story Books in Goa | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Goa. Founder stories, business legacies, and coastal narratives.",
+    "urlPath": "/services/business-story-book/goa",
+    "h1": "Business Story Books in Goa — For Companies Built with Freedom and Soul",
+    "intro": [
+      "Goa is a state of mind — where life moves at its own pace, surrounded by beaches and a unique cultural blend. Businesses here are built on a foundation of creativity, freedom, and a unique Portuguese-Goan heritage.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a creative, a business leader, or someone who has found purpose by the sea, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Coastal Creatives & Leaders", "desc": "Whether it's a creative enterprise, a business legacy, or a purpose-driven company, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Goa Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Goa's business leaders, creatives, and free spirits trust us because we understand the soul of a business built with freedom. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Goa today.",
+    "areasServed": ["Panjim", "Fontainhas", "Candolim", "Assagao", "Anjuna", "Margao", "North Goa", "South Goa"],
+    "localKeywords": ["business story book Goa", "company history book Panjim", "founder story book Goa", "family business book Goa", "corporate legacy book Goa"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Goa)", "Memoir Books (Goa)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Goa office desk",
+      "Spread showing a coastal business journey in a company book",
+      "Legacy Curator presentation box delivered in Goa"
+    ],
+    "famousFor": "Luxury villas, beach retreats, and a unique Portuguese-Goan business culture."
+  },
+
+  "kochi": {
+    "citySlug": "kochi",
+    "cityName": "Kochi",
+    "region": "Kerala, India",
+    "seoTitle": "Business Story Books in Kochi | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Kochi. Founder stories, business legacies, and port city narratives.",
+    "urlPath": "/services/business-story-book/kochi",
+    "h1": "Business Story Books in Kochi — For Companies Built with Culture and Global Vision",
+    "intro": [
+      "Kochi is a city of crossroads — a historic port city where cultures have met for centuries, and where the backwaters meet the Arabian Sea. Businesses here are built on a foundation of global vision and rich cultural heritage.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who carries forward a rich cultural legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Global Visionaries", "desc": "Whether it's a business journey, a creative enterprise, or a cultural legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Kochi Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Kochi's business leaders, creatives, and families trust us because we understand the cultural depth and global vision of a Kochi enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Kochi today.",
+    "areasServed": ["Fort Kochi", "Marine Drive", "Panampilly Nagar", "Kakkanad", "Edappally", "Thrikkakara", "Vytilla"],
+    "localKeywords": ["business story book Kochi", "company history book Fort Kochi", "founder story book Kochi", "family business book Kerala", "corporate legacy book Kochi"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Kochi)", "Memoir Books (Kochi)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Kochi office desk",
+      "Spread showing a cultural business journey in a company book",
+      "Legacy Curator presentation box delivered in Kochi"
+    ],
+    "famousFor": "Port city business, backwaters, and a rich cultural heritage influenced by Arab, Chinese, and European business history."
+  },
+
+  "coimbatore": {
+    "citySlug": "coimbatore",
+    "cityName": "Coimbatore",
+    "region": "Tamil Nadu, India",
+    "seoTitle": "Business Story Books in Coimbatore | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Coimbatore. Founder stories, business legacies, and industrial narratives.",
+    "urlPath": "/services/business-story-book/coimbatore",
+    "h1": "Business Story Books in Coimbatore — For Companies Built with Discipline and Precision",
+    "intro": [
+      "Coimbatore is a city of industrial wealth — textile mills, pump manufacturers, and a strong entrepreneurial spirit. Businesses here are built on a foundation of discipline, precision, and hard work.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, an industrialist, or someone who carries forward a legacy of enterprise, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Industrial Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a family legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Coimbatore Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Coimbatore's business leaders and industrialists trust us because we understand the discipline and precision of a Coimbatore legacy. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Coimbatore today.",
+    "areasServed": ["RS Puram", "Race Course", "Sai Baba Colony", "Singanallur", "Peelamedu", "Gandhipuram", "Tatabad"],
+    "localKeywords": ["business story book Coimbatore", "company history book RS Puram", "founder story book Coimbatore", "family business book Tamil Nadu", "corporate legacy book Coimbatore"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Coimbatore)", "Memoir Books (Coimbatore)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Coimbatore office desk",
+      "Spread showing an industrial business journey in a company book",
+      "Legacy Curator presentation box delivered in Coimbatore"
+    ],
+    "famousFor": "Industrial wealth, textiles, and a strong entrepreneurial business spirit."
+  },
+
+  "agra": {
+    "citySlug": "agra",
+    "cityName": "Agra",
+    "region": "Uttar Pradesh, India",
+    "seoTitle": "Business Story Books in Agra | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Agra. Founder stories, business legacies, and timeless narratives.",
+    "urlPath": "/services/business-story-book/agra",
+    "h1": "Business Story Books in Agra — For Companies Built with Timeless Love",
+    "intro": [
+      "Agra is a city that lives in the shadow of the Taj Mahal — a monument to love that has defined the city for centuries. Businesses here reflect that same timeless beauty and craftsmanship.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who carries forward a legacy of craft, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Timeless Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a family legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how an Agra Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Agra's business leaders, artisans, and families trust us because we understand the timeless beauty of a business built with love. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Agra today.",
+    "areasServed": ["Civil Lines", "Sadar Bazaar", "Kamla Nagar", "Dayal Bagh", "Sikandra", "Fatehabad Road", "MG Road"],
+    "localKeywords": ["business story book Agra", "company history book Civil Lines", "founder story book Agra", "family business book Uttar Pradesh", "corporate legacy book Agra"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Agra)", "Memoir Books (Agra)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on an Agra office desk",
+      "Spread showing a timeless business journey in a company book",
+      "Legacy Curator presentation box delivered in Agra"
+    ],
+    "famousFor": "The Taj Mahal, Mughal heritage, and a business culture defined by timeless love and craftsmanship."
+  },
+
+  "varanasi": {
+    "citySlug": "varanasi",
+    "cityName": "Varanasi",
+    "region": "Uttar Pradesh, India",
+    "seoTitle": "Business Story Books in Varanasi | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Varanasi. Founder stories, business legacies, and spiritual narratives.",
+    "urlPath": "/services/business-story-book/varanasi",
+    "h1": "Business Story Books in Varanasi — For Companies Built with Spiritual Depth",
+    "intro": [
+      "Varanasi is India's oldest living city — a place where the Ganges flows through centuries of spirituality, tradition, and life itself. Businesses here are built on a foundation of faith, trust, and deep spiritual connection.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a spiritual leader, a business visionary, or someone who has found purpose by the Ganges, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Spiritual & Eternal Legacies", "desc": "Whether it's a spiritual enterprise, a business legacy, or a purpose-driven company, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Varanasi Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Varanasi's spiritual leaders, business visionaries, and families trust us because we understand the eternal depth of a business built with purpose. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Varanasi today.",
+    "areasServed": ["Ghats", "Cantonment", "Sigra", "Bhelupur", "Jaitpura", "Varanasi City", "Ravindrapuri"],
+    "localKeywords": ["business story book Varanasi", "company history book Ghats", "founder story book Varanasi", "family business book Kashi", "corporate legacy book Varanasi"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Varanasi)", "Memoir Books (Varanasi)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Varanasi office desk",
+      "Spread showing a spiritual business journey in a company book",
+      "Legacy Curator presentation box delivered in Varanasi"
+    ],
+    "famousFor": "Ghats, spiritual significance, and a business culture built on faith and eternal values."
+  },
+
+  "amritsar": {
+    "citySlug": "amritsar",
+    "cityName": "Amritsar",
+    "region": "Punjab, India",
+    "seoTitle": "Business Story Books in Amritsar | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Amritsar. Founder stories, business legacies, and community narratives.",
+    "urlPath": "/services/business-story-book/amritsar",
+    "h1": "Business Story Books in Amritsar — For Companies Built with Faith and Community",
+    "intro": [
+      "Amritsar is a city of devotion, resilience, and a deep sense of community. The Golden Temple stands at its heart, a symbol of faith and service. Businesses here are built on a foundation of trust, community, and unwavering faith.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a community builder, or someone who carries forward a legacy of faith, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a business journey, a community enterprise, or a spiritual legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how an Amritsar Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Amritsar's business leaders, community builders, and families trust us because we understand the faith and community that defines an Amritsar enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Amritsar today.",
+    "areasServed": ["Golden Temple Area", "Ranjit Avenue", "Mall Road", "Lawrence Road", "Hall Gate", "Chowk Farid", "Putlighar"],
+    "localKeywords": ["business story book Amritsar", "company history book Ranjit Avenue", "founder story book Amritsar", "family business book Punjab", "corporate legacy book Amritsar"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Amritsar)", "Memoir Books (Amritsar)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on an Amritsar office desk",
+      "Spread showing a faith-filled business journey in a company book",
+      "Legacy Curator presentation box delivered in Amritsar"
+    ],
+    "famousFor": "The Golden Temple, Sikh heritage, and a deep sense of community and faith in business."
+  },
+
+  "shimla": {
+    "citySlug": "shimla",
+    "cityName": "Shimla",
+    "region": "Himachal Pradesh, India",
+    "seoTitle": "Business Story Books in Shimla | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Shimla. Founder stories, business legacies, and hill-station narratives.",
+    "urlPath": "/services/business-story-book/shimla",
+    "h1": "Business Story Books in Shimla — For Companies Built with Elegance and Serenity",
+    "intro": [
+      "Shimla is a city of colonial charm and Himalayan beauty — the old-world elegance of the Mall Road, the pine forests, and the crisp mountain air. Businesses here reflect that same understated elegance and serenity.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who has found purpose in the hills, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Elegant Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a purpose-driven company, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Shimla Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Shimla's business leaders, creatives, and families trust us because we understand the elegance and serenity of a business in the hills. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Shimla today.",
+    "areasServed": ["Mall Road", "Lakkar Bazaar", "Chotta Shimla", "Boileauganj", "Sanjauli", "Summer Hill", "Elysium Hill"],
+    "localKeywords": ["business story book Shimla", "company history book Mall Road", "founder story book Shimla", "family business book Himachal", "corporate legacy book Shimla"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Shimla)", "Memoir Books (Shimla)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Shimla office desk",
+      "Spread showing an elegant business journey in a company book",
+      "Legacy Curator presentation box delivered in Shimla"
+    ],
+    "famousFor": "Colonial hill station, Himalayan views, and a timeless business elegance."
+  },
+
+  "darjeeling": {
+    "citySlug": "darjeeling",
+    "cityName": "Darjeeling",
+    "region": "West Bengal, India",
+    "seoTitle": "Business Story Books in Darjeeling | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Darjeeling. Founder stories, business legacies, and tea garden narratives.",
+    "urlPath": "/services/business-story-book/darjeeling",
+    "h1": "Business Story Books in Darjeeling — For Companies Built with Natural Beauty and Purpose",
+    "intro": [
+      "Darjeeling is a city of tea estates, Himalayan views, and a unique colonial charm. Businesses here are built on a foundation of natural beauty, craftsmanship, and purpose.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who has found purpose in the hills, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Natural & Purposeful Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a purpose-driven company, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Darjeeling Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Darjeeling's business leaders, creatives, and families trust us because we understand the natural beauty and purpose of a business in the hills. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Darjeeling today.",
+    "areasServed": ["Chowk Bazaar", "Mall Road", "Batasia Loop", "Ghoom", "Kurseong", "Mirik", "Siliguri"],
+    "localKeywords": ["business story book Darjeeling", "company history book Mall Road", "founder story book Darjeeling", "family business book West Bengal", "corporate legacy book Darjeeling"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Darjeeling)", "Memoir Books (Darjeeling)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Darjeeling office desk",
+      "Spread showing a natural business journey in a company book",
+      "Legacy Curator presentation box delivered in Darjeeling"
+    ],
+    "famousFor": "Tea estates, Himalayan views, and a unique colonial-era business charm."
+  },
+
+  "rishikesh": {
+    "citySlug": "rishikesh",
+    "cityName": "Rishikesh",
+    "region": "Uttarakhand, India",
+    "seoTitle": "Business Story Books in Rishikesh | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Rishikesh. Founder stories, business legacies, and spiritual narratives.",
+    "urlPath": "/services/business-story-book/rishikesh",
+    "h1": "Business Story Books in Rishikesh — For Companies Built with Spirit and Purpose",
+    "intro": [
+      "Rishikesh is the yoga capital of the world and a place of deep spiritual energy. Businesses here are built on a foundation of wellness, peace, and transformative purpose.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a spiritual leader, a wellness professional, or someone who has found purpose by the Ganges, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Spiritual & Transformative Legacies", "desc": "Whether it's a spiritual enterprise, a wellness company, or a purpose-driven business, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Rishikesh Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Rishikesh's spiritual leaders, wellness professionals, and seekers trust us because we understand the transformative power of a business built with purpose. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Rishikesh today.",
+    "areasServed": ["Ghats", "Laxman Jhula", "Ram Jhula", "Tapovan", "Shivanandanagar", "Swargashram", "Muni Ki Reti"],
+    "localKeywords": ["business story book Rishikesh", "company history book Laxman Jhula", "founder story book Rishikesh", "family business book Uttarakhand", "corporate legacy book Rishikesh"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Rishikesh)", "Memoir Books (Rishikesh)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Rishikesh office desk",
+      "Spread showing a spiritual business journey in a company book",
+      "Legacy Curator presentation box delivered in Rishikesh"
+    ],
+    "famousFor": "Yoga and spiritual retreats, the Ganges, and a unique blend of adventure and peace in business."
+  },
+
+  "coorg": {
+    "citySlug": "coorg",
+    "cityName": "Coorg",
+    "region": "Karnataka, India",
+    "seoTitle": "Business Story Books in Coorg | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Coorg. Founder stories, business legacies, and coffee estate narratives.",
+    "urlPath": "/services/business-story-book/coorg",
+    "h1": "Business Story Books in Coorg — For Companies Built with Natural Richness and Purpose",
+    "intro": [
+      "Coorg is a land of coffee estates, misty hills, and a unique Kodava culture. Businesses here are built on a foundation of natural richness, authenticity, and deep cultural roots.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a planter, or someone who has found purpose in the hills, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Natural & Cultural Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a Kodava legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Coorg Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Coorg's business leaders, planters, and families trust us because we understand the natural richness and cultural depth of a Coorg enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Coorg today.",
+    "areasServed": ["Madikeri", "Virajpet", "Kushalnagar", "Somwarpet", "Gonikoppal", "Ponnampet", "Siddapur"],
+    "localKeywords": ["business story book Coorg", "company history book Madikeri", "founder story book Coorg", "family business book Karnataka", "corporate legacy book Coorg"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Coorg)", "Memoir Books (Coorg)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Coorg office desk",
+      "Spread showing a natural business journey in a company book",
+      "Legacy Curator presentation box delivered in Coorg"
+    ],
+    "famousFor": "Coffee estates, misty hills, and a unique Kodava business culture."
+  },
+
+  "pondicherry": {
+    "citySlug": "pondicherry",
+    "cityName": "Pondicherry",
+    "region": "Puducherry, India",
+    "seoTitle": "Business Story Books in Pondicherry | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Pondicherry. Founder stories, business legacies, and French-Indian narratives.",
+    "urlPath": "/services/business-story-book/pondicherry",
+    "h1": "Business Story Books in Pondicherry — For Companies Built with Chic Elegance",
+    "intro": [
+      "Pondicherry is a city of French Quarter charm and coastal beauty — where Indian and French cultures meet. Businesses here are built on a foundation of chic elegance, creativity, and cultural fusion.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a creative, a business leader, or someone who has found purpose by the sea, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Chic & Cultural Legacies", "desc": "Whether it's a creative enterprise, a business journey, or a French-Indian legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Pondicherry Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Pondicherry's creatives, business leaders, and families trust us because we understand the chic elegance and cultural fusion of a Pondicherry enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Pondicherry today.",
+    "areasServed": ["French Quarter", "Promenade", "White Town", "Auroville", "Villianur", "Ozhugarai", "Mudaliarpet"],
+    "localKeywords": ["business story book Pondicherry", "company history book French Quarter", "founder story book Pondicherry", "family business book Puducherry", "corporate legacy book Pondicherry"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Pondicherry)", "Memoir Books (Pondicherry)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Pondicherry office desk",
+      "Spread showing a chic business journey in a company book",
+      "Legacy Curator presentation box delivered in Pondicherry"
+    ],
+    "famousFor": "French Quarter charm, coastal beauty, and a unique blend of Indian and French business culture."
+  },
+
+  "mysore": {
+    "citySlug": "mysore",
+    "cityName": "Mysore",
+    "region": "Karnataka, India",
+    "seoTitle": "Business Story Books in Mysore | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Mysore. Founder stories, business legacies, and royal narratives.",
+    "urlPath": "/services/business-story-book/mysore",
+    "h1": "Business Story Books in Mysore — For Companies Built with Royal Grace",
+    "intro": [
+      "Mysore is the city of palaces, sandalwood, and royal grandeur. Businesses here are built on a foundation of royalty, culture, and deep artistic tradition.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who carries forward a royal legacy, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Royal & Cultural Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a royal legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Mysore Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Mysore's business leaders, creatives, and royal families trust us because we understand the royal grace and cultural depth of a Mysore enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Mysore today.",
+    "areasServed": ["Palace Area", "Jayalakshmipuram", "Vijayanagar", "Kuvempunagar", "Gokulam", "Yadavagiri", "Saraswathipuram"],
+    "localKeywords": ["business story book Mysore", "company history book Palace Area", "founder story book Mysore", "family business book Karnataka", "corporate legacy book Mysore"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Mysore)", "Memoir Books (Mysore)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Mysore office desk",
+      "Spread showing a royal business journey in a company book",
+      "Legacy Curator presentation box delivered in Mysore"
+    ],
+    "famousFor": "Royal palace heritage, sandalwood, and a deep cultural business tradition."
+  },
+
+  "alleppey_kumarakom": {
+    "citySlug": "alleppey-kumarakom",
+    "cityName": "Alleppey & Kumarakom",
+    "region": "Kerala, India",
+    "seoTitle": "Business Story Books in Alleppey & Kumarakom | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Alleppey & Kumarakom. Founder stories, business legacies, and backwater narratives.",
+    "urlPath": "/services/business-story-book/alleppey-kumarakom",
+    "h1": "Business Story Books in Alleppey & Kumarakom — For Companies Built with Serenity and Purpose",
+    "intro": [
+      "Alleppey and Kumarakom are the heart of Kerala's backwaters — a world of houseboats, coconut palms, and tranquil waterways. Businesses here are built on a foundation of serenity, hospitality, and connection to nature.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who has found purpose by the water, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Serene & Purposeful Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a backwater legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how an Alleppey & Kumarakom Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Alleppey and Kumarakom's business leaders, creatives, and families trust us because we understand the serenity and purpose of a backwater enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Alleppey & Kumarakom today.",
+    "areasServed": ["Alleppey", "Kumarakom", "Kottayam", "Pathiramanal", "Changanassery", "Cherthala", "Ambalappuzha"],
+    "localKeywords": ["business story book Alleppey", "company history book Kumarakom", "founder story book Kerala", "family business book backwaters", "corporate legacy book Alleppey"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Alleppey)", "Memoir Books (Kerala)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a houseboat desk",
+      "Spread showing a serene business journey in a company book",
+      "Legacy Curator presentation box delivered in Kumarakom"
+    ],
+    "famousFor": "Luxury houseboats, backwaters, and a tranquil business lifestyle."
+  },
+
+  "nagpur": {
+    "citySlug": "nagpur",
+    "cityName": "Nagpur",
+    "region": "Maharashtra, India",
+    "seoTitle": "Business Story Books in Nagpur | Company Origin & Founder Journey — Legacy Curator",
+    "metaDescription": "Document your company's journey in a beautifully hand-bound book in Nagpur. Founder stories, business legacies, and central India narratives.",
+    "urlPath": "/services/business-story-book/nagpur",
+    "h1": "Business Story Books in Nagpur — For Companies Built at the Heart of India",
+    "intro": [
+      "Nagpur is the heart of India — a city that sits at the geographical centre of the country, with a rich history of trade, culture, and enterprise. Businesses here are built on a foundation of resilience, ambition, and central Indian character.",
+      "Legacy Curator creates hand-bound Business Story Books that capture the journey behind the company. Whether you're a business leader, a creative, or someone who has found purpose in central India, we craft a book that tells your business story — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Business Story, Your Voice", "desc": "We don't impose a template. Your book reflects your company's unique journey, your values, and the way you want your story told." },
+      { "title": "Designed for Heartland & Purposeful Legacies", "desc": "Whether it's a business journey, a creative enterprise, or a central India legacy, we craft books that honour the work." },
+      { "title": "A Book That Builds Your Brand", "desc": "A Business Story Book isn't just for you — it's a powerful tool for client relationships, employee onboarding, and brand building that sets you apart." }
+    ],
+    "process": {
+      "intro": "From your company's history to a hand-bound book — here's how a Nagpur Business Story Book comes to life.",
+      "steps": [
+        { "title": "Founder & Leadership Interviews", "desc": "We sit with you, your founder, or your leadership team to understand the journey, challenges, and defining moments." },
+        { "title": "Company History Research", "desc": "We help you gather key milestones, photographs, and documents that tell the story of your business." },
+        { "title": "Story Curation", "desc": "We identify the key chapters of your business journey — the struggles, the breakthroughs, the lessons." },
+        { "title": "Writing & Design", "desc": "Our team crafts a compelling narrative and designs a book that reflects your brand's identity." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Nagpur's business leaders, creatives, and families trust us because we understand the heart and purpose of a central India enterprise. We know that a book about your company isn't just a history — it's a testament to the people who built it and a blueprint for future generations.",
+      "What they appreciate most is our ability to translate business milestones into a compelling narrative that inspires employees, impresses clients, and preserves the company's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Business Story Book?", "a": "It's a hand-bound book that tells the story of your company — its founding, its challenges, its milestones, and the people who made it all possible." },
+      { "q": "Who is this for?", "a": "Founders, family business owners, corporate leaders, and anyone who wants to document and share their company's journey." },
+      { "q": "How is this different from a company brochure?", "a": "A brochure is about selling; a Business Story Book is about storytelling. It's a legacy piece that builds brand trust, employee pride, and client relationships." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep." },
+      { "q": "Can I use this for clients or employee onboarding?", "a": "Absolutely. Many of our clients order additional copies to gift to key clients, employees, and partners." }
+    ],
+    "ctaHeading": "Your Company's Story Deserves to Be Told",
+    "ctaSub": "Start your Business Story Book project in Nagpur today.",
+    "areasServed": ["Civil Lines", "Dharampeth", "Ramdaspeth", "Sitabuldi", "Sadar", "Khamla", "Jaripatka"],
+    "localKeywords": ["business story book Nagpur", "company history book Civil Lines", "founder story book Nagpur", "family business book Maharashtra", "corporate legacy book Nagpur"],
+    "semanticKeywords": ["business story book", "company history", "founder journey", "corporate legacy book", "hand-bound business book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Nagpur)", "Memoir Books (Nagpur)", "Main Business Story Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Business Story Book on a Nagpur office desk",
+      "Spread showing a heartland business journey in a company book",
+      "Legacy Curator presentation box delivered in Nagpur"
+    ],
+    "famousFor": "Central India business hub, oranges, and a strategic location at India's geographical centre for enterprise."
+  }
+},
+
+"devotional-book": {
+  "delhi": {
+    "citySlug": "delhi",
+    "cityName": "Delhi",
+    "region": "Delhi NCR, India",
+    "seoTitle": "Devotional Books in Delhi | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Delhi. Temple histories, faith narratives, and spiritual legacies — crafted with care.",
+    "urlPath": "/services/devotional-book/delhi",
+    "h1": "Devotional Books in Delhi — For Those Whose Faith Built the City",
+    "intro": [
+      "Delhi is a city of faith — from the ancient temples of the Old City to the grand mosques of the Mughal era, from the gurdwaras of the Sikh community to the churches of the colonial period. Behind every place of worship is a story of devotion, sacrifice, and unwavering faith.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Delhi Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Delhi's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Delhi today.",
+    "areasServed": ["South Delhi", "Lutyens' Delhi", "Greater Kailash", "Vasant Vihar", "Dwarka", "Rohini", "Karol Bagh", "Civil Lines", "Old Delhi", "Gurgaon", "Noida", "Faridabad"],
+    "localKeywords": ["devotional book Delhi", "temple history book Delhi", "spiritual journey book Delhi", "religious heritage book Delhi", "faith book Delhi"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Delhi)", "Memoir Books (Delhi)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Delhi temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Delhi"
+    ],
+    "famousFor": "Heritage monuments, spiritual diversity, and a city where every faith has found a home."
+  },
+
+  "mumbai": {
+    "citySlug": "mumbai",
+    "cityName": "Mumbai",
+    "region": "Maharashtra, India",
+    "seoTitle": "Devotional Books in Mumbai | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Mumbai. Temple histories, faith narratives, and spiritual legacies — crafted with care.",
+    "urlPath": "/services/devotional-book/mumbai",
+    "h1": "Devotional Books in Mumbai — For Those Whose Faith Built the City of Dreams",
+    "intro": [
+      "Mumbai is a city of faith — from the iconic Siddhivinayak Temple to the sacred Haji Ali Dargah, from the Mount Mary Church to the global ISKCON temple. Behind every place of worship is a story of devotion, miracles, and unwavering faith.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Mumbai Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Mumbai's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Mumbai today.",
+    "areasServed": ["Bandra", "Juhu", "Worli", "Malabar Hill", "Powai", "Andheri", "Colaba", "Khar", "Navi Mumbai", "Thane"],
+    "localKeywords": ["devotional book Mumbai", "temple history book Mumbai", "spiritual journey book Bandra", "religious heritage book Mumbai", "faith book Mumbai"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Mumbai)", "Memoir Books (Mumbai)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Mumbai temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Mumbai"
+    ],
+    "famousFor": "Business capital, Bollywood glamour, and a deep spiritual fabric of faith and devotion."
+  },
+
+  "gurgaon": {
+    "citySlug": "gurgaon",
+    "cityName": "Gurgaon",
+    "region": "Haryana, India",
+    "seoTitle": "Devotional Books in Gurgaon | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Gurgaon. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/gurgaon",
+    "h1": "Devotional Books in Gurgaon — For Those Who Balance Faith and Ambition",
+    "intro": [
+      "Gurgaon is a city of ambition — but faith runs deep in the hearts of its people. From the ancient temples of the Aravallis to the modern places of worship in the city's gated communities, Gurgaon's spiritual fabric is as vibrant as its corporate towers.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Gurgaon Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Gurgaon's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Gurgaon today.",
+    "areasServed": ["Golf Course Road", "DLF Phase 1-5", "Sohna Road", "Cyber City", "Sector 56", "Sector 57", "Sector 62", "Ardee City"],
+    "localKeywords": ["devotional book Gurgaon", "temple history book Gurgaon", "spiritual journey book DLF", "religious heritage book Gurgaon", "faith book Gurgaon"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Gurgaon)", "Memoir Books (Gurgaon)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Gurgaon temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Gurgaon"
+    ],
+    "famousFor": "Corporate hub, luxury high-rises, and a community that balances faith with modern ambition."
+  },
+
+  "bengaluru": {
+    "citySlug": "bengaluru",
+    "cityName": "Bengaluru",
+    "region": "Karnataka, India",
+    "seoTitle": "Devotional Books in Bengaluru | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Bengaluru. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/bengaluru",
+    "h1": "Devotional Books in Bengaluru — For Those Whose Faith Built the Garden City",
+    "intro": [
+      "Bengaluru is a city of innovation — but it is also a city of deep spiritual roots. From the ancient Bull Temple to the vibrant ISKCON temple, from the quiet churches to the serene mosques, Bengaluru's faith landscape is as diverse as its tech community.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Bengaluru Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Bengaluru's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Bengaluru today.",
+    "areasServed": ["Koramangala", "Indiranagar", "Whitefield", "Jayanagar", "JP Nagar", "HSR Layout", "Sadashivanagar", "Electronic City"],
+    "localKeywords": ["devotional book Bengaluru", "temple history book Bangalore", "spiritual journey book Koramangala", "religious heritage book Bengaluru", "faith book Bangalore"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Bengaluru)", "Memoir Books (Bengaluru)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Bengaluru temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Bengaluru"
+    ],
+    "famousFor": "India's tech and startup capital, where spirituality and innovation coexist."
+  },
+
+  "hyderabad": {
+    "citySlug": "hyderabad",
+    "cityName": "Hyderabad",
+    "region": "Telangana, India",
+    "seoTitle": "Devotional Books in Hyderabad | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Hyderabad. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/hyderabad",
+    "h1": "Devotional Books in Hyderabad — For Those Whose Faith Bridges Heritage and Innovation",
+    "intro": [
+      "Hyderabad is a city of two worlds — Nizami heritage and modern IT innovation — and its spiritual landscape reflects this beautiful duality. From the sacred Birla Mandir to the majestic Mecca Masjid, from the serene Chilkur Balaji to the vibrant churches of the city, Hyderabad's faith is as rich as its history.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Hyderabad Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Hyderabad's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Hyderabad today.",
+    "areasServed": ["Jubilee Hills", "Banjara Hills", "HITEC City", "Gachibowli", "Old City", "Somajiguda", "Begumpet", "Secunderabad"],
+    "localKeywords": ["devotional book Hyderabad", "temple history book Hyderabad", "spiritual journey book Banjara Hills", "religious heritage book Hyderabad", "faith book Hyderabad"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Hyderabad)", "Memoir Books (Hyderabad)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Hyderabad temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Hyderabad"
+    ],
+    "famousFor": "IT wealth, Nizami heritage, and a unique blend of Hindu and Islamic spiritual traditions."
+  },
+
+  "chennai": {
+    "citySlug": "chennai",
+    "cityName": "Chennai",
+    "region": "Tamil Nadu, India",
+    "seoTitle": "Devotional Books in Chennai | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Chennai. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/chennai",
+    "h1": "Devotional Books in Chennai — For Those Whose Faith Built the City of Temples",
+    "intro": [
+      "Chennai is a city of deep-rooted spirituality — a land of ancient temples, sacred traditions, and unwavering devotion. From the majestic Kapaleeshwarar Temple to the serene Santhome Cathedral, from the centuries-old Parthasarathy Temple to the sacred churches of the city, Chennai's faith is as ancient as its history.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Chennai Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Chennai's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Chennai today.",
+    "areasServed": ["Mylapore", "Adyar", "T. Nagar", "Besant Nagar", "Nungambakkam", "Anna Nagar", "Kilpauk", "Velachery"],
+    "localKeywords": ["devotional book Chennai", "temple history book Mylapore", "spiritual journey book Chennai", "religious heritage book Adyar", "faith book Chennai"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Chennai)", "Memoir Books (Chennai)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Chennai temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Chennai"
+    ],
+    "famousFor": "Ancient temples, deep-rooted temple culture, and a tradition of unwavering devotion."
+  },
+
+  "pune": {
+    "citySlug": "pune",
+    "cityName": "Pune",
+    "region": "Maharashtra, India",
+    "seoTitle": "Devotional Books in Pune | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Pune. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/pune",
+    "h1": "Devotional Books in Pune — For Those Whose Faith Balances Tradition and Progress",
+    "intro": [
+      "Pune is a city of balance — old Maratha heritage and new IT ambition — and its spiritual landscape reflects this beautiful duality. From the sacred Dagdusheth Halwai Ganpati to the serene temples of the city, from the historic churches to the vibrant gurdwaras, Pune's faith is as rich as its history.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Pune Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Pune's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Pune today.",
+    "areasServed": ["Koregaon Park", "Kalyani Nagar", "Baner", "Aundh", "Viman Nagar", "Camp Area", "Hadapsar", "Hinjewadi"],
+    "localKeywords": ["devotional book Pune", "temple history book Pune", "spiritual journey book Koregaon Park", "religious heritage book Pune", "faith book Pune"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Pune)", "Memoir Books (Pune)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Pune temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Pune"
+    ],
+    "famousFor": "IT and auto industry wealth, education hub, and a faith tradition that balances tradition with modernity."
+  },
+
+  "ahmedabad": {
+    "citySlug": "ahmedabad",
+    "cityName": "Ahmedabad",
+    "region": "Gujarat, India",
+    "seoTitle": "Devotional Books in Ahmedabad | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Ahmedabad. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/ahmedabad",
+    "h1": "Devotional Books in Ahmedabad — For Those Whose Faith Built the Business Capital",
+    "intro": [
+      "Ahmedabad is a city of enterprise — but it is also a city of deep spiritual roots. From the sacred Akshardham Temple to the historic temples of the city, from the serene mosques to the vibrant Jain derasars, Ahmedabad's faith is as rich as its business legacy.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how an Ahmedabad Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Ahmedabad's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Ahmedabad today.",
+    "areasServed": ["C.G. Road", "Satellite", "Vastrapur", "Paldi", "Navrangpura", "Bodakdev", "Prahlad Nagar"],
+    "localKeywords": ["devotional book Ahmedabad", "temple history book Ahmedabad", "spiritual journey book Satellite", "religious heritage book Gujarat", "faith book Ahmedabad"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Ahmedabad)", "Memoir Books (Ahmedabad)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on an Ahmedabad temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Ahmedabad"
+    ],
+    "famousFor": "Business and textile wealth, entrepreneurship, and a deep spiritual heritage of Jain and Hindu traditions."
+  },
+
+  "chandigarh": {
+    "citySlug": "chandigarh",
+    "cityName": "Chandigarh",
+    "region": "Punjab, India",
+    "seoTitle": "Devotional Books in Chandigarh | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Chandigarh. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/chandigarh",
+    "h1": "Devotional Books in Chandigarh — For Those Whose Faith Built the City of Elegance",
+    "intro": [
+      "Chandigarh is a city of planned perfection — and its spiritual landscape reflects this design. From the serene temples of the city to the majestic gurdwaras, from the quiet churches to the meditative spaces, Chandigarh's faith is as elegant as its architecture.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Chandigarh Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Chandigarh's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Chandigarh today.",
+    "areasServed": ["Sector 8", "Sector 11", "Sector 35", "Sector 7", "Sector 10", "Sector 15", "Sector 22", "Sector 26"],
+    "localKeywords": ["devotional book Chandigarh", "temple history book Chandigarh", "spiritual journey book Sector 8", "religious heritage book Punjab", "faith book Chandigarh"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Chandigarh)", "Memoir Books (Chandigarh)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Chandigarh temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Chandigarh"
+    ],
+    "famousFor": "Planned city, Punjab's elite lifestyle, and a unique blend of modernist architecture and spiritual traditions."
+  },
+
+  "kolkata": {
+    "citySlug": "kolkata",
+    "cityName": "Kolkata",
+    "region": "West Bengal, India",
+    "seoTitle": "Devotional Books in Kolkata | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Kolkata. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/kolkata",
+    "h1": "Devotional Books in Kolkata — For Those Whose Faith Built the City of Culture",
+    "intro": [
+      "Kolkata is a city of culture, intellect, and deep spirituality. From the sacred Dakshineswar Kali Temple to the serene Kalighat, from the grand St. Paul's Cathedral to the majestic Nakhoda Masjid, Kolkata's faith is as rich as its literary heritage.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Kolkata Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Kolkata's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Kolkata today.",
+    "areasServed": ["Alipore", "Park Street", "Ballygunge", "Salt Lake City", "South City", "Rajarhat", "New Town"],
+    "localKeywords": ["devotional book Kolkata", "temple history book Kolkata", "spiritual journey book Alipore", "religious heritage book Kolkata", "faith book Kolkata"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Kolkata)", "Memoir Books (Kolkata)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Kolkata temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Kolkata"
+    ],
+    "famousFor": "Old aristocracy, colonial heritage, and a rich spiritual and cultural tradition."
+  },
+
+  "jaipur": {
+    "citySlug": "jaipur",
+    "cityName": "Jaipur",
+    "region": "Rajasthan, India",
+    "seoTitle": "Devotional Books in Jaipur | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Jaipur. Temple histories, faith narratives, and royal spiritual legacies.",
+    "urlPath": "/services/devotional-book/jaipur",
+    "h1": "Devotional Books in Jaipur — For Those Whose Faith Built the Pink City",
+    "intro": [
+      "Jaipur is a city of palaces and temples — where royalty and spirituality have walked hand in hand for centuries. From the sacred Govind Dev Ji Temple to the magnificent temples of the city, from the serene Jain temples to the vibrant gurdwaras, Jaipur's faith is as grand as its palaces.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Jaipur Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Jaipur's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Jaipur today.",
+    "areasServed": ["C-Scheme", "Malviya Nagar", "Vaishali Nagar", "Civil Lines", "Old City (Pink City)", "Mansarovar"],
+    "localKeywords": ["devotional book Jaipur", "temple history book Jaipur", "spiritual journey book C-Scheme", "religious heritage book Pink City", "faith book Jaipur"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Jaipur)", "Memoir Books (Jaipur)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Jaipur temple desk",
+      "Spread showing a royal spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Jaipur"
+    ],
+    "famousFor": "Palaces, Pink City heritage, and a deep spiritual and royal religious tradition."
+  },
+
+  "udaipur": {
+    "citySlug": "udaipur",
+    "cityName": "Udaipur",
+    "region": "Rajasthan, India",
+    "seoTitle": "Devotional Books in Udaipur | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Udaipur. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/udaipur",
+    "h1": "Devotional Books in Udaipur — For Those Whose Faith Built the City of Lakes",
+    "intro": [
+      "Udaipur is a city of lakes and palaces — where spirituality flows as freely as the waters of Lake Pichola. From the sacred Jagdish Temple to the serene temples on the lakeshore, from the vibrant festivals to the quiet prayers of the faithful, Udaipur's faith is as beautiful as its landscape.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how an Udaipur Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Udaipur's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Udaipur today.",
+    "areasServed": ["Lake City", "Old City", "Hiran Magri", "Sector 4", "Sector 9", "Ambavgarh", "Panchwati"],
+    "localKeywords": ["devotional book Udaipur", "temple history book Udaipur", "spiritual journey book Lake City", "religious heritage book Rajasthan", "faith book Udaipur"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Udaipur)", "Memoir Books (Udaipur)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on an Udaipur temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Udaipur"
+    ],
+    "famousFor": "Lake palaces, royal romance, and a deep spiritual tradition of devotion."
+  },
+
+  "jodhpur": {
+    "citySlug": "jodhpur",
+    "cityName": "Jodhpur",
+    "region": "Rajasthan, India",
+    "seoTitle": "Devotional Books in Jodhpur | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Jodhpur. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/jodhpur",
+    "h1": "Devotional Books in Jodhpur — For Those Whose Faith Built the Blue City",
+    "intro": [
+      "Jodhpur is a city of grandeur — the towering Mehrangarh Fort, the blue-washed houses, and a deep spiritual heritage. From the sacred temples of the city to the majestic gurdwaras, from the quiet mosques to the vibrant festivals, Jodhpur's faith is as grand as its fort.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Jodhpur Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Jodhpur's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Jodhpur today.",
+    "areasServed": ["Old City", "Sardarpura", "Ratanada", "Jalori Gate", "Umaid Heritage", "Mandal Road", "Circuit House Road"],
+    "localKeywords": ["devotional book Jodhpur", "temple history book Jodhpur", "spiritual journey book Sardarpura", "religious heritage book Rajasthan", "faith book Jodhpur"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Jodhpur)", "Memoir Books (Jodhpur)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Jodhpur temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Jodhpur"
+    ],
+    "famousFor": "Mehrangarh Fort, the Blue City, and a deep heritage of Rajput spiritual traditions."
+  },
+
+  "lucknow": {
+    "citySlug": "lucknow",
+    "cityName": "Lucknow",
+    "region": "Uttar Pradesh, India",
+    "seoTitle": "Devotional Books in Lucknow | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Lucknow. Temple histories, faith narratives, and Nawabi spiritual legacies.",
+    "urlPath": "/services/devotional-book/lucknow",
+    "h1": "Devotional Books in Lucknow — For Those Whose Faith Built the City of Nawabs",
+    "intro": [
+      "Lucknow is a city of Nawabi elegance — and its spiritual landscape reflects this refinement. From the majestic Imambaras to the sacred temples, from the serene mosques to the vibrant festivals, Lucknow's faith is as graceful as its culture.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Lucknow Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Lucknow's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Lucknow today.",
+    "areasServed": ["Hazratganj", "Gomti Nagar", "Alambagh", "Indira Nagar", "Rajajipuram", "Mahanagar", "Kaiserbagh"],
+    "localKeywords": ["devotional book Lucknow", "temple history book Lucknow", "spiritual journey book Hazratganj", "religious heritage book Uttar Pradesh", "faith book Lucknow"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Lucknow)", "Memoir Books (Lucknow)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Lucknow temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Lucknow"
+    ],
+    "famousFor": "Nawabi elegance, Mughal-era monuments, and a refined spiritual and cultural heritage."
+  },
+
+  "indore": {
+    "citySlug": "indore",
+    "cityName": "Indore",
+    "region": "Madhya Pradesh, India",
+    "seoTitle": "Devotional Books in Indore | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Indore. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/indore",
+    "h1": "Devotional Books in Indore — For Those Whose Faith Built the Rising City",
+    "intro": [
+      "Indore is a city on the rise — and its spiritual landscape is as vibrant as its business community. From the sacred Khajrana Ganesh Temple to the serene temples of the city, from the majestic gurdwaras to the quiet mosques, Indore's faith is as ambitious as its people.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how an Indore Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Indore's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Indore today.",
+    "areasServed": ["Vijay Nagar", "Bhanwar Kua", "Scheme 140", "Scheme 78", "Sapna Sangeeta", "Rajwada", "Mhow"],
+    "localKeywords": ["devotional book Indore", "temple history book Indore", "spiritual journey book Vijay Nagar", "religious heritage book Madhya Pradesh", "faith book Indore"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Indore)", "Memoir Books (Indore)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on an Indore temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Indore"
+    ],
+    "famousFor": "Emerging business wealth, fast-growing economy, and a rich spiritual heritage."
+  },
+
+  "surat": {
+    "citySlug": "surat",
+    "cityName": "Surat",
+    "region": "Gujarat, India",
+    "seoTitle": "Devotional Books in Surat | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Surat. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/surat",
+    "h1": "Devotional Books in Surat — For Those Whose Faith Built the Diamond City",
+    "intro": [
+      "Surat is a city of diamonds and textiles — and its spiritual landscape is as brilliant as its diamonds. From the sacred temples of the city to the serene mosques, from the vibrant Jain derasars to the quiet churches, Surat's faith is as polished as its gems.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Surat Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Surat's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Surat today.",
+    "areasServed": ["Adajan", "Vesu", "City Light", "Athwalines", "Piplod", "Dumas Road", "Ghod Dod Road"],
+    "localKeywords": ["devotional book Surat", "temple history book Surat", "spiritual journey book Adajan", "religious heritage book Gujarat", "faith book Surat"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Surat)", "Memoir Books (Surat)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Surat temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Surat"
+    ],
+    "famousFor": "Diamond and textile wealth, entrepreneurship, and a deep spiritual heritage."
+  },
+
+  "goa": {
+    "citySlug": "goa",
+    "cityName": "Goa",
+    "region": "Goa, India",
+    "seoTitle": "Devotional Books in Goa | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Goa. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/goa",
+    "h1": "Devotional Books in Goa — For Those Whose Faith Built the Coastal Paradise",
+    "intro": [
+      "Goa is a state of mind — a place where faith and freedom coexist. From the sacred churches of the Portuguese era to the serene temples of the Hindu tradition, from the vibrant festivals to the quiet prayers of the faithful, Goa's spirituality is as diverse as its culture.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a church's history, a temple's legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a church history, a temple's heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Goa Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Goa's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a church's history, a temple's legacy, or a family's religious heritage." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, church trustees, temple communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for church or temple distribution?", "a": "Absolutely. Many of our clients order additional copies to share with community members and spiritual leaders." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Goa today.",
+    "areasServed": ["Panjim", "Fontainhas", "Candolim", "Assagao", "Anjuna", "Margao", "North Goa", "South Goa"],
+    "localKeywords": ["devotional book Goa", "church history book Goa", "spiritual journey book Panjim", "religious heritage book Goa", "faith book Goa"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "church history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Goa)", "Memoir Books (Goa)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Goa church desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Goa"
+    ],
+    "famousFor": "Luxury villas, beach retreats, and a unique Portuguese-Goan spiritual heritage."
+  },
+
+  "kochi": {
+    "citySlug": "kochi",
+    "cityName": "Kochi",
+    "region": "Kerala, India",
+    "seoTitle": "Devotional Books in Kochi | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Kochi. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/kochi",
+    "h1": "Devotional Books in Kochi — For Those Whose Faith Built the Port City",
+    "intro": [
+      "Kochi is a city of crossroads — a historic port city where cultures have met for centuries, and where spirituality flows as freely as the Arabian Sea. From the ancient temples of the city to the majestic churches, from the serene mosques to the vibrant synagogues, Kochi's faith is as diverse as its history.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a church's legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a church's heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Kochi Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Kochi's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, a church's legacy, or a family's religious heritage." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, church communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple or church distribution?", "a": "Absolutely. Many of our clients order additional copies to share with community members and spiritual leaders." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Kochi today.",
+    "areasServed": ["Fort Kochi", "Marine Drive", "Panampilly Nagar", "Kakkanad", "Edappally", "Thrikkakara", "Vytilla"],
+    "localKeywords": ["devotional book Kochi", "temple history book Kochi", "spiritual journey book Fort Kochi", "religious heritage book Kerala", "faith book Kochi"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Kochi)", "Memoir Books (Kochi)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Kochi temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Kochi"
+    ],
+    "famousFor": "Port city business, backwaters, and a rich spiritual heritage influenced by Arab, Chinese, and European history."
+  },
+
+  "coimbatore": {
+    "citySlug": "coimbatore",
+    "cityName": "Coimbatore",
+    "region": "Tamil Nadu, India",
+    "seoTitle": "Devotional Books in Coimbatore | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Coimbatore. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/coimbatore",
+    "h1": "Devotional Books in Coimbatore — For Those Whose Faith Built the Industrial City",
+    "intro": [
+      "Coimbatore is a city of industry — and its spiritual landscape is as solid as its manufacturing. From the sacred temples of the city to the serene churches, from the vibrant mosques to the quiet gurdwaras, Coimbatore's faith is as disciplined as its work ethic.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Coimbatore Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Coimbatore's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Coimbatore today.",
+    "areasServed": ["RS Puram", "Race Course", "Sai Baba Colony", "Singanallur", "Peelamedu", "Gandhipuram", "Tatabad"],
+    "localKeywords": ["devotional book Coimbatore", "temple history book Coimbatore", "spiritual journey book RS Puram", "religious heritage book Tamil Nadu", "faith book Coimbatore"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Coimbatore)", "Memoir Books (Coimbatore)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Coimbatore temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Coimbatore"
+    ],
+    "famousFor": "Industrial wealth, textiles, and a strong spiritual and religious tradition."
+  },
+
+  "agra": {
+    "citySlug": "agra",
+    "cityName": "Agra",
+    "region": "Uttar Pradesh, India",
+    "seoTitle": "Devotional Books in Agra | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Agra. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/agra",
+    "h1": "Devotional Books in Agra — For Those Whose Faith Built the City of Love",
+    "intro": [
+      "Agra is a city of love — and its spiritual landscape is as timeless as the Taj Mahal. From the sacred temples of the city to the majestic mosques, from the serene churches to the vibrant festivals, Agra's faith is as beautiful as its monuments.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how an Agra Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Agra's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Agra today.",
+    "areasServed": ["Civil Lines", "Sadar Bazaar", "Kamla Nagar", "Dayal Bagh", "Sikandra", "Fatehabad Road", "MG Road"],
+    "localKeywords": ["devotional book Agra", "temple history book Agra", "spiritual journey book Civil Lines", "religious heritage book Uttar Pradesh", "faith book Agra"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Agra)", "Memoir Books (Agra)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on an Agra temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Agra"
+    ],
+    "famousFor": "The Taj Mahal, Mughal heritage, and a city defined by timeless love and faith."
+  },
+
+  "varanasi": {
+    "citySlug": "varanasi",
+    "cityName": "Varanasi",
+    "region": "Uttar Pradesh, India",
+    "seoTitle": "Devotional Books in Varanasi | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Varanasi. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/varanasi",
+    "h1": "Devotional Books in Varanasi — For Those Whose Faith Built the Eternal City",
+    "intro": [
+      "Varanasi is India's oldest living city — a place where the Ganges flows through centuries of spirituality, tradition, and life itself. From the sacred Kashi Vishwanath Temple to the countless ghats, from the vibrant aartis to the quiet prayers of the faithful, Varanasi's faith is as eternal as the river.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Varanasi Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Varanasi's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Varanasi today.",
+    "areasServed": ["Ghats", "Cantonment", "Sigra", "Bhelupur", "Jaitpura", "Varanasi City", "Ravindrapuri"],
+    "localKeywords": ["devotional book Varanasi", "temple history book Varanasi", "spiritual journey book Ghats", "religious heritage book Kashi", "faith book Varanasi"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Varanasi)", "Memoir Books (Varanasi)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Varanasi temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Varanasi"
+    ],
+    "famousFor": "Ghats, spiritual significance, and India's oldest living city of faith."
+  },
+
+  "amritsar": {
+    "citySlug": "amritsar",
+    "cityName": "Amritsar",
+    "region": "Punjab, India",
+    "seoTitle": "Devotional Books in Amritsar | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Amritsar. Golden Temple heritage, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/amritsar",
+    "h1": "Devotional Books in Amritsar — For Those Whose Faith Built the Golden City",
+    "intro": [
+      "Amritsar is a city of devotion — where the Golden Temple stands as a symbol of faith, service, and community. From the sacred Harmandir Sahib to the vibrant festivals, from the quiet prayers of the faithful to the langar that feeds thousands, Amritsar's faith is as golden as its temple.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a gurdwara's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a gurdwara history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how an Amritsar Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Amritsar's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a gurdwara's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, gurdwara trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for gurdwara distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Amritsar today.",
+    "areasServed": ["Golden Temple Area", "Ranjit Avenue", "Mall Road", "Lawrence Road", "Hall Gate", "Chowk Farid", "Putlighar"],
+    "localKeywords": ["devotional book Amritsar", "Golden Temple history book Amritsar", "spiritual journey book Ranjit Avenue", "religious heritage book Punjab", "faith book Amritsar"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "gurdwara history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Amritsar)", "Memoir Books (Amritsar)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on an Amritsar gurdwara desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Amritsar"
+    ],
+    "famousFor": "The Golden Temple, Sikh heritage, and a deep sense of community and faith."
+  },
+
+  "shimla": {
+    "citySlug": "shimla",
+    "cityName": "Shimla",
+    "region": "Himachal Pradesh, India",
+    "seoTitle": "Devotional Books in Shimla | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Shimla. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/shimla",
+    "h1": "Devotional Books in Shimla — For Those Whose Faith Built the Queen of Hills",
+    "intro": [
+      "Shimla is a city of colonial charm and Himalayan beauty — and its spiritual landscape is as serene as its mountains. From the sacred temples of the city to the quiet churches, from the vibrant festivals to the peaceful prayers, Shimla's faith is as elegant as its architecture.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a church's legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a church's heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Shimla Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Shimla's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a church's legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, church communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple or church distribution?", "a": "Absolutely. Many of our clients order additional copies to share with community members and spiritual leaders." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Shimla today.",
+    "areasServed": ["Mall Road", "Lakkar Bazaar", "Chotta Shimla", "Boileauganj", "Sanjauli", "Summer Hill", "Elysium Hill"],
+    "localKeywords": ["devotional book Shimla", "temple history book Shimla", "spiritual journey book Mall Road", "religious heritage book Himachal", "faith book Shimla"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Shimla)", "Memoir Books (Shimla)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Shimla temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Shimla"
+    ],
+    "famousFor": "Colonial hill station, Himalayan views, and a timeless spiritual elegance."
+  },
+
+  "darjeeling": {
+    "citySlug": "darjeeling",
+    "cityName": "Darjeeling",
+    "region": "West Bengal, India",
+    "seoTitle": "Devotional Books in Darjeeling | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Darjeeling. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/darjeeling",
+    "h1": "Devotional Books in Darjeeling — For Those Whose Faith Built the Tea Gardens",
+    "intro": [
+      "Darjeeling is a city of tea estates and Himalayan views — and its spiritual landscape is as peaceful as its gardens. From the sacred temples of the city to the quiet monasteries, from the vibrant churches to the serene Buddhist stupas, Darjeeling's faith is as diverse as its culture.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a monastery's legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a monastery's heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Darjeeling Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Darjeeling's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, a monastery's legacy, or a family's religious heritage." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, monastery communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple or monastery distribution?", "a": "Absolutely. Many of our clients order additional copies to share with community members and spiritual leaders." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Darjeeling today.",
+    "areasServed": ["Chowk Bazaar", "Mall Road", "Batasia Loop", "Ghoom", "Kurseong", "Mirik", "Siliguri"],
+    "localKeywords": ["devotional book Darjeeling", "temple history book Darjeeling", "spiritual journey book Mall Road", "religious heritage book West Bengal", "faith book Darjeeling"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Darjeeling)", "Memoir Books (Darjeeling)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Darjeeling monastery desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Darjeeling"
+    ],
+    "famousFor": "Tea estates, Himalayan views, and a unique spiritual heritage of Buddhist, Hindu, and Christian traditions."
+  },
+
+  "rishikesh": {
+    "citySlug": "rishikesh",
+    "cityName": "Rishikesh",
+    "region": "Uttarakhand, India",
+    "seoTitle": "Devotional Books in Rishikesh | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Rishikesh. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/rishikesh",
+    "h1": "Devotional Books in Rishikesh — For Those Whose Faith Built the Yoga Capital",
+    "intro": [
+      "Rishikesh is the yoga capital of the world and a place of deep spiritual energy. From the sacred ghats to the ancient temples, from the serene ashrams to the vibrant aartis, Rishikesh's spirituality is as flowing as the Ganges itself.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, an ashram's legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, an ashram's heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Rishikesh Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Rishikesh's spiritual leaders, ashram communities, and seekers trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, an ashram's legacy, or a family's religious heritage." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, ashram communities, temple trustees, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for ashram or temple distribution?", "a": "Absolutely. Many of our clients order additional copies to share with community members and spiritual leaders." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Rishikesh today.",
+    "areasServed": ["Ghats", "Laxman Jhula", "Ram Jhula", "Tapovan", "Shivanandanagar", "Swargashram", "Muni Ki Reti"],
+    "localKeywords": ["devotional book Rishikesh", "temple history book Rishikesh", "spiritual journey book Laxman Jhula", "religious heritage book Uttarakhand", "faith book Rishikesh"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Rishikesh)", "Memoir Books (Rishikesh)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Rishikesh ashram desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Rishikesh"
+    ],
+    "famousFor": "Yoga and spiritual retreats, the Ganges, and a unique blend of adventure and peace."
+  },
+
+  "coorg": {
+    "citySlug": "coorg",
+    "cityName": "Coorg",
+    "region": "Karnataka, India",
+    "seoTitle": "Devotional Books in Coorg | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Coorg. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/coorg",
+    "h1": "Devotional Books in Coorg — For Those Whose Faith Built the Coffee Country",
+    "intro": [
+      "Coorg is a land of coffee estates and misty hills — and its spiritual landscape is as rich as its soil. From the ancient temples of the region to the unique Kodava traditions, from the sacred groves to the vibrant festivals, Coorg's faith is as deep as its roots.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Coorg Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Coorg's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Coorg today.",
+    "areasServed": ["Madikeri", "Virajpet", "Kushalnagar", "Somwarpet", "Gonikoppal", "Ponnampet", "Siddapur"],
+    "localKeywords": ["devotional book Coorg", "temple history book Coorg", "spiritual journey book Madikeri", "religious heritage book Karnataka", "faith book Coorg"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Coorg)", "Memoir Books (Coorg)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Coorg temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Coorg"
+    ],
+    "famousFor": "Coffee estates, misty hills, and a unique Kodava spiritual tradition."
+  },
+
+  "pondicherry": {
+    "citySlug": "pondicherry",
+    "cityName": "Pondicherry",
+    "region": "Puducherry, India",
+    "seoTitle": "Devotional Books in Pondicherry | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Pondicherry. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/pondicherry",
+    "h1": "Devotional Books in Pondicherry — For Those Whose Faith Built the French Quarter",
+    "intro": [
+      "Pondicherry is a city of French Quarter charm — and its spiritual landscape is as beautiful as its architecture. From the sacred churches of the colonial era to the serene temples of the Indian tradition, from the vibrant ashrams to the quiet prayers, Pondicherry's spirituality is a beautiful fusion of cultures.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a church's history, a temple's legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a church history, a temple's heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Pondicherry Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Pondicherry's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a church's history, a temple's legacy, or a family's religious heritage." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, church trustees, temple communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for church or temple distribution?", "a": "Absolutely. Many of our clients order additional copies to share with community members and spiritual leaders." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Pondicherry today.",
+    "areasServed": ["French Quarter", "Promenade", "White Town", "Auroville", "Villianur", "Ozhugarai", "Mudaliarpet"],
+    "localKeywords": ["devotional book Pondicherry", "church history book Pondicherry", "spiritual journey book French Quarter", "religious heritage book Puducherry", "faith book Pondicherry"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "church history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Pondicherry)", "Memoir Books (Pondicherry)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Pondicherry church desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Pondicherry"
+    ],
+    "famousFor": "French Quarter charm, coastal beauty, and a unique blend of Indian and French spiritual traditions."
+  },
+
+  "mysore": {
+    "citySlug": "mysore",
+    "cityName": "Mysore",
+    "region": "Karnataka, India",
+    "seoTitle": "Devotional Books in Mysore | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Mysore. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/mysore",
+    "h1": "Devotional Books in Mysore — For Those Whose Faith Built the City of Palaces",
+    "intro": [
+      "Mysore is the city of palaces — and its spiritual landscape is as grand as its architecture. From the sacred Chamundeshwari Temple to the majestic temples of the city, from the vibrant festivals to the quiet prayers, Mysore's faith is as royal as its heritage.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Mysore Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Mysore's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Mysore today.",
+    "areasServed": ["Palace Area", "Jayalakshmipuram", "Vijayanagar", "Kuvempunagar", "Gokulam", "Yadavagiri", "Saraswathipuram"],
+    "localKeywords": ["devotional book Mysore", "temple history book Mysore", "spiritual journey book Palace Area", "religious heritage book Karnataka", "faith book Mysore"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Mysore)", "Memoir Books (Mysore)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Mysore temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Mysore"
+    ],
+    "famousFor": "Royal palace heritage, sandalwood, and a deep spiritual and cultural tradition."
+  },
+
+  "alleppey_kumarakom": {
+    "citySlug": "alleppey-kumarakom",
+    "cityName": "Alleppey & Kumarakom",
+    "region": "Kerala, India",
+    "seoTitle": "Devotional Books in Alleppey & Kumarakom | Spiritual Heritage & Faith Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Alleppey & Kumarakom. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/alleppey-kumarakom",
+    "h1": "Devotional Books in Alleppey & Kumarakom — For Those Whose Faith Built the Backwaters",
+    "intro": [
+      "Alleppey and Kumarakom are the heart of Kerala's backwaters — a world of houseboats, coconut palms, and tranquil waterways. And amidst this serenity, faith flows as peacefully as the water — from the ancient temples to the quiet churches, from the vibrant festivals to the daily rituals.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a church's legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a church's heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how an Alleppey & Kumarakom Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Alleppey and Kumarakom's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, a church's legacy, or a family's religious heritage." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, church communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple or church distribution?", "a": "Absolutely. Many of our clients order additional copies to share with community members and spiritual leaders." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Alleppey & Kumarakom today.",
+    "areasServed": ["Alleppey", "Kumarakom", "Kottayam", "Pathiramanal", "Changanassery", "Cherthala", "Ambalappuzha"],
+    "localKeywords": ["devotional book Alleppey", "temple history book Kumarakom", "spiritual journey book Kerala", "religious heritage book backwaters", "faith book Alleppey"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Alleppey)", "Memoir Books (Kerala)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a houseboat desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Kumarakom"
+    ],
+    "famousFor": "Luxury houseboats, backwaters, and a peaceful spiritual tradition."
+  },
+
+  "nagpur": {
+    "citySlug": "nagpur",
+    "cityName": "Nagpur",
+    "region": "Maharashtra, India",
+    "seoTitle": "Devotional Books in Nagpur | Spiritual Heritage & Temple Stories — Legacy Curator",
+    "metaDescription": "Document your spiritual journey in a beautifully hand-bound devotional book in Nagpur. Temple histories, faith narratives, and spiritual legacies.",
+    "urlPath": "/services/devotional-book/nagpur",
+    "h1": "Devotional Books in Nagpur — For Those Whose Faith Built the Heart of India",
+    "intro": [
+      "Nagpur is the heart of India — a city that sits at the geographical centre of the country, with a rich spiritual history. From the sacred temples of the city to the serene gurdwaras, from the vibrant festivals to the quiet prayers, Nagpur's faith is as central as its location.",
+      "Legacy Curator creates hand-bound Devotional Books that capture the spiritual journey behind the faith. Whether you're documenting a temple's history, a family's religious legacy, or a personal spiritual journey, we craft a book that honours the sacred — your way, in your voice."
+    ],
+    "whyChooseUs": [
+      { "title": "Your Faith Story, Your Voice", "desc": "We don't impose a template. Your book reflects your unique spiritual journey, your traditions, and the way you honour the divine." },
+      { "title": "Designed for Faith-Filled Legacies", "desc": "Whether it's a temple history, a family's religious heritage, or a personal spiritual narrative, we craft books that honour the sacred." },
+      { "title": "A Book That Inspires Devotion", "desc": "A Devotional Book isn't just for you — it's for the generations who will look to your faith journey as a guide for their own spiritual path." }
+    ],
+    "process": {
+      "intro": "From your spiritual story to a hand-bound book — here's how a Nagpur Devotional Book comes to life.",
+      "steps": [
+        { "title": "Deep-Dive Consultation", "desc": "We sit with you to understand your spiritual journey, your traditions, and the story you want to tell." },
+        { "title": "Story Curation", "desc": "We help you identify the key chapters of your faith journey — the rituals, the struggles, the divine moments." },
+        { "title": "Writing & Design", "desc": "Our team crafts a sacred narrative and designs a book that reflects your spiritual vision." },
+        { "title": "Review & Refinement", "desc": "You review the full proof, and we refine it until every detail is perfect." },
+        { "title": "Hand-Bound Delivery", "desc": "Printed on archival paper, hand-stitched to lie flat, and delivered in a bespoke presentation box." }
+      ]
+    },
+    "whyLocalTrust": [
+      "Nagpur's faith communities and spiritual leaders trust us because we understand the sacred weight of a devotional legacy. We know that a book about your faith isn't just a history — it's a testament to the divine and a guide for future generations.",
+      "What they appreciate most is our ability to translate spiritual milestones into a sacred narrative that inspires devotion and preserves the faith's heritage."
+    ],
+    "faqs": [
+      { "q": "What is a Devotional Book?", "a": "It's a hand-bound book that tells the story of your spiritual journey, a temple's history, or a family's religious legacy." },
+      { "q": "Who is this for?", "a": "Spiritual leaders, temple trustees, faith communities, and anyone who wants to document and share their sacred journey." },
+      { "q": "How is this different from a regular book?", "a": "A Devotional Book is created with sacred intention — it honours the divine, preserves spiritual heritage, and inspires devotion." },
+      { "q": "How long does it take?", "a": "Typically 10-14 weeks, depending on complexity and the depth of spiritual content." },
+      { "q": "Do I own the design files?", "a": "Yes, all print-ready design files are yours to keep, so you can reprint or share with devotees anytime." },
+      { "q": "Can I use this for temple distribution or spiritual gatherings?", "a": "Absolutely. Many of our clients order additional copies to share with devotees, spiritual leaders, and community members." }
+    ],
+    "ctaHeading": "Your Spiritual Journey Deserves to Be Told",
+    "ctaSub": "Start your Devotional Book project in Nagpur today.",
+    "areasServed": ["Civil Lines", "Dharampeth", "Ramdaspeth", "Sitabuldi", "Sadar", "Khamla", "Jaripatka"],
+    "localKeywords": ["devotional book Nagpur", "temple history book Nagpur", "spiritual journey book Civil Lines", "religious heritage book Maharashtra", "faith book Nagpur"],
+    "semanticKeywords": ["devotional book", "spiritual journey", "temple history", "faith narrative", "hand-bound sacred book"],
+    "internalLinkSuggestions": ["Vision & Passion Books (Nagpur)", "Memoir Books (Nagpur)", "Main Devotional Books service page"],
+    "imageAltSuggestions": [
+      "Hand-bound Devotional Book on a Nagpur temple desk",
+      "Spread showing a spiritual journey in a sacred book",
+      "Legacy Curator presentation box delivered in Nagpur"
+    ],
+    "famousFor": "Central India business hub, oranges, and a rich spiritual heritage at India's geographical centre."
+  }
+}
 
 };
 

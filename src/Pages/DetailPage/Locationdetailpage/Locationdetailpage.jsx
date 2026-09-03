@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import services from '../../../data/Services.js';
 import locationsData from '../../../data/Locations.js';
+import RelatedBlogs from '../RelatedBlogs.jsx';
 
 // ─── Local Theme (shares brand fonts, distinct layout language) ───────────
 const L = {
@@ -365,6 +366,7 @@ const LocationDetailPage = () => {
             {location.whyLocalTrust.map((p, i) => <p key={i} className="loc-trust-p">{p}</p>)}
           </div>
         </section>
+        <RelatedBlogs category={slug} location={location?.cityName} limit={3} />
 
         {/* ── FAQ ── */}
         <section className="loc-section loc-faq">

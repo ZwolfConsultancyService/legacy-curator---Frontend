@@ -9,6 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import services from '../../../data/Services.js';
 import locationsData from '../../../data/Locations.js';
+import RelatedBlogs from '../RelatedBlogs.jsx';
 
 // ─── Color Theme ─────────────────────────────────────────────────────────────
 const THEME = {
@@ -729,6 +730,10 @@ const ServiceDetailPage = () => {
             <ChevronRight size={18} color="rgba(253,255,252,0.6)" />
           </button>
         </section>
+        <RelatedBlogs
+  category={slug}
+  limit={3}
+/>
 
         {/* ── LOCATIONS (city-level SEO pages) ── */}
         {!isSubType && <LocationsSection slug={slug} serviceTitle={service.title} />}
