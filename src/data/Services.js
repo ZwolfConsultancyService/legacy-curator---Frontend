@@ -70,24 +70,67 @@ const services = {
         path: '/services/coffee-table-individual-legacy-book',
       },
     ],
-    faqs: [
-      {
-        q: 'What subjects work best for a coffee table book?',
-        a: 'The possibilities are wide — architecture, travel, art collections, fashion, family estates, brand stories, personal photography, and more. If it is visually compelling and meaningful to you, our art director will know how to make it extraordinary on the page.',
-      },
-      {
-        q: 'What is the finished size of the book?',
-        a: 'The Prestige Statement Edition is produced in a generous 35×35 cm square format — substantial enough to command attention and designed to lie beautifully flat on any surface. Custom dimensions can be discussed during your art direction sessions.',
-      },
-      {
-        q: 'Can this book be used as a corporate or client gift?',
-        a: 'Absolutely. Many of our clients commission coffee table books as premium gifts for investors, clients, or key stakeholders. The book can be fully brand-aligned and presented in a custom luxury gift box, making it an unforgettable impression.',
-      },
-      {
-        q: 'Do I receive the design files after the project?',
-        a: 'Yes. Full rights to all print-ready design files are included in your package. You are free to commission reprints at any time, through us or independently, with no restrictions.',
-      },
-    ],
+   faqs: [
+  {
+    q: 'What subjects work best for a Coffee Table Book?',
+    a: 'Coffee Table Books work beautifully for subjects that have a strong visual and emotional story — including architecture, travel, art, fashion, family estates, personal photography, celebrations, collections, and brand stories. If the subject is meaningful and visually compelling, it can be transformed into a distinctive Coffee Table Book.'
+  },
+
+  {
+    q: 'What makes a Coffee Table Book different from a regular book?',
+    a: 'A Coffee Table Book is designed as a visual experience rather than simply a text-led publication. It uses larger imagery, spacious layouts, considered typography, premium materials, and a carefully curated sequence to create a book that is meant to be displayed, explored, and admired.'
+  },
+
+  {
+    q: 'What is the Prestige Statement Edition?',
+    a: 'The Prestige Statement Edition is our premium Coffee Table Book format, created as a substantial visual statement piece. It combines art direction, editorial storytelling, photography, refined design, and luxury production to create a book intended to make a lasting impression.'
+  },
+
+  {
+    q: 'What is the finished size of the book?',
+    a: 'The Prestige Statement Edition is produced in a generous 35×35 cm square format, giving photography and visual storytelling the space they deserve. Custom dimensions can also be discussed during the art direction and design process.'
+  },
+
+  {
+    q: 'Can I create a Coffee Table Book from my own photographs?',
+    a: 'Yes. Personal photographs, professional photography, archival images, artwork, documents, and other visual materials can all be curated into the book. Our team helps select, sequence, and present the material so that the final book feels cohesive and intentional.'
+  },
+
+  {
+    q: 'Can old photographs or archival material be restored?',
+    a: 'Yes. Older, faded, damaged, or scanned photographs can be carefully restored and enhanced before being incorporated into the book. Archival documents and other historical materials can also be prepared and integrated into the visual narrative.'
+  },
+
+  {
+    q: 'Can the Coffee Table Book be completely customized?',
+    a: 'Yes. The book can be customized across the visual and physical experience, including the content structure, photography, typography, layouts, cover treatment, materials, finishes, and overall art direction. The final design is developed around the character and purpose of your story.'
+  },
+
+  {
+    q: 'Can this book be used as a corporate or client gift?',
+    a: 'Absolutely. Coffee Table Books can be commissioned as premium gifts for clients, investors, partners, founders, executives, or other important stakeholders. Corporate projects can be brand-aligned and presented with customized packaging for a more distinctive gifting experience.'
+  },
+
+  {
+    q: 'Can multiple copies be produced for gifting or distribution?',
+    a: 'Yes. Additional copies can be produced for family members, clients, investors, guests, institutions, or other recipients. The quantity and production specifications can be planned according to the purpose of the project.'
+  },
+
+  {
+    q: 'Can the book include both photographs and written stories?',
+    a: 'Yes. A Coffee Table Book can combine photography with carefully edited stories, captions, interviews, essays, timelines, quotations, and other written material. The content is balanced so that the writing supports the visual narrative rather than overwhelming it.'
+  },
+
+  {
+    q: 'Do I receive the design files after the project?',
+    a: 'Yes. Print-ready design files are included according to the selected package and project terms. These files can be retained for future reference and reprints, subject to the applicable production and licensing terms.'
+  },
+
+  {
+    q: 'Can I order reprints of my Coffee Table Book later?',
+    a: 'Yes. Once the final design has been approved, additional copies can be produced when required. This makes it possible to create further editions for gifting, events, family members, clients, or other occasions.'
+  }
+],
     carouselImages: [
       { src: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&q=85', caption: 'Large format, breathtaking design' },
       { src: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1200&q=85', caption: 'A statement piece for any space' },
