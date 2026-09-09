@@ -881,22 +881,12 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL;
 // ============================================================
 // SERVICE CATEGORIES
 // ============================================================
-
 const VALID_CATEGORIES = [
-  "photo-book",
-  "travel-photo-book",
-  "wedding-photo-book",
-  "individual-photo-book",
-  "customized-photo-book",
-  "product-catalogue-photo-book",
-  "childrens-photo-book",
-  "travel-book",
-  "legacy-book",
   "coffee-table",
-  "memoir",
-  "vision-passion-book",
-  "business-book",
-  "devotional-book",
+  "coffee-table-family-legacy-book",
+  "coffee-table-business-story-book",
+  "coffee-table-devotional-book",
+  "coffee-table-individual-legacy-book",
 ];
 
 // ============================================================
