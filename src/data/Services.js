@@ -124,12 +124,67 @@ const services = {
       { title: 'Yours to personalise', items: ['Spot UV cover option', 'Foil-stamped family name', 'Embossed title lettering', 'Custom slipcase design'] },
       { title: 'Printing and binding', items: ['170gsm silk art paper', 'Sewn sections to lie flat', 'Hand-bound in London', 'Luxury gift box for every copy'] },
     ],
-    faqs: [
-      { q: 'How is this different from the regular Legacy Book?', a: 'The Legacy Book is a readable, text-led hardback. This Coffee Table edition is a large-format, image-led statement piece — built to be displayed, not shelved, with the same family stories told visually.' },
-      { q: 'Can old family photographs be restored for this format?', a: 'Yes. Our photo editor restores and enhances older photographs so they hold up beautifully at the larger scale this format demands.' },
-      { q: 'Can it include a family tree spread?', a: 'Yes, our family tree designer creates a bespoke spread as part of the package, laid out to match the scale and style of the rest of the book.' },
-      { q: 'What is the finished size?', a: 'A generous 35×35 cm square format — substantial enough to command attention on any coffee table or console.' },
-    ],
+  faqs: [
+  {
+    q: 'What is a Coffee Table Family Legacy Book?',
+    a: 'A Coffee Table Family Legacy Book is a premium, large-format visual record of your family’s history, memories, milestones, photographs, and traditions. It brings generations of your family story together in an elegant book designed to be displayed and passed down as a treasured heirloom.'
+  },
+
+  {
+    q: 'How is a Coffee Table Family Legacy Book different from a regular Family Legacy Book?',
+    a: 'A regular Family Legacy Book is primarily designed around reading and storytelling, while the Coffee Table Family Legacy Book is more visual and presentation-focused. It uses larger photography, spacious layouts, premium design, and carefully curated family stories to create a statement piece for your home.'
+  },
+
+  {
+    q: 'Can the book include photographs from multiple generations?',
+    a: 'Yes. The book can bring together photographs and stories from grandparents, parents, children, and earlier generations, creating a visual journey through your family history and showing how your family has evolved over time.'
+  },
+
+  {
+    q: 'Can old and damaged family photographs be included?',
+    a: 'Yes. Old family photographs can be carefully restored and enhanced before being incorporated into the book. This allows precious archival images to be presented beautifully while preserving their original character and historical value.'
+  },
+
+  {
+    q: 'Can we include our family tree in the book?',
+    a: 'Yes. A bespoke family tree can be designed as part of the Coffee Table Family Legacy Book. It can visually connect generations and complement the photographs, stories, and other family-history content throughout the book.'
+  },
+
+  {
+    q: 'What kind of family stories can be included?',
+    a: 'The book can include stories about your family’s origins, grandparents, childhood memories, marriages, achievements, traditions, important milestones, places you have lived, family businesses, celebrations, and the values that have been passed from one generation to another.'
+  },
+
+  {
+    q: 'Can the Coffee Table Family Legacy Book be customized for our family?',
+    a: 'Yes. Every Coffee Table Family Legacy Book can be tailored to your family. The photography, stories, family tree, typography, layouts, cover, materials, and overall visual direction can be thoughtfully designed around your family’s personality and history.'
+  },
+
+  {
+    q: 'Can we include handwritten letters, documents, or family memorabilia?',
+    a: 'Yes. Meaningful family documents, handwritten letters, certificates, invitations, newspaper clippings, artwork, and other memorabilia can be incorporated into the design to make the book a more complete record of your family legacy.'
+  },
+
+  {
+    q: 'Who is a Coffee Table Family Legacy Book for?',
+    a: 'It is ideal for families who want to preserve their history in a beautiful physical form. It can also make a meaningful heirloom or milestone gift for parents, grandparents, anniversaries, family reunions, weddings, or significant family occasions.'
+  },
+
+  {
+    q: 'How is the family story organized inside the book?',
+    a: 'The story can be organized chronologically, by generation, by family branch, or around significant chapters and themes. The structure is developed around your family’s history so that the final book feels natural, personal, and visually engaging.'
+  },
+
+  {
+    q: 'Can multiple family members contribute to the book?',
+    a: 'Yes. Different family members can contribute photographs, memories, stories, documents, and personal reflections. These contributions can then be carefully curated and brought together into one cohesive family legacy.'
+  },
+
+  {
+    q: 'What makes this book a family heirloom?',
+    a: 'The combination of carefully preserved family stories, photographs, archival material, and premium bookmaking creates something designed to last beyond a single generation. It becomes a physical record of where your family came from and a meaningful object to pass forward.'
+  }
+],
     carouselImages: [
       { src: 'https://images.unsplash.com/photo-1491841573634-28140fc7ced7?w=1200&q=85', caption: 'Generations, displayed in grandeur' },
       { src: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&q=85', caption: 'Large format, breathtaking design' },
@@ -166,12 +221,67 @@ const services = {
       { title: 'Yours to personalise', items: ['Full brand colour integration', 'Foil-stamped company name', 'Custom chapter dividers', 'Investor edition available'] },
       { title: 'Printing and binding', items: ['170gsm silk art paper', 'Sewn sections to lie flat', 'Hand-bound in London', 'Luxury gift box for every copy'] },
     ],
-    faqs: [
-      { q: 'How is this different from the regular Business Story Book?', a: 'The standard edition is a text-led hardback narrative. This Coffee Table edition is a large-format, visually led statement piece — ideal for lobbies, boardrooms, and premium client gifting.' },
-      { q: 'Can this be brand-aligned to our identity?', a: 'Fully. Brand colours, typography, and a foil-stamped company name are all part of the package, with a brand-aligned typographer overseeing every spread.' },
-      { q: 'Is an investor edition available?', a: 'Yes, an investor-focused edition with an executive summary section can be produced alongside the standard run.' },
-      { q: 'How many copies come with the package?', a: 'The base package includes hand-bound copies for internal and gifting use; additional copies can be ordered at a per-copy rate whenever you need more.' },
-    ],
+  faqs: [
+  {
+    q: 'How is this different from the regular Business Story Book?',
+    a: 'The standard Business Story Book is a text-led narrative focused on documenting the company journey. This Coffee Table edition is a large-format, visually led statement piece that combines the company story with powerful photography, premium layouts, and an elevated presentation designed for boardrooms, offices, and distinguished client gifting.'
+  },
+
+  {
+    q: 'What can be included in a Coffee Table Business Story Book?',
+    a: 'It can include the company’s founding story, leadership journey, milestones, major projects, products, people, culture, achievements, client stories, photographs, and defining moments. The content is carefully curated to create a compelling visual record of the business and its journey.'
+  },
+
+  {
+    q: 'Can this be brand-aligned to our identity?',
+    a: 'Fully. The book can be designed around your existing brand identity, including brand colours, typography, visual language, photography style, and company marks. The design is developed to feel like a natural extension of your brand rather than a generic corporate publication.'
+  },
+
+  {
+    q: 'Can the book showcase our founders and leadership team?',
+    a: 'Yes. Founder and leadership profiles can be presented as dedicated visual chapters, combining portraits, personal stories, milestones, philosophies, and contributions to the organization’s journey.'
+  },
+
+  {
+    q: 'Can we include our company history and milestones?',
+    a: 'Yes. Key milestones can be structured into a visual timeline or dedicated chapters, showing how the organization evolved from its beginnings to where it stands today. Important events, achievements, expansions, and turning points can all be incorporated.'
+  },
+
+  {
+    q: 'Can projects, products, or achievements be featured?',
+    a: 'Absolutely. Major projects, flagship products, landmark achievements, awards, and important business moments can be given dedicated spreads. Photography, statistics, captions, and storytelling can be combined to make each achievement visually memorable.'
+  },
+
+  {
+    q: 'Can it be created specifically for premium client gifting?',
+    a: 'Yes. The Coffee Table Business Story Book is particularly suited to premium client and stakeholder gifting. The large-format design, refined presentation, and personalized brand treatment create a lasting physical representation of your organization and its story.'
+  },
+
+  {
+    q: 'Is an investor edition available?',
+    a: 'Yes. An investor-focused edition can be developed with content structured around the company vision, business journey, leadership, key milestones, market presence, achievements, and an executive summary section where appropriate.'
+  },
+
+  {
+    q: 'Can employees and company culture be featured?',
+    a: 'Yes. The book can include employees, teams, workplace culture, celebrations, traditions, and behind-the-scenes moments. This helps capture the people and culture behind the organization rather than focusing only on business milestones.'
+  },
+
+  {
+    q: 'Can we include photographs from the early days of the company?',
+    a: 'Yes. Archival photographs from the company’s early years can be restored, enhanced, and integrated with contemporary photography to create a visual contrast between where the organization began and where it is today.'
+  },
+
+  {
+    q: 'How many copies come with the package?',
+    a: 'The base package includes a curated number of hand-bound copies intended for internal presentation, leadership, and premium gifting. Additional copies can be produced whenever required, subject to the selected production specifications.'
+  },
+
+  {
+    q: 'Can multiple editions be created for different audiences?',
+    a: 'Yes. Different versions can be developed for audiences such as investors, clients, leadership, employees, or special events. The core story can remain consistent while the content and emphasis are adapted for each audience.'
+  }
+],
     carouselImages: [
       { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85', caption: 'Your brand story, in large format' },
       { src: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&q=85', caption: 'A legacy for your boardroom' },
@@ -208,12 +318,67 @@ const services = {
       { title: 'Yours to personalise', items: ['Gold or silver embossing', 'Foil-stamped title', 'Custom slipcase design', 'Personalised prayer page'] },
       { title: 'Printing and binding', items: ['170gsm silk art paper', 'Sewn sections to lie flat', 'Hand-bound in London', 'Luxury gift box for every copy'] },
     ],
-    faqs: [
-      { q: 'How is this different from the regular Devotional Book?', a: 'The standard edition is a text-led hardback. This Coffee Table edition is a large-format, image-led piece designed for display, with the same reverence given to prayers and sacred imagery.' },
-      { q: 'Is this suitable for all faiths?', a: 'Yes, entirely — our sacred art consultant works across all faiths and personal spiritual traditions with the same care and respect.' },
-      { q: 'Can it include family prayers or scripture?', a: 'Absolutely, a dedicated scripture and content review session is included to select what matters most to you.' },
-      { q: 'What is the finished size?', a: 'A generous 35×35 cm square format, built to sit beautifully in a prayer room, living room, or entryway.' },
-    ],
+  faqs: [
+  {
+    q: 'How is this different from the regular Devotional Book?',
+    a: 'The standard Devotional Book is primarily a text-led hardback, while this Coffee Table edition is a large-format, visually led creation. It brings together sacred imagery, prayers, scripture, spiritual reflections, and meaningful moments in an elegant format designed to be displayed and revisited.'
+  },
+
+  {
+    q: 'What can be included in a Coffee Table Devotional Book?',
+    a: 'The book can include prayers, scriptures, spiritual teachings, sacred artwork, devotional photography, personal reflections, religious ceremonies, important spiritual milestones, and other content that holds deep meaning for you or your community.'
+  },
+
+  {
+    q: 'Is the Coffee Table Devotional Book suitable for different faiths and traditions?',
+    a: 'Yes. Each project is developed around the faith, spiritual tradition, and beliefs it is intended to represent. The content, imagery, language, and design are approached with care and respect for the traditions being documented.'
+  },
+
+  {
+    q: 'Can it include family prayers and personal spiritual traditions?',
+    a: 'Absolutely. Family prayers, traditions, blessings, rituals, spiritual memories, and meaningful passages can be incorporated to create a devotional book that reflects your family’s personal spiritual heritage.'
+  },
+
+  {
+    q: 'Can sacred photographs and artwork be included?',
+    a: 'Yes. Sacred photographs, religious artwork, temple or place-of-worship imagery, ceremonial moments, and other meaningful visual material can be carefully curated and integrated into the book’s design.'
+  },
+
+  {
+    q: 'Can we include scripture or religious texts in the book?',
+    a: 'Yes. Selected scripture, prayers, verses, hymns, teachings, and other devotional text can be incorporated into the book. Content can be carefully organized alongside imagery to create a balanced and meaningful visual experience.'
+  },
+
+  {
+    q: 'Can the book document a spiritual journey or pilgrimage?',
+    a: 'Yes. A spiritual journey, pilgrimage, visits to sacred places, religious ceremonies, or significant moments of faith can be developed into a visual narrative, combining photographs, reflections, dates, locations, and meaningful devotional content.'
+  },
+
+  {
+    q: 'Can the Coffee Table Devotional Book be personalized?',
+    a: 'Yes. The book can be personalized through its photography, artwork, typography, cover treatment, layout, written content, and overall visual direction. Every element can be thoughtfully selected to reflect the spiritual character and purpose of the book.'
+  },
+
+  {
+    q: 'Can old devotional photographs and family archives be restored?',
+    a: 'Yes. Older photographs, scanned prints, handwritten prayers, and archival materials can be carefully restored and prepared for inclusion. This allows important spiritual and family memories to become part of the finished book.'
+  },
+
+  {
+    q: 'Can it be created as a family spiritual heirloom?',
+    a: 'Yes. The book can preserve prayers, traditions, stories, photographs, teachings, and spiritual memories that are meaningful to your family. Created as a lasting physical record, it can be passed from one generation to the next.'
+  },
+
+  {
+    q: 'Where can a Coffee Table Devotional Book be displayed?',
+    a: 'Its large-format presentation makes it suitable for spaces such as a prayer room, meditation area, living room, family library, entrance space, or other meaningful setting where the book can be respectfully displayed and revisited.'
+  },
+
+  {
+    q: 'What is the finished size of the Coffee Table Devotional Book?',
+    a: 'The Coffee Table Devotional Book is created in a generous large-format presentation, with the final dimensions selected according to the project’s design, content, and production requirements.'
+  }
+],
     carouselImages: [
       { src: 'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1200&q=85', caption: 'Faith, displayed with grandeur' },
       { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85', caption: 'Sacred imagery, large format' },
@@ -250,12 +415,67 @@ const services = {
       { title: 'Yours to personalise', items: ['Spot UV cover option', 'Foil-stamped title lettering', 'Custom slipcase design', 'Personalised tribute page'] },
       { title: 'Printing and binding', items: ['170gsm silk art paper', 'Sewn sections to lie flat', 'Hand-bound in London', 'Luxury gift box for every copy'] },
     ],
-    faqs: [
-      { q: 'How is this different from the regular Individual Photo Book?', a: 'The standard edition is a hardback keepsake. This Coffee Table edition is a large-format statement piece, designed for display rather than the bookshelf.' },
-      { q: 'Who is this best suited for?', a: 'Milestone birthdays, retirements, and tributes to a loved one — anyone whose life story deserves to be seen, not just kept.' },
-      { q: 'Can old or damaged photos be restored?', a: 'Yes, our photo editor restores and enhances images so they hold up beautifully at this larger scale.' },
-      { q: 'What is the finished size?', a: 'A generous 35×35 cm square format, built to command attention on any table.' },
-    ],
+  faqs: [
+  {
+    q: 'How is this different from the regular Individual Legacy Book?',
+    a: 'The regular Individual Legacy Book focuses primarily on documenting a person’s story in a traditional keepsake format. This Coffee Table edition is a larger, more visually led statement piece that combines personal stories, photographs, milestones, and memories in a format designed to be displayed and admired.'
+  },
+
+  {
+    q: 'Who is a Coffee Table Individual Legacy Book best suited for?',
+    a: 'It is ideal for milestone birthdays, retirements, anniversaries, professional achievements, tributes, or simply celebrating a remarkable life. It can also be created as a meaningful gift for a parent, grandparent, spouse, mentor, founder, or loved one.'
+  },
+
+  {
+    q: 'What can be included in an Individual Legacy Book?',
+    a: 'The book can include childhood memories, family photographs, education, career milestones, relationships, travels, achievements, personal philosophies, memorable experiences, important life events, and reflections from people who have been part of the journey.'
+  },
+
+  {
+    q: 'Can the book tell the complete story of someone’s life?',
+    a: 'Yes. The book can be structured as a complete visual life story, moving through different stages and chapters of a person’s journey. The narrative can be chronological or organized around the people, places, achievements, and experiences that shaped their life.'
+  },
+
+  {
+    q: 'Can old or damaged photographs be restored?',
+    a: 'Yes. Older, faded, damaged, or low-quality photographs can be carefully restored and enhanced before being incorporated into the book, helping important memories look their best at the larger Coffee Table format.'
+  },
+
+  {
+    q: 'Can photographs from different stages of life be included?',
+    a: 'Absolutely. Childhood photographs, school and college memories, professional portraits, family occasions, travels, celebrations, and recent photographs can all be brought together to create a visual journey through the individual’s life.'
+  },
+
+  {
+    q: 'Can family and friends contribute stories or memories?',
+    a: 'Yes. Contributions from family members, friends, colleagues, and other important people can be included as personal messages, memories, anecdotes, letters, or reflections, adding multiple perspectives to the life story.'
+  },
+
+  {
+    q: 'Can the book include personal achievements and professional milestones?',
+    a: 'Yes. Academic achievements, career milestones, awards, leadership roles, entrepreneurial journeys, creative accomplishments, community contributions, and other defining moments can be presented through dedicated visual chapters and spreads.'
+  },
+
+  {
+    q: 'Can the Coffee Table Individual Legacy Book be personalized?',
+    a: 'Yes. The book can be customized around the individual’s personality and story, including the photography, narrative, typography, layouts, cover treatment, colours, captions, and overall visual direction.'
+  },
+
+  {
+    q: 'Can I create this book as a tribute to someone?',
+    a: 'Yes. A Coffee Table Individual Legacy Book can thoughtfully preserve the life, memories, achievements, relationships, and personal qualities of someone who holds a special place in your life. It can become a lasting tribute for family and future generations.'
+  },
+
+  {
+    q: 'Can the book include letters, certificates, awards, or other personal memorabilia?',
+    a: 'Yes. Meaningful letters, certificates, newspaper features, awards, handwritten notes, artwork, invitations, and other personal archives can be incorporated into the design to make the book a richer record of the individual’s journey.'
+  },
+
+  {
+    q: 'What makes this an Individual Legacy Book rather than just a photo book?',
+    a: 'A photo book primarily presents a collection of images, while an Individual Legacy Book connects photographs with stories, memories, achievements, relationships, and personal reflections. The result is a complete portrait of a person’s life rather than simply a collection of photographs.'
+  }
+],
     carouselImages: [
       { src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&q=85', caption: 'One life, in large format' },
       { src: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&q=85', caption: 'A statement piece for any space' },

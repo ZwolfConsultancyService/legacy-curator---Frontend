@@ -1,66 +1,211 @@
-// import React from "react";
+// import React, { useRef } from "react";
 // import { Link } from "react-router-dom";
-// import Coffee from '../../../assets/stories/CoffeeTableBooks.jpeg'
-// import Family from '../../../assets/stories/FamilyLegacy.jpg'
-// import Memoir from '../../../assets/stories/MemoirBooks.jpg'
-// import Photo from '../../../assets/stories/PhotoBooks.jpg'
-// import Book from '../../../assets/stories/Books.jpeg'
-// import Devotional from '../../../assets/stories/Devotional.jpeg'
-// import Business from '../../../assets/stories/Business.jpeg'
+// import Coffee from '../../../assets/stories/CoffeeTableBooks.jpeg';
+// import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// const services = [
-//   {
-//     title: "Coffee Table Books",
-//     tagline: "Art You Can Hold.",
-//     desc: "Our coffee table books are crafted to be seen, felt, and admired, turning every page into a visual experience and a timeless conversation piece.",
-//     image:Coffee,
-//     path: "/services/coffee-table",
-//   },
-//   {
-//     title: "Family Legacy Books",
-//     tagline: "Stories Passed Down Forever.",
-//     desc: "Our family legacy books preserve generations of love, values, and memories, ensuring your story continues to live on and inspire forever.",
-//     image: Family,
-//     path: "/services/legacy-book",
-//   },
-//   {
-//     title: "Business Story Books",
-//     tagline: "The story behind the empire.",
-//     desc: "Our business story books capture your journey from vision to success, turning it into a powerful narrative that builds trust and inspires growth.",
-//     image: Business,
-//     path: "/services/business-book",
-//   },
-//   {
-//     title: "Memoir Books",
-//     tagline: "A life, in your own words.",
-//     desc: "Our memoir and tribute books reflect life's most heartfelt moments, honouring stories that deserve to be cherished and remembered forever.",
-//     image: Memoir,
-//     path: "/services/memoir",
-//   },
-//   {
-//     title: "Photo Books",
-//     tagline: "Moments that refuse to fade.",
-//     desc: "Our photo books beautifully capture and curate your special moments, designed to help you relive your memories again and again.",
-//     image: Photo,
-//     path: "/services/photo-book",
-//   },
-//   {
-//     title: "Vision & Passion Books",
-//     tagline: "Write what comes next.",
-//     desc: "Our vision and passion books bring your dreams, ideas, and purpose together, shaping them into a story that inspires and guides.",
-//     image: Book,
-//     path: "/services/vision-passion-book",
-//   },
-//   {
-//     title: "Devotional Books",
-//     tagline: "Where faith finds its voice.",
-//     desc: "Our devotional books express faith and spirituality in a soulful way, crafted to bring peace, meaning, and a deeper connection.",
-//     image: Devotional,
-//     path: "/services/devotional-book",
-//   },
-// ];
-
+// const THEME = {
+//   copper: '#8B6A3E',
+//   ink: '#1E2B24',
+//   inkLight: '#4A554F',
+//   border: '#D4C9C0',
+//   porcelain: '#F5F0EA'
+// };
+// import img1 from "../../../assets/stories/FamilyLegacy.jpg"
+// import img2 from "../../../assets/stories/Business.jpeg"
+// import img3 from "../../../assets/stories/Devotional.jpeg"
+// import img4 from "../../../assets/stories/Individual.png"
 // const ServicesCards = () => {
+//   // ─── SERVICE DETAIL PAGE SLIDER DATA ──────────────────────────────────
+//   // Yeh wahi data hai jo ServiceDetailPage ke VariantsSelector mein use hota hai
+//   const sliderVariants = [
+//     {
+//       title: "Family Legacy Book",
+//       tagline: "Generations, Displayed in Grandeur.",
+//       image: img1,
+//       path: img1
+//     },
+//     {
+//       title: "Business Story Book",
+//       tagline: "Your Brand, In Large Format.",
+//       image: img2,
+//       path: "/services/coffee-table-business-story-book"
+//     },
+//     {
+//       title: "Devotional Book",
+//       tagline: "Faith, Displayed With Grandeur.",
+//       image: img3,
+//       path: "/services/coffee-table-devotional-book"
+//     },
+//     {
+//       title: "Individual Legacy Book",
+//       tagline: "One Life, In Large Format.",
+//       image: img4,
+//       path: "/services/coffee-table-individual-legacy-book"
+//     }
+//   ];
+
+//   // ─── VARIANT SLIDER TRACK ───────────────────────────────────────────────
+//   const VariantSliderTrack = ({ variants }) => {
+//     const trackRef = useRef(null);
+
+//     const scrollByCard = (dir) => {
+//       const track = trackRef.current;
+//       if (!track) return;
+//       const card = track.querySelector('.plate-card');
+//       const cardWidth = card ? card.offsetWidth + 32 : 320;
+//       track.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+//     };
+
+//     return (
+//       <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '0 48px' }}>
+//         <style>{`.plate-track::-webkit-scrollbar { display: none; }`}</style>
+//         <div
+//           ref={trackRef}
+//           className="plate-track"
+//           style={{
+//             display: 'flex', gap: 32, overflowX: 'auto', scrollSnapType: 'x mandatory',
+//             paddingBottom: 8, scrollbarWidth: 'none', msOverflowStyle: 'none',
+//           }}
+//         >
+//           {variants.map((v, i) => {
+//             const plateNumber = ['I', 'II', 'III', 'IV', 'V', 'VI'][i] || i + 1;
+//             return (
+//               <Link
+//                 key={v.path}
+//                 to={v.path}
+//                 className="plate-card"
+//                 style={{
+//                   display: 'block', textDecoration: 'none', color: 'inherit',
+//                   flex: '0 0 auto', width: 300, scrollSnapAlign: 'start',
+//                 }}
+//                 onMouseEnter={e => {
+//                   const img = e.currentTarget.querySelector('.plate-img');
+//                   const title = e.currentTarget.querySelector('.plate-title');
+//                   if (img) img.style.transform = 'scale(1.03)';
+//                   if (title) title.style.backgroundSize = '100% 1px';
+//                 }}
+//                 onMouseLeave={e => {
+//                   const img = e.currentTarget.querySelector('.plate-img');
+//                   const title = e.currentTarget.querySelector('.plate-title');
+//                   if (img) img.style.transform = 'scale(1)';
+//                   if (title) title.style.backgroundSize = '0% 1px';
+//                 }}
+//               >
+//                 <div style={{
+//                   position: 'relative', height: 300, overflow: 'hidden',
+//                   border: `1px solid ${THEME.border}`, background: '#fff',
+//                   borderRadius: '12px',
+//                 }}>
+//                   <img
+//                     className="plate-img"
+//                     src={v.image}
+//                     alt={v.title}
+//                     loading="lazy"
+//                     style={{
+//                       width: '100%', height: '100%', objectFit: 'cover',
+//                       display: 'block', transition: 'transform 0.6s ease',
+//                     }}
+//                   />
+//                 </div>
+
+//                 <div style={{ padding: '16px 2px 0' }}>
+//                   <p style={{
+//                     fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 13,
+//                     color: THEME.copper, margin: '0 0 4px',
+//                   }}>
+//                     Plate {plateNumber}
+//                   </p>
+//                   <p
+//                     className="plate-title"
+//                     style={{
+//                       fontFamily: "'Cormorant Garamond', serif", fontSize: 21, fontWeight: 600,
+//                       color: THEME.ink, margin: '0 0 4px', lineHeight: 1.3,
+//                       display: 'inline',
+//                       backgroundImage: `linear-gradient(${THEME.ink}, ${THEME.ink})`,
+//                       backgroundPosition: '0 100%', backgroundRepeat: 'no-repeat',
+//                       backgroundSize: '0% 1px', transition: 'background-size 0.35s ease',
+//                       paddingBottom: 2,
+//                     }}
+//                   >
+//                     {v.title}
+//                   </p>
+//                   <p style={{
+//                     fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 14,
+//                     color: THEME.inkLight, margin: 0, lineHeight: 1.45,
+//                   }}>
+//                     {v.tagline}
+//                   </p>
+//                 </div>
+//               </Link>
+//             );
+//           })}
+//         </div>
+
+//         <button
+//           onClick={() => scrollByCard(-1)}
+//           aria-label="Previous"
+//           style={{
+//             position: 'absolute', top: '38%', left: 8, transform: 'translateY(-50%)',
+//             width: 40, height: 40, borderRadius: '50%', border: `1px solid ${THEME.border}`,
+//             background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
+//             cursor: 'pointer', boxShadow: '0 4px 14px rgba(39,72,66,0.1)',
+//           }}
+//         >
+//           <ChevronLeft size={18} color={THEME.ink} />
+//         </button>
+//         <button
+//           onClick={() => scrollByCard(1)}
+//           aria-label="Next"
+//           style={{
+//             position: 'absolute', top: '38%', right: 8, transform: 'translateY(-50%)',
+//             width: 40, height: 40, borderRadius: '50%', border: `1px solid ${THEME.border}`,
+//             background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
+//             cursor: 'pointer', boxShadow: '0 4px 14px rgba(39,72,66,0.1)',
+//           }}
+//         >
+//           <ChevronRight size={18} color={THEME.ink} />
+//         </button>
+//       </div>
+//     );
+//   };
+
+//   // ─── VARIANTS SELECTOR (SERVICE DETAIL PAGE STYLE) ────────────────────
+//   const VariantsSelector = ({ variants, parentTitle }) => (
+//     <section style={{
+//       background: THEME.porcelain, padding: '80px 0',
+//       borderTop: `1px solid ${THEME.border}`, borderBottom: `1px solid ${THEME.border}`,
+//     }}>
+//       <div style={{ maxWidth: 600, margin: '0 auto 48px', textAlign: 'center', padding: '0 48px' }}>
+//         <h2 style={{
+//           fontFamily: "'Cormorant Garamond', serif",
+//           fontSize: 'clamp(24px, 2.8vw, 36px)', fontWeight: 600,
+//           color: THEME.ink, margin: '0 0 12px', lineHeight: 1.25,
+//         }}>
+//           {parentTitle}, told a few different ways
+//         </h2>
+//         <p style={{
+//           fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
+//           fontSize: 17, color: THEME.inkLight, margin: 0, lineHeight: 1.5,
+//         }}>
+//           Same coffee-table format, each edition set around a different story.
+//         </p>
+//       </div>
+
+//       <VariantSliderTrack variants={variants} />
+//     </section>
+//   );
+
+//   // Service data
+//   const services = [
+//     {
+//       title: "Coffee Table Books",
+//       tagline: "Art You Can Hold.",
+//       desc: "Our coffee table books are crafted to be seen, felt, and admired, turning every page into a visual experience and a timeless conversation piece.",
+//       image: Coffee,
+//       path: "/services/coffee-table",
+//     },
+//   ];
+
 //   return (
 //     <>
 //       <style>{`
@@ -107,10 +252,8 @@
 //           display: flex;
 //           align-items: center;
 //           gap: 72px;
-//           margin-bottom: 100px;
+//           margin-bottom: 0;
 //         }
-//         .sv-row:last-child { margin-bottom: 0; }
-//         .sv-row.reverse { flex-direction: row-reverse; }
 
 //         .sv-img-wrap {
 //           flex: 0 0 48%;
@@ -220,10 +363,9 @@
 
 //         @media (max-width: 900px) {
 //           .sv-container { padding: 0 32px; }
-//           .sv-row, .sv-row.reverse {
+//           .sv-row {
 //             flex-direction: column;
 //             gap: 32px;
-//             margin-bottom: 64px;
 //           }
 //           .sv-img-wrap { flex: none; width: 100%; aspect-ratio: 16 / 9; }
 //           .sv-main-title { font-size: 36px; }
@@ -236,7 +378,6 @@
 //           .sv-top { margin-bottom: 48px; }
 //           .sv-card-title { font-size: 22px; }
 //           .sv-tagline { font-size: 13px; }
-//           .sv-row { margin-bottom: 48px; }
 //           .sv-img-number { font-size: 44px; }
 //         }
 //       `}</style>
@@ -251,11 +392,9 @@
 //             </h2>
 //           </div>
 
+//           {/* ─── SERVICE CARDS ────────────────────────────────────────────── */}
 //           {services.map((service, index) => (
-//             <div
-//               key={index}
-//               className={`sv-row${index % 2 !== 0 ? " reverse" : ""}`}
-//             >
+//             <div key={index} className="sv-row">
 //               <div className="sv-img-wrap">
 //                 <img src={service.image} alt={service.title} />
 //                 <span className="sv-img-number">0{index + 1}</span>
@@ -274,6 +413,13 @@
 //             </div>
 //           ))}
 
+//           {/* ─── SLIDER - SERVICE DETAIL PAGE STYLE ──────────────────────── */}
+//           {/* Yeh wahi slider hai jo ServiceDetailPage mein dikhta hai */}
+//           <VariantsSelector 
+//             variants={sliderVariants} 
+//             parentTitle="Coffee Table Books" 
+//           />
+
 //         </div>
 //       </section>
 //     </>
@@ -282,26 +428,238 @@
 
 // export default ServicesCards;
 
-
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import Coffee from '../../../assets/stories/CoffeeTableBooks.jpeg'
+import Coffee from '../../../assets/stories/CoffeeTableBooks.jpeg';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// ── Only ONE service shown here: Coffee Table Books ──
-// Its detail page (/services/coffee-table) will show the
-// "Coffee Table for Family Legacy / Business Story / Devotional / Individual Legacy"
-// sub-options, each with its own detail page (see services.js -> variants).
-const services = [
-  {
-    title: "Coffee Table Books",
-    tagline: "Art You Can Hold.",
-    desc: "Our coffee table books are crafted to be seen, felt, and admired, turning every page into a visual experience and a timeless conversation piece.",
-    image: Coffee,
-    path: "/services/coffee-table",
-  },
-];
+const THEME = {
+  copper: '#8B6A3E',
+  ink: '#1E2B24',
+  inkLight: '#4A554F',
+  border: '#D4C9C0',
+  porcelain: '#F5F0EA'
+};
+import img1 from "../../../assets/stories/FamilyLegacy.jpg"
+import img2 from "../../../assets/stories/Business.jpeg"
+import img3 from "../../../assets/stories/Devotional.jpeg"
+import img4 from "../../../assets/stories/Individual.png"
 
 const ServicesCards = () => {
+  const sliderVariants = [
+    {
+      title: "Family Legacy Book",
+      tagline: "Generations, Displayed in Grandeur.",
+      image: img1,
+      path: "/services/coffee-table-family-legacy-book"
+    },
+    {
+      title: "Business Story Book",
+      tagline: "Your Brand, In Large Format.",
+      image: img2,
+      path: "/services/coffee-table-business-story-book"
+    },
+    {
+      title: "Devotional Book",
+      tagline: "Faith, Displayed With Grandeur.",
+      image: img3,
+      path: "/services/coffee-table-devotional-book"
+    },
+    {
+      title: "Individual Legacy Book",
+      tagline: "One Life, In Large Format.",
+      image: img4,
+      path: "/services/coffee-table-individual-legacy-book"
+    }
+  ];
+
+  const VariantSliderTrack = ({ variants }) => {
+    const trackRef = useRef(null);
+
+    const scrollByCard = (dir) => {
+      const track = trackRef.current;
+      if (!track) return;
+      const card = track.querySelector('.plate-card');
+      const cardWidth = card ? card.offsetWidth + 32 : 320;
+      track.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+    };
+
+    return (
+      <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '0 48px' }}>
+       
+        
+        <div
+          ref={trackRef}
+          className="plate-track"
+          style={{
+            display: 'flex', gap: 28, overflowX: 'auto', scrollSnapType: 'x mandatory',
+            paddingBottom: 20, scrollbarWidth: 'none', msOverflowStyle: 'none',
+          }}
+        >
+          {variants.map((v, i) => {
+            return (
+
+ <Link
+                key={v.path}
+                to={v.path}
+                className="plate-card"
+                style={{
+                  display: 'block', textDecoration: 'none', color: 'inherit',
+                  flex: '0 0 auto', width: 300, scrollSnapAlign: 'start',
+                }}
+                onMouseEnter={e => {
+                  const img = e.currentTarget.querySelector('.plate-img');
+                  const title = e.currentTarget.querySelector('.plate-title');
+                  if (img) img.style.transform = 'scale(1.03)';
+                  if (title) title.style.backgroundSize = '100% 1px';
+                }}
+                onMouseLeave={e => {
+                  const img = e.currentTarget.querySelector('.plate-img');
+                  const title = e.currentTarget.querySelector('.plate-title');
+                  if (img) img.style.transform = 'scale(1)';
+                  if (title) title.style.backgroundSize = '0% 1px';
+                }}
+              >
+                <div style={{
+                  position: 'relative', height: 300, overflow: 'hidden',
+                  border: `1px solid ${THEME.border}`, background: '#fff',
+                  borderRadius: '12px',
+                }}>
+                  <img
+                    className="plate-img"
+                    src={v.image}
+                    alt={v.title}
+                    loading="lazy"
+                    style={{
+                      width: '100%', height: '100%', objectFit: 'cover',
+                      display: 'block', transition: 'transform 0.6s ease',
+                    }}
+                  />
+                </div>
+
+                <div style={{ padding: '16px 2px 0' }}>
+                  <p style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 13,
+                    color: THEME.copper, margin: '0 0 4px',
+                  }}>
+                   
+                  </p>
+                  <p
+                    className="plate-title"
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 21, fontWeight: 600,
+                      color: THEME.ink, margin: '0 0 4px', lineHeight: 1.3,
+                      display: 'inline',
+                      backgroundImage: `linear-gradient(${THEME.ink}, ${THEME.ink})`,
+                      backgroundPosition: '0 100%', backgroundRepeat: 'no-repeat',
+                      backgroundSize: '0% 1px', transition: 'background-size 0.35s ease',
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {v.title}
+                  </p>
+                  <p style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 14,
+                    color: THEME.inkLight, margin: 0, lineHeight: 1.45,
+                  }}>
+                    {v.tagline}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        <button
+          onClick={() => scrollByCard(-1)}
+          aria-label="Previous"
+          className="slider-btn"
+          style={{
+            position: 'absolute', top: '42%', left: 4, transform: 'translateY(-50%)',
+            width: 46, height: 46, borderRadius: '50%', border: `1px solid ${THEME.border}`,
+            background: 'rgba(255,255,255,0.92)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', boxShadow: '0 4px 20px rgba(39,72,66,0.08)',
+          }}
+        >
+          <ChevronLeft size={20} color={THEME.ink} />
+        </button>
+        <button
+          onClick={() => scrollByCard(1)}
+          aria-label="Next"
+          className="slider-btn"
+          style={{
+            position: 'absolute', top: '42%', right: 4, transform: 'translateY(-50%)',
+            width: 46, height: 46, borderRadius: '50%', border: `1px solid ${THEME.border}`,
+            background: 'rgba(255,255,255,0.92)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', boxShadow: '0 4px 20px rgba(39,72,66,0.08)',
+          }}
+        >
+          <ChevronRight size={20} color={THEME.ink} />
+        </button>
+      </div>
+    );
+  };
+
+  const VariantsSelector = ({ variants, parentTitle }) => (
+    <section style={{
+      background: THEME.porcelain, padding: '80px 0 100px',
+      borderTop: `1px solid ${THEME.border}`, borderBottom: `1px solid ${THEME.border}`,
+    }}>
+      <div style={{ maxWidth: 700, margin: '0 auto 56px', textAlign: 'center', padding: '0 48px' }}>
+        <div style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16,
+          marginBottom: 20,
+        }}>
+          <span style={{ width: 40, height: 1, background: THEME.copper, opacity: 0.4 }} />
+          <span style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontSize: 10, letterSpacing: '0.35em', textTransform: 'uppercase',
+            color: THEME.copper, fontWeight: 600,
+          }}>Explore Editions</span>
+          <span style={{ width: 40, height: 1, background: THEME.copper, opacity: 0.4 }} />
+        </div>
+        
+        <h2 style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontSize: 'clamp(28px, 3.2vw, 40px)', fontWeight: 600,
+          color: THEME.ink, margin: '0 0 14px', lineHeight: 1.2,
+          letterSpacing: '-0.01em',
+        }}>
+          {parentTitle}, <span style={{ fontStyle: 'italic', color: THEME.copper }}>told a few different ways</span>
+        </h2>
+        
+        <p style={{
+          fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
+          fontSize: 18, color: THEME.inkLight, margin: 0, lineHeight: 1.6,
+          opacity: 0.8,
+        }}>
+          Same coffee-table format, each edition set around a different story.
+        </p>
+        
+        <div style={{
+          width: 60, height: 2, background: THEME.copper,
+          margin: '24px auto 0', opacity: 0.4,
+        }} />
+      </div>
+
+      <VariantSliderTrack variants={variants} />
+    </section>
+  );
+
+  const services = [
+    {
+      title: "Coffee Table Books",
+      tagline: "Art You Can Hold.",
+      desc: "Our coffee table books are crafted to be seen, felt, and admired, turning every page into a visual experience and a timeless conversation piece.",
+      image: Coffee,
+      path: "/services/coffee-table",
+    },
+  ];
+
   return (
     <>
       <style>{`
@@ -508,6 +866,11 @@ const ServicesCards = () => {
             </div>
           ))}
 
+          <VariantsSelector 
+            variants={sliderVariants} 
+            parentTitle="Coffee Table Books" 
+          />
+
         </div>
       </section>
     </>
@@ -515,3 +878,7 @@ const ServicesCards = () => {
 };
 
 export default ServicesCards;
+
+
+
+    
