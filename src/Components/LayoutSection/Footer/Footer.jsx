@@ -32,30 +32,35 @@ const YoutubeIcon = () => (
   </svg>
 );
 
+// ─── FIXED: Updated footer links with correct Coffee Table paths ──────────
 const footerLinks = {
   "Our Portfolio": [
-    { name: "Coffee Table Books",     path: "/services/coffee-table" },
-    { name: "Family Legacy Books",    path: "/services/legacy-book" },
-    { name: "Business Story Books",   path: "/services/business-book" },
-    { name: "Memoir Books",           path: "/services/memoir" },
-    { name: "Photo Books",            path: "/services/photo-book" },
-    { name: "Vision & Passion Books", path: "/services/vision-passion-book" },
-    { name: "Devotional Books",       path: "/services/devotional-book" },
+    // Parent Coffee Table Book
+    { name: "Coffee Table Books", path: "/services/coffee-table" },
+    // ─── Children of Coffee Table Books ───
+    { name: "  Family Legacy Books", path: "/services/coffee-table-family-legacy-book" },
+    { name: "  Business Story Books", path: "/services/coffee-table-business-story-book" },
+    { name: "  Devotional Books", path: "/services/coffee-table-devotional-book" },
+    { name: "  Individual Legacy Books", path: "/services/coffee-table-individual-legacy-book" },
+    // ─── Standalone services ───
+    // { name: "Memoir Books", path: "/services/memoir" },
+    // { name: "Photo Books", path: "/services/photo-book" },
+    // { name: "Vision & Passion Books", path: "/services/vision-passion-book" },
   ],
   Company: [
-    { name: "About Us",   path: "/about" },
-    { name: "Our Team",   path: "/team" },
-    { name: "Blog",       path: "/blog" },
+    { name: "About Us", path: "/about" },
+    { name: "Our Team", path: "/team" },
+    { name: "Blog", path: "/blog" },
     { name: "Contact Us", path: "/contacts" },
   ],
 };
 
 const socialLinks = [
-  { label: "Facebook",  href: "#", icon: <FacebookIcon /> },
+  { label: "Facebook", href: "#", icon: <FacebookIcon /> },
   { label: "Instagram", href: "https://www.instagram.com/legacycurator.in?igsh=MTBzZWhoOTRsNGY1MA==", icon: <InstagramIcon /> },
   { label: "Pinterest", href: "#", icon: <PinterestIcon /> },
-  { label: "YouTube",   href: "#", icon: <YoutubeIcon /> },
-  { label: "LinkedIn",  href: "https://www.linkedin.com/company/legacycurator/", icon: <LinkedInIcon /> },
+  { label: "YouTube", href: "#", icon: <YoutubeIcon /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/legacycurator/", icon: <LinkedInIcon /> },
 ];
 
 const Footer = () => {
@@ -64,6 +69,13 @@ const Footer = () => {
       <style>{`
         .footer-root, .footer-root * {
           font-family: 'Montserrat', sans-serif !important;
+        }
+        /* Optional: indentation for child links */
+        .footer-child-link {
+          padding-left: 16px;
+        }
+        .footer-child-link .link-line {
+          margin-left: 0 !important;
         }
       `}</style>
 
@@ -117,17 +129,31 @@ const Footer = () => {
                 Our Portfolio
               </h3>
               <ul className="space-y-2.5">
-                {footerLinks["Our Portfolio"].map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.path}
-                      className="group flex items-center text-[13px] text-forest/80 hover:text-saddle font-medium transition-colors duration-200"
-                    >
-                      <span className="block h-px bg-saddle w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out" />
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
+                {footerLinks["Our Portfolio"].map((link, index) => {
+                  const isChild = link.name.startsWith("  ");
+                  const displayName = isChild ? link.name.slice(2) : link.name;
+                  const isParent = link.name === "Coffee Table Books";
+                  return (
+                    <li key={index}>
+                      <Link
+                        to={link.path}
+                        className={`
+                          group flex items-center text-[13px] text-forest/80 hover:text-saddle font-medium transition-colors duration-200
+                          ${isChild ? "footer-child-link" : ""}
+                        `}
+                        style={isChild ? { paddingLeft: "16px" } : {}}
+                      >
+                        <span
+                          className={`
+                            block h-px bg-saddle w-0 group-hover:w-3 mr-0 group-hover:mr-2 flex-shrink-0 transition-all duration-300 ease-out
+                            ${isChild ? "ml-0" : ""}
+                          `}
+                        />
+                        {displayName}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 

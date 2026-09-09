@@ -294,7 +294,8 @@ const LocationDetailPage = () => {
         <section className="loc-hero">
           <div data-aos="fade-right">
             <nav className="loc-crumb">
-              <Link to="/services/photo-book">{service.title}</Link>
+              {/* <Link to="/services/photo-book">{service.title}</Link> */}
+              <Link to={`/services/${slug}`}>{service.title}</Link>
               <span>›</span>
               <span style={{ color: L.gold }}>{location.cityName}</span>
             </nav>
