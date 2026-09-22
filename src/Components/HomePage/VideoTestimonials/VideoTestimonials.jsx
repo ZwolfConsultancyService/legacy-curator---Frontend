@@ -1,28 +1,47 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
-const testimonials = [
+import client01 from "../../../assets/videoimage/01.jpeg";
+import client02 from "../../../assets/videoimage/02.jpeg";
+import client03 from "../../../assets/videoimage/03.jpeg";
+import client04 from "../../../assets/videoimage/04.jpeg";
+import client05 from "../../../assets/videoimage/05.jpeg";
+import client06 from "../../../assets/videoimage/06.jpeg";
+
+const REELS = [
   {
-    id: 1,
-    thumbnail: "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=900&q=85",
-    videoUrl: "https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&rel=0",
-    quote: "It preserved stories I thought were lost forever.",
-    duration: "3:42",
+    url: "https://www.instagram.com/reel/DXMuYP4jYnY/",
+    name: "Client story 1",
+    thumb: client01,
   },
   {
-    id: 2,
-    thumbnail: "https://images.unsplash.com/photo-1559628233-100c798642d4?w=900&q=85",
-    videoUrl: "https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&rel=0",
-    quote: "Every photograph became a doorway to the past.",
-    duration: "4:18",
+    url: "https://www.instagram.com/reel/DXRv9v-jzln/",
+    name: "Client story 2",
+    thumb: client02,
   },
   {
-    id: 3,
-    thumbnail: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=900&q=85",
-    videoUrl: "https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&rel=0",
-    quote: "My children now understand where they come from.",
-    duration: "5:01",
+    url: "https://www.instagram.com/reel/DXeYjJvj_g1/?stkn=MXNrYWszbHM5Zjk0cQ==",
+    name: "Client story 3",
+    thumb: client03,
+  },
+  {
+    url: "https://www.instagram.com/reel/DXmduWrDfHM/?stkn=bWxjZ2liMnN1czY5",
+    name: "Client story 4",
+    thumb: client04,
+  },
+  {
+    url: "https://www.instagram.com/reel/DXwp5NBz-9D/?stkn=MWVxd2EybnE2ZjZjZA==",
+    name: "Client story 5",
+    thumb: client05,
+  },
+  {
+    url: "https://www.instagram.com/reel/DZsEGNsPWZP/?stkn=OWJ3bG5lM3J4dTQx",
+    name: "Client story 6",
+    thumb: client06,
   },
 ];
+
+// Duplicate the list so the marquee can loop seamlessly (2x is enough for a smooth infinite scroll)
+const LOOP_REELS = [...REELS, ...REELS];
 
 const CSS = `
   * { box-sizing: border-box; }
@@ -31,241 +50,385 @@ const CSS = `
     from { opacity: 0; transform: translateY(32px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  @keyframes modalIn {
-    from { opacity: 0; transform: scale(0.94); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-  @keyframes backdropIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
   @keyframes pulse {
     0%, 100% { box-shadow: 0 0 0 0px rgba(255,255,255,0.35); }
     50%       { box-shadow: 0 0 0 12px rgba(255,255,255,0.08); }
   }
 
-  .lc-card { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both; }
-  .lc-card:nth-child(1) { animation-delay: 0.05s; }
-  .lc-card:nth-child(2) { animation-delay: 0.18s; }
-  .lc-card:nth-child(3) { animation-delay: 0.31s; }
+
+  .lc-section { background: #ffffff; padding: 0 0 80px; position: relative; overflow: hidden; }
+  @media (max-width: 600px) { .lc-section { padding: 0 0 40px; } }
+
+  .lc-header { text-align: center; max-width: 560px; margin: 0 auto 48px; padding: 56px 28px 0; animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+  @media (max-width: 600px) { .lc-header { margin-bottom: 24px; padding: 40px 20px 0; } }
+
+  /* ---- Continuous slider ---- */
+  .lc-slider-outer { position: relative; width: 100%; }
+
+  .lc-slider-viewport {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .lc-slider-viewport::-webkit-scrollbar { display: none; }
+  .lc-slider-track {
+    display: flex;
+    width: max-content;
+    gap: 22px;
+    padding: 4px 48px 16px;
+  }
+  @media (max-width: 600px) { .lc-slider-track { padding: 4px 40px 16px; } }
+
+  .lc-nav-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    z-index: 5; width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid rgba(139,105,20,0.25);
+    background: rgba(254,252,248,0.95);
+    box-shadow: 0 8px 24px rgba(100,80,40,0.18);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background 0.2s, transform 0.2s;
+  }
+  .lc-nav-btn:hover { background: #fff; transform: translateY(-50%) scale(1.07); }
+  .lc-nav-btn.prev { left: 6px; }
+  .lc-nav-btn.next { right: 6px; }
+  @media (max-width: 600px) {
+    .lc-nav-btn { width: 36px; height: 36px; }
+    .lc-nav-btn.prev { left: 2px; }
+    .lc-nav-btn.next { right: 2px; }
+  }
+
+  .lc-slide {
+    flex: 0 0 240px;
+    width: 240px;
+  }
+  @media (max-width: 600px) {
+    .lc-slide { flex-basis: 62vw; width: 62vw; max-width: 230px; }
+    .lc-slider-track { gap: 14px; animation-duration: 30s; }
+  }
 
   .lc-wrap {
     position: relative; cursor: pointer; border-radius: 16px; overflow: hidden;
-    aspect-ratio: 9 / 15;
+    aspect-ratio: 9 / 15; background: #111;
     box-shadow: 0 8px 32px rgba(100,80,40,0.13), 0 1px 4px rgba(100,80,40,0.08);
     transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), box-shadow 0.45s ease;
   }
-  .lc-wrap:hover { transform: translateY(-12px) scale(1.012); box-shadow: 0 32px 72px rgba(100,80,40,0.22), 0 2px 8px rgba(100,80,40,0.10); }
+  .lc-wrap:hover { transform: translateY(-6px) scale(1.012); box-shadow: 0 28px 60px rgba(100,80,40,0.22), 0 2px 8px rgba(100,80,40,0.10); }
 
   .lc-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.85s cubic-bezier(0.22,1,0.36,1); }
   .lc-wrap:hover .lc-img { transform: scale(1.06); }
 
-  .lc-grad { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.08) 40%, rgba(10,6,2,0.82) 100%); }
-  .lc-sepia { position: absolute; inset: 0; background: rgba(70,44,8,0.18); }
-
-  .lc-duration {
-    position: absolute; top: 16px; right: 16px;
-    font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; color: #f5ead0;
-    background: rgba(0,0,0,0.48); border: 0.5px solid rgba(255,220,140,0.3);
-    padding: 4px 12px; border-radius: 20px; letter-spacing: 0.06em; backdrop-filter: blur(4px);
-  }
+  .lc-grad { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.0) 40%, rgba(10,6,2,0.78) 100%); }
 
   .lc-play-wrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
   .lc-play {
-    width: 72px; height: 72px; border-radius: 50%;
+    width: 56px; height: 56px; border-radius: 50%;
     border: 1.5px solid rgba(255,255,255,0.8); background: rgba(255,255,255,0.18);
     backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center;
     transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background 0.3s ease;
-    animation: pulse 2.8s ease-in-out infinite; padding-left: 5px;
+    animation: pulse 2.8s ease-in-out infinite; padding-left: 4px;
   }
-  .lc-wrap:hover .lc-play { transform: scale(1.15); background: rgba(255,255,255,0.28); animation: none; box-shadow: 0 0 0 18px rgba(255,255,255,0.1); }
+  .lc-wrap:hover .lc-play { transform: scale(1.15); background: rgba(255,255,255,0.28); animation: none; box-shadow: 0 0 0 16px rgba(255,255,255,0.1); }
 
-  .lc-bottom { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 22px 24px; }
-  .lc-quote { font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 14px; font-weight: 300; line-height: 1.6; color: #f0e4cc; text-shadow: 0 1px 10px rgba(0,0,0,0.8); margin: 0; }
-  .lc-watch-bar { margin-top: 10px; display: flex; align-items: center; gap: 8px; }
-  .lc-watch-line { width: 20px; height: 1px; background: rgba(212,184,122,0.7); flex-shrink: 0; }
-  .lc-watch-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #d4b87a; }
-
-  /* Desktop grid */
-  .lc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 960px; margin: 0 auto; }
-
-  @media (max-width: 900px) and (min-width: 601px) {
-    .lc-grid { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
+  /* Inline playing card (video shows right inside the slider, not a modal) */
+  .lc-playing {
+    position: relative; border-radius: 16px; overflow: hidden;
+    background: #fefcf8; border: 1px solid #e0d4be;
+    box-shadow: 0 8px 32px rgba(100,80,40,0.13);
+    min-height: 100%;
   }
-  @media (max-width: 600px) { .lc-grid { display: none; } }
-
-  /* Carousel */
-  .lc-carousel { display: none; }
-  @media (max-width: 600px) { .lc-carousel { display: block; } }
-
-  .lc-track {
-    display: flex; gap: 16px; padding: 4px 24px 16px;
-    overflow-x: auto; scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; scrollbar-width: none; scroll-behavior: smooth;
-  }
-  .lc-track::-webkit-scrollbar { display: none; }
-  .lc-track-item { flex: 0 0 75vw; max-width: 280px; scroll-snap-align: center; }
-
-  .lc-dots { display: flex; justify-content: center; gap: 7px; padding-top: 14px; }
-  .lc-dot { width: 7px; height: 7px; border-radius: 50%; background: #c8a96e; opacity: 0.28; border: none; padding: 0; cursor: pointer; transition: opacity 0.3s, transform 0.3s; }
-  .lc-dot.active { opacity: 1; transform: scale(1.4); }
-
-  .lc-section {
-    background: #ffffff;
-    padding: 0 28px 80px;
-    position: relative;
-    overflow: hidden;
-  }
-  @media (max-width: 600px) {
-    .lc-section { padding: 0 0 40px; }
-  }
-
-  .lc-header {
-    text-align: center;
-    max-width: 560px;
-    margin: 0 auto 56px;
-    padding: 56px 28px 0;
-  }
-  @media (max-width: 600px) {
-    .lc-header { margin-bottom: 28px; padding: 40px 20px 0; }
-  }
-
-  /* Modal */
-  .lc-modal-backdrop {
-    position: fixed; inset: 0; z-index: 9999;
-    background: rgba(20,12,2,0.82);
+  .lc-playing-close {
+    position: absolute; top: 8px; right: 8px; z-index: 3;
+    width: 26px; height: 26px; border-radius: 50%; border: none; cursor: pointer;
+    background: rgba(20,12,2,0.65); color: #fff; font-size: 15px; line-height: 1;
     display: flex; align-items: center; justify-content: center;
-    padding: 24px; animation: backdropIn 0.28s ease; backdrop-filter: blur(16px);
+    backdrop-filter: blur(4px);
   }
-  .lc-modal { width: min(860px, 100%); animation: modalIn 0.38s cubic-bezier(0.22,1,0.36,1); background: #fefcf8; border-radius: 12px; overflow: hidden; border: 1px solid #e0d4be; box-shadow: 0 40px 100px rgba(0,0,0,0.4); }
-  .lc-modal-bar { padding: 14px 24px; background: #faf6ee; border-bottom: 1px solid #ede5d8; display: flex; align-items: center; justify-content: space-between; }
-  .lc-modal-title { font-family: 'Montserrat', sans-serif; font-style: italic; font-weight: 300; color: #9b8360; font-size: 13px; letter-spacing: 0.04em; }
-  .lc-close { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; color: #5c4310; text-transform: uppercase; border: 0.5px solid rgba(139,105,20,0.4); padding: 7px 22px; border-radius: 2px; background: rgba(139,105,20,0.06); cursor: pointer; transition: background 0.2s; }
-  .lc-close:hover { background: rgba(139,105,20,0.14); }
+  .lc-embed-body { padding: 8px; }
+  .lc-embed-body iframe { border-radius: 8px !important; }
+  .lc-embed-loading {
+    font-family: 'Montserrat', sans-serif; font-size: 12px;
+    color: #9b8360; text-align: center; padding: 60px 0;
+  }
 `;
 
-const Modal = ({ item, onClose }) => (
-  <div className="lc-modal-backdrop" onClick={onClose}>
-    <div className="lc-modal" onClick={e => e.stopPropagation()}>
-      <div className="lc-modal-bar">
-        <span className="lc-modal-title">"{item.quote}"</span>
-        <button className="lc-close" onClick={onClose}>Close</button>
-      </div>
-      <div style={{ position: "relative", paddingTop: "56.25%" }}>
-        <iframe src={item.videoUrl} title="Testimonial" allow="autoplay; fullscreen" allowFullScreen style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }} />
-      </div>
-    </div>
-  </div>
-);
+// Instagram embed.js load + re-process helper
+function useInstagramEmbed(trigger) {
+  useEffect(() => {
+    if (!trigger) return;
 
-const CardInner = ({ item, onClick }) => (
-  <div className="lc-wrap" onClick={() => onClick(item)}>
-    <img className="lc-img" src={item.thumbnail} alt="testimonial" />
-    <div className="lc-sepia" />
-    <div className="lc-grad" />
-    <div className="lc-duration">{item.duration}</div>
-    <div className="lc-play-wrap">
-      <div className="lc-play">
-        <svg viewBox="0 0 24 24" fill="#fff" width="28" height="28"><path d="M8 5.14v14l11-7-11-7z" /></svg>
+    const process = () => {
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+    };
+
+    const timer = setTimeout(process, 100);
+
+    if (window.instgrm) {
+      process();
+      return () => clearTimeout(timer);
+    }
+
+    const existing = document.getElementById("instagram-embed-script");
+    if (existing) {
+      existing.addEventListener("load", process);
+      return () => {
+        clearTimeout(timer);
+        existing.removeEventListener("load", process);
+      };
+    }
+
+    const script = document.createElement("script");
+    script.id = "instagram-embed-script";
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+    script.onload = process;
+    document.body.appendChild(script);
+
+    return () => clearTimeout(timer);
+  }, [trigger]);
+}
+
+const InlineEmbed = ({ item, onClose }) => {
+  useInstagramEmbed(item.url);
+
+  return (
+    <div className="lc-playing">
+      <button className="lc-playing-close" onClick={onClose} aria-label="Close">
+        ×
+      </button>
+      <div className="lc-embed-body">
+        <blockquote
+          key={item.url}
+          className="instagram-media"
+          data-instgrm-captioned
+          data-instgrm-permalink={item.url}
+          data-instgrm-version="14"
+          style={{
+            margin: 0,
+            width: "100%",
+            background: "#FFF",
+            border: 0,
+            borderRadius: 3,
+            boxShadow: "0 0 1px 0 rgba(0,0,0,0.5)",
+            minWidth: "220px",
+            padding: 0,
+          }}
+        >
+          <div className="lc-embed-loading">Loading reel…</div>
+        </blockquote>
       </div>
     </div>
-    <div className="lc-bottom">
-      <p className="lc-quote">"{item.quote}"</p>
-      <div className="lc-watch-bar">
-        <div className="lc-watch-line" />
-        <span className="lc-watch-label">Watch Story</span>
+  );
+};
+
+const Slide = ({ item, isPlaying, onPlay, onClose }) => {
+  if (isPlaying) {
+    return <InlineEmbed item={item} onClose={onClose} />;
+  }
+  return (
+    <div className="lc-wrap" onClick={onPlay}>
+      <img className="lc-img" src={item.thumb} alt={item.name} />
+      <div className="lc-grad" />
+      <div className="lc-play-wrap">
+        <div className="lc-play">
+          <svg viewBox="0 0 24 24" fill="#fff" width="22" height="22">
+            <path d="M8 5.14v14l11-7-11-7z" />
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default function VideoTestimonials() {
-  const [activeVideo, setActiveVideo] = useState(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const trackRef = useRef(null);
-  const autoRef = useRef(null);
-  const userTouching = useRef(false);
+  // track which slide index (in the doubled LOOP_REELS array) is currently playing
+  const [playingIdx, setPlayingIdx] = useState(null);
+  const viewportRef = useRef(null);
+  const rafRef = useRef(null);
+  const resumeTimer = useRef(null);
+  const pausedRef = useRef(false);
 
-  const startAuto = () => {
-    clearInterval(autoRef.current);
-    autoRef.current = setInterval(() => {
-      if (userTouching.current) return;
-      setActiveIndex(prev => { const next = (prev + 1) % testimonials.length; snapTo(next); return next; });
-    }, 2600);
-  };
-
-  const snapTo = (i) => {
-    const track = trackRef.current; if (!track) return;
-    const child = track.children[i]; if (!child) return;
-    track.scrollTo({ left: child.offsetLeft - (track.clientWidth - child.offsetWidth) / 2, behavior: "smooth" });
-  };
-
-  useEffect(() => { startAuto(); return () => clearInterval(autoRef.current); }, []);
-
-  const onScroll = () => {
-    const track = trackRef.current; if (!track) return;
-    const center = track.scrollLeft + track.clientWidth / 2;
-    let closest = 0, minD = Infinity;
-    Array.from(track.children).forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center); if (d < minD) { minD = d; closest = i; } });
-    setActiveIndex(closest);
-  };
-
-  const dotClick = (i) => { clearInterval(autoRef.current); setActiveIndex(i); snapTo(i); setTimeout(startAuto, 3000); };
-
+  // Continuous auto-scroll loop (pixel-by-pixel), seamless because the list is duplicated
   useEffect(() => {
-    const h = e => { if (e.key === "Escape") setActiveVideo(null); };
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
+    const step = () => {
+      const el = viewportRef.current;
+      if (el && !pausedRef.current) {
+        el.scrollLeft += 0.6;
+        const halfWidth = el.scrollWidth / 2;
+        if (el.scrollLeft >= halfWidth) {
+          el.scrollLeft -= halfWidth;
+        }
+      }
+      rafRef.current = requestAnimationFrame(step);
+    };
+    rafRef.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafRef.current);
   }, []);
+
+  const pause = useCallback(() => {
+    clearTimeout(resumeTimer.current);
+    pausedRef.current = true;
+  }, []);
+
+  const resume = useCallback((delay = 0) => {
+    clearTimeout(resumeTimer.current);
+    resumeTimer.current = setTimeout(() => {
+      pausedRef.current = false;
+    }, delay);
+  }, []);
+
+  const handlePlay = (idx) => {
+    setPlayingIdx(idx);
+    pause();
+  };
+
+  const handleClose = () => {
+    setPlayingIdx(null);
+    resume(400);
+  };
+
+  const nudge = (dir) => {
+    const el = viewportRef.current;
+    if (!el) return;
+    pause();
+    const amount = (el.querySelector(".lc-slide")?.offsetWidth || 240) + 22;
+    el.scrollBy({ left: dir * amount, behavior: "smooth" });
+    resume(2500);
+  };
+
+  useEffect(() => () => clearTimeout(resumeTimer.current), []);
 
   return (
     <>
       <style>{CSS}</style>
       <section className="lc-section">
-
         <header className="lc-header">
-          <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "26px" }}>
-            <div style={{ flex: 1, height: "0.5px", background: "linear-gradient(90deg,transparent,#c8a96e)" }} />
-            <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, color: "#b8a07a", fontSize: "10px", letterSpacing: "0.35em", textTransform: "uppercase" }}>Legacy Curator</span>
-            <div style={{ flex: 1, height: "0.5px", background: "linear-gradient(90deg,#c8a96e,transparent)" }} />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              marginBottom: "26px",
+            }}
+          >
+            <div
+              style={{
+                flex: 1,
+                height: "0.5px",
+                background: "linear-gradient(90deg,transparent,#c8a96e)",
+              }}
+            />
+            <span
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 500,
+                color: "#b8a07a",
+                fontSize: "10px",
+                letterSpacing: "0.35em",
+                textTransform: "uppercase",
+              }}
+            >
+              Legacy Curator
+            </span>
+            <div
+              style={{
+                flex: 1,
+                height: "0.5px",
+                background: "linear-gradient(90deg,#c8a96e,transparent)",
+              }}
+            />
           </div>
-          <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "clamp(26px, 4vw, 42px)", color: "#1e1408", margin: 0, lineHeight: 1.18 }}>
-            Trusted by over<br />one million families
+          <h2
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(26px, 4vw, 42px)",
+              color: "#1e1408",
+              margin: 0,
+              lineHeight: 1.18,
+            }}
+          >
+            Trusted by over
+            <br />
+            one million families
           </h2>
-          <p style={{ fontFamily: "'Montserrat', sans-serif", fontStyle: "italic", fontWeight: 300, fontSize: "16px", color: "#9b8360", marginTop: "14px", lineHeight: 1.6 }}>
+          <p
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: "16px",
+              color: "#9b8360",
+              marginTop: "14px",
+              lineHeight: 1.6,
+            }}
+          >
             Real voices. Real stories. Preserved for generations.
           </p>
-          <div style={{ marginTop: "24px", display: "flex", alignItems: "center", justifyContent: "center", gap: "12px" }}>
+          <div
+            style={{
+              marginTop: "24px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "12px",
+            }}
+          >
             <div style={{ width: "32px", height: "0.5px", background: "#d4b87a" }} />
-            <svg viewBox="0 0 20 20" fill="#c8a96e" width="12" height="12" opacity="0.75"><path d="M10 1l2.4 6.4H19l-5.3 3.9 2 6.5L10 14l-5.7 3.8 2-6.5L1 7.4h6.6z" /></svg>
+            <svg viewBox="0 0 20 20" fill="#c8a96e" width="12" height="12" opacity="0.75">
+              <path d="M10 1l2.4 6.4H19l-5.3 3.9 2 6.5L10 14l-5.7 3.8 2-6.5L1 7.4h6.6z" />
+            </svg>
             <div style={{ width: "32px", height: "0.5px", background: "#d4b87a" }} />
           </div>
         </header>
 
-        <div className="lc-grid">
-          {testimonials.map((item) => (
-            <div className="lc-card" key={item.id}><CardInner item={item} onClick={setActiveVideo} /></div>
-          ))}
-        </div>
-
-        <div className="lc-carousel">
-          <div className="lc-track" ref={trackRef} onScroll={onScroll}
-            onTouchStart={() => { userTouching.current = true; clearInterval(autoRef.current); }}
-            onTouchEnd={() => { setTimeout(() => { userTouching.current = false; startAuto(); }, 2000); }}
+        <div className="lc-slider-outer">
+          <button
+            className="lc-nav-btn prev"
+            onClick={() => nudge(-1)}
+            aria-label="Previous"
           >
-            {testimonials.map((item) => (
-              <div className="lc-track-item" key={item.id}><CardInner item={item} onClick={setActiveVideo} /></div>
-            ))}
-          </div>
-          <div className="lc-dots">
-            {testimonials.map((_, i) => (
-              <button key={i} className={`lc-dot${activeIndex === i ? " active" : ""}`} onClick={() => dotClick(i)} />
-            ))}
-          </div>
-        </div>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#5c4310" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
 
+          <div
+            className="lc-slider-viewport"
+            ref={viewportRef}
+            onMouseEnter={pause}
+            onMouseLeave={() => (playingIdx === null ? resume() : null)}
+            onTouchStart={pause}
+            onTouchEnd={() => (playingIdx === null ? resume(1500) : null)}
+          >
+            <div className="lc-slider-track">
+              {LOOP_REELS.map((item, i) => (
+                <div className="lc-slide" key={item.url + "-" + i}>
+                  <Slide
+                    item={item}
+                    isPlaying={playingIdx === i}
+                    onPlay={() => handlePlay(i)}
+                    onClose={handleClose}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            className="lc-nav-btn next"
+            onClick={() => nudge(1)}
+            aria-label="Next"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#5c4310" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+        </div>
       </section>
-      {activeVideo && <Modal item={activeVideo} onClose={() => setActiveVideo(null)} />}
     </>
   );
 }
