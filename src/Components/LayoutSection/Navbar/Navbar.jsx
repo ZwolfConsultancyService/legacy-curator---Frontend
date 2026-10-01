@@ -15,7 +15,7 @@ const serviceLinks = [
     name: "Coffee Table Books", 
     slug: "coffee-table",  // main umbrella slug
     icon: "☕", 
-    sub: "Statement, displayed",
+    sub: "",
     children: [
       { name: "Family Legacy Books", slug: "coffee-table-family-legacy-book" },
       { name: "Business Story Books", slug: "coffee-table-business-story-book" },
@@ -184,7 +184,7 @@ const Navbar = () => {
         /* ─── SHARED NAV LINK / BUTTON STYLE ─── */
         .lc-link, .lc-drop-btn {
           font-family: 'Montserrat', sans-serif;
-          font-size: 9.5px;
+          font-size: 12px;
           font-weight: 500;
           letter-spacing: 0.28em;
           text-transform: uppercase;
@@ -222,7 +222,7 @@ const Navbar = () => {
 
         /* Solid mode colours */
         .solid .lc-link,
-        .solid .lc-drop-btn { color: var(--forest-mid); }
+        .solid .lc-drop-btn { color: #111111; }
         .solid .lc-link:hover, .solid .lc-link.active,
         .solid .lc-drop-btn:hover, .solid .lc-drop-btn.active { color: var(--forest); }
         .solid .lc-link::after, .solid .lc-drop-btn::after { background: var(--gold); }
@@ -340,9 +340,9 @@ const Navbar = () => {
         .dd-text { flex: 1; min-width: 0; }
         .dd-name {
           font-family: 'Montserrat', sans-serif;
-          font-size: 11px;
+          font-size: 13px;
           font-weight: 500;
-          color: rgba(20,32,26,0.6);
+          color: rgba(18, 22, 20, 0.6);
           letter-spacing: 0.02em;
           line-height: 1.25;
           transition: color 0.16s;
@@ -352,7 +352,7 @@ const Navbar = () => {
 
         .dd-sub {
           font-family: 'Cormorant Garamond', serif;
-          font-size: 11px;
+          font-size: 13px;
           font-style: italic;
           color: rgba(20,32,26,0.28);
           letter-spacing: 0.02em;
@@ -404,7 +404,7 @@ const Navbar = () => {
         .dd-co-text { flex: 1; }
         .dd-co-name {
           font-family: 'Montserrat', sans-serif;
-          font-size: 12px;
+          font-size: 13px;
           font-weight: 500;
           color: rgba(20,32,26,0.62);
           letter-spacing: 0.02em;
@@ -415,7 +415,7 @@ const Navbar = () => {
 
         .dd-co-sub {
           font-family: 'Cormorant Garamond', serif;
-          font-size: 11px;
+          font-size: 13px;
           font-style: italic;
           color: rgba(20,32,26,0.28);
           margin-top: 2px;
@@ -449,12 +449,12 @@ const Navbar = () => {
         .solid       .lc-logo-link:hover { background: var(--forest-faint); }
 
         .lc-logo-img {
-          height: 100px;
-          width: auto;
-          max-width: 260px;
-          object-fit: contain;
-          display: block;
-          transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+          height: 125px;
+  width: auto;
+  max-width: 320px;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
         }
         .transparent .lc-logo-img {
           filter: brightness(0) invert(1);
@@ -960,7 +960,7 @@ const Navbar = () => {
       <div className={`lc-drawer${menuOpen ? " open" : ""}`}>
         <div className="drawer-head">
           <Link to="/" onClick={() => setMenuOpen(false)}>
-            <img src={logo} alt="Legacy Curator" className="drawer-logo" />
+            
           </Link>
           <button className="drawer-close" onClick={() => setMenuOpen(false)} aria-label="Close">
             <X size={14} />

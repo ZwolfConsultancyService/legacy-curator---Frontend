@@ -398,65 +398,120 @@ const LocationsSection = ({ slug, serviceTitle }) => {
         <span style={{ width: 56, height: 1, background: THEME.border, display: 'block' }} />
       </div>
 
-      <div style={{
-        display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-        gap: 20, maxWidth: 1080, margin: '0 auto',
-      }}>
-        {cities.map((city, i) => (
-          <Link
-            key={city.citySlug}
-            to={`/services/${slug}/${city.citySlug}`}
-            data-aos="fade-up"
-            data-aos-delay={i * 70}
-            style={{
-              display: 'block', textDecoration: 'none',
-              background: THEME.eggshell, border: `1px solid ${THEME.border}`,
-              borderRadius: 6, padding: '26px 24px', position: 'relative',
-              transition: 'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-4px)';
-              e.currentTarget.style.boxShadow = '0 16px 40px rgba(39,72,66,0.14)';
-              e.currentTarget.style.borderColor = THEME.copper;
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.borderColor = THEME.border;
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-              <span style={{
-                width: 34, height: 34, borderRadius: '50%', flexShrink: 0,
-                background: 'rgba(167,112,61,0.1)', display: 'flex',
-                alignItems: 'center', justifyContent: 'center',
-              }}>
-                <MapPin size={15} color={THEME.copper} />
-              </span>
-              <span style={{
-                fontFamily: "'Cormorant Garamond', serif", fontSize: 20,
-                fontWeight: 700, color: THEME.ink, lineHeight: 1.2,
-              }}>
-                {city.cityName}
-              </span>
-            </div>
-            <p style={{
-              fontFamily: "'Montserrat', sans-serif", fontSize: 12.5,
-              color: THEME.inkLight, lineHeight: 1.6, margin: '0 0 14px',
-            }}>
-              {city.region}
-            </p>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              fontFamily: "'Montserrat', sans-serif", fontSize: 10,
-              fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase',
-              color: THEME.copper, borderBottom: `1px solid ${THEME.copper}`, paddingBottom: 2,
-            }}>
-              View Details <ArrowRight size={10} color={THEME.copper} />
-            </span>
-          </Link>
-        ))}
+    <div
+  style={{
+    display: 'flex',
+    gap: 20,
+    maxWidth: 1080,
+    margin: '0 auto',
+    overflowX: 'auto',
+    overflowY: 'hidden',
+    padding: '4px 4px 16px',
+    scrollBehavior: 'smooth',
+    scrollbarWidth: 'thin',
+  }}
+>
+  {cities.map((city, i) => (
+    <Link
+      key={city.citySlug}
+      to={`/services/${slug}/${city.citySlug}`}
+      data-aos="fade-up"
+      data-aos-delay={i * 70}
+      style={{
+        flex: '0 0 240px',
+        minWidth: 240,
+        display: 'block',
+        textDecoration: 'none',
+        background: THEME.eggshell,
+        border: `1px solid ${THEME.border}`,
+        borderRadius: 6,
+        padding: '26px 24px',
+        position: 'relative',
+        boxSizing: 'border-box',
+        transition:
+          'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'translateY(-4px)';
+        e.currentTarget.style.boxShadow =
+          '0 16px 40px rgba(39,72,66,0.14)';
+        e.currentTarget.style.borderColor = THEME.copper;
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.boxShadow = 'none';
+        e.currentTarget.style.borderColor = THEME.border;
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 10,
+          marginBottom: 12,
+        }}
+      >
+        <span
+          style={{
+            width: 34,
+            height: 34,
+            borderRadius: '50%',
+            flexShrink: 0,
+            background: 'rgba(167,112,61,0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <MapPin size={15} color={THEME.copper} />
+        </span>
+
+        <span
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: 20,
+            fontWeight: 700,
+            color: THEME.ink,
+            lineHeight: 1.2,
+          }}
+        >
+          {city.cityName}
+        </span>
       </div>
+
+      <p
+        style={{
+          fontFamily: "'Montserrat', sans-serif",
+          fontSize: 12.5,
+          color: THEME.inkLight,
+          lineHeight: 1.6,
+          margin: '0 0 14px',
+        }}
+      >
+        {city.region}
+      </p>
+
+      <span
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 6,
+          fontFamily: "'Montserrat', sans-serif",
+          fontSize: 10,
+          fontWeight: 700,
+          letterSpacing: '0.14em',
+          textTransform: 'uppercase',
+          color: THEME.copper,
+          borderBottom: `1px solid ${THEME.copper}`,
+          paddingBottom: 2,
+        }}
+      >
+        View Details
+        <ArrowRight size={10} color={THEME.copper} />
+      </span>
+    </Link>
+  ))}
+</div>
     </section>
   );
 };

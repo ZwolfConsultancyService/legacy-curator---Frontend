@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import services from '../../../data/Services.js';
 import locationsData from '../../../data/Locations.js';
 import RelatedBlogs from '../RelatedBlogs.jsx';
+import { MapPin, ArrowRight } from 'lucide-react';
 
 // ─── Local Theme (shares brand fonts, distinct layout language) ───────────
 const L = {
@@ -386,16 +387,169 @@ const LocationDetailPage = () => {
 
         {/* ── NEARBY CITIES (internal linking) ── */}
         {nearbyCities.length > 0 && (
-          <section className="loc-section" style={{ paddingTop: 40, paddingBottom: 40 }}>
-            <p className="loc-section-eyebrow">Also Serving Nearby</p>
-            <div className="loc-nearby-list" data-aos="fade-up">
-              {nearbyCities.map(c => (
-                <Link key={c.citySlug} to={`/services/${slug}/${c.citySlug}`} className="loc-nearby-link">
-                  {service.title} in {c.cityName}
-                </Link>
-              ))}
+         <section
+  className="loc-section"
+  style={{
+    paddingTop: 40,
+    paddingBottom: 40,
+  }}
+>
+  <div
+    style={{
+      maxWidth: 1080,
+      margin: '0 auto',
+    }}
+  >
+    {/* Heading */}
+    <div style={{ marginBottom: 22 }}>
+      <p
+        className="loc-section-eyebrow"
+        style={{
+          margin: 0,
+          fontFamily: "'Montserrat', sans-serif",
+          fontSize: 10,
+          fontWeight: 700,
+          letterSpacing: '0.18em',
+          textTransform: 'uppercase',
+          color: '#A7703D',
+        }}
+      >
+        Also Serving Nearby
+      </p>
+
+      <div
+        style={{
+          width: 42,
+          height: 1,
+          background: '#A7703D',
+          marginTop: 9,
+        }}
+      />
+    </div>
+
+    {/* Horizontal Scroll */}
+    <div
+      data-aos="fade-up"
+      style={{
+        display: 'flex',
+        gap: 14,
+        overflowX: 'auto',
+        overflowY: 'hidden',
+        padding: '4px 3px 14px',
+        scrollBehavior: 'smooth',
+        WebkitOverflowScrolling: 'touch',
+        scrollbarWidth: 'thin',
+      }}
+    >
+      {nearbyCities.map((c) => (
+        <Link
+          key={c.citySlug}
+          to={`/services/${slug}/${c.citySlug}`}
+          style={{
+            flex: '0 0 250px',
+            minWidth: 250,
+            textDecoration: 'none',
+            background: '#FBF8F2',
+            border: '1px solid #DED7CC',
+            borderRadius: 8,
+            padding: '18px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 14,
+            boxSizing: 'border-box',
+            transition:
+              'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-3px)';
+            e.currentTarget.style.boxShadow =
+              '0 12px 30px rgba(39,72,66,0.12)';
+            e.currentTarget.style.borderColor = '#A7703D';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = 'none';
+            e.currentTarget.style.borderColor = '#DED7CC';
+          }}
+        >
+          {/* City Info */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              minWidth: 0,
+            }}
+          >
+            <span
+              style={{
+                width: 34,
+                height: 34,
+                minWidth: 34,
+                borderRadius: '50%',
+                background: 'rgba(167,112,61,0.09)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <MapPin size={15} color="#A7703D" />
+            </span>
+
+            <div style={{ minWidth: 0 }}>
+              <p
+                style={{
+                  margin: 0,
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: 18,
+                  fontWeight: 700,
+                  color: '#274842',
+                  lineHeight: 1.2,
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+              >
+                {c.cityName}
+              </p>
+
+              <p
+                style={{
+                  margin: '4px 0 0',
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: 9.5,
+                  color: '#71817C',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {service.title}
+              </p>
             </div>
-          </section>
+          </div>
+
+          {/* Arrow */}
+          <span
+            style={{
+              width: 28,
+              height: 28,
+              minWidth: 28,
+              borderRadius: '50%',
+              border: '1px solid #DED7CC',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'all 0.25s ease',
+            }}
+          >
+            <ArrowRight size={12} color="#A7703D" />
+          </span>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
         )}
 
         {/* ── CTA ── */}
